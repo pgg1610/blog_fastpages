@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Sp_500 | fastpages</title>
+<title>S&amp;P 500 analysis using beautifulsoup and pandas | fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Sp_500" />
+<meta property="og:title" content="S&amp;P 500 analysis using beautifulsoup and pandas" />
 <meta name="author" content="Pushkar G. Ghanekar" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta name="description" content="Notebook that uses BeautifulSoup to generate a list of S&amp;P 500 companies and plot their market capital as a function of months." />
+<meta property="og:description" content="Notebook that uses BeautifulSoup to generate a list of S&amp;P 500 companies and plot their market capital as a function of months." />
 <link rel="canonical" href="https://pgg1610.github.io/blog_fastpages/python/plotting%20web-scrapping/2020/08/01/SP_500.html" />
 <meta property="og:url" content="https://pgg1610.github.io/blog_fastpages/python/plotting%20web-scrapping/2020/08/01/SP_500.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-01T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","url":"https://pgg1610.github.io/blog_fastpages/python/plotting%20web-scrapping/2020/08/01/SP_500.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pgg1610.github.io/blog_fastpages/python/plotting%20web-scrapping/2020/08/01/SP_500.html"},"headline":"Sp_500","dateModified":"2020-08-01T00:00:00-05:00","datePublished":"2020-08-01T00:00:00-05:00","author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"@context":"https://schema.org"}</script>
+{"description":"Notebook that uses BeautifulSoup to generate a list of S&amp;P 500 companies and plot their market capital as a function of months.","url":"https://pgg1610.github.io/blog_fastpages/python/plotting%20web-scrapping/2020/08/01/SP_500.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pgg1610.github.io/blog_fastpages/python/plotting%20web-scrapping/2020/08/01/SP_500.html"},"headline":"S&amp;P 500 analysis using beautifulsoup and pandas","dateModified":"2020-08-01T00:00:00-05:00","datePublished":"2020-08-01T00:00:00-05:00","author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pgg1610.github.io/blog_fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /><script src="https://hypothes.is/embed.js" async></script>
@@ -88,7 +88,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Sp_500</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-01T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">S&amp;P 500 analysis using beautifulsoup and pandas</h1><p class="page-description">Notebook that uses `BeautifulSoup` to generate a list of S&P 500 companies and plot their market capital as a function of months.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-01T00:00:00-05:00" itemprop="datePublished">
         Aug 1, 2020
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -138,10 +138,20 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="###-First:-Get-list-of-S&P-500-companies">## First: Get list of S&amp;P 500 companies </a></li>
-<li class="toc-entry toc-h2"><a href="###-Populate-each-row-entry-as-per-company-data">## Populate each row entry as per company data </a></li>
-<li class="toc-entry toc-h2"><a href="###-Get-total-number-of-Shares">## Get total number of Shares </a></li>
-<li class="toc-entry toc-h2"><a href="###-Plotting-multiple-companies">## Plotting multiple companies </a></li>
+<li class="toc-entry toc-h3"><a href="#To-extract-stock-information">To extract stock information </a></li>
+<li class="toc-entry toc-h2"><a href="#1.-Generate-list-of-S&P-500-companies">1. Generate list of S&amp;P 500 companies </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Parse-wikipedia-to-generate-a-list">Parse wikipedia to generate a list </a></li>
+<li class="toc-entry toc-h3"><a href="#Populate-each-row-entry-as-per-company-data">Populate each row entry as per company data </a></li>
+<li class="toc-entry toc-h3"><a href="#Visualize-distribution-of-the-companies-as-per-sectors">Visualize distribution of the companies as per sectors </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Get-total-number-of-Shares">Get total number of Shares </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Extend-this-to-plotting-for-multiple-companies">Extend this to plotting for multiple companies </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Final-plot-for-returns">Final plot for returns </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -151,6 +161,22 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Skills used:</p>
+<ul>
+<li>Panda DateTime data wrangling </li>
+<li>Beautifulsoup web scraping </li>
+</ul>
+<h3 id="To-extract-stock-information">
+<a class="anchor" href="#To-extract-stock-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>To extract stock information<a class="anchor-link" href="#To-extract-stock-information"> </a>
+</h3>
+<p>To extract stock information we will use <code>yfinance</code> module which is a convenient way to download data from Yahoo Finance. The official API for Yahoo Finance was decommissioned some time back. More details about this module can be found <a href="https://aroussi.com/post/python-yahoo-finance">here.</a></p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -214,9 +240,18 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="##-First:-Get-list-of-S&amp;P-500-companies">
-<a class="anchor" href="###-First:-Get-list-of-S&amp;P-500-companies" aria-hidden="true"><span class="octicon octicon-link"></span></a>## First: Get list of S&amp;P 500 companies<a class="anchor-link" href="###-First:-Get-list-of-S&amp;P-500-companies"> </a>
+<h2 id="1.-Generate-list-of-S&amp;P-500-companies">
+<a class="anchor" href="#1.-Generate-list-of-S&amp;P-500-companies" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Generate list of S&amp;P 500 companies<a class="anchor-link" href="#1.-Generate-list-of-S&amp;P-500-companies"> </a>
 </h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Parse-wikipedia-to-generate-a-list">
+<a class="anchor" href="#Parse-wikipedia-to-generate-a-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parse wikipedia to generate a list<a class="anchor-link" href="#Parse-wikipedia-to-generate-a-list"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -332,9 +367,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="##-Populate-each-row-entry-as-per-company-data">
-<a class="anchor" href="###-Populate-each-row-entry-as-per-company-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>## Populate each row entry as per company data<a class="anchor-link" href="###-Populate-each-row-entry-as-per-company-data"> </a>
-</h2>
+<h3 id="Populate-each-row-entry-as-per-company-data">
+<a class="anchor" href="#Populate-each-row-entry-as-per-company-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Populate each row entry as per company data<a class="anchor-link" href="#Populate-each-row-entry-as-per-company-data"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -616,6 +651,15 @@ Name: GICS Sector, dtype: int64</pre>
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Visualize-distribution-of-the-companies-as-per-sectors">
+<a class="anchor" href="#Visualize-distribution-of-the-companies-as-per-sectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visualize distribution of the companies as per sectors<a class="anchor-link" href="#Visualize-distribution-of-the-companies-as-per-sectors"> </a>
+</h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1233,8 +1277,8 @@ Name: GICS Sector, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="##-Get-total-number-of-Shares">
-<a class="anchor" href="###-Get-total-number-of-Shares" aria-hidden="true"><span class="octicon octicon-link"></span></a>## Get total number of Shares<a class="anchor-link" href="###-Get-total-number-of-Shares"> </a>
+<h2 id="Get-total-number-of-Shares">
+<a class="anchor" href="#Get-total-number-of-Shares" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get total number of Shares<a class="anchor-link" href="#Get-total-number-of-Shares"> </a>
 </h2>
 <p>We will use <code>yfinance</code> to extact Tickr information for each SP500 company and use pandas <code>datareader</code></p>
 <div class="highlight"><pre><span></span><span class="n">yf_tickr</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="s1">'ADBE'</span><span class="p">)</span>
@@ -1399,9 +1443,9 @@ Market Cap: 800966.8592300799 Million USD
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="##-Plotting-multiple-companies">
-<a class="anchor" href="###-Plotting-multiple-companies" aria-hidden="true"><span class="octicon octicon-link"></span></a>## Plotting multiple companies<a class="anchor-link" href="###-Plotting-multiple-companies"> </a>
-</h2>
+<h3 id="Extend-this-to-plotting-for-multiple-companies">
+<a class="anchor" href="#Extend-this-to-plotting-for-multiple-companies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extend this to plotting for multiple companies<a class="anchor-link" href="#Extend-this-to-plotting-for-multiple-companies"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -1621,6 +1665,15 @@ Looking at: XOM
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Final-plot-for-returns">
+<a class="anchor" href="#Final-plot-for-returns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final plot for returns<a class="anchor-link" href="#Final-plot-for-returns"> </a>
+</h2>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
