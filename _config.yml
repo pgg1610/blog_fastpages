@@ -39,9 +39,11 @@ baseurl: "/blog_fastpages" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
-    twitter: https://twitter.com/mepgg
-    github: https://github.com/pgg1610
-
+    twitter: mepgg
+    linkedin: pushkarghanekar
+    github: pgg1610
+    instagram: pgg1610
+  
 # Set this to true to get LaTeX math equation support
 use_math: true
 
