@@ -11,6 +11,7 @@ Besides research, I enjoy teaching and making scientific ideas accessible to the
 Outside of work, I enjoy cooking [(link to some latest experiments)](https://www.instagram.com/pgg1610/), gaming, diving deep in arcane internet rabbit holes, reading philosophy, and going on longer-than-necessary bike rides.
 
 [Link to resume](../images/Resume_PushkarGhanekar_two_column.pdf)
+
 <!--
 This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
 [^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
