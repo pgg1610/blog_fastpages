@@ -11,13 +11,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Simple notebook looking at meshes in matplotlib" />
 <meta property="og:description" content="Simple notebook looking at meshes in matplotlib" />
-<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2021/04/25/_creating_meshes.html" />
-<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2021/04/25/_creating_meshes.html" />
+<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2020/07/18/creating_meshes.html" />
+<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2020/07/18/creating_meshes.html" />
 <meta property="og:site_name" content="Pushkar Ghanekar" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-04-25T00:00:00-05:00" />
+<meta property="article:published_time" content="2020-07-18T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Simple notebook looking at meshes in matplotlib","url":"http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2021/04/25/_creating_meshes.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2021/04/25/_creating_meshes.html"},"headline":"Plotting surface in matplotlib","dateModified":"2021-04-25T00:00:00-05:00","datePublished":"2021-04-25T00:00:00-05:00","author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"@context":"https://schema.org"}</script>
+{"url":"http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2020/07/18/creating_meshes.html","@type":"BlogPosting","headline":"Plotting surface in matplotlib","dateModified":"2020-07-18T00:00:00-05:00","datePublished":"2020-07-18T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/plotting/machine-learning/2020/07/18/creating_meshes.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Simple notebook looking at meshes in matplotlib","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Pushkar Ghanekar" /><link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -88,8 +88,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Plotting surface in matplotlib</h1><p class="page-description">Simple notebook looking at meshes in matplotlib</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-25T00:00:00-05:00" itemprop="datePublished">
-        Apr 25, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Plotting surface in matplotlib</h1><p class="page-description">Simple notebook looking at meshes in matplotlib</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-07-18T00:00:00-05:00" itemprop="datePublished">
+        Jul 18, 2020
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Pushkar G. Ghanekar</span></span>
@@ -120,19 +120,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/pgg1610/blog_fastpages/tree/master/_notebooks/2020-07-18_creating_meshes.ipynb" role="button" target="_blank">
+    <a href="https://github.com/pgg1610/blog_fastpages/tree/master/_notebooks/2020-07-18-creating_meshes.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/pgg1610/blog_fastpages/master?filepath=_notebooks%2F2020-07-18_creating_meshes.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/pgg1610/blog_fastpages/master?filepath=_notebooks%2F2020-07-18-creating_meshes.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/pgg1610/blog_fastpages/blob/master/_notebooks/2020-07-18_creating_meshes.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/pgg1610/blog_fastpages/blob/master/_notebooks/2020-07-18-creating_meshes.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -146,7 +146,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-07-18_creating_meshes.ipynb
+# file to edit: _notebooks/2020-07-18-creating_meshes.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -394,7 +394,7 @@ $$ X-path = \begin{bmatrix} y_{1} &amp; y_{1} &amp; y_{1} \\ y_{2} &amp; y_{2} &
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/blog_fastpages/python/plotting/machine-learning/2021/04/25/_creating_meshes.html" hidden></a>
+</script><a class="u-url" href="/blog_fastpages/python/plotting/machine-learning/2020/07/18/creating_meshes.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
