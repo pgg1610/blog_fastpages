@@ -96,7 +96,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -159,6 +159,24 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Function that activates the particular neuron or node if the value across a particular threshold. These functions add the necessary non-linearity in the ANNs. Each perceptron is, in reality (and traditionally), a logistic regression unit. When N units are stacked on top of each other we get a basic single layer perceptron which serves as the basis of Artificial neural network.</p>
+<p><a href="https://developers.google.com/machine-learning/glossary#activation-function">Click here for Google's ML glossary definition</a></p>
+<p>There are different types of activation function and each has its benefits and faults. One of the consideration is the ease in evaluation of the gradient. It should be easy but also help in the final learning process by translating the necessary abstraction and non-linearity across the network. Some of the activation functions are primarily used to model the output of the ANN. Traditionally for a classification task, we would use a sigmoid activation function for a binary classification to predict a binary output (yes/no). In the case of multi-class classification that activation is replaced by softmax activation to estimate the 'probability' across different classes.</p>
+<p>Some of the traditionally used Activation functions:</p>
+<ul>
+    <li>Sigmoid activaton function</li>
+    <li>tanh (hyperbolic tangent) activaton function</li>
+    <li>ReLU activaton function</li>
+    <li>Leaky ReLU activaton function</li>
+    <li>Softplus function </li>
+    <li>Softmax function </li>
+</ul>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
