@@ -11,13 +11,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal blog" />
 <meta property="og:description" content="Personal blog" />
-<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/plotting/2021/01/11/Simple_Dropout.html" />
-<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/plotting/2021/01/11/Simple_Dropout.html" />
+<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html" />
+<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html" />
 <meta property="og:site_name" content="Pushkar Ghanekar" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-01-11T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/plotting/2021/01/11/Simple_Dropout.html","@type":"BlogPosting","headline":"Bayesian Neural Networks","dateModified":"2021-01-11T00:00:00-06:00","datePublished":"2021-01-11T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/plotting/2021/01/11/Simple_Dropout.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Personal blog","@context":"https://schema.org"}</script>
+{"url":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html","@type":"BlogPosting","headline":"Bayesian Neural Networks","dateModified":"2021-01-11T00:00:00-06:00","datePublished":"2021-01-11T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Personal blog","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Pushkar Ghanekar" /><link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -96,7 +96,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -110,9 +110,6 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/blog_fastpages/categories/#machine-learning">machine-learning</a>
-        &nbsp;
-      
-        <a class="category-tags-link" href="/blog_fastpages/categories/#plotting">plotting</a>
         
       
       </p>
@@ -153,6 +150,31 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Adapted from Deep Learning online course notes from NYU. <a href="https://atcold.github.io/pytorch-Deep-Learning/en/week14/14-3/">Note link</a>
+</li>
+<li><a href="https://arxiv.org/pdf/1506.02142.pdf">Paper about using Dropout as a Bayesian Approximation</a></li>
+</ul>
+<p>Another notebook which uses PyTorch dropout: <a href="https://xuwd11.github.io/Dropout_Tutorial_in_PyTorch/">Link</a></p>
+<ul>
+<li><a href="https://arxiv.org/abs/1910.02600">New paper on evidential deep learning for guided molecular property prediction</a></li>
+</ul>
+<p>In addition to predicting a value from a model it is also important to know the confidence in that prediction. Dropout is one way of estimating this. After multiple rounds of predictions, the mean and standard deviation in the prediction can be viewed as the prediction value and the corresponding confidence in the prediction. It is important to note that this is different from the error in the prediction. The model may have error in the prediction but could be precise in that value. It is similar to the idea of accuracy vs precision.</p>
+<p>When done with dropout -- the weights in the NN are scale by $\frac{1}{1-r}$ to account for dropping of the weights</p>
+<p>Type of uncertainties: 
+<a href="https://arxiv.org/abs/1703.04977">Aleaotric and Epistemic uncertainty</a></p>
+<ul>
+<li>Aleatoric uncertainty captures noise inherent in the observations</li>
+<li>Epistemic uncertainty accounts for uncertainty in the model</li>
+</ul>
+<p>The ideal way to measure epistemic uncertainty is to train many different models, each time using a different random seed and possibly varying hyperparameters. Then use all of them for each input and see how much the predictions vary. This is very expensive to do, since it involves repeating the whole training process many times. Fortunately, we can approximate the same effect in a less expensive way: by using dropout -- effectively training a huge ensemble of different models all at once. Each training sample is evaluated with a different dropout mask, corresponding to a different random subset of the connections in the full model. Usually we only perform dropout during training and use a single averaged mask for prediction. But instead, let's use dropout for prediction too. We can compute the output for lots of different dropout masks, then see how much the predictions vary. This turns out to give a reasonable estimate of the <strong>epistemic uncertainty in the outputs</strong></p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -614,7 +636,7 @@ Wall time: 29.3 µs
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/blog_fastpages/python/pytorch/machine-learning/plotting/2021/01/11/Simple_Dropout.html" hidden></a>
+</script><a class="u-url" href="/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
