@@ -4,9 +4,9 @@
         "post0": {
             "title": "Making equal spaces parity plots using Matplotlib",
             "content": "import os import matplotlib.pyplot as plt import numpy as np # High DPI rendering for mac %config InlineBackend.figure_format = &#39;retina&#39; %config InlineBackend.print_figure_kwargs={&#39;facecolor&#39; : &quot;w&quot;} . X = np.linspace(0,5,200) Y = X + np.random.normal(0.01, size=X.shape) fig, ax = plt.subplots(1,1, figsize=(8,8)) ax.scatter(X, Y) . &lt;matplotlib.collections.PathCollection at 0x7f7f4d469a20&gt; . fig, ax = plt.subplots(1,1, figsize=(8,8)) ax.scatter(X, Y, label=&#39;data&#39;) lims = [np.min([ax.get_xlim(), ax.get_ylim()]), # min of both axes np.max([ax.get_xlim(), ax.get_ylim()]), # max of both axes ] ax.plot(lims, lims, &#39;k--&#39;, alpha=0.75, zorder=0, label=&#39;parity&#39;) ax.set_aspect(&#39;equal&#39;) ax.set_xlim(lims) ax.set_ylim(lims) ax.set_xlabel(&#39;X&#39;) ax.set_ylabel(&#39;Y&#39;) handles, labels = ax.get_legend_handles_labels() print(labels) ax.legend(handles=handles, labels=labels, title=&quot;Facet&quot;) . [&#39;parity&#39;, &#39;data&#39;] . &lt;matplotlib.legend.Legend at 0x7f7f4d4c7f28&gt; .",
-            "url": "http://pgg1610.github.io/blog_fastpages/python/data-visualization/2021/04/24/matplotlib-equal-aspect.html",
-            "relUrl": "/python/data-visualization/2021/04/24/matplotlib-equal-aspect.html",
-            "date": " • Apr 24, 2021"
+            "url": "http://pgg1610.github.io/blog_fastpages/python/data-visualization/2021/04/08/matplotlib-equal-aspect.html",
+            "relUrl": "/python/data-visualization/2021/04/08/matplotlib-equal-aspect.html",
+            "date": " • Apr 8, 2021"
         }
         
     
