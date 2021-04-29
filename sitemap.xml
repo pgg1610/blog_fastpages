@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://pgg1610.github.io/blog_fastpages/python/machine-learning/2019/08/02/end2endML_housing.html</loc>
+<loc>http://pgg1610.github.io/blog_fastpages/python/data-analysis/machine-learning/2019/08/02/end2endML_housing.html</loc>
 <lastmod>2019-08-02T00:00:00-05:00</lastmod>
 </url>
 <url>
@@ -37,12 +37,16 @@
 <lastmod>2020-07-30T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>http://pgg1610.github.io/blog_fastpages/python/data-visualization/web-scrapping/2020/08/01/SP_500.html</loc>
+<loc>http://pgg1610.github.io/blog_fastpages/python/data-analysis/data-visualization/web-scrapping/2020/08/01/SP_500.html</loc>
 <lastmod>2020-08-01T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://pgg1610.github.io/blog_fastpages/python/machine-learning/2020/08/12/MNIST_Scikit_learn-Classification.html</loc>
 <lastmod>2020-08-12T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://pgg1610.github.io/blog_fastpages/python/data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html</loc>
+<lastmod>2020-08-23T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://pgg1610.github.io/blog_fastpages/python/machine-learning/2020/11/08/network_analysis_basics.html</loc>
@@ -73,7 +77,10 @@
 <loc>http://pgg1610.github.io/blog_fastpages/categories/</loc>
 </url>
 <url>
+<loc>http://pgg1610.github.io/blog_fastpages/page2/</loc>
+</url>
+<url>
 <loc>http://pgg1610.github.io/blog_fastpages/images/Resume_PushkarGhanekar_two_column.pdf</loc>
-<lastmod>2021-04-28T15:47:31-05:00</lastmod>
+<lastmod>2021-04-28T19:28:47-05:00</lastmod>
 </url>
 </urlset>
