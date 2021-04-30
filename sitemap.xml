@@ -33,10 +33,6 @@
 <lastmod>2020-07-18T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>http://pgg1610.github.io/blog_fastpages/python/machine-learning/2020/07/30/NN_classification_from_scratch.html</loc>
-<lastmod>2020-07-30T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>http://pgg1610.github.io/blog_fastpages/python/data-analysis/data-visualization/web-scrapping/2020/08/01/SP_500.html</loc>
 <lastmod>2020-08-01T00:00:00-05:00</lastmod>
 </url>
@@ -47,6 +43,10 @@
 <url>
 <loc>http://pgg1610.github.io/blog_fastpages/python/data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html</loc>
 <lastmod>2020-08-23T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://pgg1610.github.io/blog_fastpages/python/data-analysis/2020/09/18/SMILES_from_pubchem.html</loc>
+<lastmod>2020-09-18T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://pgg1610.github.io/blog_fastpages/python/machine-learning/2020/11/08/network_analysis_basics.html</loc>
@@ -81,6 +81,6 @@
 </url>
 <url>
 <loc>http://pgg1610.github.io/blog_fastpages/images/Resume_PushkarGhanekar_two_column.pdf</loc>
-<lastmod>2021-04-28T19:28:47-05:00</lastmod>
+<lastmod>2021-04-30T14:40:47-05:00</lastmod>
 </url>
 </urlset>

@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Dropout as a Bayesian Neural Networks | Pushkar Ghanekar</title>
+<title>Estimating prediction confidence through dropout | Pushkar Ghanekar</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Dropout as a Bayesian Neural Networks" />
+<meta property="og:title" content="Estimating prediction confidence through dropout" />
 <meta name="author" content="Pushkar G. Ghanekar" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Musings over data and science" />
-<meta property="og:description" content="Musings over data and science" />
+<meta name="description" content="Musing over data and science" />
+<meta property="og:description" content="Musing over data and science" />
 <link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html" />
 <meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html" />
 <meta property="og:site_name" content="Pushkar Ghanekar" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-01-11T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html","@type":"BlogPosting","headline":"Dropout as a Bayesian Neural Networks","dateModified":"2021-01-11T00:00:00-06:00","datePublished":"2021-01-11T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Musings over data and science","@context":"https://schema.org"}</script>
+{"url":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html","@type":"BlogPosting","headline":"Estimating prediction confidence through dropout","dateModified":"2021-01-11T00:00:00-06:00","datePublished":"2021-01-11T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/pytorch/machine-learning/2021/01/11/Simple_Dropout.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Musing over data and science","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Pushkar Ghanekar" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -103,7 +103,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Dropout as a Bayesian Neural Networks</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-11T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Estimating prediction confidence through dropout</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-11T00:00:00-06:00" itemprop="datePublished">
         Jan 11, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -669,6 +669,7 @@ Wall time: 3.04 s
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The red line represents the predictions. The purple shaded region around the predictions represent the uncertainty i.e. variance of predictions.</p>
 <p>Looking at the plot we can see the region in space where the neural network model does a good job and where it fails to capture the function. The orange line tracks the NN predictions that follows the dashed black line which depicts the original functions. The NN does a poor job in the region where the data points are not provided in the NN training. Not surprising, but good to visualize the model pitfalls. Coming the model confidence, the green bars show the confidence interval for model predictions. The variance in the prediction (seen by larger green window) is present for points away from the training points. This shows that model is uncertain outside the domain of training data.</p>
 
 </div>
@@ -705,7 +706,7 @@ Wall time: 3.04 s
         </p>
       </div>
       <div class="footer-col">
-        <p>Musings over data and science</p>
+        <p>Musing over data and science</p>
       </div>
     </div>
 

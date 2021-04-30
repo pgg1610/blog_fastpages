@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Get SMILES from PubChem using DASK | Pushkar Ghanekar</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Get SMILES from PubChem using DASK" />
+<meta name="author" content="Pushkar G. Ghanekar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Use parallelized DASK methods to find SMILE and InChI keys for molecules" />
+<meta property="og:description" content="Use parallelized DASK methods to find SMILE and InChI keys for molecules" />
+<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/data-analysis/2020/09/18/SMILES_from_pubchem.html" />
+<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/data-analysis/2020/09/18/SMILES_from_pubchem.html" />
+<meta property="og:site_name" content="Pushkar Ghanekar" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-18T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"http://pgg1610.github.io/blog_fastpages/python/data-analysis/2020/09/18/SMILES_from_pubchem.html","@type":"BlogPosting","headline":"Get SMILES from PubChem using DASK","dateModified":"2020-09-18T00:00:00-05:00","datePublished":"2020-09-18T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/data-analysis/2020/09/18/SMILES_from_pubchem.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Use parallelized DASK methods to find SMILE and InChI keys for molecules","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Pushkar Ghanekar" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167983168-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167983168-2');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon_glass.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog_fastpages/">Pushkar Ghanekar</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog_fastpages/about/">About Me</a><a class="page-link" href="/blog_fastpages/search/">Search</a><a class="page-link" href="/blog_fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Get SMILES from PubChem using DASK</h1><p class="page-description">Use parallelized DASK methods to find SMILE and InChI keys for molecules</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-09-18T00:00:00-05:00" itemprop="datePublished">
+        Sep 18, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Pushkar G. Ghanekar</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#data-analysis">data-analysis</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/pgg1610/blog_fastpages/tree/master/_notebooks/2020-09-18-SMILES_from_pubchem.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog_fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/pgg1610/blog_fastpages/master?filepath=_notebooks%2F2020-09-18-SMILES_from_pubchem.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/pgg1610/blog_fastpages/blob/master/_notebooks/2020-09-18-SMILES_from_pubchem.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Get-SMILES-from-Pubchem">Get SMILES from Pubchem </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#client">Client</a></li>
+<li class="toc-entry toc-h3"><a href="#cluster">Cluster</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="###-Dask-to-get-InChIKey">## Dask to get InChIKey </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-09-18-SMILES_from_pubchem.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dask implementation to acquire <code>CanonicalSMILES</code> from PubChem using the <code>pubchem</code> API. At the end of the notebook there is another dask based implementation of using <code>RDKit</code> to get InChIKey from the SMILES. While Dask is not necessary required in the case of InChIKeys it is a much more elegant implementation of <code>dask.dataframes</code> and <code>map_partitions</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pubchempy</span> <span class="k">as</span> <span class="nn">pcp</span>
+<span class="kn">from</span> <span class="nn">pubchempy</span> <span class="kn">import</span> <span class="n">Compound</span><span class="p">,</span> <span class="n">get_compounds</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/depot/jgreeley/apps/envs/ml_torch/lib/python3.6/site-packages/pandas/compat/__init__.py:120: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Get-SMILES-from-Pubchem">
+<a class="anchor" href="#Get-SMILES-from-Pubchem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get SMILES from Pubchem<a class="anchor-link" href="#Get-SMILES-from-Pubchem"> </a>
+</h2>
+<blockquote>
+<p>Update:Parallelized using dask</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_100</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./DASK_SMILES/sample_chemical_names.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_100</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(147, 1)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">progress</span>
+<span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
+<span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">delayed</span><span class="p">,</span> <span class="n">compute</span>
+<span class="kn">from</span> <span class="nn">dask.multiprocessing</span> <span class="kn">import</span> <span class="n">get</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">client</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table style="border: 2px solid white;">
+<tr>
+<td style="vertical-align: top; border: 0px solid white">
+<h3 style="text-align: left;">
+<a class="anchor" href="#client" aria-hidden="true"><span class="octicon octicon-link"></span></a>Client</h3>
+<ul style="text-align: left; list-style: none; margin: 0; padding: 0;">
+  <li>
+<b>Scheduler: </b>tcp://127.0.0.1:45859</li>
+  <li>
+<b>Dashboard: </b><a href="http://127.0.0.1:8787/status" target="_blank">http://127.0.0.1:8787/status</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top; border: 0px solid white">
+<h3 style="text-align: left;">
+<a class="anchor" href="#cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cluster</h3>
+<ul style="text-align: left; list-style:none; margin: 0; padding: 0;">
+  <li>
+<b>Workers: </b>4</li>
+  <li>
+<b>Cores: </b>8</li>
+  <li>
+<b>Memory: </b>39.85 GB</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_smile</span><span class="p">(</span><span class="n">cmpd_name</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1">#delayed(f)(x, args=a)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">pcp</span><span class="o">.</span><span class="n">get_properties</span><span class="p">)([</span><span class="s1">'CanonicalSMILES'</span><span class="p">],</span> <span class="n">cmpd_name</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">smile</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'CanonicalSMILES'</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">smile</span> <span class="o">=</span> <span class="s1">'X'</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cta_name</span><span class="p">,</span> <span class="n">smile</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">smile</span>
+
+<span class="k">def</span> <span class="nf">dask_smiles</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'CanonicalSMILES'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'CTA'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">get_smile</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span> <span class="c1">#Map paritions works here -- but not with to_list() in the previous implementation </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_dask</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df_100</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_dask</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div><strong>Dask DataFrame Structure:</strong></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CTA</th>
+    </tr>
+    <tr>
+      <th>npartitions=10</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div>Dask Name: from_pandas, 10 tasks</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+df_dask.visualize()
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> ddf_out  = df_dask.map_partitions(dask_smiles)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 567 ms, sys: 92.3 ms, total: 660 ms
+Wall time: 10 s
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf_out</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Dask Series Structure:
+npartitions=10
+0      object
+15        ...
+        ...  
+135       ...
+146       ...
+Name: CTA, dtype: object
+Dask Name: getitem, 30 tasks</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+ddf_out.visualize()
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> results = ddf_out.persist(scheduler=client).compute()
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 9.42 s, sys: 1.27 s, total: 10.7 s
+Wall time: 2min 43s
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas.core.frame.DataFrame</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>CTA                                                     Cyclopropane
+CanonicalSMILES    Delayed('getitem-e98dc8d7261c3d694a3c944735b3c...
+Name: 0, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">compute</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">'CanonicalSMILES'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Compute result for one entry </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'C1CC1'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> results['CanonicalSMILES'] = [value[0] for value in results['CanonicalSMILES'].map(compute)]
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 3.73 s, sys: 443 ms, total: 4.17 s
+Wall time: 31.1 s
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas.core.frame.DataFrame</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s1">'CanonicalSMILES'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CTA</th>
+      <th>CanonicalSMILES</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CTA</th>
+      <th>CanonicalSMILES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cyclopropane</td>
+      <td>C1CC1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ethylene</td>
+      <td>C=C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Methane</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>t-Butanol</td>
+      <td>CC(C)(C)O</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ethane</td>
+      <td>CC</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>Cyclohexane-1,3-dicarbaldehyde</td>
+      <td>C1CC(CC(C1)C=O)C=O</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>isobutene</td>
+      <td>CC(=C)C</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>propanal</td>
+      <td>CCC=O</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>methyl methacrylate</td>
+      <td>CC(=C)C(=O)OC</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>vinyl acetate</td>
+      <td>CC(=O)OC=C</td>
+    </tr>
+  </tbody>
+</table>
+<p>147 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+results.to_pickle("cta_smiles_table_100_less.pkl")
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="##-Dask-to-get-InChIKey">
+<a class="anchor" href="###-Dask-to-get-InChIKey" aria-hidden="true"><span class="octicon octicon-link"></span></a>## Dask to get InChIKey<a class="anchor-link" href="###-Dask-to-get-InChIKey"> </a>
+</h2>
+<p>This implementation in my opinion is more elegant use of dask's <code>apply</code> command wrapper around conventional pandas <code>apply</code>. Also here we are defining the <code>meta</code> key for the variable since the code doesn't seem to recognise the type of entries we expect in the final output</p>
+<p>More information about <code>meta</code> here: <a href="https://docs.dask.org/en/latest/dataframe-api.html">https://docs.dask.org/en/latest/dataframe-api.html</a></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">rdkit</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">PandasTools</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="n">Chem</span><span class="o">.</span><span class="n">WrapLogs</span><span class="p">()</span>
+<span class="n">lg</span> <span class="o">=</span> <span class="n">rdkit</span><span class="o">.</span><span class="n">RDLogger</span><span class="o">.</span><span class="n">logger</span><span class="p">()</span> 
+<span class="n">lg</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">rdkit</span><span class="o">.</span><span class="n">RDLogger</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_InChiKey</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">inchi_key</span> <span class="o">=</span>  <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">inchi_key</span> <span class="o">=</span> <span class="s1">'X'</span>
+    <span class="k">return</span> <span class="n">inchi_key</span>
+
+<span class="k">def</span> <span class="nf">dask_smiles</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'INCHI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'smiles'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">get_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_dask</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inchi</span> <span class="o">=</span> <span class="n">results_dask</span><span class="p">[</span><span class="s1">'CanonicalSMILES'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">meta</span><span class="o">=</span><span class="p">(</span><span class="s1">'inchi_key'</span><span class="p">,</span><span class="nb">str</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inchi</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Dask Series Structure:
+npartitions=10
+0      object
+15        ...
+        ...  
+135       ...
+146       ...
+Name: inchi_key, dtype: object
+Dask Name: apply, 30 tasks</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+inchi.visualize()
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>inchi</code> is a new Pandas series which has the <code>delayed</code> graphs for computing InChIKeys. We can compute it directly in the <code>results</code> dataframe as a new column. This is slightly different from the SMILES implementation above.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> results['INCHI'] = compute(inchi, scheduler = client)[0]
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 125 ms, sys: 17.3 ms, total: 142 ms
+Wall time: 1.02 s
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CTA</th>
+      <th>CanonicalSMILES</th>
+      <th>INCHI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cyclopropane</td>
+      <td>C1CC1</td>
+      <td>LVZWSLJZHVFIQJ-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ethylene</td>
+      <td>C=C</td>
+      <td>VGGSQFUCUMXWEO-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Methane</td>
+      <td>C</td>
+      <td>VNWKTOKETHGBQD-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>t-Butanol</td>
+      <td>CC(C)(C)O</td>
+      <td>DKGAVHZHDRPRBM-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ethane</td>
+      <td>CC</td>
+      <td>OTMSDBZUPAUEDD-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>Cyclohexane-1,3-dicarbaldehyde</td>
+      <td>C1CC(CC(C1)C=O)C=O</td>
+      <td>WHKHKMGAZGBKCK-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>isobutene</td>
+      <td>CC(=C)C</td>
+      <td>VQTUBCCKSQIDNK-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>propanal</td>
+      <td>CCC=O</td>
+      <td>NBBJYMSMWIIQGU-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>methyl methacrylate</td>
+      <td>CC(=C)C(=O)OC</td>
+      <td>VVQNEPGJFQJSBK-UHFFFAOYSA-N</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>vinyl acetate</td>
+      <td>CC(=O)OC=C</td>
+      <td>XTXRWKRVRITETP-UHFFFAOYSA-N</td>
+    </tr>
+  </tbody>
+</table>
+<p>147 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="pgg1610/blog_fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog_fastpages/python/data-analysis/2020/09/18/SMILES_from_pubchem.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog_fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog_fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Musing over data and science</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/pgg1610" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/pgg1610" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/pushkarghanekar" title="pushkarghanekar"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/mepgg" title="mepgg"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
