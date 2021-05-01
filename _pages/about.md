@@ -6,15 +6,15 @@ permalink: /about/
 
 ![]({{site.baseurl}}/images/main_image.jpg)
 
-Data aesthete at heart, I am a Ph.D. candidate in the [Davidson School of Chemical Engineering](https://engineering.purdue.edu/ChE) at Purdue University, advised by [Jeffrey P. Greeley](https://engineering.purdue.edu/ChE/people/ptProfile?resource_id=84163). Understanding molecular-level behavior of the catalyst through data and science is at the heart of my Ph.D. research. 
+<img src={{site.baseurl}}/images/main_image.jpg width="100" height="100">
 
-Besides research, I enjoy teaching and making scientific ideas accessible to the public. I have taught introductory chemistry and mathematics to middle-schoolers, and have assisted in designing modules that introduce critical thinking, logical reasoning, and coding in high-school curricula.
+Hello, I am Pushkar Ghanekar. 
 
-Outside of work, I enjoy cooking [(link to some latest experiments)](https://www.instagram.com/pgg1610/), gaming, diving deep in arcane internet rabbit holes, reading philosophy, and going on longer-than-necessary bike rides.
+This blog is a compilations of tips and learnings in the area of data science, machine learning, with some flavor of chemical science. The listed notebooks and posts are meant to be a reference for my future self and whoever wishes to start dabbling in this space. This is my first time venturing in to the world of blogging and is definitely a work in progress. 
+
+You can check out my personal website [here](http://pushkarghanekar.com). 
 
 [Link to resume]({{site.baseurl}}/images/Resume_PushkarGhanekar_two_column.pdf)
 
-<!--
 This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
 [^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
--->
