@@ -111,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      12 min read
     
 </span></p>
 
@@ -157,17 +157,17 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Dataset">Dataset </a></li>
-<li class="toc-entry toc-h2"><a href="#3---Simple-Logistic-Regression">3 - Simple Logistic Regression </a></li>
-<li class="toc-entry toc-h2"><a href="#4---Neural-Network-model">4 - Neural Network model </a>
+<li class="toc-entry toc-h2"><a href="#Simple-Logistic-Regression">Simple Logistic Regression </a></li>
+<li class="toc-entry toc-h2"><a href="#Neural-Network-model">Neural Network model </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#4.1---Defining-the-neural-network-structure">4.1 - Defining the neural network structure </a></li>
-<li class="toc-entry toc-h3"><a href="#4.2---Initialize-the-model's-parameters">4.2 - Initialize the model&#39;s parameters </a></li>
-<li class="toc-entry toc-h3"><a href="#4.3---The-Loop">4.3 - The Loop </a></li>
+<li class="toc-entry toc-h3"><a href="#Defining-the-neural-network-structure">Defining the neural network structure </a></li>
+<li class="toc-entry toc-h3"><a href="#Initialize-the-model's-parameters">Initialize the model&#39;s parameters </a></li>
+<li class="toc-entry toc-h3"><a href="#Forward-pass">Forward-pass </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Loss-function">Loss function </a></li>
 <li class="toc-entry toc-h2"><a href="#Back-propogation">Back-propogation </a></li>
-<li class="toc-entry toc-h2"><a href="#Integrate-previous-parts-in-a-nn_model()">Integrate previous parts in a nn_model() </a>
+<li class="toc-entry toc-h2"><a href="#Integrate-previous-parts-nn_model()">Integrate previous parts nn_model() </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Predictions">Predictions </a></li>
 <li class="toc-entry toc-h3"><a href="#Tuning-hidden-layer-size">Tuning hidden layer size </a></li>
@@ -364,8 +364,8 @@ The shape of Y is: (1, 800)
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3---Simple-Logistic-Regression">
-<a class="anchor" href="#3---Simple-Logistic-Regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>3 - Simple Logistic Regression<a class="anchor-link" href="#3---Simple-Logistic-Regression"> </a>
+<h2 id="Simple-Logistic-Regression">
+<a class="anchor" href="#Simple-Logistic-Regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Logistic Regression<a class="anchor-link" href="#Simple-Logistic-Regression"> </a>
 </h2>
 <p>Before building a full neural network, lets first see how logistic regression performs on this problem. You can use sklearn's built-in functions to do that. Run the code below to train a logistic regression classifier on the dataset.</p>
 
@@ -518,8 +518,8 @@ The shape of Y is: (1, 800)
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4---Neural-Network-model">
-<a class="anchor" href="#4---Neural-Network-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 - Neural Network model<a class="anchor-link" href="#4---Neural-Network-model"> </a>
+<h2 id="Neural-Network-model">
+<a class="anchor" href="#Neural-Network-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neural Network model<a class="anchor-link" href="#Neural-Network-model"> </a>
 </h2>
 <p>Logistic regression did not work well on the dataset. Let's train a Neural Network with a single hidden layer and see if it does any better.</p>
 <p><strong>Here is basic framework for the model</strong>:
@@ -559,8 +559,8 @@ $$<p><strong>The general methodology to build a Neural Network is to:</strong></
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.1---Defining-the-neural-network-structure">
-<a class="anchor" href="#4.1---Defining-the-neural-network-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1 - Defining the neural network structure<a class="anchor-link" href="#4.1---Defining-the-neural-network-structure"> </a>
+<h3 id="Defining-the-neural-network-structure">
+<a class="anchor" href="#Defining-the-neural-network-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining the neural network structure<a class="anchor-link" href="#Defining-the-neural-network-structure"> </a>
 </h3>
 <p>Define three variables:</p>
 
@@ -643,8 +643,8 @@ The size of the output layer is: n_y = 1
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.2---Initialize-the-model's-parameters">
-<a class="anchor" href="#4.2---Initialize-the-model's-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2 - Initialize the model's parameters<a class="anchor-link" href="#4.2---Initialize-the-model's-parameters"> </a>
+<h3 id="Initialize-the-model's-parameters">
+<a class="anchor" href="#Initialize-the-model's-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initialize the model's parameters<a class="anchor-link" href="#Initialize-the-model's-parameters"> </a>
 </h3>
 <ul>
 <li>Initialize the weights matrices with random values. <ul>
@@ -713,8 +713,8 @@ The size of the output layer is: n_y = 1
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.3---The-Loop">
-<a class="anchor" href="#4.3---The-Loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.3 - The Loop<a class="anchor-link" href="#4.3---The-Loop"> </a>
+<h3 id="Forward-pass">
+<a class="anchor" href="#Forward-pass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forward-pass<a class="anchor-link" href="#Forward-pass"> </a>
 </h3>
 <p>Implement <code>forward_propagation()</code>:</p>
 <ol>
@@ -941,7 +941,7 @@ $$<ul>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>General gradient descent rule</strong>: 
+<p><strong>General gradient descent formalism</strong>: 
 
 $$ \theta = \theta - \alpha \frac{\partial J }{ \partial \theta }$$
 </p>
@@ -1004,8 +1004,8 @@ $$ \theta = \theta - \alpha \frac{\partial J }{ \partial \theta }$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Integrate-previous-parts-in-a-nn_model()">
-<a class="anchor" href="#Integrate-previous-parts-in-a-nn_model()" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integrate previous parts in a nn_model()<a class="anchor-link" href="#Integrate-previous-parts-in-a-nn_model()"> </a>
+<h2 id="Integrate-previous-parts-nn_model()">
+<a class="anchor" href="#Integrate-previous-parts-nn_model()" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integrate previous parts <code>nn_model()</code><a class="anchor-link" href="#Integrate-previous-parts-nn_model()"> </a>
 </h2>
 </div>
 </div>
