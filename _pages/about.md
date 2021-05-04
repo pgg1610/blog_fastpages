@@ -8,11 +8,11 @@ permalink: /about/
 
 Hello, I am Pushkar Ghanekar. 
 
-This blog is a compilation of learnings and helpful tips I have accumulated in the area of data science, machine learning, with some flavor of chemical science sprinkled sporadically. The listed notebooks and posts are meant to be a reference for my future self and whoever wishes to start dabbling in this space. This is my first time venturing in to the world of blogging and is definitely a work in progress. 
+This blog is a compilation of tinkerings, learnings, and helpful tips I have accumulated in the area of data science and machine learning, with some flavor of chemical science sprinkled sporadically. The posts are meant to be a reference for my future self and whoever wishes to start dabbling in the data science and ML space. 
+
+This is my first-ever venture in the world of blogging and is definitely a work in progress. Would love hear what you think! 
 
 You can check out my personal website [here](http://pushkarghanekar.com). 
-
-[Link to resume]({{site.baseurl}}/images/Resume_PushkarGhanekar_two_column.pdf)
 
 This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
 
