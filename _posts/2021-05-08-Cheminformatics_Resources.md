@@ -60,6 +60,7 @@ Few key papers which I have found useful when learning more about the state-of-t
 Benchmark different models and uncertainty metrics for molecular property prediction. 
 
 * [Evidential Deep learning for guided molecular property prediction and disocovery Ava Soleimany, Conor Coley, et. al.](https://arxiv.org/abs/1910.02600](https://arxiv.org/abs/1910.02600) | [Slides](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
+
 Train network to output the parameters of an evidential distribution. One forward-pass to find the uncertainty as opposed to dropout or ensemble - principled incorporation of uncertainties
 
 * [Differentiable sampling of molecular geometries with uncertainty-based adversarial attacks](https://arxiv.org/pdf/2101.11588.pdf)
