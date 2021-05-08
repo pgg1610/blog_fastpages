@@ -23,7 +23,7 @@ title: Cheminformatics Literature and Resources
 
 1. [Navigating through the Maze of Homogeneous Catalyst Design with Machine Learning](https://chemrxiv.org/articles/preprint/Navigating_through_the_Maze_of_Homogeneous_Catalyst_Design_with_Machine_Learning/12786722/1)
 
-2. [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004](https://doi.org/10.1016/j.trechm.2020.11.004)
+2. [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004)
 
 3. [Applications of Deep learning in molecular generation and molecular property prediction](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00699)
 
@@ -59,7 +59,7 @@ Few key papers which I have found useful when learning more about the state-of-t
 
 Benchmark different models and uncertainty metrics for molecular property prediction. 
 
-* [Evidential Deep learning for guided molecular property prediction and disocovery Ava Soleimany, Conor Coley, et. al.](https://arxiv.org/abs/1910.02600](https://arxiv.org/abs/1910.02600) | [Slides](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
+* [Evidential Deep learning for guided molecular property prediction and disocovery Ava Soleimany, Conor Coley, et. al.](https://arxiv.org/abs/1910.02600) | [Slides](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
 
 Train network to output the parameters of an evidential distribution. One forward-pass to find the uncertainty as opposed to dropout or ensemble - principled incorporation of uncertainties
 
@@ -71,7 +71,7 @@ Active learning provides strategies for efficient screening of subsets of the li
 
 * [Reker, D. Practical Considerations for Active Machine Learning in Drug Discovery. Drug Discov. Today Technol. 2020](https://doi.org/10.1016/j.ddtec.2020.06.001)
 
-* [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y) | [Open Access](https://doyle.princeton.edu/wp-content/uploads/2021/02/58.-Bayesian-reaction-optimization-as-a-tool-for-chemical-synthesis.pdf) | [Github](https://github.com/b-shields/edbo)
+* [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
 
 Experimental design using Bayesian Optimization. 
 
@@ -107,16 +107,15 @@ Junction tree based decoding. Define a grammar for the small molecule and find s
 
 Generative adversarial network for finding small molecules using graph networks, quite interesting
 
-
-* [Message passing graph networks for molecular generation](https://iopscience.iop.org/article/10.1088/2632-2153/abf5b7/pdf](https://iopscience.iop.org/article/10.1088/2632-2153/abf5b7/pdf)
-
-* [SMILES-based deep generative scaffold decorator for de-novo drug design][https://github.com/undeadpixel/reinvent-randomized](https://github.com/undeadpixel/reinvent-randomized)[https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00441-8#availability-of-data-and-materials](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00441-8#availability-of-data-and-materials)
+* [Message passing graph networks for molecular generation](https://iopscience.iop.org/article/10.1088/2632-2153/abf5b7/pdf)
 
 **Language models:**
 
-* [LSTM based (RNN) approaches to small molecule generation](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf) | [Github](https://github.com/ETHmodlab/BIMODAL)
+* [LSTM based (RNN) approaches to small molecule generation](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf). [Github](https://github.com/ETHmodlab/BIMODAL)
 
 * [Chithrananda, S.; Grand, G.; Ramsundar, B. ChemBERTa: Large-Scale Self-Supervised Pretraining for Molecular Property Prediction. arXiv [cs.LG], 2020](https://arxiv.org/abs/2010.09885).
+
+* [SMILES-based deep generative scaffold decorator for de-novo drug design](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00441-8#availability-of-data-and-materials). [Github](https://github.com/undeadpixel/reinvent-randomized)
 
 **Synthesizability Criteria into Generative Models:**
 
@@ -138,22 +137,19 @@ Paper looks at different ways of integrating synthesizability criteria into gene
 ### Code / Packages:
 
 * Schnet by Jacobsen et. al. (Neural message passing)
-[Paper](https://arxiv.org/abs/1806.03146) | [Github](https://github.com/atomistic-machine-learning/G-SchNet) | [Tutorial](https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html)
+[Paper](https://arxiv.org/abs/1806.03146). [Github](https://github.com/atomistic-machine-learning/G-SchNet). [Tutorial](https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html)
 
-* [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1) | [Github](https://github.com/Mariewelt/OpenChem)
+* [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
 * [DeepChem](https://github.com/deepchem/deepchem)
 
-* [DimeNet++  -- extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123) | [Github](https://github.com/klicperajo/dimenet)
+* [DimeNet++  -- extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
 
 * [PhysNet](https://arxiv.org/pdf/1902.08408.pdf)
-Oliver T. Unke and Markus Meuwly. PhysNet: A Neural Network for Predicting Energies, Forces, Dipole Moments, and Partial Charges. Journal of Chemical Theory and Computation, 15(6): 3678–3693, June 2019.
 
 * [RNN based encoder software](https://github.com/ETHmodlab/BIMODAL)
 
 * [AutodE](https://duartegroup.github.io/autodE/)
-
-autodE is a Python module designed for the automated generation of reaction profiles as fast as possible. Profiles are generated using a double-ended search form reactant(s) and product(s) given as 1D SMILES or 3D structures
 
 * [DScribe](https://singroup.github.io/dscribe/latest/)
 
@@ -166,7 +162,7 @@ autodE is a Python module designed for the automated generation of reaction prof
 
 * [Papers with code benchmark for QM9 energy predictions](https://paperswithcode.com/sota/formation-energy-on-qm9)
 
-* Benchmark for molecular generation models: [molecularsets/moses](https://github.com/molecularsets/moses)
+* [Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
 ### Molecules datasets:
 
@@ -175,9 +171,3 @@ autodE is a Python module designed for the automated generation of reaction prof
 * [http://quantum-machine.org/datasets](http://quantum-machine.org/datasets/)
 
 * [Databases for Drug Discovery](https://github.com/LeeJunHyun/The-Databases-for-Drug-Discovery)
-
-(1) ZINC
-(2) ChEMBL
-(3) PubChem
-(4) QM9
-(5) GDB-13/17
