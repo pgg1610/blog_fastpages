@@ -34,6 +34,7 @@ title: Cheminformatics Literature and Resources
 ## Special Journal Issues: 
 
 1. [Nice collection of recent papers in Nature Communications on ML application and modeling](https://www.nature.com/collections/gcijejjahe)
+
 2. [Journal of Medicinal Chemistry compendium of AI in Drug discovery issue](https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077)
 
 ## Specific Articles 
