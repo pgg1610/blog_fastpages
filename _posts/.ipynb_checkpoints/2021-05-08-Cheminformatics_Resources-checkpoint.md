@@ -59,7 +59,7 @@ Few key papers which I have found useful when learning more about the state-of-t
 
 Benchmark different models and uncertainty metrics for molecular property prediction. 
 
-* [Evidential Deep learning for guided molecular property prediction and disocovery Ava Soleimany, Conor Coley, et. al.](https://arxiv.org/abs/1910.02600) | [Slides](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
+* [Evidential Deep learning for guided molecular property prediction and disocovery Ava Soleimany, Conor Coley, et. al.](https://arxiv.org/abs/1910.02600). [Slides](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
 
 Train network to output the parameters of an evidential distribution. One forward-pass to find the uncertainty as opposed to dropout or ensemble - principled incorporation of uncertainties
 
@@ -134,10 +134,9 @@ Paper looks at different ways of integrating synthesizability criteria into gene
 
 * [Machine learning in chemical reaction space](https://www.nature.com/articles/s41467-020-19267-x)
 
-### Code / Packages:
+## Code / Packages:
 
-* Schnet by Jacobsen et. al. (Neural message passing)
-[Paper](https://arxiv.org/abs/1806.03146). [Github](https://github.com/atomistic-machine-learning/G-SchNet). [Tutorial](https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html)
+* [Schnet by Jacobsen et. al. (Neural message passing)](https://arxiv.org/abs/1806.03146). [Github](https://github.com/atomistic-machine-learning/G-SchNet). [Tutorial](https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html)
 
 * [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
@@ -153,7 +152,7 @@ Paper looks at different ways of integrating synthesizability criteria into gene
 
 * [DScribe](https://singroup.github.io/dscribe/latest/)
 
-### Helpful utilities:
+## Helpful utilities:
 
 * [RD-Kit](https://github.com/rdkit/rdkit)
     * [Get Atom Indices in the SMILE:](https://colab.research.google.com/drive/16T6ko0YE5WqIRzL4pwW_nufTDn7F3adw)
@@ -164,10 +163,10 @@ Paper looks at different ways of integrating synthesizability criteria into gene
 
 * [Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
-### Molecules datasets:
+## Molecules datasets:
 
-* [http://www.gdb.unibe.ch/downloads/](http://www.gdb.unibe.ch/downloads/)
+* [GDB Dataset](http://www.gdb.unibe.ch/downloads/)
 
-* [http://quantum-machine.org/datasets](http://quantum-machine.org/datasets/)
+* [Quantum Machine: Website listing useful datasets including QM9s and MD trajectory](http://quantum-machine.org/datasets/)
 
-* [Databases for Drug Discovery](https://github.com/LeeJunHyun/The-Databases-for-Drug-Discovery)
+* [Github repository listing databases for Drug Discovery](https://github.com/LeeJunHyun/The-Databases-for-Drug-Discovery)
