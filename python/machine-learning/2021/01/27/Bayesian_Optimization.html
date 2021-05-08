@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Bayesian optimisation implementation | Pushkar Ghanekar</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Bayesian optimisation implementation" />
+<meta name="author" content="Pushkar G. Ghanekar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Walkthrough on implementing a modular bayesian optimization routine" />
+<meta property="og:description" content="Walkthrough on implementing a modular bayesian optimization routine" />
+<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/machine-learning/2021/01/27/Bayesian_Optimization.html" />
+<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/machine-learning/2021/01/27/Bayesian_Optimization.html" />
+<meta property="og:site_name" content="Pushkar Ghanekar" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-27T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"http://pgg1610.github.io/blog_fastpages/python/machine-learning/2021/01/27/Bayesian_Optimization.html","@type":"BlogPosting","headline":"Bayesian optimisation implementation","dateModified":"2021-01-27T00:00:00-06:00","datePublished":"2021-01-27T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/machine-learning/2021/01/27/Bayesian_Optimization.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Walkthrough on implementing a modular bayesian optimization routine","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Pushkar Ghanekar" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167983168-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167983168-2');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon_glass.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog_fastpages/">Pushkar Ghanekar</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog_fastpages/about/">About Me</a><a class="page-link" href="/blog_fastpages/search/">Search</a><a class="page-link" href="/blog_fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Bayesian optimisation implementation</h1><p class="page-description">Walkthrough on implementing a modular bayesian optimization routine</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-27T00:00:00-06:00" itemprop="datePublished">
+        Jan 27, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Pushkar G. Ghanekar</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#machine-learning">machine-learning</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/pgg1610/blog_fastpages/tree/master/_notebooks/2021-01-27-Bayesian_Optimization.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog_fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/pgg1610/blog_fastpages/master?filepath=_notebooks%2F2021-01-27-Bayesian_Optimization.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/pgg1610/blog_fastpages/blob/master/_notebooks/2021-01-27-Bayesian_Optimization.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Surrogate-model">Surrogate model </a></li>
+<li class="toc-entry toc-h3"><a href="#Acquisition-functions">Acquisition functions </a></li>
+<li class="toc-entry toc-h3"><a href="#Expected-improvement">Expected improvement </a></li>
+<li class="toc-entry toc-h3"><a href="#Implementation-with-Numpy-and-Scipy">Implementation with Numpy and Scipy </a></li>
+<li class="toc-entry toc-h2"><a href="###-Import-the-acquisition-functions-implemented">## Import the acquisition functions implemented </a></li>
+<li class="toc-entry toc-h1"><a href="#A-One-Dimensional-Example">A One-Dimensional Example </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="####-Egg-carton-objective-function">### Egg-carton objective function </a></li>
+<li class="toc-entry toc-h2"><a href="#Fit-a-GPR-model-(surrogate-function)-to-the-sampled-points">Fit a GPR model (surrogate function) to the sampled points </a></li>
+<li class="toc-entry toc-h2"><a href="#Plot-the-Initial-Sample">Plot the Initial Sample </a></li>
+<li class="toc-entry toc-h2"><a href="#Run-a-Few-Iterations-and-Assess">Run a Few Iterations and Assess </a></li>
+<li class="toc-entry toc-h2"><a href="#Run-a-Few-More-Iterations">Run a Few More Iterations </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-01-27-Bayesian_Optimization.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If $f$ (objective function) is cheap to evaluate we can sample various points and built a potential surface however, if the $f$ is expensive -- like in case of first-principles electronic structure calculations, it is important to minimize the number of $f$ calls and number of samples drawn from this evaluation. In that case, if an exact functional form for f is not available (that is, f behaves as a “black box”), what can we do?</p>
+<p>Bayesian optimization proceeds by maintaining a probabilistic belief about f and designing a so called <strong><em>acquisition function</em></strong> to determine where to evaluate the function next. Bayesian optimization is particularly well-suited to global optimization problems where f is an expensive black-box function. The idea is the find "global" minimum with least number of steps. Incorporating prior beliefs about the underlying process and update the prior with samples draw from the model to better estimate the posterior. Model used for approximating the objective function is called the <strong><em>surrogate model</em></strong>.</p>
+<ul>
+<li>
+<p>Notebook explaining the idea behind bayesian optimization alongside a small example showing its use. This notebook was adapted from Martin Krasser's <a href="http://krasserm.github.io/2018/03/21/bayesian-optimization/">blogpost</a></p>
+</li>
+<li>
+<p>Good introductory write-up on Bayesian optimization <a href="https://distill.pub/2020/bayesian-optimization/">here</a></p>
+</li>
+<li>
+<p>Nice lecture explaining the working of Gaussian Processes <a href="https://www.youtube.com/watch?v=92-98SYOdlY&amp;t=4827s">here</a></p>
+</li>
+</ul>
+<h3 id="Surrogate-model">
+<a class="anchor" href="#Surrogate-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Surrogate model<a class="anchor-link" href="#Surrogate-model"> </a>
+</h3>
+<p>A popular surrogate model applied for Bayesian optimization, although strictly not required, are Gaussian Processes (GPs). These are used to define a prior beliefs about the objective function. The GP posterior is cheap to evaluate and is used to propose points in the search space where sampling is likely to yield an improvement. Herein, we could substitute this for a ANNs or other surrogate models.</p>
+<h3 id="Acquisition-functions">
+<a class="anchor" href="#Acquisition-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acquisition functions<a class="anchor-link" href="#Acquisition-functions"> </a>
+</h3>
+<p>Used to propose sampling points in the search space. Trade-off between exploitation vs exploration. Exploitation == sampling where objective function value is high; exploration == where uncertainty is high. Both correspond to high <code>acquisition function</code> value. The goal is the maximize the acquisition value to determine next sampling point.</p>
+<p>Popular acquisition functions:</p>
+<ul>
+<li>
+<p>Maximum probability of improvement</p>
+<blockquote>
+<p>PI involves sampling for points which improve on the current best objective function value. The point in the sample space with the highest probability of improvement, based on the value predicted by the surrogate function, is chosen as the next point for evaluating through the expensive method. However in this searching scheme we look only at the probability improvement and not the extent of improvement. This might lead it to get stuck in a local minima. Instead we can turn to the <strong>Expected value</strong> of improvement wherein we consider the extent of improvement as well.</p>
+</blockquote>
+</li>
+<li>
+<p>Expected improvement:* Upper confidence bound (UCB)
+### Optimization strategy</p>
+</li>
+</ul>
+<p>Following strategy is followed when optimizing using Bayesian optimization:</p>
+<ul> 
+    <li>Find the next sampling point $\mathbf{x}_t$ by optimizing the acquisition function over a surrogate model (in this case a GP) fit over a distribution $\mathcal{D}_{1:t-1}$</li>
+    <li>Evaluate $f$ at $f(x_{t})$ i.e. sample $f(x_{t})$ from the $f$</li>
+    <li>Add the new point to the prior of the GP now $\mathcal{D}_{1:t} = ( \mathcal{D}_{1:t-1}, (x_{t},f(x_{t})) )$</li>
+</ul>
+<h3 id="Expected-improvement">
+<a class="anchor" href="#Expected-improvement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expected improvement<a class="anchor-link" href="#Expected-improvement"> </a>
+</h3>
+<p>Expected improvement is defined as: 
+
+$$\mathrm{EI}(\mathbf{x}) = \max((f(\mathbf{x}) - f(\mathbf{x}^+), 0))\tag{1}$$
+</p>
+<p>where $f(\mathbf{x}^+)$ is the value of the best sample so far and $\mathbf{x}^+$ is the location of that sample i.e. $\mathbf{x}^+ = \mathrm{argmax}_{\mathbf{x}_i \in \mathbf{x}_{1:t}} f(\mathbf{x}_i)$. The expected improvement can be evaluated analytically under the GP model<sup>[3]</sup></p>
+<p>Expected improvement can be evaluated analytically for a GP model.</p>
+<h3 id="Implementation-with-Numpy-and-Scipy">
+<a class="anchor" href="#Implementation-with-Numpy-and-Scipy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation with Numpy and Scipy<a class="anchor-link" href="#Implementation-with-Numpy-and-Scipy"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+
+<span class="c1"># Plot matplotlib plots with white background: </span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.print_figure_kwargs={'facecolor' : "w"}
+
+<span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <span class="n">GaussianProcessRegressor</span> <span class="k">as</span> <span class="n">GPR</span>
+<span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <span class="n">kernels</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">Bayesian_optimization</span> <span class="kn">import</span> <span class="n">plotting_utils</span><span class="p">,</span> <span class="n">acquisition</span><span class="p">,</span> <span class="n">objectives</span><span class="p">,</span> <span class="n">opti</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_params</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">'font.size'</span> <span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+<span class="s1">'axes.titlesize'</span> <span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+<span class="s1">'axes.labelsize'</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+<span class="s1">'axes.labelweight'</span> <span class="p">:</span> <span class="s1">'bold'</span><span class="p">,</span>
+<span class="s1">'xtick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+<span class="s1">'ytick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+<span class="p">}</span>
+ 
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot_params</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="##-Import-the-acquisition-functions-implemented">
+<a class="anchor" href="###-Import-the-acquisition-functions-implemented" aria-hidden="true"><span class="octicon octicon-link"></span></a>## Import the acquisition functions implemented<a class="anchor-link" href="###-Import-the-acquisition-functions-implemented"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">EI</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">ExpectedImprovement</span><span class="p">(</span><span class="n">delta</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">LCB</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">LowerConfidenceBound</span><span class="p">(</span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.96</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="A-One-Dimensional-Example">
+<a class="anchor" href="#A-One-Dimensional-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>A One-Dimensional Example<a class="anchor-link" href="#A-One-Dimensional-Example"> </a>
+</h1>
+<h3 id="###-Egg-carton-objective-function">
+<a class="anchor" href="####-Egg-carton-objective-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>### Egg-carton objective function<a class="anchor-link" href="####-Egg-carton-objective-function"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">objective</span> <span class="o">=</span> <span class="n">objectives</span><span class="o">.</span><span class="n">egg_carton</span>
+<span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="n">domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">low</span><span class="p">],</span> <span class="p">[</span><span class="n">high</span><span class="p">]])</span>
+<span class="n">x_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_pts</span> <span class="o">=</span> <span class="n">objective</span><span class="p">(</span><span class="n">x_pts</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_sample_points</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">noise_</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">generator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">x_sample</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_sample_points</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">y_sample</span> <span class="o">=</span> <span class="n">objective</span><span class="p">(</span><span class="n">x_sample</span><span class="p">,</span> <span class="n">noise_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_pts</span><span class="p">,</span> <span class="n">y_pts</span><span class="p">,</span> <span class="s1">'k-'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Ground truth'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_sample</span><span class="p">,</span> <span class="n">y_sample</span><span class="p">,</span> <span class="s1">'ro'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Noisy sampled points'</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$x$"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$f(x)$"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Initial setup"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fit-a-GPR-model-(surrogate-function)-to-the-sampled-points">
+<a class="anchor" href="#Fit-a-GPR-model-(surrogate-function)-to-the-sampled-points" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fit a GPR model (surrogate function) to the sampled points<a class="anchor-link" href="#Fit-a-GPR-model-(surrogate-function)-to-the-sampled-points"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">constant</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">ConstantKernel</span><span class="p">()</span>
+<span class="n">matern</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">Matern</span><span class="p">(</span><span class="n">nu</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">)</span>
+<span class="n">rbf</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">RBF</span><span class="p">()</span>
+
+<span class="n">gpr_model</span> <span class="o">=</span> <span class="n">GPR</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="n">constant</span><span class="o">*</span><span class="n">rbf</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="n">n_restarts_optimizer</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">normalize_y</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
+
+<span class="n">gpr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_sample</span><span class="p">,</span> <span class="n">y_sample</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">mean_pred</span><span class="p">,</span> <span class="n">stddev_pred</span><span class="p">)</span> <span class="o">=</span> <span class="n">gpr_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_pts</span><span class="p">,</span> <span class="n">return_std</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">gpr_model</span><span class="o">.</span><span class="n">kernel_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plot-the-Initial-Sample">
+<a class="anchor" href="#Plot-the-Initial-Sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plot the Initial Sample<a class="anchor-link" href="#Plot-the-Initial-Sample"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">fig_ec</span><span class="p">,</span> <span class="n">ax_ec</span><span class="p">)</span> <span class="o">=</span> <span class="n">plotting_utils</span><span class="o">.</span><span class="n">illustrate_1d_gpr</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">gpr_model</span><span class="p">,</span> <span class="n">x_pts</span><span class="p">,</span> <span class="n">EI</span><span class="p">,</span> <span class="n">LCB</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Run-a-Few-Iterations-and-Assess">
+<a class="anchor" href="#Run-a-Few-Iterations-and-Assess" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run a Few Iterations and Assess<a class="anchor-link" href="#Run-a-Few-Iterations-and-Assess"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pkwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"num_sample"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+           <span class="s2">"num_improve"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+           <span class="s2">"generator"</span><span class="p">:</span> <span class="n">generator</span><span class="p">}</span>
+
+<span class="n">res_ec</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">bayesian_optimization</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">gpr_model</span><span class="p">,</span> <span class="n">LCB</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise_</span><span class="p">,</span> <span class="n">prop_kwargs</span> <span class="o">=</span> <span class="n">pkwargs</span><span class="p">)</span>
+<span class="n">gpr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">res_ec</span><span class="p">[</span><span class="s2">"X"</span><span class="p">],</span> <span class="n">res_ec</span><span class="p">[</span><span class="s2">"y"</span><span class="p">])</span> <span class="c1"># Incorporate final point into plots.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">fig_ec</span><span class="p">,</span> <span class="n">ax_ec</span><span class="p">)</span> <span class="o">=</span> <span class="n">plotting_utils</span><span class="o">.</span><span class="n">illustrate_1d_gpr</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">gpr_model</span><span class="p">,</span> <span class="n">x_pts</span><span class="p">,</span> <span class="n">EI</span><span class="p">,</span> <span class="n">LCB</span><span class="p">,</span> <span class="n">num_sample_points</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Run-a-Few-More-Iterations">
+<a class="anchor" href="#Run-a-Few-More-Iterations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run a Few More Iterations<a class="anchor-link" href="#Run-a-Few-More-Iterations"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res_ec</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">bayesian_optimization</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">gpr_model</span><span class="p">,</span> <span class="n">LCB</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise_</span><span class="p">,</span> <span class="n">prop_kwargs</span> <span class="o">=</span> <span class="n">pkwargs</span><span class="p">)</span>
+<span class="n">gpr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">res_ec</span><span class="p">[</span><span class="s2">"X"</span><span class="p">],</span> <span class="n">res_ec</span><span class="p">[</span><span class="s2">"y"</span><span class="p">])</span> <span class="c1"># Incorporate final point into plots.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">fig_ec</span><span class="p">,</span> <span class="n">ax_ec</span><span class="p">)</span> <span class="o">=</span> <span class="n">plotting_utils</span><span class="o">.</span><span class="n">illustrate_1d_gpr</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">gpr_model</span><span class="p">,</span> <span class="n">x_pts</span><span class="p">,</span> <span class="n">EI</span><span class="p">,</span> <span class="n">LCB</span><span class="p">,</span> <span class="n">num_sample_points</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In total the noisy estimation of the ground-truth is conducted on 30 additional points. It is evident from the plot that most of those points are near the x = (4,6) since that is the minimum value region for the function.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="pgg1610/blog_fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog_fastpages/python/machine-learning/2021/01/27/Bayesian_Optimization.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog_fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog_fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Mulling over data and science</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/pgg1610" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/pgg1610" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/pushkarghanekar" title="pushkarghanekar"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/mepgg" title="mepgg"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
