@@ -15,9 +15,11 @@ title: Cheminformatics Literature and Resources
 2. [Is Life Worth Living](https://iwatobipen.wordpress.com/)
     * [Very helpful cookbook on Python for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
 
-3. [Cheminformia](http://www.cheminformania.com)
+3. [Andrew White's ML for Molecules and Materials Online Book](https://whitead.github.io/dmol-book/intro.html)
 
-4. [Depth-First](https://depth-first.com)
+4. [Cheminformia](http://www.cheminformania.com)
+
+5. [Depth-First](https://depth-first.com)
 
 ## Reviews:
 
