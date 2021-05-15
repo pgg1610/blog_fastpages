@@ -33,6 +33,8 @@ title: Cheminformatics Literature and Resources
 
 5. [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
 
+6. [Machine Learning in Chemistry - Jon Paul Janet & Heather Kulik](https://books.google.com/books?hl=en&lr=&id=JObqDwAAQBAJ&oi=fnd&pg=PA1902&dq=info:lWNtugbBwAsJ:scholar.google.com&ots=cbiwVybtQW&sig=MTKJOvhlbt2sDujAZ5XECERmNl8)
+
 ## Special Journal Issues: 
 
 1. [Nice collection of recent papers in Nature Communications on ML application and modeling](https://www.nature.com/collections/gcijejjahe)
