@@ -669,8 +669,7 @@ Wall time: 3.04 s
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The red line represents the predictions. The purple shaded region around the predictions represent the uncertainty i.e. variance of predictions.</p>
-<p>Looking at the plot we can see the region in space where the neural network model does a good job and where it fails to capture the function. The orange line tracks the NN predictions that follows the dashed black line which depicts the original functions. The NN does a poor job in the region where the data points are not provided in the NN training. Not surprising, but good to visualize the model pitfalls. Coming the model confidence, the green bars show the confidence interval for model predictions. The variance in the prediction (seen by larger green window) is present for points away from the training points. This shows that model is uncertain outside the domain of training data.</p>
+<p>The plot above is the combination of <code>ground truth</code> points (blue), <code>original function</code> (grey) and the <code>predicted function</code> (orange) with corresponding confidence interval at each ML-prediction (green). It is seen that the ML model does well for the region of X in the range of original points. Another interesting observation is the uncertainity of the model prediction, which is seen to increase in the space where training points dont exist e.g. X=(5,10) and X &gt; 10 or X &lt; -10. This shows that the model is highly uncertain outside the domain of training data (extrapolation) but does a decent job within the range of training data (interpolation).</p>
 
 </div>
 </div>
