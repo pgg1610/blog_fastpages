@@ -53,8 +53,6 @@ Few key papers which I have found useful when learning more about the state-of-t
 
 * [M. Krenn, F. Hase, A. Nigam, P. Friederich, and A. Aspuru-Guzik, “Self-Referencing Embedded Strings (SELFIES): A 100% robust molecular string representation,” Mach. Learn. Sci. Technol., pp. 1–9, 2020](https://arxiv.org/abs/1905.13741)
 
-
-
 ### Uncertainty quantification:
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
@@ -107,11 +105,13 @@ Representation using SELFIES proposed to make it much more powerful
 
 Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule
 
-* [N. De Cao and T. Kipf, “MolGAN: An implicit generative model for small molecular graphs,” 2018](https://arxiv.org/abs/1805.11973)
+* [MolGAN: An implicit generative model for small molecular graphs, N. De Cao and T. Kipf, 2018](https://arxiv.org/abs/1805.11973)
 
-Generative adversarial network for finding small molecules using graph networks, quite interesting
+Generative adversarial network for finding small molecules using graph networks, quite interesting. Avoids issues arising from node ordering that are associated with likelihood based methods by using an adversarial loss instead (GAN)
 
-* [Message passing graph networks for molecular generation](https://iopscience.iop.org/article/10.1088/2632-2153/abf5b7/pdf)
+* [MPGVAE: Message passing graph networks for molecular generation, Daniel Flam-Shepherd et al 2021 Mach. Learn.: Sci. Technol.](https://iopscience.iop.org/article/10.1088/2632-2153/abf5b7/pdf)
+
+Introduce a graph generation model by building a Message Passing Neural Network (MPNNs) into the encoder and decoder of a VAE (MPGVAE).
 
 **Language models:**
 
@@ -124,10 +124,17 @@ Generative adversarial network for finding small molecules using graph networks,
 **Synthesizability Criteria into Generative Models:**
 
 * [Gao, W.; Coley, C. W. The Synthesizability of Molecules Proposed by Generative Models. J. Chem. Inf. Model. 2020](https://doi.org/10.1021/acs.jcim.0c00174)
-Paper looks at different ways of integrating synthesizability criteria into generative models.
+
+This paper looks at different ways of integrating synthesizability criteria into generative models. 
 
 
 ### Reaction Network Predictions: 
+
+Nice review on the matter by Unsleber et. al. (2019): 
+
+* [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
+
+Articles: 
 
 * [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
 
@@ -137,6 +144,12 @@ Paper looks at different ways of integrating synthesizability criteria into gene
 * [Automatic discovery of chemical reactions using imposed activation](https://chemrxiv.org/articles/preprint/Automatic_discovery_of_chemical_reactions_using_imposed_activation/13008500/1)
 
 * [Machine learning in chemical reaction space](https://www.nature.com/articles/s41467-020-19267-x)
+
+Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE. 
+
+* [More and Faster: Simultaneously Improving Reaction Coverage and Computational Cost in Automated Reaction Prediction Tasks](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/13076087/More_and_Faster__Simultaneously_Improving_Reaction_Coverage_and_Computational_Cost_in_Automated_Reaction_Prediction_Task_v1.pdf)
+
+Presents an algorithmic improvement to the reaction network prediction task through their YARP (Yet Another Reaction Program) methodology. Shown to reduce computational cost of optimization while improving the diversity of identified products and reaction pathways. 
 
 ## Code / Packages:
 
