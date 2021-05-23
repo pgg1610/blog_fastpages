@@ -6,11 +6,9 @@ categories: [chemistry, machine-learning, resources]
 title: Material-informatics Literature and Resources
 ---
 
-Some might argue Material Informatics, as a field, is nascent compared to its organic chemistry comtemporary: Cheminformatics. Nevertheless, in spirit the aim of Material informatics is similar to Cheminformatics and offers a promising addition to traditional material R&D processes. The basic idea is to augment the conventional material discovery task using data, analytics, and identify chemical spaces which are interesting to be probed rigorously either using first-principles techniques and/or experimentation. 
+Material Informatics is the solid-state, inorganic chemistry focussed cousin to its organic chemistry comtemporary: Cheminformatics. In spirit, the aim of Material informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
 
-The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services demand new advanced materials at even greater rates and lower costs. 
-
-While we can attribute the recent interest in material informatics to democratization of data analytics and ML packages, growing set of benchmark datasets (list provided at the end of this article) of materials from multiple research institution has been crucial for development of new methods, algorithms and providing a consistent set of comparison. 
+The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services, where ever there's a demand for new advanced materials at even greater rates and lower costs. 
 
 **Application of material informatics in atomic-scale modeling:**
 
@@ -192,6 +190,8 @@ Semantically constrained graph-based code for presenting a MOFs. Target property
 * [Discovering Relationships between OSDAs and Zeolites through Data Mining and Generative Neural Networks](https://pubs.acs.org/doi/10.1021/acscentsci.1c00024)
 
 ## Datasets:
+
+While we can attribute the recent interest in material informatics to democratization of data analytics and ML packages, growing set of benchmark datasets of materials from multiple research institution has been crucial for development of new methods, algorithms and providing a consistent set of comparison. 
 
 * OC20 dataset (CMU + Facebook). [Paper](https://arxiv.org/pdf/2010.09435.pdf) | [Github](https://github.com/Open-Catalyst-Project/ocp)
 
