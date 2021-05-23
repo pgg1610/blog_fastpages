@@ -26,9 +26,9 @@ In case of molecular-level modeling of material properties, concepts developed i
 
 Machine learning in atomic-scale modeling is often used to replace expensive ab initio methods with cheaper approximations. While certainly lucractive an additional consideration for ML use-case is its utility as a surrogate model to help researchers identify interesting regions in the material space. It also helps to decode the 'intuition' and serendipity involved in material development and hopefully provide a rigorous data driven basis for a design decision.
 
-Below are some (recent) review, articles, resources I've found useful to document the state-of-the-art for material informatics. 
+Below are some (recent) review, articles, resources I've found that document the state-of-the-art for material informatics. It goes without saying that this is a highly biased and a non-exhaustive listing of articles covering only the ones I've read. The idea with this document is to provide a starting point in understanding the general status of the field. 
 
-## REVIEWS:
+## Reviews:
 
 1. C. Chen, Y. Zuo, W. Ye, X. Li, Z. Deng, and S. P. Ong, “A Critical Review of Machine Learning of Energy Materials,” Adv. Energy Mater., vol. 1903242, p. 1903242, Jan. 2020.
 
@@ -49,7 +49,7 @@ A. Y. T. Wang et al., “Machine Learning for Materials Scientists: An Introduct
 
 ## Featurizations possible:
 
-Like most of the model development area -- featurization or descriptors used to convert material entries is machine-readable data is crucial for the eventual performance of any statistical model. Over the years there has been tremendous progress in describing the periodic solid crystal structures. 
+Similar to other machine-learning development efforts -- featurization or descriptors used to convert material entries in machine-readable format is crucial for the eventual performance of any statistical model. Over the years there has been tremendous progress in describing the periodic solid crystal structures. Some of the key articles I've liked are mentioned below:
 
 **Reviews:**
 
@@ -91,7 +91,7 @@ Consider various encoding scheme and machine learning models to predict single a
 
 3. [Rosen, Andrew; Iyer, Shaelyn; Ray, Debmalya; Yao, Zhenpeng; Aspuru-Guzik, Alan; Gagliardi, Laura; et al. (2020): Machine Learning the Quantum-Chemical Properties of Metal–Organic Frameworks for Accelerated Materials Discovery with a New Electronic Structure Database. ChemRxiv. Preprint](https://chemrxiv.org/articles/preprint/Machine_Learning_the_Quantum-Chemical_Properties_of_Metal_Organic_Frameworks_for_Accelerated_Materials_Discovery_with_a_New_Electronic_Structure_Database/13147616/1?file=25304507)
 
-## ARTICLES:
+## Articles:
 
 There is a rich history of using statistical model and data mining for predicting bulk inorganic crystal properties, for those articles reviews in the above section can points to key papers. In this section I list of the recent paper on encoding surface for predicting binding energies, which is fairly new and very active research direction: 
 
