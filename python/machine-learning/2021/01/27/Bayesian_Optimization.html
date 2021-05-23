@@ -246,6 +246,7 @@ $$\mathrm{EI}(\mathbf{x}) = \max((f(\mathbf{x}) - f(\mathbf{x}^+), 0))\tag{1}$$
 </p>
 <p>where $f(\mathbf{x}^+)$ is the value of the best sample so far and $\mathbf{x}^+$ is the location of that sample i.e. $\mathbf{x}^+ = \mathrm{argmax}_{\mathbf{x}_i \in \mathbf{x}_{1:t}} f(\mathbf{x}_i)$. The expected improvement can be evaluated analytically under the GP model</p>
 <p>Expected improvement can be evaluated analytically for a GP model.</p>
+<p>Before diving in the technical details, I would like to acknowledge the work of Noah Wichrowski (JHU) in building the necessary ground work for the bayesian optimization routine implemented in this article.</p>
 <h3 id="Implementation-with-Numpy-and-Scipy">
 <a class="anchor" href="#Implementation-with-Numpy-and-Scipy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation with Numpy and Scipy<a class="anchor-link" href="#Implementation-with-Numpy-and-Scipy"> </a>
 </h3>
