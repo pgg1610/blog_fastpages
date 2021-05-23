@@ -26,7 +26,7 @@ In case of molecular-level modeling of material properties, concepts developed i
 
 Machine learning in atomic-scale modeling is often used to replace expensive ab initio methods with cheaper approximations. While certainly lucractive an additional consideration for ML use-case is its utility as a surrogate model to help researchers identify interesting regions in the material space. It also helps to decode the 'intuition' and serendipity involved in material development and hopefully provide a rigorous data driven basis for a design decision.
 
-Below are some (recent) review, articles, resources I've found that document the state-of-the-art for material informatics. It goes without saying that this is a highly biased and a non-exhaustive listing of articles covering only the ones I've read. The idea with this document is to provide a starting point in understanding the general status of the field. 
+Below are few reviews, articles, and resources I've found that document the state-of-the-art for material informatics. It goes without saying that this is a highly biased and a non-exhaustive listing of articles covering only the ones I've read. The idea with this document is to provide a starting point in understanding the general status of the field. 
 
 ## Reviews:
 
