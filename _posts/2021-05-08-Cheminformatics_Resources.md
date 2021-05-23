@@ -162,9 +162,17 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 
 * [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
-* [DeepChem](https://github.com/deepchem/deepchem)
+* [DeepChem](https://github.com/deepchem/deepchem) | [Website](https://deepchem.io) 
 
-* [DimeNet++  -- extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
+DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, quantum chemistry, and biology - from Github
+
+* [Chainer-Chemistry](https://github.com/chainer/chainer-chemistry)
+
+Chainer Chemistry is a deep learning framework (based on Chainer) with applications in Biology and Chemistry. It supports various state-of-the-art models (especially GCNN - Graph Convolutional Neural Network) for chemical property prediction - from Github
+
+* [DimeNet++  - extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
+
+* [BondNet - Graph neural network model for predicting bond dissociation energies, considers both homolytic and heterolytic bond breaking]. [Github](https://github.com/mjwen/bondnet)
 
 * [PhysNet](https://arxiv.org/pdf/1902.08408.pdf)
 
