@@ -6,7 +6,9 @@ categories: [chemistry, machine-learning, resources]
 title: Material-informatics Literature and Resources
 ---
 
-Material informatics is a somewhat of a nascent field compared to its organic chem comtemporary: Cheminformatics. In spirit the aim of Material informatics is similar to Cheminformatics and offers promising addition to traditional material R&D processes. The idea is to augment the conventional mateiral discovery task using data, identify chemical spaces which are interesting to be probed rigorously either using first-principles techniques and/or experimentation. The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services demand new advanced materials at even greater rates and lower costs. 
+Some might argue Material Informatics, as a field, is nascent compared to its organic chemistry comtemporary: Cheminformatics. Nevertheless, in spirit the aim of Material informatics is similar to Cheminformatics and offers a promising addition to traditional material R&D processes. The basic idea is to augment the conventional material discovery task using data, analytics, and identify chemical spaces which are interesting to be probed rigorously either using first-principles techniques and/or experimentation. 
+
+The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services demand new advanced materials at even greater rates and lower costs. 
 
 While we can attribute the recent interest in material informatics to democratization of data analytics and ML packages, growing set of benchmark datasets (list provided at the end of this article) of materials from multiple research institution has been crucial for development of new methods, algorithms and providing a consistent set of comparison. 
 
