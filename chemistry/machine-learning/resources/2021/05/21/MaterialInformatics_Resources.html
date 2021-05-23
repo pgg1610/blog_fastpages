@@ -131,6 +131,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#special-issues">Special Issues:</a></li>
 <li class="toc-entry toc-h2"><a href="#reviews">Reviews:</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#best-practices-in-material-informatics">Best practices in material informatics:</a></li>
@@ -174,6 +175,18 @@ window.onload = wrap_img;
 <p>Machine learning in atomic-scale modeling is often used to replace expensive ab initio methods with cheaper approximations. While certainly lucractive an additional consideration for ML use-case is its utility as a surrogate model to help researchers identify interesting regions in the material space. It also helps to decode the ‘intuition’ and serendipity involved in material development and hopefully provide a rigorous data driven basis for a design decision.</p>
 
 <p>Below are few reviews, articles, and resources I’ve found that document the state-of-the-art for material informatics. It goes without saying that this is a highly biased and a non-exhaustive listing of articles covering only the ones I’ve read. The idea with this document is to provide a starting point in understanding the general status of the field.</p>
+
+<h2 id="special-issues">
+<a class="anchor" href="#special-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Special Issues:</h2>
+
+<ul>
+  <li>
+    <p><a href="https://www.cell.com/matter/collections/computation-data-and-machine-learning">Matter journal’s Material prediction using data and ML prediction</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.nature.com/collections/gcijejjahe">Nature Communications compendium on ML for material modelling</a></p>
+  </li>
+</ul>
 
 <h2 id="reviews">
 <a class="anchor" href="#reviews" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reviews:</h2>
@@ -253,21 +266,21 @@ window.onload = wrap_img;
 <h2 id="material-modeling-benchmark-studies">
 <a class="anchor" href="#material-modeling-benchmark-studies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Material modeling benchmark studies:</h2>
 
-<ol>
+<ul>
   <li><a href="https://www.nature.com/articles/s41524-020-00362-y">Bartel, C.J., Trewartha, A., Wang, Q. et al. A critical examination of compound stability predictions from machine-learned formation energies. npj Comput Mater 6, 97 (2020)</a></li>
-</ol>
+</ul>
 
 <p>Investigate if ML models can distinguish materials wrt thermodynamic stability and not just formation energies. Learning formation energy from composition alone is fine for MAE and RMSE representations. Propose that graph-based methods reduce the MAE by roughly 50% compared with the best performing compositional model. Show that including structural information is advantageous when predicting formation energies.</p>
 
-<ol>
+<ul>
   <li><a href="https://pubs.acs.org/doi/10.1021/acs.jpcc.8b09284">A. J. Chowdhury, W. Yang, E. Walker, O. Mamun, A. Heyden, and G. A. Terejanu, “Prediction of Adsorption Energies for Chemical Species on Metal Catalyst Surfaces Using Machine Learning,” J. Phys. Chem. C, vol. 122, no. 49, pp. 28142–28150, 2018</a></li>
-</ol>
+</ul>
 
 <p>Consider various encoding scheme and machine learning models to predict single adsorbate binding energy for carbon-based adsorabtes on transition metal surfaces. They show linear methods and scaling relationship hold well compared to ML methods. They found that for ML models to succeed, it is not necessary to use advanced (geometric) coordinate-based descriptors; simple descriptors, such as bond count, can provide satisfactory results. As many catalysis and materials science problems require significant time to generate each data point, in many cases the ML models would need to work with a relatively small-sized dataset</p>
 
-<ol>
+<ul>
   <li><a href="https://chemrxiv.org/articles/preprint/Machine_Learning_the_Quantum-Chemical_Properties_of_Metal_Organic_Frameworks_for_Accelerated_Materials_Discovery_with_a_New_Electronic_Structure_Database/13147616/1?file=25304507">Rosen, Andrew; Iyer, Shaelyn; Ray, Debmalya; Yao, Zhenpeng; Aspuru-Guzik, Alan; Gagliardi, Laura; et al. (2020): Machine Learning the Quantum-Chemical Properties of Metal–Organic Frameworks for Accelerated Materials Discovery with a New Electronic Structure Database. ChemRxiv. Preprint</a></li>
-</ol>
+</ul>
 
 <h2 id="articles">
 <a class="anchor" href="#articles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Articles:</h2>
