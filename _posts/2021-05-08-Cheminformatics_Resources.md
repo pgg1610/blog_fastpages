@@ -23,17 +23,20 @@ title: Cheminformatics Literature and Resources
 
 ## Reviews:
 
-1. [Navigating through the Maze of Homogeneous Catalyst Design with Machine Learning](https://chemrxiv.org/articles/preprint/Navigating_through_the_Maze_of_Homogeneous_Catalyst_Design_with_Machine_Learning/12786722/1)
+* [W. Patrick Walters & Regina Barzilay. Applications of Deep Learning in Molecule Generation and Molecular Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00699)
 
-2. [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004)
+Recent review summarising the state of the molecular property prediction and structure generation research. In spite of exciting recent advances in the modeling efforts,  there is a need to generate better (realistic)  training data, assess model prediction confidence, and metrics to quantify molecular generation performance. 
 
-3. [Applications of Deep learning in molecular generation and molecular property prediction](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00699)
+* [Navigating through the Maze of Homogeneous Catalyst Design with Machine Learning](https://chemrxiv.org/articles/preprint/Navigating_through_the_Maze_of_Homogeneous_Catalyst_Design_with_Machine_Learning/12786722/1)
 
-4. [Bayer's ADMET platform review](https://www.sciencedirect.com/science/article/pii/S1359644620302609)
+* [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004)
 
-5. [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
+* [Applications of Deep learning in molecular generation and molecular property prediction](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00699)
 
-6. [Machine Learning in Chemistry - Jon Paul Janet & Heather Kulik](https://books.google.com/books?hl=en&lr=&id=JObqDwAAQBAJ&oi=fnd&pg=PA1902&dq=info:lWNtugbBwAsJ:scholar.google.com&ots=cbiwVybtQW&sig=MTKJOvhlbt2sDujAZ5XECERmNl8)
+* [Bayer's ADMET platform review](https://www.sciencedirect.com/science/article/pii/S1359644620302609)
+
+* [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
+
 
 ## Special Journal Issues: 
 
@@ -41,13 +44,15 @@ title: Cheminformatics Literature and Resources
 
 2. [Journal of Medicinal Chemistry compendium of AI in Drug discovery issue](https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077)
 
+3. [Account of Chemical Research Special Issue on advances in data-driven chemistry research](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
+
 ## Specific Articles 
 
 Few key papers which I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
 
 ### Representation:
 
-* [Representation of Molecular in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
+* [Representation of Molecules in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
 
 * [Screening of energetic molecules -- comparing different representations](https://www.nature.com/articles/s41598-018-27344-x)
 
@@ -91,7 +96,7 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 ### Generative models:
 
-[B. Sanchez-Lengeling and A. Aspuru-Guzik, “Inverse molecular design using machine learning: Generative models for matter engineering,” Science (80-. )., vol. 361, no. 6400, pp. 360–365, Jul. 2018](https://science.sciencemag.org/content/361/6400/360)
+* [B. Sanchez-Lengeling and A. Aspuru-Guzik, “Inverse molecular design using machine learning: Generative models for matter engineering,” Science (80-. )., vol. 361, no. 6400, pp. 360–365, Jul. 2018](https://science.sciencemag.org/content/361/6400/360)
 
 - Research Articles:
 
