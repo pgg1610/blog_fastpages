@@ -122,6 +122,10 @@ Generative adversarial network for finding small molecules using graph networks,
 
 Introduce a graph generation model by building a Message Passing Neural Network (MPNNs) into the encoder and decoder of a VAE (MPGVAE).
 
+* [ConfVAE: End-to-end framework for molecular conformation generation via bilevel programming](https://arxiv.org/pdf/2105.07246.pdf)
+
+Algorithm to predict 3D conforms from molecular graphs.
+
 **Language models:**
 
 * [LSTM based (RNN) approaches to small molecule generation](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf). [Github](https://github.com/ETHmodlab/BIMODAL)
