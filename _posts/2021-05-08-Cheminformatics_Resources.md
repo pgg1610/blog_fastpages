@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: List of (fairly) recent articles, resources, and blogs that I've found useful to learn about Cheminformatics
-categories: [chemistry, machine-learning, resources]
+categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 

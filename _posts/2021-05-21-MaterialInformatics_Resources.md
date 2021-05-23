@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: List of resources and state-of-the-art for Material Informatics
-categories: [chemistry, machine-learning, resources]
+categories: [chemical-science, machine-learning, resources]
 title: Material-informatics Literature and Resources
 ---
 
