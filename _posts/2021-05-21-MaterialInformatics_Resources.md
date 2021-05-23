@@ -6,7 +6,7 @@ categories: [chemistry, machine-learning, resources]
 title: Material-informatics Literature and Resources
 ---
 
-Material Informatics is the solid-state, inorganic chemistry focussed cousin to its organic chemistry comtemporary: Cheminformatics. In spirit, the aim of Material informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
+Material Informatics is the solid-state, inorganic chemistry focused cousin to its organic chemistry comtemporary: Cheminformatics. In spirit, the aim of Material Informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
 
 The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services, where ever there's a demand for new advanced materials at even greater rates and lower costs. 
 
@@ -185,7 +185,7 @@ J. Noh et al., “Inverse Design of Solid-State Materials via a Continuous Repre
 
 * [Z. Yao et al., “Inverse Design of Nanoporous Crystalline Reticular Materials with Deep Generative Models,” 2020](https://chemrxiv.org/articles/Inverse_Design_of_Nanoporous_Crystalline_Reticular_Materials_with_Deep_Generative_Models/12186681/1?file=22407606)
 
-Semantically constrained graph-based code for presenting a MOFs. Target property directed optimization. Encode MOFs are edges|vertices|topologies. Edges are molecular fragments with two connecting points, verticies contain node information, topologies indicate a definite framework. Supramolecular Variational Autoencoder (SmVAE) with several corresponding components that oversee encoding and decoding each part of the MOF. This model allows us to map the frameworks with discrete representations (RFcodes) into continuous vectors (z) and then back.
+Semantically constrained graph-based code for presenting a MOFs. Target property directed optimization. Encode MOFs as edges, vertices, topologies. Edges are molecular fragments with two connecting points, verticies contain node information, topologies indicate a definite framework. Supramolecular Variational Autoencoder (SmVAE) with several corresponding components that oversee encoding and decoding each part of the MOF: Map the frameworks with discrete representations (RFcodes) into continuous vectors (z) and then back.
 
 * [Discovering Relationships between OSDAs and Zeolites through Data Mining and Generative Neural Networks](https://pubs.acs.org/doi/10.1021/acscentsci.1c00024)
 
@@ -193,7 +193,7 @@ Semantically constrained graph-based code for presenting a MOFs. Target property
 
 While we can attribute the recent interest in material informatics to democratization of data analytics and ML packages, growing set of benchmark datasets of materials from multiple research institution has been crucial for development of new methods, algorithms and providing a consistent set of comparison. 
 
-* OC20 dataset (CMU + Facebook). [Paper](https://arxiv.org/pdf/2010.09435.pdf) | [Github](https://github.com/Open-Catalyst-Project/ocp)
+* OC20 dataset (CMU + Facebook). [Paper](https://arxiv.org/pdf/2010.09435.pdf). [Github](https://github.com/Open-Catalyst-Project/ocp)
 
 Dataset comprising of surface heterogeneous adsorbates.  
 
@@ -205,31 +205,31 @@ Surface Reactions database contains thousands of reaction energies and barriers 
 
 Besides providing a collection of over 130,000 inorganic compounds and 49,000 molecules and counting, with calculated phase diagrams, structural, thermodynamic, electronic, magnetic, and topological properties it also provides analysis tools for post-processing. 
 
-3. [OQMD from Chris Wolverton's Group](http://oqmd.org)
+* [OQMD from Chris Wolverton's Group](http://oqmd.org)
 
 815,000+ materials with calculated thermodynamic and structural properties.
 
-4. [ICSD](https://icsd.products.fiz-karlsruhe.de/en/products/icsd-products)
+* [ICSD](https://icsd.products.fiz-karlsruhe.de/en/products/icsd-products)
 
 210,000+ inorganic crystal structures from literature. Requires subscription.
 
-5. [JARVIS by NIST](https://jarvis.nist.gov)
+* [JARVIS by NIST](https://jarvis.nist.gov)
 
 Includes calculated materials properties, 2D materials, and tools for ML and high-throughput tight-binding.
 
-6. [C2DB](https://cmr.fysik.dtu.dk/c2db/c2db.html)
+* [C2DB](https://cmr.fysik.dtu.dk/c2db/c2db.html)
 
 Structural, thermodynamic, elastic, electronic, magnetic, and optical properties of around 4000 two-dimensional (2D) materials distributed over more than 40 different crystal structures. 
 
-7. [AFLOW](http://www.aflowlib.org)
+* [AFLOW](http://www.aflowlib.org)
 
 Millions of materials and calculated properties, focusing on alloys.
 
-10. Citrination
+* Citrination
 
 Contributed and curated datasets from Citrine Informatics 
 
-11. [MDPS](https://mpds.io/tutorial/#MPDS-intro)
+* [MDPS](https://mpds.io/tutorial/#MPDS-intro)
 
 Fascinating resource linking scientific publications using the Pauling File database (relational database of published literature for material scientists)
 
