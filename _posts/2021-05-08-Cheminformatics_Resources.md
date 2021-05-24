@@ -1,5 +1,6 @@
 ---
 toc: true
+sticky_rank: 3
 layout: post
 description: List of (fairly) recent articles, resources, and blogs that I've found useful to learn about Cheminformatics
 categories: [chemical-science, machine-learning, resources]

@@ -1,5 +1,6 @@
 ---
 toc: true
+sticky_rank: 2
 layout: post
 description: List of resources and state-of-the-art for Material Informatics
 categories: [chemical-science, machine-learning, resources]
