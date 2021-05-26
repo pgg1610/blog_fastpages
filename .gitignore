@@ -11,6 +11,8 @@ _notebooks/.ipynb_checkpoints
 _notebooks/data/misc
 _notebooks/dask-worker-space
 
+_posts/misc
+
 # Local Netlify folder
 .netlify
 .tweet-cache

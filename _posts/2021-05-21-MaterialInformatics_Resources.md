@@ -172,7 +172,23 @@ Adsorbate binding predictions have been recently extended to cover high-entropy 
 
 * S. Nellaiappan et al., “High-Entropy Alloys as Catalysts for the CO2 and CO Reduction Reactions: Experimental Realization,” ACS Catal., vol. 10, no. 6, pp. 3658–3663, 2020.
 
-## GENERATIVE MODELS:
+## Reaction Network Predictions: 
+
+* [A Chemically Consistent Graph Architecture for Massive Reaction Networks Applied to Solid-Electrolyte Interphase Formation. ChemRxiv. Blau, Samuel; Patel, Hetal; Spotte-Smith, Evan; Xie, Xiaowei; Dwaraknath, Shyam; Persson, Kristin (2020)](https://chemrxiv.org/articles/preprint/A_Chemically_Consistent_Graph_Architecture_for_Massive_Reaction_Networks_Applied_to_Solid-Electrolyte_Interphase_Formation/13028105/1)
+
+Develop a multi-reactant representation scheme to look at arbitrary reactant product pairs. Apply this technique to understand electrochemical reaction network for Li-ion solid electrolyte interphase. 
+
+* [Predicting chemical reaction pathways in solid state material synthesis](https://www.nature.com/articles/s41467-021-23339-x)
+
+Chemical reaction network model to predict synthesis pathway for exotic oxides. Solid-state synthesis procedures for YMnO<sub>3</sub>, Y<sub>2</sub>Mn<sub>2</sub>O<sub>7</sub>, Fe<sub>2</sub>SiS<sub>4</sub>, and YBa<sub>2</sub>Cu<sub>3</sub>O<sub>6.5</sub> are proposed and compared to literature pathways. Finally apply the algorithm to search for a probable synthesis route to make MgMo<sub>3</sub>(PO<sub>4</sub>)<sub>3</sub>O, battery cathode material that has yet to be synthesized.
+
+* [Discovering Competing Electrocatalytic Mechanisms and Their Overpotentials: Automated Enumeration of Oxygen Evolution Pathways, A. Govind Rajan and E. A. Carter, J. Phys. Chem. C, vol. 124, no. 45, pp. 24883–24898, Nov. 2020.](https://pubs.acs.org/doi/10.1021/acs.jpcc.0c08120)
+
+* [Accurate Thermochemistry of Complex Lignin Structures via Density Functional Theory, Group Additivity, and Machine Learning, Q. Li, G. Wittreich, Y. Wang, H. Bhattacharjee, U. Gupta, and D. G. Vlachos, ACS Sustain. Chem. Eng., vol. 9, no. 8, pp. 3043–3049, Mar. 2021.](https://pubs.acs.org/doi/abs/10.1021/acssuschemeng.0c08856)
+
+* [Ziyun Wang, Yuguang Li, Jacob Boes et al. CO2 Electrocatalyst Design Using Graph Theory, 21 September 2020, Preprint](https://www.researchsquare.com/article/rs-66715/v1)
+
+## Generative Models:
 
 **Review:**
 

@@ -144,9 +144,21 @@ This paper looks at different ways of integrating synthesizability criteria into
 
 ### Reaction Network Predictions: 
 
-Nice review on the matter by Unsleber et. al. (2019): 
+Recent review on the matter from Reiher group: 
 
 * [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
+
+Perspective article summarising their position on the current state of research and future considerations on developing better reaction network models. Break down the analysis of reaction networks as into 3 classes (1) Front Open End: exploration of products from reactants (2) Backward Open Start: Know the product and explore potential reactants (3) Start to End: Product and reactant known, explore the likely intermediates. 
+
+Nice summary of potential challenges in the field: 
+
+- Validating exploration algorithms on a consistent set of reaction system.
+Need to generate a comparative metric to benchmark different algorithms.  
+- Considering effect of solvents and/or protein embeddings in the analysis
+
+* Previous review article by same group: [Exploration of Reaction Pathways and Chemical Transformation Networks](https://pubs.acs.org/doi/pdf/10.1021/acs.jpca.8b10007)
+
+Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
 Articles: 
 
