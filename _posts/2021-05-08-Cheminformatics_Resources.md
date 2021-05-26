@@ -190,7 +190,7 @@ DeepChem aims to provide a high quality open-source toolchain that democratizes 
 
 * [Chainer-Chemistry](https://github.com/chainer/chainer-chemistry)
 
-Chainer Chemistry is a deep learning framework (based on Chainer) with applications in Biology and Chemistry. It supports various state-of-the-art models (especially GCNN - Graph Convolutional Neural Network) for chemical property prediction - from Github
+"Chainer Chemistry is a deep learning framework (based on Chainer) with applications in Biology and Chemistry. It supports various state-of-the-art models (especially GCNN - Graph Convolutional Neural Network) for chemical property prediction" - from their Github repo introduction
 
 * [DimeNet++  - extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
 
@@ -203,6 +203,10 @@ Chainer Chemistry is a deep learning framework (based on Chainer) with applicati
 * [AutodE](https://duartegroup.github.io/autodE/)
 
 * [DScribe](https://singroup.github.io/dscribe/latest/)
+
+* [RMG - Reaction Mechanism Generator](https://github.com/ReactionMechanismGenerator/RMG-Py)
+
+Tool to generate chemical reaction networks. Includes Arkane, package for calculating thermodynamics from quantum mechanical calculations. 
 
 ## Helpful utilities:
 
