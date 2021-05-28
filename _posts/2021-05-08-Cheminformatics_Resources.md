@@ -83,6 +83,15 @@ Train network to output the parameters of an evidential distribution. One forwar
 
 * [Differentiable sampling of molecular geometries with uncertainty-based adversarial attacks](https://arxiv.org/pdf/2101.11588.pdf)
 
+* [J. P. Janet, S. Ramesh, C. Duan, H. J. Kulik, ACS Cent. Sci. 2020](https://pubs.acs.org/doi/10.1021/acscentsci.0c00026)
+
+Conduct a global multi-objective optimization with expected improvement criterion. Find transition metal complex redox couples for Redox flow batteries that address stability, solubility, and redox potential metric. Use distance of a point from a training data in latent space as a metric to quantify uncertainty. 
+
+* [J. P. Janet, C. Duan, T. Yang, A. Nandy, H. J. Kulik, Chem. Sci. 2019, 10, 7913–7922](https://pubs.rsc.org/en/content/articlelanding/2019/sc/c9sc02298h#!divAbstract)
+
+Distance from available data in NN latent space is used as a variable for low-cost, quantitative uncertainty metric that works for both inorganic and organic chemistry. Introduce a technique to calibrate latent distances enabling conversion of distance-based metric to error estimates in units of predicted property 
+
+
 ### Active Learning 
 
 Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.
