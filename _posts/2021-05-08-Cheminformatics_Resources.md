@@ -7,6 +7,8 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
+Last update: 28th May 2021
+
 ## Noteworthy blogs to follow:
 
 1. [Patrick Walters Blog on Cheminformatics](https://practicalcheminformatics.blogspot.com/2021/01/ai-in-drug-discovery-2020-highly.html)
