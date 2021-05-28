@@ -7,6 +7,8 @@ categories: [chemical-science, machine-learning, resources]
 title: Material-informatics Literature and Resources
 ---
 
+Last update: 28th May 2021
+
 Material Informatics is the solid-state, inorganic chemistry focused cousin to its organic chemistry comtemporary: Cheminformatics. In spirit, the aim of Material Informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
 
 The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services, where ever there's a demand for new advanced materials at even greater rates and lower costs. 
@@ -29,6 +31,9 @@ Below are few reviews, articles, and resources I've found that document the stat
 
 
 ## Special Issues: 
+
+* [Nature Materials collection of review articles discussing the role of computation for material design](https://www.nature.com/collections/dhcfgffecf)
+
 
 * [Matter journal's Material prediction using data and ML prediction](https://www.cell.com/matter/collections/computation-data-and-machine-learning)
 
@@ -81,7 +86,8 @@ Using attention-based graph networks on material composition to predict material
 Similar to the previous article in spirit, here authors use material composition to generate weighted graphs and predict material properties 
 
 **2.Structural based:**
-5. T. Xie and J. C. Grossman, “Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties,” Phys. Rev. Lett., vol. 120, no. 14, p. 145301, 2018.
+
+* T. Xie and J. C. Grossman, “Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties,” Phys. Rev. Lett., vol. 120, no. 14, p. 145301, 2018.
 
 ## Material modeling benchmark studies:
 
@@ -135,6 +141,22 @@ Adsorbate binding predictions have been recently extended to cover high-entropy 
 * M. K. Bisbo and B. Hammer, “Efficient global structure optimization with a machine learned surrogate model,” Phys. Rev. Lett., vol. 124, no. 8, p. 86102, 2019.
 
 * J. Dean, M. G. Taylor, and G. Mpourmpakis, “Unfolding adsorption on metal nanoparticles: Connecting stability with catalysis,” Sci. Adv., vol. 5, no. 9, 2019.
+
+
+## Uncertainty quantification (UQ): 
+
+* [A. Wang et al., “A Framework for Quantifying Uncertainty in DFT Energy Corrections.” 19-May-2021](https://chemrxiv.org/articles/preprint/A_Framework_for_Quantifying_Uncertainty_in_DFT_Energy_Corrections/14593476)
+
+Method to comment on the uncertainty of DFT errors which accounts for both sources of uncertainty: experimental and model parameters. Fit energy corrections using a set of 222 binary and ternary compounds for which experimental and computed values are present. Quantifying this uncertainty can help reveal cases wherein empirically-corrected DFT calculations are limited to differentiate between stable and unstable phases. Validate  this approach on Sc-W-O phase diagram analysis. 
+
+* [Feng, J., Lansford, J. L., Katsoulakis, M. A., & Vlachos, D. G. (2020). Explainable and trustworthy artificial intelligence for correctable modeling in chemical sciences. Science advances, 6(42)](https://advances.sciencemag.org/content/6/42/eabc3204)
+
+Propose Bayesian networks, type of probabilistic graphical models, to integrate physics- and chemistry-based data and uncertainty. Demonstrate this framework in searching for the optimal reaction rate and oxygen binding energy for the oxygen reduction reaction (ORR) using the volcano model. Their model is able to comment on the source of uncertainty in the model. 
+
+* [K. Tran, W. Neiswanger, J. Yoon, Q. Zhang, E. Xing, and Z. W. Ulissi, “Methods for comparing uncertainty quantifications for material property predictions,” pp. 1–29, Dec. 2019](https://arxiv.org/abs/1912.10066)
+
+Helpful overview and benchmark of various model flavors and metrics to understand ways of reporting the confidence in model predictions for material properties. Interesting convolution-Fed Gaussian Process (CFGP) model framework looked into which is a combination of CGCNN and GP: pooled outputs of the convolutional layers of the network as features in a new GP. This was also their best model from the collection. Nice overview of different metrics used for comparing methods for UQ. 
+
 
 ## Active learning:
 

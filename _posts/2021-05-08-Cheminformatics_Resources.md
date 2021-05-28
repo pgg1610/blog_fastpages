@@ -34,10 +34,16 @@ Recent review summarising the state of the molecular property prediction and str
 
 * [Applications of Deep learning in molecular generation and molecular property prediction](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00699)
 
-* [Bayer's ADMET platform review](https://www.sciencedirect.com/science/article/pii/S1359644620302609)
 
 * [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
 
+## Industry-focused drug discovery reviews 
+
+* [A. Bender and I. Cortés-Ciriano, “Artificial intelligence in drug discovery: what is realistic, what are illusions? Part 1: Ways to make an impact, and why we are not there yet,” Drug Discov. Today, vol. 26, no. 2, pp. 511–524, 2021](https://www.sciencedirect.com/science/article/pii/S1359644620305274)
+
+* [A. H. Göller et al., “Bayer’s in silico ADMET platform: a journey of machine learning over the past two decades,” Drug Discov. Today, vol. 25, no. 9, pp. 1702–1709, 2020.](https://www.sciencedirect.com/science/article/pii/S1359644620302609)
+
+* [J. Shen and C. A. Nicolaou, “Molecular property prediction: recent trends in the era of artificial intelligence,” Drug Discov. Today Technol., vol. 32–33, no. xx, pp. 29–36, 2019.](https://www.sciencedirect.com/science/article/abs/pii/S1740674920300032)
 
 ## Special Journal Issues: 
 
