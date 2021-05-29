@@ -179,6 +179,10 @@ Technical details of various algorithms being implemented for reaction mechanism
 
 Articles: 
 
+* [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021.])(https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
+
+Newest version of RMG (v3) is updated to Python v3. It has ability to generate heterogeneous catalyst models, uncertainty analysis to conduct first order sensitivity analysis. RMG dataset for the thermochemical and kinetic parameters have been expanded. 
+
 * [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
 
 

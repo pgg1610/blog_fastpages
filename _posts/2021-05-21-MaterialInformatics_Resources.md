@@ -196,6 +196,10 @@ Helpful overview and benchmark of various model flavors and metrics to understan
 
 ## Reaction Network Predictions: 
 
+* [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021.])(https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
+
+Newest version of RMG (v3) is updated to Python v3. It has ability to generate heterogeneous catalyst models, uncertainty analysis to conduct first order sensitivity analysis. RMG dataset for the thermochemical and kinetic parameters have been expanded. 
+
 * [A Chemically Consistent Graph Architecture for Massive Reaction Networks Applied to Solid-Electrolyte Interphase Formation. ChemRxiv. Blau, Samuel; Patel, Hetal; Spotte-Smith, Evan; Xie, Xiaowei; Dwaraknath, Shyam; Persson, Kristin (2020)](https://chemrxiv.org/articles/preprint/A_Chemically_Consistent_Graph_Architecture_for_Massive_Reaction_Networks_Applied_to_Solid-Electrolyte_Interphase_Formation/13028105/1)
 
 Develop a multi-reactant representation scheme to look at arbitrary reactant product pairs. Apply this technique to understand electrochemical reaction network for Li-ion solid electrolyte interphase. 
@@ -208,7 +212,7 @@ Chemical reaction network model to predict synthesis pathway for exotic oxides. 
 
 * [Accurate Thermochemistry of Complex Lignin Structures via Density Functional Theory, Group Additivity, and Machine Learning, Q. Li, G. Wittreich, Y. Wang, H. Bhattacharjee, U. Gupta, and D. G. Vlachos, ACS Sustain. Chem. Eng., vol. 9, no. 8, pp. 3043–3049, Mar. 2021.](https://pubs.acs.org/doi/abs/10.1021/acssuschemeng.0c08856)
 
-* [Ziyun Wang, Yuguang Li, Jacob Boes et al. CO2 Electrocatalyst Design Using Graph Theory, 21 September 2020, Preprint](https://www.researchsquare.com/article/rs-66715/v1)
+* [Ziyun Wang, Yuguang Li, Jacob Boes et al. CO<sub>2</sub> Electrocatalyst Design Using Graph Theory, 21 September 2020, Preprint](https://www.researchsquare.com/article/rs-66715/v1)
 
 ## Generative Models:
 
