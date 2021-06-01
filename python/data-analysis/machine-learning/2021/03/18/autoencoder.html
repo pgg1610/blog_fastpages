@@ -182,17 +182,17 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>An autoencoder is a type of unsupervised learning method. More than that, it is a type of 'generative' model which once trained can potentially help generate synthetic data. In essense, it is a non-linear dimensionality reduction technique to learn the internal low-dimensional structure of the data.</p>
 <p>An autoencoder model contains two components:</p>
-<ol>
-<li>
-<p><strong>An encoder:</strong> that takes an image as input, and outputs a low-dimensional embedding (representation) of the image.</p>
-</li>
-<li>
-<p><strong>A decoder:</strong> that takes the low-dimensional embedding, and reconstructs the image.</p>
-</li>
-</ol>
+<p><strong>1. An encoder:</strong> that takes an image as input, and outputs a low-dimensional embedding (representation) of the image.</p>
+<p><strong>2. A decoder:</strong> that takes the low-dimensional embedding, and reconstructs the image.</p>
+<p><img src="/blog_fastpages/images/copied_from_nb/./images/autoencoder_schematic.png" alt="" title="Image courtesy: Hackernoon article on Autoencoder"></p>
+<p>In esence autoencoder can be viewed as a dimensionality reduction tool for embedding the data in low-dimensional latent space which is non-linear.</p>
+<p><strong>Relationship to PCA</strong></p>
+<p>Autoencoder can be seen as a generalisation of principal component analysis to nonlinear manifolds. If we remove the nonlinearity (brought about by the activation functions) then the result of autoencoder will be in (some sense) equivalent to PCA. Now, however, the component vectors encoded by weights will not be orthogonal, like with PCA.</p>
+<p><strong>Anamoly Detection</strong></p>
 <p>Besides being used a generative model, it can be used as a anamoly detection method by considering the loss value between the decoded object and the encoded entity. By setting a threshold on the acceptable loss values we can train the model to flag any instances wherein the model's loss value exceed that limit and potentially is an anamolous digit.</p>
 <p>Such an anamoly detection could be used in processes where images, sound, or signal is scanned and flagged for being out of spec. Google I/O in 2021 had a nice workshop on introducing Autoencoder and their utility in anomaly detection for detecting abnormal heart rhythm. <a href="https://www.youtube.com/watch?v=2K3ScZp1dXQ">Video</a></p>
 <p>A simple autoencoder based on a CNN architecture will be built to encode and embed MNIST hand-written digit data.</p>
+<p><strong>Model Development</strong></p>
 <p>For the CNN stride and filter size is chose to ensure final vector in the bottleneck is commensurate with a single vector. To understand more on the how the stride and filter is chosen, or the effect of those parameters on the convolution, there's a helpful visualization and documentation here: <a href="https://github.com/vdumoulin/conv_arithmetic">https://github.com/vdumoulin/conv_arithmetic</a></p>
 
 </div>
