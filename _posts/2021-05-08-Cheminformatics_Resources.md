@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 28th May 2021
+Last update: 31st May 2021
 
 ## Noteworthy blogs to follow:
 
@@ -130,7 +130,7 @@ Representation using SELFIES proposed to make it much more powerful
 
 * [W. Jin, R. Barzilay, and T. Jaakkola, “Junction tree variational autoencoder for molecular graph generation,” 35th Int. Conf. Mach. Learn. ICML 2018, vol. 5, pp. 3632–3648, 2018](https://arxiv.org/abs/1802.04364)
 
-Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule
+Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule. The molecule is generated in two-steps: first being generating the scaffold or backbone of the molelcule, then the nodes  are added with molecular substructure as identified from the 'molecular grammar'. 
 
 * [MolGAN: An implicit generative model for small molecular graphs, N. De Cao and T. Kipf, 2018](https://arxiv.org/abs/1805.11973)
 
@@ -144,6 +144,10 @@ Introduce a graph generation model by building a Message Passing Neural Network 
 
 Algorithm to predict 3D conforms from molecular graphs.
 
+* [MOSES - Benchmarking platform for generative models](https://arxiv.org/abs/1811.12823).
+
+Propose a platform to deploy and compare state-of-the-art generative models for exploring molecular space on same dataset. In addition the authors also propose list of metrics  to evaluate the quality and diversity of the generated structures.  
+
 **Language models:**
 
 * [LSTM based (RNN) approaches to small molecule generation](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf). [Github](https://github.com/ETHmodlab/BIMODAL)
@@ -151,6 +155,8 @@ Algorithm to predict 3D conforms from molecular graphs.
 * [Chithrananda, S.; Grand, G.; Ramsundar, B. ChemBERTa: Large-Scale Self-Supervised Pretraining for Molecular Property Prediction. arXiv [cs.LG], 2020](https://arxiv.org/abs/2010.09885).
 
 * [SMILES-based deep generative scaffold decorator for de-novo drug design](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00441-8#availability-of-data-and-materials). [Github](https://github.com/undeadpixel/reinvent-randomized)
+
+SMILES-based language model that generates molecules from scaffolds and can be trained from any arbitrary molecular set. Uses randomized SMILES to improve final prediction validity. 
 
 **Synthesizability Criteria into Generative Models:**
 
@@ -207,17 +213,27 @@ Look at exploration of reaction space rather than compound space. SOAP kernel fo
 
 ## Code / Packages:
 
+* [MOSES - Benchmarking platform for generative models](https://arxiv.org/abs/1811.12823). [Github](https://github.com/molecularsets/moses)
+
+Benchmarking platform to implement molecular generative models. It also provides a set of metrics to evaluate the quality and diversity of the generated molecules. A benchmark dataset (subset of ZINC) is provided for training the models. 
+
+* [Reinvent 2.0 - an AI tool forr de novo drug design](https://chemrxiv.org/articles/preprint/REINVENT_2_0_an_AI_Tool_for_De_Novo_Drug_Design/12058026/1). [Github](https://github.com/MolecularAI/Reinvent)
+
+Production-ready tool for de novo design from Astra Zeneca. It can be effectively applied on drug discovery projects that are striving to resolve either exploration or exploitation problems while navigating the chemical space. Language model with SMILE  output and trained by “randomizing” the SMILES representation of the input data. Implement reinforcement-leraning for directing the model towards relevant area of interest. 
+
 * [Schnet by Jacobsen et. al. (Neural message passing)](https://arxiv.org/abs/1806.03146). [Github](https://github.com/atomistic-machine-learning/G-SchNet). [Tutorial](https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html)
 
 * [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
-* [DeepChem](https://github.com/deepchem/deepchem) | [Website](https://deepchem.io) 
+* [DeepChem](https://github.com/deepchem/deepchem). [Website](https://deepchem.io) 
 
 DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, quantum chemistry, and biology - from Github
 
 * [Chainer-Chemistry](https://github.com/chainer/chainer-chemistry)
 
 "Chainer Chemistry is a deep learning framework (based on Chainer) with applications in Biology and Chemistry. It supports various state-of-the-art models (especially GCNN - Graph Convolutional Neural Network) for chemical property prediction" - from their Github repo introduction
+
+* [FastJTNN - python 3 version of the JT-NN](https://github.com/Bibyutatsu/FastJTNNpy3)
 
 * [DimeNet++  - extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
 
