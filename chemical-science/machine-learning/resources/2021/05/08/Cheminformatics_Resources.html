@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -148,7 +148,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#code--packages">Code / Packages:</a></li>
 <li class="toc-entry toc-h2"><a href="#helpful-utilities">Helpful utilities:</a></li>
 <li class="toc-entry toc-h2"><a href="#molecules-datasets">Molecules datasets:</a></li>
-</ul><p>Last update: 28th May 2021</p>
+</ul><p>Last update: 31st May 2021</p>
 
 <h2 id="noteworthy-blogs-to-follow">
 <a class="anchor" href="#noteworthy-blogs-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Noteworthy blogs to follow:</h2>
@@ -355,7 +355,7 @@ Transfer learning by training a network to DFT data and then retrain on a datase
   <li><a href="https://arxiv.org/abs/1802.04364">W. Jin, R. Barzilay, and T. Jaakkola, “Junction tree variational autoencoder for molecular graph generation,” 35th Int. Conf. Mach. Learn. ICML 2018, vol. 5, pp. 3632–3648, 2018</a></li>
 </ul>
 
-<p>Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule</p>
+<p>Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule. The molecule is generated in two-steps: first being generating the scaffold or backbone of the molelcule, then the nodes  are added with molecular substructure as identified from the ‘molecular grammar’.</p>
 
 <ul>
   <li><a href="https://arxiv.org/abs/1805.11973">MolGAN: An implicit generative model for small molecular graphs, N. De Cao and T. Kipf, 2018</a></li>
@@ -375,6 +375,13 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 <p>Algorithm to predict 3D conforms from molecular graphs.</p>
 
+<ul>
+  <li>
+<a href="https://arxiv.org/abs/1811.12823">MOSES - Benchmarking platform for generative models</a>.</li>
+</ul>
+
+<p>Propose a platform to deploy and compare state-of-the-art generative models for exploring molecular space on same dataset. In addition the authors also propose list of metrics  to evaluate the quality and diversity of the generated structures.</p>
+
 <p><strong>Language models:</strong></p>
 
 <ul>
@@ -388,6 +395,8 @@ Transfer learning by training a network to DFT data and then retrain on a datase
     <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00441-8#availability-of-data-and-materials">SMILES-based deep generative scaffold decorator for de-novo drug design</a>. <a href="https://github.com/undeadpixel/reinvent-randomized">Github</a></p>
   </li>
 </ul>
+
+<p>SMILES-based language model that generates molecules from scaffolds and can be trained from any arbitrary molecular set. Uses randomized SMILES to improve final prediction validity.</p>
 
 <p><strong>Synthesizability Criteria into Generative Models:</strong></p>
 
@@ -466,20 +475,29 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 
 <ul>
   <li>
+<a href="https://arxiv.org/abs/1811.12823">MOSES - Benchmarking platform for generative models</a>. <a href="https://github.com/molecularsets/moses">Github</a>
+</li>
+</ul>
+
+<p>Benchmarking platform to implement molecular generative models. It also provides a set of metrics to evaluate the quality and diversity of the generated molecules. A benchmark dataset (subset of ZINC) is provided for training the models.</p>
+
+<ul>
+  <li>
+<a href="https://chemrxiv.org/articles/preprint/REINVENT_2_0_an_AI_Tool_for_De_Novo_Drug_Design/12058026/1">Reinvent 2.0 - an AI tool forr de novo drug design</a>. <a href="https://github.com/MolecularAI/Reinvent">Github</a>
+</li>
+</ul>
+
+<p>Production-ready tool for de novo design from Astra Zeneca. It can be effectively applied on drug discovery projects that are striving to resolve either exploration or exploitation problems while navigating the chemical space. Language model with SMILE  output and trained by “randomizing” the SMILES representation of the input data. Implement reinforcement-leraning for directing the model towards relevant area of interest.</p>
+
+<ul>
+  <li>
     <p><a href="https://arxiv.org/abs/1806.03146">Schnet by Jacobsen et. al. (Neural message passing)</a>. <a href="https://github.com/atomistic-machine-learning/G-SchNet">Github</a>. <a href="https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html">Tutorial</a></p>
   </li>
   <li>
     <p><a href="https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1">OpenChem</a>. <a href="https://github.com/Mariewelt/OpenChem">Github</a></p>
   </li>
   <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><a href="https://github.com/deepchem/deepchem">DeepChem</a></td>
-          <td><a href="https://deepchem.io">Website</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <p><a href="https://github.com/deepchem/deepchem">DeepChem</a>. <a href="https://deepchem.io">Website</a></p>
   </li>
 </ul>
 
@@ -492,6 +510,9 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 <p>“Chainer Chemistry is a deep learning framework (based on Chainer) with applications in Biology and Chemistry. It supports various state-of-the-art models (especially GCNN - Graph Convolutional Neural Network) for chemical property prediction” - from their Github repo introduction</p>
 
 <ul>
+  <li>
+    <p><a href="https://github.com/Bibyutatsu/FastJTNNpy3">FastJTNN - python 3 version of the JT-NN</a></p>
+  </li>
   <li>
     <p><a href="https://arxiv.org/abs/2003.03123">DimeNet++  - extension of Directional message pasing working (DimeNet)</a>. <a href="https://github.com/klicperajo/dimenet">Github</a></p>
   </li>
