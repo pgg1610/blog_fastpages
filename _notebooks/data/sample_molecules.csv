@@ -1,0 +1,116 @@
+Name,SMILE
+Cyclopropane,C1CC1
+Ethylene,C=C
+Methane,C
+t-Butanol,CC(C)(C)O
+ethane,CC
+Ethylene Oxide,C1CO1
+"2,2-Dimethylpropane",CC(C)(C)C
+Benzene,C1=CC=CC=C1
+Methanol,CO
+Propane,CCC
+Methyl Acetate,CC(=O)OC
+t-Butyl Acetate,CC(=O)OC(C)(C)C
+Methyl Formate,COC=O
+Ethyl Acetate,CCOC(=O)C
+n-Butane,CCCC
+Triphenyl phosphine,C1=CC=C(C=C1)P(C2=CC=CC=C2)C3=CC=CC=C3
+Methyl Benzoate,COC(=O)C1=CC=CC=C1
+Methylamine,CN
+"N,N-Diisopropylacetamide",CC(C)N(C(C)C)C(=O)C
+N-Methylacetamide,CC(=O)NC
+n-Hexane,CCCCCC
+Ethanol,CCO
+n-Heptane,CCCCCCC
+n-Butyl Acetate,CCCCOC(=O)C
+Cyclohexane,C1CCCCC1
+"1,2-Dichloroethane",C(CCl)Cl
+Acetonitrile,CC#N
+Methylcyclohexane,CC1CCCCC1
+N-Ethylacetamide,CCNC(=O)C
+propylene,CC=C
+n-Decane,CCCCCCCCCC
+"N,N-Diethylacetamide",CCN(CC)C(=O)C
+Cyclopentane,C1CCCC1
+Acetic Anhydride,CC(=O)OC(=O)C
+n-Tridecane,CCCCCCCCCCCCC
+n-Butyl Benzoate,CCCCOC(=O)C1=CC=CC=C1
+Isopropanol,CC(C)O
+Toluene,CC1=CC=CC=C1
+Hydrogen,[HH]
+Acetone,CC(=O)C
+"4,4-Dimethyl-1-pentene",CC(C)(C)CC=C
+Trimethylamine,CN(C)C
+"N,N-Dimethylacetamide",CC(=O)N(C)C
+Isobutylene,CC(=C)C
+n-Butyl Isocyanate,CCCCN=C=O
+Methyl Butyrate,CCCC(=O)OC
+n-Butylamine,CCCCN
+"N,N-Dimethylformamide",CN(C)C=O
+Tetrahydrofuran,C1CCOC1
+4-Methyl-1-pentene,CC(C)CC=C
+p-Xylene,CC1=CC=C(C=C1)C
+Methylene Chloride,C(Cl)Cl
+2-Butene,CC=CC
+1-Bromo-2-chloroethane,C(CBr)Cl
+1-Octene,CCCCCCC=C
+2-Methyl-2-butene,CC=C(C)C
+Cumene,CC(C)C1=CC=CC=C1
+Methyl Vinyl Sulfide,CSC=C
+n-Butyronitrile,CCCC#N
+2-Methyl-1-butene,CCC(=C)C
+Ethylbenzene,CCC1=CC=CC=C1
+Formaldehyde,C=O
+1-Hexadecene,CCCCCCCCCCCCCCC=C
+2-Butanone,CCC(=O)C
+n-Butyl Isothiocyanate,CCCCN=C=S
+Methyl 3-Cyanopropionate,COC(=O)CCC#N
+Tri-n-butylamine,CCCCN(CCCC)CCCC
+3-Methyl-2-butanone,CC(C)C(=O)C
+Isobutyronitrile,CC(C)C#N
+Tetrakis(dimethylamino)ethylene,CN(C)C(=C(N(C)C)N(C)C)N(C)C
+Di-n-butylamine,CCCCNCCCC
+Methyl Chloroacetate,COC(=O)CCl
+3-Methyl-1-butene,CC(C)C=C
+"1,2-Dibromoethane",C(CBr)Br
+Dimethylamine,CNC
+Benzaldehyde,C1=CC=C(C=C1)C=O
+Chloroform,C(Cl)(Cl)Cl
+n-Butyraldehyde,CCCC=O
+2-Ethyl-1-hexene,CCCCC(=C)CC
+Propionaldehyde,CCC=O
+n-Heptaldehyde,CCCCCCC=O
+"1,4-Dichloro-2-butene",C(C=CCCl)Cl
+Tri-n-butyl phosphine,CCCCP(CCCC)CCCC
+Dimethylphosphite,COP([O-])OC
+Methyl Cyanoacetate,COC(=O)CC#N
+Carbon Tetrachloride,C(Cl)(Cl)(Cl)Cl
+Bromotrichloromethane,C(Cl)(Cl)(Cl)Br
+Di-n-butylphosphine,CCCCPCCCC
+n-Butanethiol,CCCCS
+tert-Butanethiol,CC(C)(C)S
+Phosphine,P
+ethanethiol,CCS
+2-propanethiol,CC(C)S
+2-butanethiol,CCC(C)S
+t-butyl mercaptan,CC(C)(C)S
+1-nonanethiol,CCCCCCCCCS
+n-dodecyl mercaptan,CCCCCCCCCCCCS
+t-dodecylmercaptan,CC(C)C(C)(C)C(C)(C)C(C)(C)S
+dipentene dimercaptan,CC1CCC(CC1S)C(C)CS
+cyclohexyl mercaptan,C1CCC(CC1)S
+ethyl 2-mercaptopropionate,CCOC(=O)C(C)S
+Pentaerythritol tetrathioglycolate,C(C(=O)OCC(COC(=O)CS)(COC(=O)CS)COC(=O)CS)S
+2-mercapto-propionic acid,CC(C(=O)O)S
+Diisobutylphosphine,CC(C)CPCC(C)C
+"4,8-dimethyl-2-phosphabicyclo[3.3.1]nonane",CC1CCC2CC1PCC2C
+dibutyl phosphite,CCCCO[P+](=O)OCCCC
+Dioleyl phosphite,CCCCCCCCC=CCCCCCCCCO[P+](=O)OCCCCCCCCC=CCCCCCCCC
+triethyl silane,CC[SiH](CC)CC
+tetramethyl disiloxane,C[SiH2]O[Si](C)(C)C
+cinnamonitrile,C1=CC=C(C=C1)C=CC#N
+4-nitrobenzaldehyde,C1=CC(=CC=C1C=O)[N+](=O)[O-]
+2-napthaldehyde,C1=CC=C2C=C(C=CC2=C1)C=O
+1-napthaldehyde,C1=CC=C2C(=C1)C=CC=C2C=O
+2-phenylpropionaldehyde,CC(C=O)C1=CC=CC=C1
+trans-cinnamaldehyde,C1=CC=C(C=C1)C=CC=O
