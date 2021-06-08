@@ -39,6 +39,10 @@ Recent review summarising the state of the molecular property prediction and str
 
 * [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
 
+* [Mariia Matveieva & Pavel Polishchuk. Benchmarks for interpretation of QSAR models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Github](https://github.com/ci-lab-cz/ibenchmark). [Patrick Walter's blog on the paper](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html).
+
+Paper outlining good practices for interpretating QSAR (Quantative Structure-Property Prediction) models. Good set of heuristics and comparison in the paper in terms of model interpretability. Create 6 synthetic datasets with varying complexity for QSAR tasks. The authors compare interpretability of graph-based methods to conventional QSAR methods. In regards to performance graph-based models show low interpretation compared to conventional QSAR method. 
+
 ## Industry-focused drug discovery reviews 
 
 * [A. Bender and I. Cortés-Ciriano, “Artificial intelligence in drug discovery: what is realistic, what are illusions? Part 1: Ways to make an impact, and why we are not there yet,” Drug Discov. Today, vol. 26, no. 2, pp. 511–524, 2021](https://www.sciencedirect.com/science/article/pii/S1359644620305274)
