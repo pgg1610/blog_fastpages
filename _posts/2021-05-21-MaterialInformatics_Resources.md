@@ -9,7 +9,7 @@ title: Material-informatics Literature and Resources
 
 Last update: 28th May 2021
 
-Material Informatics is the solid-state, inorganic chemistry focused cousin to its organic chemistry comtemporary: Cheminformatics. In spirit, the aim of Material Informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
+Material Informatics is the solid-state, inorganic chemistry focused cousin to its organic chemistry contemporary: Cheminformatics. In spirit, the aim of Material Informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
 
 The potential application of material informatics can be seen in:  Microelectronics, aerospace, and automotive to defense, clean energy, and health services, where ever there's a demand for new advanced materials at even greater rates and lower costs. 
 
