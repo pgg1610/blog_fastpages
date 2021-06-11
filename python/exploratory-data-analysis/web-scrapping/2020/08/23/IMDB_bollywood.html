@@ -9,15 +9,15 @@
 <meta property="og:title" content="Analyze Bollywood movie ratings (1950-2020)" />
 <meta name="author" content="Pushkar G. Ghanekar" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Analyze IMDb Bollywood movie data to find average ratings and volume of movie releases over time." />
-<meta property="og:description" content="Analyze IMDb Bollywood movie data to find average ratings and volume of movie releases over time." />
+<meta name="description" content="Analyze IMDb Bollywood movie data to find average ratings and number of bollywood movie releases over time." />
+<meta property="og:description" content="Analyze IMDb Bollywood movie data to find average ratings and number of bollywood movie releases over time." />
 <link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/python/exploratory-data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html" />
 <meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/python/exploratory-data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html" />
 <meta property="og:site_name" content="Omnis tempus datum" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-23T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"http://pgg1610.github.io/blog_fastpages/python/exploratory-data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html","@type":"BlogPosting","headline":"Analyze Bollywood movie ratings (1950-2020)","dateModified":"2020-08-23T00:00:00-05:00","datePublished":"2020-08-23T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/exploratory-data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Analyze IMDb Bollywood movie data to find average ratings and volume of movie releases over time.","@context":"https://schema.org"}</script>
+{"url":"http://pgg1610.github.io/blog_fastpages/python/exploratory-data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html","@type":"BlogPosting","headline":"Analyze Bollywood movie ratings (1950-2020)","dateModified":"2020-08-23T00:00:00-05:00","datePublished":"2020-08-23T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/python/exploratory-data-analysis/web-scrapping/2020/08/23/IMDB_bollywood.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Analyze IMDb Bollywood movie data to find average ratings and number of bollywood movie releases over time.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Omnis tempus datum" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -103,7 +103,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Analyze Bollywood movie ratings (1950-2020)</h1><p class="page-description">Analyze IMDb Bollywood movie data to find average ratings and volume of movie releases over time.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-23T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Analyze Bollywood movie ratings (1950-2020)</h1><p class="page-description">Analyze IMDb Bollywood movie data to find average ratings and number of bollywood movie releases over time.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-23T00:00:00-05:00" itemprop="datePublished">
         Aug 23, 2020
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -111,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -234,11 +234,88 @@ window.onload = wrap_img;
 <h2 id="Load-Dataset">
 <a class="anchor" href="#Load-Dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Load Dataset<a class="anchor-link" href="#Load-Dataset"> </a>
 </h2>
-<p>The data set for the movie was scrapped from IMDB using <code>BeautifulSoup</code>. More details can be found in the supplementary python script.</p>
+<p>The data set for the movie was scrapped from IMDB using <code>BeautifulSoup</code>. A template for the code used for scrapping the data is shown in the cell below.</p>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">imdb_rating</span><span class="p">,</span> <span class="n">metascore</span><span class="p">,</span> <span class="n">num_votes</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span> 
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">requests</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">years_url</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span><span class="mi">2006</span><span class="p">)]</span>
+<span class="n">page_iter</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">151</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">year_url</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">years_url</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">page_num</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">page_iter</span><span class="p">):</span>
+        <span class="c1">#URL to parse </span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://www.imdb.com/search/title/?title_type=feature,&amp;release_date=</span><span class="si">{0}</span><span class="s1">,</span><span class="si">{0}</span><span class="s1">&amp;countries=in&amp;languages=hi&amp;sort=num_votes,desc&amp;start=</span><span class="si">{1}</span><span class="s1">&amp;ref_=adv_prv'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">year_url</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">page_num</span><span class="p">))</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        
+        <span class="c1">#Sleep to carve out load </span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+        
+        <span class="c1">#Estimate time elapsed per request</span>
+        <span class="n">requests</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Request:</span><span class="si">{}</span><span class="s1">; Frequency: </span><span class="si">{}</span><span class="s1"> requests/s'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">requests</span><span class="p">,</span> <span class="n">requests</span><span class="o">/</span><span class="n">elapsed_time</span><span class="p">))</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">html_soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
+        <span class="n">movie_containers</span> <span class="o">=</span> <span class="n">html_soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">'lister-item mode-advanced'</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">container</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">movie_containers</span><span class="p">):</span>
+            <span class="n">container_entry</span> <span class="o">=</span> <span class="n">movie_containers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+            <span class="n">movie_name</span> <span class="o">=</span> <span class="n">container_entry</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_name</span><span class="p">)</span>
+            
+            <span class="n">movie_year</span> <span class="o">=</span> <span class="n">container_entry</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'span'</span><span class="p">,</span><span class="n">class_</span><span class="o">=</span><span class="s1">'lister-item-year text-muted unbold'</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'()'</span><span class="p">)</span>
+            <span class="n">year</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_year</span><span class="p">)</span>
+            <span class="c1">#print(movie_name, movie_year)</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">movie_rating</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">container_entry</span><span class="o">.</span><span class="n">strong</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                <span class="n">imdb_rating</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_rating</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="n">imdb_rating</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">movie_votes</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">container_entry</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'span'</span><span class="p">,</span> <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span><span class="s1">'nv'</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)))</span>
+                <span class="n">num_votes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_votes</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                <span class="n">num_votes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+                
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">movie_metascore</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">container_entry</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'span'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">'metascore'</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="n">metascore</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_metascore</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="n">metascore</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Making dataframe for year </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year_url</span><span class="p">))</span>
+    <span class="n">df_movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span><span class="p">:</span><span class="n">names</span><span class="p">,</span><span class="s1">'year'</span><span class="p">:</span><span class="n">year</span><span class="p">,</span><span class="s1">'rating'</span><span class="p">:</span><span class="n">imdb_rating</span><span class="p">,</span><span class="s1">'metascore'</span><span class="p">:</span><span class="n">metascore</span><span class="p">,</span><span class="s1">'num_votes'</span><span class="p">:</span><span class="n">num_votes</span><span class="p">})</span>
+    <span class="n">df_movies</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./temp_imdb_files/bollywood_data_</span><span class="si">{}</span><span class="s1">.csv'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year_url</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">df_movies</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -337,6 +414,8 @@ memory usage: 464.0+ KB
 <h2 id="Cleaning-the-data">
 <a class="anchor" href="#Cleaning-the-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cleaning the data<a class="anchor-link" href="#Cleaning-the-data"> </a>
 </h2>
+<p>Since we are particularly interested in release year of the movies, we can sanitize that column first. To begin, we see what are different possible strings/elements in the year.</p>
+
 </div>
 </div>
 </div>
@@ -448,7 +527,7 @@ memory usage: 464.0+ KB
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I am using <code>strip</code> to loop each date entry in the dataset and strip off any residual characters which coincide with the those mentioned in the filter</p>
+<p>I am using <code>strip</code> to loop each date entry in the dataset and strip off any residual characters which coincide with the those mentioned in the filter. Another option is to use <code>replace</code> in pandas using <code>regex</code> filters</p>
 
 </div>
 </div>
@@ -895,6 +974,14 @@ memory usage: 464.0+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The two plots show the number of films released each year and the average IMDb rating for the movies released in that year. Now we might conclude that movies are getting selectively worse in spite of there being more movies being released, however the confidence in that statement is difficult to justify since the number of votes casted in these movies is an important parameter to keep in mind.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
