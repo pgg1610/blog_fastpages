@@ -7,16 +7,14 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 31st May 2021
+Last update: 14th June 2021
 
 ## Noteworthy blogs to follow:
 
 1. [Patrick Walters Blog on Cheminformatics](https://practicalcheminformatics.blogspot.com/2021/01/ai-in-drug-discovery-2020-highly.html)
     * [Pat Walter's Cheminformatics Resources list](https://github.com/PatWalters/resources/blob/main/cheminformatics_resources.md)
-    * [Cheminformatics Hands-on workshop](https://github.com/PatWalters/workshop)
-
+    
 2. [Is Life Worth Living](https://iwatobipen.wordpress.com/)
-    * [Very helpful cookbook on Python for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
 
 3. [Andrew White's ML for Molecules and Materials Online Book](https://whitead.github.io/dmol-book/intro.html)
 
@@ -24,7 +22,27 @@ Last update: 31st May 2021
 
 5. [Depth-First](https://depth-first.com)
 
+
+## Online resources 
+
+* [Pen's Python cookbook for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
+
+* [Patrick Walter's Cheminformatics Hands-on workshop](https://github.com/PatWalters/workshop)
+
+* [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD)
+
+* [Chem LibreText collection | ACS Division of Chemical Education's Committee on Computers in Chemical Education](https://bit.ly/2SxItoc)
+
+
 ## Reviews:
+
+* [F. Strieth-Kalthoff, F. Sandfort, M. H. S. Segler, and F. Glorius, Machine learning the ropes: principles, applications and directions in synthetic chemistry, Chem. Soc. Rev](https://pubs.rsc.org/en/content/articlelanding/2020/CS/C9CS00786E#fn1)
+
+Pedagogical account of various machine learning techniques, models, representation schemes from perspective of synthetic chemistry. Covers different applications of machine learning in synthesis planning, property prediction, molecular design, and reactivity prediction
+
+* [Mariia Matveieva & Pavel Polishchuk. Benchmarks for interpretation of QSAR models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Github](https://github.com/ci-lab-cz/ibenchmark). [Patrick Walter's blog on the paper](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html).
+
+Paper outlining good practices for interpretating QSAR (Quantative Structure-Property Prediction) models. Good set of heuristics and comparison in the paper in terms of model interpretability. Create 6 synthetic datasets with varying complexity for QSAR tasks. The authors compare interpretability of graph-based methods to conventional QSAR methods. In regards to performance graph-based models show low interpretation compared to conventional QSAR method. 
 
 * [W. Patrick Walters & Regina Barzilay. Applications of Deep Learning in Molecule Generation and Molecular Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00699)
 
@@ -39,9 +57,6 @@ Recent review summarising the state of the molecular property prediction and str
 
 * [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
 
-* [Mariia Matveieva & Pavel Polishchuk. Benchmarks for interpretation of QSAR models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Github](https://github.com/ci-lab-cz/ibenchmark). [Patrick Walter's blog on the paper](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html).
-
-Paper outlining good practices for interpretating QSAR (Quantative Structure-Property Prediction) models. Good set of heuristics and comparison in the paper in terms of model interpretability. Create 6 synthetic datasets with varying complexity for QSAR tasks. The authors compare interpretability of graph-based methods to conventional QSAR methods. In regards to performance graph-based models show low interpretation compared to conventional QSAR method. 
 
 ## Industry-focused drug discovery reviews 
 
@@ -216,14 +231,17 @@ Look at exploration of reaction space rather than compound space. SOAP kernel fo
 
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
-
-
 * [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
 
 
 
 
 ## Code / Packages:
+
+* [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160
+)
+
+Automates the selection of decision threshold for imbalanced classification task. Maximizes Cohen's Kappa on training subsets and use that threshold to predict test set. Threshold is adjusted to maximize a balanced accuracy metric. This workflow can be used for any classification algorithm that produces probability estimates. GHOST improves significantly the performance of the different classification models, outperforming other renowned methods. SMOTE was a good option but computationally expensive. The proposed thresholding procedures offer two major advantages compared to the other rebalancing techniques. First, they do not alter the original data set, and second, they do not require any retraining of the classification model. Validate the approach on real-world drug data and find reasonable improvement, the assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data. 
 
 * [MOSES - Benchmarking platform for generative models](https://arxiv.org/abs/1811.12823). [Github](https://github.com/molecularsets/moses)
 
