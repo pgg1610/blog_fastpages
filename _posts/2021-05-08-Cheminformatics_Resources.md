@@ -31,8 +31,7 @@ Last update: 14th June 2021
 
 * [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD)
 
-* [Chem LibreText collection | ACS Division of Chemical Education's Committee on Computers in Chemical Education](https://bit.ly/2SxItoc)
-
+* [Chem LibreText collection from ACS Division of Chemical Education](https://bit.ly/2SxItoc)
 
 ## Reviews:
 
