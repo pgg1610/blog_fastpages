@@ -211,7 +211,7 @@ Technical details of various algorithms being implemented for reaction mechanism
 
 Articles: 
 
-* [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021.])(https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
+* [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
 Newest version of RMG (v3) is updated to Python v3. It has ability to generate heterogeneous catalyst models, uncertainty analysis to conduct first order sensitivity analysis. RMG dataset for the thermochemical and kinetic parameters have been expanded. 
 
@@ -240,7 +240,7 @@ Look at exploration of reaction space rather than compound space. SOAP kernel fo
 * [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160
 )
 
-Automates the selection of decision threshold for imbalanced classification task. Maximizes Cohen's Kappa on training subsets and use that threshold to predict test set. Threshold is adjusted to maximize a balanced accuracy metric. This workflow can be used for any classification algorithm that produces probability estimates. GHOST improves significantly the performance of the different classification models, outperforming other renowned methods. SMOTE was a good option but computationally expensive. The proposed thresholding procedures offer two major advantages compared to the other rebalancing techniques. First, they do not alter the original data set, and second, they do not require any retraining of the classification model. Validate the approach on real-world drug data and find reasonable improvement, the assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data. 
+Automates the selection of decision threshold for imbalanced classification task. The assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data. 
 
 * [MOSES - Benchmarking platform for generative models](https://arxiv.org/abs/1811.12823). [Github](https://github.com/molecularsets/moses)
 
