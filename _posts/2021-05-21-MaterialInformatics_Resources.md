@@ -71,7 +71,7 @@ Similar to other machine-learning development efforts -- featurization or descri
 
 **Articles:**
 
-**1.Composition based:**
+**1. Composition based:**
 
 * [L. Ward et al., “Including crystal structure attributes in machine learning models of formation energies via Voronoi tessellations,” Phys. Rev. B, vol. 96, no. 2, 2017](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.024104)
 
@@ -85,7 +85,7 @@ Using attention-based graph networks on material composition to predict material
 
 Similar to the previous article in spirit, here authors use material composition to generate weighted graphs and predict material properties 
 
-**2.Structural based:**
+**2. Structural based:**
 
 * T. Xie and J. C. Grossman, “Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties,” Phys. Rev. Lett., vol. 120, no. 14, p. 145301, 2018.
 
@@ -104,7 +104,7 @@ Consider various encoding scheme and machine learning models to predict single a
 
 ## Articles:
 
-There is a rich history of using statistical model and data mining for predicting bulk inorganic crystal properties, for those articles reviews in the above section can points to key papers. In this section I list of the recent paper on encoding surface for predicting binding energies, which is fairly new and very active research direction: 
+There is a rich history of using statistical model and data mining for predicting bulk inorganic crystal properties. The review articles mentioned  in the above section discuss those areas quite nicely. In this section particularly focusses on papers looking at apply informatics to encode surfaces for modeling heterogeneous catalyst surfaces, which is fairly new and very active research direction: 
 
 * Ma, X., Li, Z., Achenie, L.E.K., and Xin, H. (2015). Machine-learning-augmented chemisorption model for CO2 electroreduction catalyst screening. J. Phys. Chem. Lett. 6, 3528–3533.
 
@@ -196,7 +196,7 @@ Helpful overview and benchmark of various model flavors and metrics to understan
 
 ## Reaction Network Predictions: 
 
-* [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021.])(https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
+* [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021.](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
 Newest version of RMG (v3) is updated to Python v3. It has ability to generate heterogeneous catalyst models, uncertainty analysis to conduct first order sensitivity analysis. RMG dataset for the thermochemical and kinetic parameters have been expanded. 
 
