@@ -7,17 +7,34 @@ categories: [exploratory-data-analysis, machine-learning, resources]
 title: Resources list
 ---
 
+Below is a non-exhaustive list of resources including blogs, courses, books, podcasts, and video lectures which I have found extremely useful in learning python, statstics, and machine-learning concepts. 
+
+
+
 ## Highly recommended machine-learning starting point:
 
-1. Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems. [Github](https://github.com/ageron/handson-ml)
+I strongly believe in the 80-20 rule, 80% of the output/results from 20% inputs. For practical purposes it is not always necessary dive super deep, rather its helpful to get a tldr version of the concept, assumptions, and start applying them right away. From that point of view, following is the rank order of how I have approached learning about machine learning and data science: 
 
-2. [Introduction to Statistical Learning + Elements of Statistical Learning](https://www.statlearning.com)
+1. [Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/). [Github](https://github.com/ageron/handson-ml)
 
-3. [Data science from scratch](https://github.com/joelgrus/data-science-from-scratch)
+I started to read on ML and data analysis using this wonderful book by Aurélien Géron. This is one of the best, if not the best, introductory books for machine learning. It is concise and simple to read and has jupyter notebooks to apply the concepts taught in it. Initial chapters (Part 1) of the book offer a strong foundation for traditional ML algorithms.
 
-4. [Practical Deep Learning for coders from FastAI](https://course19.fast.ai/index.html)
+2. [Data science from scratch](https://github.com/joelgrus/data-science-from-scratch)
 
-5. 100 page ML
+Besides just focusing on ML, having experience with data wrangling using PyData stack (NumPy, Pandas, and friends) is always a plus. In fact, most of the time  the limitation in setting up any ML model is massaging data into machine readable format. 
+
+3. [Practical Deep Learning for coders from Fast.AI](https://course19.fast.ai/index.html)
+
+Deep Learning is the most popular sub-branch of ML and something you should have a general understanding of. Jeremy Howard and team have setup this wonderful didactic coursework using PyTorch (personal preference) comprising of useful collection of walkthroughs and practical examples. 
+
+4. [Introduction to Statistical Learning + Elements of Statistical Learning](https://www.statlearning.com)
+
+Fantastic high-level math focussed introduction to algorithms.
+
+5. [100 page ML](http://themlbook.com)
+
+Approachable compendium of key ML concepts boiled down to key insights, offers a nice way to articulate concepts in a concise way. 
+
 
 ### Nice (free) online courses: 
 * [Harvard's CS 109](http://cs109.github.io/2015/pages/videos.html)
@@ -48,10 +65,7 @@ title: Resources list
 * [Project Euler](https://projecteuler.net/)
 * [Calm code tips on python code](https://calmcode.io/)
 
-Where should I start ML?
-[https://sgfin.github.io/learning-resources/#bayesML](https://sgfin.github.io/learning-resources/#bayesML)
-
-**Python writing better code** 
+**Writing better code** 
 * [Corey Schafer's Tips for writing better code](https://www.youtube.com/watch?v=C-gEQdGVXbk)
 * [Refactory blog](https://refactoring.guru/design-patterns/python)
 * [RealPython blog](https://realpython.com/python-application-layouts/)
@@ -68,42 +82,45 @@ Where should I start ML?
 
 ### Books
 
-* [Think Stats]([https://greenteapress.com/thinkstats2/thinkstats2.pdf](https://greenteapress.com/thinkstats2/thinkstats2.pdf))
+**Statstics & Exploratory Analysis**
 
+* [Think Stats by Allen Downley]([https://greenteapress.com/thinkstats2/thinkstats2.pdf](https://greenteapress.com/thinkstats2/thinkstats2.pdf))
 * [Telling stories with data](https://www.tellingstorieswithdata.com/)
 
-* [Online deep learning book by Ian Goodfellow](https://www.deeplearningbook.org/)
+**Data Science**
+
+* [Jakevdp Python Datascience Notebook](https://github.com/jakevdp/PythonDataScienceHandbook)
+
+**Data Visualization** 
 
 * [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
 
+**Machine-Learning**
+
 * [ML Online notebook](https://d2l.ai/index.html)
-
 * [ML interview book by Chip Huyen](https://huyenchip.com/ml-interviews-book/)
-
 * [Andrew White's Deep Learning for Molecules and Materials Notebook](https://whitead.github.io/dmol-book/ml/introduction.html#id3)
-
-* [Jakevdp Python Datascience Notbook](https://github.com/jakevdp/PythonDataScienceHandbook)
+* [Online deep learning book by Ian Goodfellow](https://www.deeplearningbook.org/)
 
 ### Key commentaries, perspectives, and reviews
 
-* [A Survey of Deep Learning for Scientific Discovery](https://arxiv.org/abs/2003.11755)
+**Area reviews**
 
+* [A Survey of Deep Learning for Scientific Discovery](https://arxiv.org/abs/2003.11755)
 * [The Discipline of Machine Learning](http://www.cs.cmu.edu/~tom/pubs/MachineLearning.pdf)
 
+**General tips**
+
+* [Scikit-learn documentation on common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html)
+* [Machine Learning that Matters](https://arxiv.org/abs/1206.4656)
+* [Three pitfalls to avoid in machine learning](https://www.nature.com/articles/d41586-019-02307-y)
 * [A Few Useful Things to Know about Machine Learning](https://sites.astro.caltech.edu/~george/ay122/cacm12.pdf)
 
-* [Scikit-learn has good documentation on common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html)
-
-* [Machine Learning that Matters](https://arxiv.org/abs/1206.4656)
-
-* [Three pitfalls to avoid in machine learning](https://www.nature.com/articles/d41586-019-02307-y)
+**Commentaries**
 
 * [Statistical Modeling: The Two Cultures](https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full)
-
 * [The Hardware Lottery](https://arxiv.org/abs/2009.06489)
-
 * [Machine Learning that Matters](https://arxiv.org/abs/1206.4656)
-
 * [Why is AI harder than we think](https://arxiv.org/pdf/2104.12871.pdf)
 
 
@@ -123,50 +140,62 @@ Where should I start ML?
 
 ### Video series 
 
+**Explanations**
+
 * [Neural networks series by 3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-
 * [Machine learning zero to hero](https://www.youtube.com/watch?v=VwVg9jCtqaU)
-
 * [Ali Godsi's video lecture series (highly recommend his lecture on Variational Auto Encoders)](https://uwaterloo.ca/data-analytics/teaching/deep-learning-2017)
+* [Khan Academy's Multivariate Calculus](https://www.khanacademy.org/math/multivariable-calculus)
+* [Khan Academy Statsitics + Probability](https://www.khanacademy.org/math/statistics-probability/)
+
+**PyCon talks**
 
 * [Statistics for Hackers, Jake Vanderplas](https://www.youtube.com/watch?v=-7I7MWTX0gA)
-
 * [Statistical Thinking for Data Science, Chris Fonnesbeck](https://www.youtube.com/watch?v=TGGGDpb04Yc)
+
+**AI talks**
 
 * [Dangers of AI is weirder than you think](https://www.youtube.com/watch?v=OhCzX0iLnOc)
 
-* [Khan Academy's Multivariate Calculus](https://www.khanacademy.org/math/multivariable-calculus)
 
-* [Khan Academy Statsitics + Probability](https://www.khanacademy.org/math/statistics-probability/)
+### Blogs
 
-* [3Blue1Brown's Essence of Linear Algebra Series](https://www.youtube.com/watch?v=fNk_z... )
+**Data Science focused**
 
-* [Intuitive guide to Linear Algebra](https://betterexplained.com/articles/linear-algebra-guide/)
-
-
-### Data Science Blogs
 * [Nate Silver's 538](https://fivethirtyeight.com/)
 * [Pudding's data viz](https://pudding.cool/)
 * [Spurious Correlations](https://www.tylervigen.com/spurious-correlations)
-* [Understanding uncertaintly](https://understandinguncertainty.org/blog)
+* [Understanding uncertainty](https://understandinguncertainty.org/blog)
 * [Math3ma Blog](https://www.math3ma.com/blog/)
 * [Max Wolfe](https://minimaxir.com/)
 * [Chris Albon](https://chrisalbon.com/)
-
-### Statistics Blogs
-* [Statistics by Jim](https://statisticsbyjim.com)
-* [Probably overthinking it](http://allendowney.blogspot.com)
-
-
-## ML inclined: 
-* [Chris Olah]([https://colah.github.io/](https://colah.github.io/))
 * [Caitlin Hudson](https://caitlinhudon.com/blog-links/)
-* [Andrej Karpathy, wonderfully didactic](https://karpathy.ai/)
 
-**General blogs & compilations**
+**Statistics Blogs**
+
+* [Statistics by Jim](https://statisticsbyjim.com)
+* [Probably overthinking it by Allen Downley](http://allendowney.blogspot.com)
+
+
+**ML inclined**
+* [Chris Olah]([https://colah.github.io/](https://colah.github.io/))
+* [Andrej Karpathy, wonderfully didactic posts](https://karpathy.ai/)
+* [Jay Alammer's NLP focussed](http://jalammar.github.io)
+
+**General compilations**
 
 * [Distill Blog](https://distill.pub)
 * [KDNuggets](kdnuggets.com)
+
+### Data-inspired Podcasts 
+
+Fanstastic resource, you can be a fly on the wall and listen to experts talk about a topic that interests you 
+
+* AI in Business
+* McKinsey AI
+* AZ16 podcast
+* Data Skeptic
+* Lex Friedman / AI podcast 
 
 ### YouTubers 
 List of YouTuber channels that never fail to inspire me 
@@ -179,9 +208,12 @@ List of YouTuber channels that never fail to inspire me
 * [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw)
 * [Vertisasium](https://www.youtube.com/user/1veritasium)
 * [Applied Science](https://www.youtube.com/user/bkraz333)
+* [MKBHD](https://www.youtube.com/user/marquesbrownlee)
+
+**Statistics**
+
 * [StatQuest](https://www.youtube.com/user/joshstarmer)
 * [Corey Schafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)
-* [MKBHD](https://www.youtube.com/user/marquesbrownlee)
 
 **2. Food**
 
@@ -204,14 +236,6 @@ List of YouTuber channels that never fail to inspire me
 * [Dhruv Rahtee](https://www.youtube.com/user/dhruvrathee)
 * [Johnny Harris](https://www.youtube.com/user/johnnymangosteen)
 * [Faye D'Souza](https://www.youtube.com/channel/UCzI8K9xO_5E-4iCP7Km6cRQ)
-
-### Podcasts 
-
-* AI in Business
-* McKinsey AI
-* AZ16 podcast
-* Data Skeptic
-* Lex Friedman / AI podcast 
 
 ### Diversity & Inclusion
 
