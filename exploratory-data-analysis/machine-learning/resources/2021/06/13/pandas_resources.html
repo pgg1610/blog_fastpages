@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Pandas function | Omnis tempus datum</title>
+<title>Pandas cookbook | Omnis tempus datum</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Pandas function" />
+<meta property="og:title" content="Pandas cookbook" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Pandas code snippets and recipes that I revisit now and again." />
 <meta property="og:description" content="Pandas code snippets and recipes that I revisit now and again." />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-06-13T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html","@type":"BlogPosting","headline":"Pandas function","dateModified":"2021-06-13T00:00:00-05:00","datePublished":"2021-06-13T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html"},"description":"Pandas code snippets and recipes that I revisit now and again.","@context":"https://schema.org"}</script>
+{"url":"http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html","@type":"BlogPosting","headline":"Pandas cookbook","dateModified":"2021-06-13T00:00:00-05:00","datePublished":"2021-06-13T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html"},"description":"Pandas code snippets and recipes that I revisit now and again.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Omnis tempus datum" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -102,13 +102,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Pandas function</h1><p class="page-description">Pandas code snippets and recipes that I revisit now and again.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-13T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Pandas cookbook</h1><p class="page-description">Pandas code snippets and recipes that I revisit now and again.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-13T00:00:00-05:00" itemprop="datePublished">
         Jun 13, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -139,7 +139,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#statistics--distributions">Statistics &amp; Distributions</a></li>
 <li class="toc-entry toc-h2"><a href="#convert-variables">Convert variables</a></li>
 <li class="toc-entry toc-h2"><a href="#grouping-data-by-entries-in-a-row">Grouping data by entries in a row:</a></li>
-</ul><p>Some Pandas code snippets and recipes that I revisit now and again. The snippets are adopted from different python scripts written over time, ignore the variable names.</p>
+</ul><p>Selected Pandas code snippets and recipes that I revisit now and again. The snippets are adopted from different python scripts written over time, ignore the variable names.</p>
+
+<p>This post was inspired by the wonderful work of <a href="https://chrisalbon.com/#python">Chris Albon</a> and his snippets of code blocks.</p>
 
 <blockquote>
   <p>Last update: 13th June 2021</p>
@@ -154,7 +156,7 @@ window.onload = wrap_img;
 </code></pre></div></div>
 
 <p><strong>Saving a file to not have ‘Unamed’ column</strong></p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s">'cta_w_LSV_cvae_63012.csv'</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">df1</span><span class="p">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s">'file_name_to_save_as.csv'</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">df1</span><span class="p">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><strong>Information about the dataframe</strong></p>
@@ -166,7 +168,7 @@ window.onload = wrap_img;
 </code></pre></div></div>
 
 <p><strong>Replace</strong></p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">value</span> <span class="n">to</span> <span class="n">replace</span><span class="p">],</span> <span class="n">value_to_replace_with</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span> <span class="p">[</span><span class="n">list_of_value_to_replace</span><span class="p">],</span> <span class="n">value_to_replace_with</span><span class="p">)</span>
 <span class="c1"># Eg: df.replace( [98-99], np.nan)
 </span></code></pre></div></div>
 
@@ -247,18 +249,18 @@ window.onload = wrap_img;
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample_incomplete_rows</span> <span class="o">=</span> <span class="n">housing</span><span class="p">[</span><span class="n">housing</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)].</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><strong>Get number of null entries in the dataframe columns</strong></p>
+<p><strong>Get number of NULL entries in the dataframe columns</strong></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">null_columns</span><span class="o">=</span><span class="n">food_df</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="n">food_df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">()]</span>
 <span class="n">food_df</span><span class="p">[</span><span class="n">null_columns</span><span class="p">].</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><strong>Print full rows having null entries in the df</strong></p>
+<p><strong>Print full rows having NULL entries in the df</strong></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_NaN</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">.</span><span class="n">isnull</span><span class="p">()</span>
 <span class="n">row_has_NaN</span> <span class="o">=</span> <span class="n">is_NaN</span><span class="p">.</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">rows_with_NaN</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">[</span><span class="n">row_has_NaN</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p><strong>Dropping NaN only from a particular column</strong></p>
+<p><strong>Dropping NULL only from a particular column</strong></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_income_drop_na</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">'INCOME2'</span><span class="p">])</span>
 </code></pre></div></div>
 
@@ -305,7 +307,7 @@ window.onload = wrap_img;
 </ul>
 
 <p><strong>Clean up entries with partial matches</strong></p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'Store Name'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'Hy-Vee'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="s">'Store_Group_1'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Hy-Vee'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'Store Name'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'Wal'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="s">'Store_Group_1'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Walmarts'</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">south_indian_tag</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Chettinad'</span><span class="p">,</span> <span class="s">'Andhra'</span><span class="p">,</span> <span class="s">'Karnataka'</span><span class="p">,</span> <span class="s">'Tamil Nadu'</span><span class="p">,</span> <span class="s">'Kerala Recipes'</span><span class="p">,</span> <span class="s">'South Indian Recipes'</span><span class="p">]</span>
