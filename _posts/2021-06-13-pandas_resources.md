@@ -3,13 +3,14 @@ toc: true
 layout: post
 description: Pandas code snippets and recipes that I revisit now and again.
 categories: [exploratory-data-analysis, machine-learning, resources]
-title: Pandas function
+title: Pandas cookbook
 ---
 
-Some Pandas code snippets and recipes that I revisit now and again. The snippets are adopted from different python scripts written over time, ignore the variable names.
+Selected Pandas code snippets and recipes that I revisit now and again. The snippets are adopted from different python scripts written over time, ignore the variable names.
+
+This post was inspired by the wonderful work of [Chris Albon](https://chrisalbon.com/#python) and his snippets of code blocks. 
 
 > Last update: 13th June 2021
-
 
 ## Reading and Writing 
 
@@ -21,7 +22,7 @@ pd.read_csv(file_name, header=None, names=['col1','col2'])
 
 **Saving a file to not have 'Unamed' column**
 ```python
-df1.to_csv(os.path.join(output_dir, 'cta_w_LSV_cvae_63012.csv'), sep=',',columns=df1.columns, index=False)
+df1.to_csv(os.path.join(output_dir, 'file_name_to_save_as.csv'), sep=',',columns=df1.columns, index=False)
 ```
 
 **Information about the dataframe**
@@ -36,7 +37,7 @@ pandas_dataframe.describe().round(2)
 
 **Replace**
 ```python
-df = df.replace( [list of value to replace], value_to_replace_with)
+df = df.replace( [list_of_value_to_replace], value_to_replace_with)
 # Eg: df.replace( [98-99], np.nan)
 ```
 
@@ -126,21 +127,21 @@ housing["total_bedrooms"].fillna( attribute_median, inplace=True )
 sample_incomplete_rows = housing[housing.isnull().any(axis=1)].head()
 ```
 
-**Get number of null entries in the dataframe columns**
+**Get number of NULL entries in the dataframe columns**
 ```python
 null_columns=food_df.columns[food_df.isnull().any()]
 food_df[null_columns].isnull().sum()
 ```
 
 
-**Print full rows having null entries in the df**
+**Print full rows having NULL entries in the df**
 ```python
 is_NaN = food_df.isnull()
 row_has_NaN = is_NaN.any(axis=1)
 rows_with_NaN = food_df[row_has_NaN]
 ```
 
-**Dropping NaN only from a particular column**
+**Dropping NULL only from a particular column**
 ```python
 df_income_drop_na = df.dropna(subset=['INCOME2'])
 ```
@@ -189,7 +190,7 @@ food_df_top_cuisine = food_df.loc[ food_df['Cuisine'].isin(list(cuisin_counts_mo
 
 **Clean up entries with partial matches**
 ```python
-df.loc[df['Store Name'].str.contains('Hy-Vee', case=False), 'Store_Group_1'] = 'Hy-Vee'
+df.loc[df['Store Name'].str.contains('Wal', case=False), 'Store_Group_1'] = 'Walmarts'
 ```
 
 ```python
