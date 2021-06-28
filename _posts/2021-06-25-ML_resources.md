@@ -13,36 +13,44 @@ Below is a non-exhaustive list of resources including blogs, courses, books, pod
 
 I am self taught machine learning practitioner. I strongly believe in the 80-20 rule, 80% of the output/results from 20% inputs. In that spirit, following are top five sources to get upto speed on applying ML and learning its basics. For practical purposes it is not always necessary dive super deep, rather its helpful to get a tldr version of the concept, assumptions, and start applying them right away. 
 
-1. [Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/). [Github](https://github.com/ageron/handson-ml)
+* [Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/). [Github](https://github.com/ageron/handson-ml)
 
 I started to read on ML and data analysis using this wonderful book by Aurélien Géron. This is one of the best, if not the best, introductory books for machine learning. It is concise and simple to read and has jupyter notebooks to apply the concepts taught in it. Initial chapters (Part 1) of the book offer a strong foundation for traditional ML algorithms.
 
-2. [Data science from scratch](https://github.com/joelgrus/data-science-from-scratch)
+* [Data science from scratch](https://github.com/joelgrus/data-science-from-scratch)
 
 Besides just focusing on ML, having experience with data wrangling using PyData stack (NumPy, Pandas, and friends) is always a plus. In fact, most of the time  the limitation in setting up any ML model is massaging data into machine readable format. 
 
-3. [Practical Deep Learning for coders from Fast.AI](https://course19.fast.ai/index.html)
+* [Practical Deep Learning for coders from Fast.AI (using PyTorch)](https://course19.fast.ai/index.html)
 
 Deep Learning is the most popular sub-branch of ML and something you should have a general understanding of. Jeremy Howard and team have setup this wonderful didactic coursework using PyTorch (personal preference) comprising of useful collection of walkthroughs and practical examples. 
 
-4. [Introduction to Statistical Learning + Elements of Statistical Learning](https://www.statlearning.com)
+* [Introduction to Statistical Learning + Elements of Statistical Learning](https://www.statlearning.com)
 
 Fantastic high-level math focussed introduction to algorithms.
 
-5. [100 page ML](http://themlbook.com)
+* [100 page ML](http://themlbook.com)
 
 Approachable compendium of key ML concepts boiled down to key insights, offers a nice way to articulate concepts in a concise way. 
 
 
 ### Nice (free) online courses: 
-* [Harvard's CS 109](http://cs109.github.io/2015/pages/videos.html)
-* [Stanford's CS - CNN course](http://cs231n.stanford.edu/)
+
+**Machine Learning** 
+
 * [MIT's Intro to Deep Learning](http://introtodeeplearning.com/)
 * [Google's ML crash course](https://developers.google.com/machine-learning/crash-course)
-* [Deep learning for molecules](https://whitead.github.io/dmol-book/dl/gnn.html)
+* [Stanford's CS - CNN course](http://cs231n.stanford.edu/)
 * [NYU's PyTorch Deep learning](https://atcold.github.io/pytorch-Deep-Learning/)
-* [CMU's course on Computer Graphics](http://15462.courses.cs.cmu.edu/fall2020/)
+
+**Data Science and Computation**
+
 * [MIT's course on Computational Thinking](https://computationalthinking.mit.edu/Fall20/)
+* [Harvard's CS 109](http://cs109.github.io/2015/pages/videos.html)
+
+**Miscellaneous** 
+
+* [CMU's course on Computer Graphics](http://15462.courses.cs.cmu.edu/fall2020/)
 
 ### Python in general 
 
