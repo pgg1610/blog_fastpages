@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Pandas function | Omnis tempus datum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Pandas function" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pandas code snippets and recipes that I revisit now and again." />
+<meta property="og:description" content="Pandas code snippets and recipes that I revisit now and again." />
+<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html" />
+<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html" />
+<meta property="og:site_name" content="Omnis tempus datum" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-13T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html","@type":"BlogPosting","headline":"Pandas function","dateModified":"2021-06-13T00:00:00-05:00","datePublished":"2021-06-13T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html"},"description":"Pandas code snippets and recipes that I revisit now and again.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Omnis tempus datum" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167983168-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167983168-2');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon_glass.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog_fastpages/">Omnis tempus datum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog_fastpages/about/">About Me</a><a class="page-link" href="/blog_fastpages/search/">Search</a><a class="page-link" href="/blog_fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Pandas function</h1><p class="page-description">Pandas code snippets and recipes that I revisit now and again.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-13T00:00:00-05:00" itemprop="datePublished">
+        Jun 13, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#exploratory-data-analysis">exploratory-data-analysis</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#machine-learning">machine-learning</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#resources">resources</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#reading-and-writing">Reading and Writing</a></li>
+<li class="toc-entry toc-h2"><a href="#quick-plotting">Quick plotting</a></li>
+<li class="toc-entry toc-h2"><a href="#handling-missing-values">Handling missing values</a></li>
+<li class="toc-entry toc-h2"><a href="#join-two-datasets">Join two datasets</a></li>
+<li class="toc-entry toc-h2"><a href="#searching">Searching</a></li>
+<li class="toc-entry toc-h2"><a href="#statistics--distributions">Statistics &amp; Distributions</a></li>
+<li class="toc-entry toc-h2"><a href="#convert-variables">Convert variables</a></li>
+<li class="toc-entry toc-h2"><a href="#grouping-data-by-entries-in-a-row">Grouping data by entries in a row:</a></li>
+</ul><p>Some Pandas code snippets and recipes that I revisit now and again. The snippets are adopted from different python scripts written over time, ignore the variable names.</p>
+
+<blockquote>
+  <p>Last update: 13th June 2021</p>
+</blockquote>
+
+<h2 id="reading-and-writing">
+<a class="anchor" href="#reading-and-writing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reading and Writing</h2>
+
+<p><strong>Basic reading a blank csv file</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># If you have no column names but know the number of columns
+</span><span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">'col1'</span><span class="p">,</span><span class="s">'col2'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><strong>Saving a file to not have ‘Unamed’ column</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s">'cta_w_LSV_cvae_63012.csv'</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">df1</span><span class="p">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Information about the dataframe</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pandas_dataframe</span><span class="p">.</span><span class="n">info</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Summary statistics (mean, quartile ranges)</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pandas_dataframe</span><span class="p">.</span><span class="n">describe</span><span class="p">().</span><span class="nb">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Replace</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">value</span> <span class="n">to</span> <span class="n">replace</span><span class="p">],</span> <span class="n">value_to_replace_with</span><span class="p">)</span>
+<span class="c1"># Eg: df.replace( [98-99], np.nan)
+</span></code></pre></div></div>
+
+<p><strong>Replace characters in the columns</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># List of characters to remove
+</span><span class="n">chars_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="s">'+'</span><span class="p">,</span><span class="s">'$'</span><span class="p">,</span><span class="s">','</span><span class="p">]</span>
+
+<span class="c1"># List of column names to clean
+</span><span class="n">cols_to_clean</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Installs'</span><span class="p">,</span><span class="s">'Price'</span><span class="p">]</span>
+
+<span class="c1"># Loop for each column in cols_to_clean
+</span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols_to_clean</span><span class="p">:</span>
+    <span class="c1"># Loop for each char in chars_to_remove
+</span>    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chars_to_remove</span><span class="p">:</span>
+        <span class="c1"># Replace the character with an empty string
+</span>        <span class="n">apps</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">apps</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s">''</span><span class="p">))</span>
+    <span class="c1"># Convert col to float data type
+</span>    <span class="n">apps</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">apps</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Convert spaces titles in the row to one word separated by ‘-‘</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reduced_df</span><span class="p">[</span><span class="s">'product_title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">reduced_df</span><span class="p">[</span><span class="s">'product_title'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">lower</span><span class="p">().</span><span class="n">replace</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="s">'-'</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Define a new column with temp entries</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pandas_dataframe</span><span class="p">[</span><span class="s">'columns_name'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span> 
+</code></pre></div></div>
+
+<p><strong>Create columns in a loop</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pandas_dataframe</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'feature_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p><strong>Dropping miscellaneous columns and NaN entries</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">columns_to_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s">'CookTimeInMins'</span><span class="p">,</span> <span class="s">'Servings'</span><span class="p">,</span> <span class="s">'Course'</span><span class="p">,</span> <span class="s">'Diet'</span><span class="p">,</span> <span class="s">'Instructions'</span><span class="p">,</span> <span class="s">'TranslatedInstructions'</span><span class="p">,</span> <span class="s">'URL'</span><span class="p">]</span>
+<span class="n">food_df</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns_to_drop</span><span class="p">).</span><span class="n">dropna</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="quick-plotting">
+<a class="anchor" href="#quick-plotting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick plotting</h2>
+
+<p><strong>Simple pearson correlation plot</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Generate Pearson Correlation Matrix for HOUSING 
+</span><span class="n">corr_matrix</span><span class="o">=</span><span class="n">housing</span><span class="p">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Edit the visuals and precision 
+</span><span class="n">corr_matrix</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s">'coolwarm'</span><span class="p">).</span><span class="n">set_precision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Look at Pearson values for one attribute 
+</span><span class="n">corr_matrix</span><span class="p">[</span><span class="s">'median_house_value'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Plot multiple scatter plots</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">scatter_matrix</span>
+<span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="s">"median_house_value"</span><span class="p">,</span> <span class="s">"median_income"</span><span class="p">,</span> <span class="s">"total_rooms"</span><span class="p">,</span>
+              <span class="s">"housing_median_age"</span><span class="p">]</span>
+<span class="n">scatter_axes</span> <span class="o">=</span> <span class="n">scatter_matrix</span><span class="p">(</span><span class="n">housing</span><span class="p">[</span><span class="n">attributes</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h2 id="handling-missing-values">
+<a class="anchor" href="#handling-missing-values" aria-hidden="true"><span class="octicon octicon-link"></span></a>Handling missing values</h2>
+
+<p><strong>Option A: Dropping values in the columns with NaN</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">housing</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">"total_bedrooms"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><strong>Option B: Drop that column entirely</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">housing</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s">"total_bedrooms"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Option C: Fill missing value with some central tendency</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">attribute_median</span> <span class="o">=</span> <span class="n">housing</span><span class="p">[</span><span class="s">"total_bedrooms"</span><span class="p">].</span><span class="n">median</span><span class="p">()</span>
+<span class="n">housing</span><span class="p">[</span><span class="s">"total_bedrooms"</span><span class="p">].</span><span class="n">fillna</span><span class="p">(</span> <span class="n">attribute_median</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span> <span class="p">)</span> 
+</code></pre></div></div>
+
+<p><strong>Checking the NULL enties in the dataset</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample_incomplete_rows</span> <span class="o">=</span> <span class="n">housing</span><span class="p">[</span><span class="n">housing</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)].</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Get number of null entries in the dataframe columns</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">null_columns</span><span class="o">=</span><span class="n">food_df</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="n">food_df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">()]</span>
+<span class="n">food_df</span><span class="p">[</span><span class="n">null_columns</span><span class="p">].</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Print full rows having null entries in the df</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_NaN</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">.</span><span class="n">isnull</span><span class="p">()</span>
+<span class="n">row_has_NaN</span> <span class="o">=</span> <span class="n">is_NaN</span><span class="p">.</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rows_with_NaN</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">[</span><span class="n">row_has_NaN</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><strong>Dropping NaN only from a particular column</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_income_drop_na</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">'INCOME2'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="join-two-datasets">
+<a class="anchor" href="#join-two-datasets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Join two datasets</h2>
+
+<p><strong>1. Inner join</strong></p>
+
+<p>Only returns rows with matching values in both df.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A_B</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">common</span> <span class="n">column</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">suffixes</span> <span class="o">=</span> <span class="n">tuples</span> <span class="n">to</span> <span class="n">append</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">columns</span> <span class="k">with</span> <span class="n">similar</span> <span class="n">names</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<p>Remember that .merge() only returns rows where the values match in both tables.</p>
+
+<p><strong>2. Merging more than one table</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">'col_A'</span><span class="p">)</span> \
+    <span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">'col_B'</span><span class="p">)</span> \
+    <span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df4</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">'col_C'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>3. Merge across multiple columns tags</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df2</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s">'col_A'</span><span class="p">,</span> <span class="s">'col_B'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="searching">
+<a class="anchor" href="#searching" aria-hidden="true"><span class="octicon octicon-link"></span></a>Searching</h2>
+
+<p><strong>Find columns names based on a string</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_raw_data</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="n">df_raw_data</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'STRING_SUBSET'</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p><strong>Filter entries in the column based on the threshold</strong></p>
+<ul>
+  <li>Data has indian-inspired international cuisines which are not what we are interested in
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">cuisin_counts</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">[</span><span class="s">'Cuisine'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">cuisin_counts_more_than_50</span> <span class="o">=</span> <span class="n">cuisin_counts</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">cuisin_counts</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)]</span>
+<span class="n">food_df_top_cuisine</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">food_df</span><span class="p">[</span><span class="s">'Cuisine'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cuisin_counts_more_than_50</span><span class="p">.</span><span class="n">index</span><span class="p">))</span>  <span class="p">]</span> 
+<span class="c1">#Dropping entries in `food_df` which have non-ind
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>Clean up entries with partial matches</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'Store Name'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'Hy-Vee'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="s">'Store_Group_1'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Hy-Vee'</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">south_indian_tag</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Chettinad'</span><span class="p">,</span> <span class="s">'Andhra'</span><span class="p">,</span> <span class="s">'Karnataka'</span><span class="p">,</span> <span class="s">'Tamil Nadu'</span><span class="p">,</span> <span class="s">'Kerala Recipes'</span><span class="p">,</span> <span class="s">'South Indian Recipes'</span><span class="p">]</span>
+<span class="n">food_df_top_cuisine</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">food_df_top_cuisine</span><span class="p">[</span><span class="s">'Cuisine'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">south_indian_tag</span><span class="p">),</span> <span class="s">'Combined_cuisine'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'South Indian'</span>
+</code></pre></div></div>
+
+<p><strong>With <code class="language-plaintext highlighter-rouge">or</code> statements</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String_filter_option</span> <span class="o">=</span> <span class="p">[</span><span class="s">'cond_1'</span><span class="p">,</span> <span class="s">'cond_2'</span><span class="p">]</span>
+<span class="n">pandas_dataframe</span><span class="p">[</span> <span class="n">Pandas_dataframe</span><span class="p">[</span> <span class="s">'columns'</span> <span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'|'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">string_filter_option</span><span class="p">))</span> <span class="p">]</span> 
+</code></pre></div></div>
+
+<p><strong>Filter rows in the pandas df with another list</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">'May'</span><span class="p">,</span><span class="s">'Jun'</span><span class="p">,</span><span class="s">'Jul'</span><span class="p">,</span><span class="s">'Aug'</span><span class="p">,</span><span class="s">'Sep'</span><span class="p">]</span>
+<span class="n">df_pH</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_pH</span><span class="p">[</span><span class="s">'Month'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">month_list</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p><strong>Filter out  values using names: Making a separate list of those that DO NOT satisfy the constraint</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">no_bands</span> <span class="o">=</span> <span class="n">halftime_musicians</span><span class="p">[</span> <span class="o">~</span><span class="n">halftime_musicians</span><span class="p">.</span><span class="n">musician</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'Marching'</span><span class="p">)</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="statistics--distributions">
+<a class="anchor" href="#statistics--distributions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statistics &amp; Distributions</h2>
+
+<p><strong>Histogram</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'WTKG3'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>CDF and PDF</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Functions for PMF and CDF, we will come to those later in the notebook 
+</span><span class="k">def</span> <span class="nf">pmf</span><span class="p">(</span><span class="n">pandas_series</span><span class="p">):</span>
+    <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">pandas_series</span><span class="p">,</span> <span class="n">return_counts</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">pmf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span> <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span> <span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">pmf</span> 
+
+<span class="k">def</span> <span class="nf">cdf</span><span class="p">(</span><span class="n">pandas_series</span><span class="p">):</span>
+    <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">pandas_series</span><span class="p">,</span> <span class="n">return_counts</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">pmf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span> <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span> <span class="p">]</span>
+    <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">pmf</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> 
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pmf</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">cdf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pmf</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">pmf</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> 
+        
+    <span class="k">return</span> <span class="n">cdf</span>
+</code></pre></div></div>
+
+<p><strong>Confidence interval</strong></p>
+
+<p>A bootstrap analysis of the reduction of deaths due to handwashing</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boot_mean_diff</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
+    <span class="n">boot_before</span> <span class="o">=</span> <span class="n">before_proportion</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">boot_after</span> <span class="o">=</span> <span class="n">after_proportion</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">boot_mean_diff</span><span class="p">.</span><span class="n">append</span><span class="p">(</span> <span class="n">boot_after</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">boot_before</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>Calculating a 95% confidence interval from <code class="language-plaintext highlighter-rouge">boot_mean_diff</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confidence_interval</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">boot_mean_diff</span><span class="p">).</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.025</span><span class="p">,</span><span class="mf">0.975</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="convert-variables">
+<a class="anchor" href="#convert-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Convert variables</h2>
+
+<p><strong>Convert continuous variable to discrete</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">cut</span> 
+</code></pre></div></div>
+
+<p>Example 1:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">housing</span><span class="p">[</span><span class="s">"income_cat"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">cut</span><span class="p">(</span><span class="n">housing</span><span class="p">[</span><span class="s">"median_income"</span><span class="p">],</span>
+                               <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">inf</span><span class="p">],</span> <span class="c1">#bins around 2-5 income bracket
+</span>                               <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Use cut when you need to segment and sort data values into bins. This function is also useful for going from a continuous variable to a categorical variable. For example, cut could convert ages to groups of age ranges. Supports binning into an equal number of bins, or a pre-specified array of bins.</p>
+
+<p>Example 2:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">cut</span><span class="p">(</span><span class="n">iris_df</span><span class="p">[</span><span class="s">'sepal_length'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">'low'</span><span class="p">,</span><span class="s">'med'</span><span class="p">,</span><span class="s">'high'</span><span class="p">],</span> <span class="n">retbins</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Fine tune the labeling</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert_to_cat</span><span class="p">(</span><span class="n">panda_series</span><span class="p">):</span>
+    <span class="n">first_quarter</span> <span class="o">=</span> <span class="n">panda_series</span><span class="p">.</span><span class="n">describe</span><span class="p">()[</span><span class="s">'25%'</span><span class="p">]</span>
+    <span class="n">third_quarter</span> <span class="o">=</span> <span class="n">panda_series</span><span class="p">.</span><span class="n">describe</span><span class="p">()[</span><span class="s">'75%'</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">first_quarter</span><span class="p">,</span> <span class="n">third_quarter</span><span class="p">)</span>
+    
+    <span class="n">cat_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">'temp'</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">panda_series</span><span class="p">)</span> 
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">panda_series</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">entry</span> <span class="o">&lt;=</span> <span class="n">first_quarter</span><span class="p">:</span> 
+            <span class="n">cat_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">'SMALL'</span>
+        <span class="k">elif</span> <span class="n">first_quarter</span> <span class="o">&lt;</span> <span class="n">entry</span> <span class="o">&lt;=</span> <span class="n">third_quarter</span><span class="p">:</span>
+            <span class="n">cat_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">'MED'</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cat_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">'LARGE'</span>
+    
+    <span class="k">return</span> <span class="n">cat_list</span>
+</code></pre></div></div>
+
+<p><strong>Cateogorical variables to one-hot</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pandas get dummies is one option 
+</span><span class="n">pd</span><span class="p">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">iris_df</span><span class="p">[</span><span class="s">'sepal_width_cat'</span><span class="p">],</span> <span class="n">prefix</span><span class="o">=</span><span class="s">'sepal_width'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>One-hot discrete variable with more granularity</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">OHE_discreet</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">pandas_series</span><span class="p">,</span> <span class="n">intervals</span><span class="p">):</span>
+    <span class="s">'''
+    define range for one-hot, for every entry find the closest value in the one-hot
+    '''</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">pandas_series</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pandas_series</span><span class="p">),</span> <span class="n">intervals</span><span class="p">)</span>
+    <span class="n">ohe</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">ohe</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">point</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ohe</span>
+
+<span class="n">iris_df</span><span class="p">[</span><span class="s">'sepal_width_OHE'</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris_df</span><span class="p">[</span><span class="s">'sepal_width'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="n">OHE_discreet</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">iris_df</span><span class="p">[</span><span class="s">'sepal_width'</span><span class="p">],</span> <span class="mi">11</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="grouping-data-by-entries-in-a-row">
+<a class="anchor" href="#grouping-data-by-entries-in-a-row" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grouping data by entries in a row:</h2>
+
+<p><strong>Example 1</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">licenses_zip_ward</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'alderman'</span><span class="p">).</span><span class="n">agg</span><span class="p">({</span><span class="s">'income'</span><span class="p">:</span><span class="s">'median'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>Estimate the statistic of ‘income’ after grouping the dataframe by row entries in column ‘alderman’</p>
+
+<p><strong>Example 2</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counted_df</span> <span class="o">=</span> <span class="n">licenses_owners</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'title'</span><span class="p">).</span><span class="n">agg</span><span class="p">({</span><span class="s">'account'</span><span class="p">:</span><span class="s">'count'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>I want to know the number of account each unique title entry has in the df. Here the column <code class="language-plaintext highlighter-rouge">account</code> was counted and the total entries were reported when the data frame was first grouped by entries in the title column.</p>
+
+<p><strong>Example 3</strong></p>
+
+<p>Groupby multiple columns and show the counts</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a column that will store the month
+</span><span class="n">data</span><span class="p">[</span><span class="s">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">month</span>
+
+<span class="c1"># Create a column that will store the year
+</span><span class="n">data</span><span class="p">[</span><span class="s">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">year</span>
+
+<span class="c1"># Group by the month and year and count the pull requests
+</span><span class="n">counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'month'</span><span class="p">,</span><span class="s">'year'</span><span class="p">])[</span><span class="s">'pid'</span><span class="p">].</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Example 4</strong></p>
+
+<p>Group and pivot table. Find the number of pull_request for the repo every year for the two authors:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The developers we are interested in
+</span><span class="n">authors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'xeno-by'</span><span class="p">,</span> <span class="s">'soc'</span><span class="p">]</span>
+
+<span class="c1"># Get all the developers' pull requests
+</span><span class="n">by_author</span> <span class="o">=</span> <span class="n">pulls</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">pulls</span><span class="p">[</span><span class="s">'user'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">authors</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">by_author</span><span class="p">[</span><span class="s">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_author</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">year</span> 
+
+<span class="c1"># Count the number of pull requests submitted each year
+</span><span class="n">counts</span> <span class="o">=</span> <span class="n">by_author</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'user'</span><span class="p">,</span> <span class="s">'year'</span><span class="p">]).</span><span class="n">agg</span><span class="p">({</span><span class="s">'pid'</span><span class="p">:</span> <span class="s">'count'</span><span class="p">}).</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Convert the table to a wide format
+</span><span class="n">counts_wide</span> <span class="o">=</span> <span class="n">counts</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s">'year'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">'user'</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s">'pid'</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Plot the results
+</span><span class="n">counts_wide</span>
+</code></pre></div></div>
+
+
+  </div><a class="u-url" href="/blog_fastpages/exploratory-data-analysis/machine-learning/resources/2021/06/13/pandas_resources.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog_fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog_fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Every moment is a data point</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/pgg1610" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/pgg1610" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/pushkarghanekar" title="pushkarghanekar"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/mepgg" title="mepgg"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
