@@ -22,8 +22,9 @@ pd.read_csv(file_name, header=None, names=['col1','col2'])
 
 **Saving a file to not have 'Unamed' column**
 ```python
-df1.to_csv(os.path.join(output_dir, 'file_name_to_save_as.csv'), sep=',',columns=df1.columns, index=False)
+df1.to_csv(os.path.join(output_dir, 'file_name_to_save_as.csv'), sep=',',columns=df1.columns, index=False, header=False) # header = None for no column names
 ```
+
 
 **Information about the dataframe**
 ```python
@@ -222,7 +223,6 @@ no_bands = halftime_musicians[ ~halftime_musicians.musician.str.contains('Marchi
 ```python
 df.hist('WTKG3')
 ```
-
 
 **CDF and PDF** 
 

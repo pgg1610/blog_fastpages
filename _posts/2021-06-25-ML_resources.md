@@ -144,6 +144,11 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [Medium blog on graph neural networks](https://gordicaleksa.medium.com/how-to-get-started-with-graph-machine-learning-afa53f6f963a)
 * [GraphML substack](https://graphml.substack.com/)
 
+### Cheat Sheets
+
+I've compiled some nice cheat-sheets discussing basics of ML, Data Science, Statistics concepts alongside some tips on NumPy, Pandas, and Scikit-learn. These compilations are particularly useful when brushing up details before a potential job interview. 
+[Link to dataset repository](https://github.com/pgg1610/cheat_sheets)
+
 ### Video series 
 
 **Explanations**
@@ -178,7 +183,6 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [Caitlin Hudson](https://caitlinhudon.com/blog-links/)
 
 **Statistics Blogs**
-
 * [Statistics by Jim](https://statisticsbyjim.com)
 * [Probably overthinking it by Allen Downley](http://allendowney.blogspot.com)
 
@@ -188,8 +192,12 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [Andrej Karpathy, wonderfully didactic posts](https://karpathy.ai/)
 * [Jay Alammer's NLP focussed](http://jalammar.github.io)
 
-**General compilations**
+**ML code examples and tutorials** 
+* [Keras Code Examples](https://keras.io/examples/)
+* [Tensorflow Examples](https://www.tensorflow.org/tutorials)
+* [PyTorch Examples](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html)
 
+**General compilations**
 * [Distill Blog](https://distill.pub)
 * [KDNuggets](kdnuggets.com)
 
