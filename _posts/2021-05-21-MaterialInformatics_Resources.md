@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Material-informatics Literature and Resources
 ---
 
-Last update: 28th May 2021
+Last update: 4th July 2021
 
 Material Informatics is the solid-state, inorganic chemistry focused cousin to its organic chemistry contemporary: Cheminformatics. In spirit, the aim of Material Informatics is similar to Cheminformatics; it offers a promising avenue to augment traditional material R&D processes. Amplify the conventional material discovery task using data, analytics, and identify chemical spaces, and structure in the data, which are interesting and probe those rigorously using first-principles techniques and/or experimentation. 
 
@@ -102,6 +102,8 @@ Consider various encoding scheme and machine learning models to predict single a
 
 * [Rosen, Andrew; Iyer, Shaelyn; Ray, Debmalya; Yao, Zhenpeng; Aspuru-Guzik, Alan; Gagliardi, Laura; et al. (2020): Machine Learning the Quantum-Chemical Properties of Metal–Organic Frameworks for Accelerated Materials Discovery with a New Electronic Structure Database. ChemRxiv. Preprint](https://chemrxiv.org/articles/preprint/Machine_Learning_the_Quantum-Chemical_Properties_of_Metal_Organic_Frameworks_for_Accelerated_Materials_Discovery_with_a_New_Electronic_Structure_Database/13147616/1?file=25304507)
 
+* [Fung, V., Zhang, J., Juarez, E. et al. Benchmarking graph neural networks for materials chemistry. npj Comput Mater 7, 84 (2021)](https://www.nature.com/articles/s41524-021-00554-0)
+
 ## Articles:
 
 There is a rich history of using statistical model and data mining for predicting bulk inorganic crystal properties. The review articles mentioned  in the above section discuss those areas quite nicely. In this section particularly focusses on papers looking at apply informatics to encode surfaces for modeling heterogeneous catalyst surfaces, which is fairly new and very active research direction: 
@@ -166,6 +168,8 @@ Helpful overview and benchmark of various model flavors and metrics to understan
 
 * D. Xue, P. V. Balachandran, J. Hogden, J. Theiler, D. Xue, and T. Lookman, “Accelerated search for materials with targeted properties by adaptive design,” Nat. Commun., vol. 7, pp. 1–9, 2016.
 
+* [Deshwal A, Simon C, Doppa JR. Bayesian optimization of nanoporous materials. ChemRxiv. 2021](https://chemrxiv.org/engage/chemrxiv/article-details/60d2c7d7e211337735e056e2)
+
 ## Surrogate optimizer and accelerating TS searches: 
 
 * O.-P. Koistinen, F. B. Dagbjartsdóttir, V. Ásgeirsson, A. Vehtari, and H. Jónsson, “Nudged elastic band calculations accelerated with Gaussian process regression,” J. Chem. Phys., vol. 147, no. 15, p. 152720, Oct. 2017.
@@ -196,6 +200,10 @@ Helpful overview and benchmark of various model flavors and metrics to understan
 
 ## Reaction Network Predictions: 
 
+
+* ["Rational Solid-State Synthesis Routes for Inorganic Materials" Muratahan Aykol, Joseph H. Montoya, and Jens Hummelshøj
+Journal of the American Chemical Society 2021 143 (24), 9244-9259](https://pubs.acs.org/doi/pdf/10.1021/jacs.1c04888)
+
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021.](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
 Newest version of RMG (v3) is updated to Python v3. It has ability to generate heterogeneous catalyst models, uncertainty analysis to conduct first order sensitivity analysis. RMG dataset for the thermochemical and kinetic parameters have been expanded. 
@@ -204,7 +212,7 @@ Newest version of RMG (v3) is updated to Python v3. It has ability to generate h
 
 Develop a multi-reactant representation scheme to look at arbitrary reactant product pairs. Apply this technique to understand electrochemical reaction network for Li-ion solid electrolyte interphase. 
 
-* [Predicting chemical reaction pathways in solid state material synthesis](https://www.nature.com/articles/s41467-021-23339-x)
+* [McDermott, M.J., Dwaraknath, S.S. & Persson, K.A. A graph-based network for predicting chemical reaction pathways in solid-state materials synthesis. Nat Commun 12, 3097 (2021)](https://www.nature.com/articles/s41467-021-23339-x)
 
 Chemical reaction network model to predict synthesis pathway for exotic oxides. Solid-state synthesis procedures for YMnO<sub>3</sub>, Y<sub>2</sub>Mn<sub>2</sub>O<sub>7</sub>, Fe<sub>2</sub>SiS<sub>4</sub>, and YBa<sub>2</sub>Cu<sub>3</sub>O<sub>6.5</sub> are proposed and compared to literature pathways. Finally apply the algorithm to search for a probable synthesis route to make MgMo<sub>3</sub>(PO<sub>4</sub>)<sub>3</sub>O, battery cathode material that has yet to be synthesized.
 
