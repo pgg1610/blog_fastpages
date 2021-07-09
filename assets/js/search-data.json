@@ -348,7 +348,7 @@
   
       ,"page1": {
           "title": "About Me",
-          "content": ". Hello, I am Pushkar Ghanekar. . This blog is a compilation of tinkerings, learnings, and helpful tips I have accumulated in the area of data science and machine learning, with some flavor of chemical science sprinkled sporadically. The posts are meant to be a reference for my future self and whoever wishes to start dabbling in the data science and ML space. . This is my first-ever venture in the world of blogging and is definitely a work in progress. Would love hear what you think! . You can check out my personal website here. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "Hello, I am Pushkar Ghanekar. Currently, I am working at the intersection chemical science, computational modeling, and dabbling in machine learning as and when necessary. This is my first-ever venture in the world of blogging and is definitely a work in progress. Would love hear what you think! . You can check out my personal website here . This website is powered by fastpages 1. After years of trying out different templates to host my Jupyter notebooks, this service is by far the most convenient and robust out there. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "http://pgg1610.github.io/blog_fastpages/about/",
           "relUrl": "/about/",
           "date": ""
