@@ -107,6 +107,8 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [ML interview book by Chip Huyen](https://huyenchip.com/ml-interviews-book/)
 * [Andrew White's Deep Learning for Molecules and Materials Notebook](https://whitead.github.io/dmol-book/ml/introduction.html#id3)
 * [Online deep learning book by Ian Goodfellow](https://www.deeplearningbook.org/)
+* [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/index.html)
+
 
 ### Machine-learning focused key commentaries, perspectives, and reviews
 

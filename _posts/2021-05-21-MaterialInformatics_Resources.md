@@ -170,6 +170,8 @@ Helpful overview and benchmark of various model flavors and metrics to understan
 
 * [Deshwal A, Simon C, Doppa JR. Bayesian optimization of nanoporous materials. ChemRxiv. 2021](https://chemrxiv.org/engage/chemrxiv/article-details/60d2c7d7e211337735e056e2)
 
+* [Jablonka, Kevin Maik, et al. "Bias free multiobjective active learning for materials design and discovery." Nature communications 12.1 (2021): 1-10.](https://www.nature.com/articles/s41467-021-22437-0)
+
 ## Surrogate optimizer and accelerating TS searches: 
 
 * O.-P. Koistinen, F. B. Dagbjartsdóttir, V. Ásgeirsson, A. Vehtari, and H. Jónsson, “Nudged elastic band calculations accelerated with Gaussian process regression,” J. Chem. Phys., vol. 147, no. 15, p. 152720, Oct. 2017.

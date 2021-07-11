@@ -276,9 +276,13 @@ Production-ready tool for de novo design from Astra Zeneca. It can be effectivel
 
 * [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
-* [DeepChem](https://github.com/deepchem/deepchem). [Website](https://deepchem.io) 
+* [DeepChem (Tensorflow)](https://github.com/deepchem/deepchem). [Website](https://deepchem.io) 
 
 DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, quantum chemistry, and biology - from Github
+
+* [ChemProp (Pytorch)](https://github.com/chemprop/chemprop)
+
+Github repository for implmenting message passing neural networks for molecular property prediction as described in the paper [Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237) by Yang et. al. 
 
 * [Chainer-Chemistry](https://github.com/chainer/chainer-chemistry)
 
