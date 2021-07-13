@@ -10,6 +10,7 @@ vendor
 _notebooks/.ipynb_checkpoints
 _notebooks/data/misc
 _notebooks/dask-worker-space
+_notebooks/data/hymenoptera_data
 
 _posts/misc
 
