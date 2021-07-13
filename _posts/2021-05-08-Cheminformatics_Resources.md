@@ -315,7 +315,11 @@ Tool to generate chemical reaction networks. Includes Arkane, package for calcul
 
 * [Papers with code benchmark for QM9 energy predictions](https://paperswithcode.com/sota/formation-energy-on-qm9)
 
-* [Molecular generation models benchmark](https://github.com/molecularsets/moses)
+* [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
+
+* [Therapeutics Data Commons](https://tdcommons.ai)
+"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaningful data splits, data processors, and molecule generation oracles. All resources are integrated and accessible via an open Python library."
+
 
 ## Molecules datasets:
 
