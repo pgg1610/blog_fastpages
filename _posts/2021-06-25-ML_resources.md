@@ -11,7 +11,7 @@ Below is a non-exhaustive list of resources including blogs, courses, books, pod
 
 ### Highly recommended machine-learning starting point:
 
-I am self taught machine learning practitioner. I strongly believe in the 80-20 rule, 80% of the output/results from 20% inputs. In that spirit, following are top five sources to get upto speed on applying ML and learning its basics. For practical purposes it is not always necessary dive super deep, rather its helpful to get a tldr version of the concept, assumptions, and start applying them right away. 
+For practical purposes, I've noticed, it is not always necessary dive super deep in a concept, rather its helpful to get a concise version of the concept and understand the core assumptions; start applying the concept right away and figure out your knowledge gaps on the way. I strongly believe in the 80-20 rule (80% of the output from 20% inputs). In that spirit, following are the top five sources to get upto speed on learning the basics of ML. 
 
 * [Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/). [Github](https://github.com/ageron/handson-ml)
 
@@ -42,6 +42,7 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [Google's ML crash course](https://developers.google.com/machine-learning/crash-course)
 * [Stanford's CS - CNN course](http://cs231n.stanford.edu/)
 * [NYU's PyTorch Deep learning](https://atcold.github.io/pytorch-Deep-Learning/)
+* [AI Summer](https://theaisummer.com)
 
 **Data Science and Computation**
 
