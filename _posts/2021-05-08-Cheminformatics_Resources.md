@@ -127,6 +127,8 @@ Active learning provides strategies for efficient screening of subsets of the li
 
 * [Reker, D. Practical Considerations for Active Machine Learning in Drug Discovery. Drug Discov. Today Technol. 2020](https://doi.org/10.1016/j.ddtec.2020.06.001)
 
+* [Janet, J. P., Ramesh, S., Duan, C., & Kulik, H. J. (2020). Accurate multiobjective design in a space of millions of transition metal complexes with neural-network-driven efficient global optimization. ACS central science, 6(4), 513-524.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.0c00026)
+
 * [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
 
 Experimental design using Bayesian Optimization. 
@@ -251,9 +253,6 @@ Look at exploration of reaction space rather than compound space. SOAP kernel fo
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
 * [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
-
-
-
 
 ## Code / Packages:
 
