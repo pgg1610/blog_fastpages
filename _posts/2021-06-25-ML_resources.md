@@ -213,6 +213,7 @@ Fanstastic resource, you can be a fly on the wall and listen to experts talk abo
 * AZ16 podcast
 * Data Skeptic
 * Lex Friedman / AI podcast 
+* Microsoft Research Podcast
 
 ### YouTubers 
 List of YouTuber channels that never fail to inspire me 

@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 3rd July 2021
+Last update: 21st July 2021
 
 ## Noteworthy blogs to follow:
 
