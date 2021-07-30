@@ -53,6 +53,9 @@ Below are few reviews, articles, and resources I've found that document the stat
 
 6. M. Moliner, Y. Román-Leshkov, and A. Corma, “Machine Learning Applied to Zeolite Synthesis: The Missing Link for Realizing High-Throughput Discovery,” Acc. Chem. Res., vol. 52, no. 10, pp. 2971–2980, 2019.
 
+7. [Tao, H., Wu, T., Aldeghi, M. et al. Nanoparticle synthesis assisted by machine learning. Nat Rev Mater, 2021](https://www.nature.com/articles/s41578-021-00337-5)
+
+
 ### Best practices in material informatics:
 
 A. Y. T. Wang et al., “Machine Learning for Materials Scientists: An Introductory Guide toward Best Practices,” Chem. Mater., vol. 32, no. 12, pp. 4954–4965, 2020.
@@ -171,6 +174,9 @@ Helpful overview and benchmark of various model flavors and metrics to understan
 * [Deshwal A, Simon C, Doppa JR. Bayesian optimization of nanoporous materials. ChemRxiv. 2021](https://chemrxiv.org/engage/chemrxiv/article-details/60d2c7d7e211337735e056e2)
 
 * [Jablonka, Kevin Maik, et al. "Bias free multiobjective active learning for materials design and discovery." Nature communications 12.1 (2021): 1-10.](https://www.nature.com/articles/s41467-021-22437-0)
+
+Active learning algorithm to find Pareto front for multi-objective optimization. Apply algorithm to de-novo polymer design. Ranking materials in a multi-objective optimization tasks is sometimes biased. Instead of ranking the candidates, the authors want to identify an approximate pareto front. Selection of candidates happens based on their promixity to the pareto front, which itself is defined by following geometric rules. 
+
 
 ## Surrogate optimizer and accelerating TS searches: 
 
@@ -313,3 +319,7 @@ Fascinating resource linking scientific publications using the Pauling File data
 * [Matminer](https://github.com/hackingmaterials/matminer)
 
 * [Mat2Vec](https://github.com/materialsintelligence/mat2vec)
+
+* [PyePAL](https://pyepal.readthedocs.io/en/latest/?badge=latest)
+
+Active learning approach to efficiently and confidently identify the Pareto front with any regression model that can output a mean and a standard deviation.
