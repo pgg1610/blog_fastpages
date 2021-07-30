@@ -90,10 +90,9 @@ Few key papers which I have found useful when learning more about the state-of-t
 
 Comparative study of descriptor-based and graph-based models using public data set. Used descriptor-based models (XGBoost, RF, SVM, using ECFP) and compared them to graph-based models (GCN, GAT, AttentiveFP, MPNN). They show descriptor-based models outperform the graph-based models in terms of prediction accuracy and computational efficiency with SVM having best predictions. Graph-based methods are good for multi-task learning. 
 
-
 * [Yang, K., Swanson, K., Jin, W., Coley, C., Eiden, P., Gao, H., Guzman-Perez, A., Hopper, T., Kelley, B., Mathea, M. and Palmer, A., 2019. Analyzing learned molecular representations for property prediction. Journal of chemical information and modeling, 59(8), pp.3370-3388](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237)
 
-Benchmark property prediction models on 19 public and 16 proprietary industrial data sets spanning a wide variety of chemical end points. Introduce a modeling framework (Chemprop) that consistently matches or outperforms models using fixed molecular descriptors as well as previous graph neural architectures on both public and proprietary data sets.
+Benchmark property prediction models on 19 public and 16 proprietary industrial data sets spanning a wide variety of chemical end points. Introduce a modeling framework (__Chemprop__) that consistently matches or outperforms models using fixed molecular descriptors as well as previous graph neural architectures on both public and proprietary data sets.
 
 * [Matthew Clark, et. al. DNA-encoded small-molecule libraries (DEL)](https://www.nature.com/articles/nchembio.211). [C&EN article on the topic](https://cen.acs.org/articles/95/i25/DNA-encoded-libraries-revolutionizing-drug.html)
 
@@ -137,6 +136,10 @@ Active learning provides strategies for efficient screening of subsets of the li
 * [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
 
 Experimental design using Bayesian Optimization. 
+
+* [A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.](https://pubs.acs.org/doi/10.1021/acscentsci.1c00546). [Slideshare](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
+
+Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare chemprop and SchNet models on different tasks. 
 
 ### Transfer Learning  
 
