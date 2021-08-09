@@ -11,7 +11,7 @@ Below is a non-exhaustive list of resources including blogs, courses, books, pod
 
 ### Highly recommended machine-learning starting point:
 
-For practical purposes, I've noticed, it is not always necessary dive super deep in a concept, rather its helpful to get a concise version of the concept and understand the core assumptions; start applying the concept right away and figure out your knowledge gaps on the way. I strongly believe in the 80-20 rule (80% of the output from 20% inputs). In that spirit, following are the top five sources to get upto speed on learning the basics of ML. 
+For practical purposes, I've noticed, it is not always necessary dive super deep in a concept, rather its helpful to get a concise version of the concept, understand the core assumptions, and start applying the concept right away figuring out your knowledge gaps along the way. I strongly believe in the 80-20 rule (80% output from 20% input). In that spirit, following are the top five sources to get upto speed on learning the basics of ML. 
 
 * [Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/). [Github](https://github.com/ageron/handson-ml)
 
@@ -145,6 +145,7 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 
 * [Graph networks: Relational inductive biases, deep learning, and graph networks](https://arxiv.org/abs/1806.01261)
 * [Medium blog on graph neural networks](https://gordicaleksa.medium.com/how-to-get-started-with-graph-machine-learning-afa53f6f963a)
+* [An attempt at demystifying graph deep learning](https://ericmjl.github.io/essays-on-data-science/machine-learning/graph-nets/?utm_source=pocket_mylist)
 * [GraphML substack](https://graphml.substack.com/)
 
 ### Cheat Sheets
@@ -167,10 +168,11 @@ I've compiled some nice cheat-sheets discussing basics of ML, Data Science, Stat
 * [Statistics for Hackers, Jake Vanderplas](https://www.youtube.com/watch?v=-7I7MWTX0gA)
 * [Statistical Thinking for Data Science, Chris Fonnesbeck](https://www.youtube.com/watch?v=TGGGDpb04Yc)
 
-**AI talks**
+**AI talks / commentaries**
 
 * [Dangers of AI is weirder than you think](https://www.youtube.com/watch?v=OhCzX0iLnOc)
-
+* [Machine learning and algorithmic fairness in public and population health](https://www.nature.com/articles/s42256-021-00373-4)
+* [Hundreds of AI tools have been built to catch covid. None of them helped.](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/?utm_source=pocket_mylist)
 
 ### Blogs
 
@@ -257,7 +259,7 @@ List of YouTuber channels that never fail to inspire me
 
 ### Diversity & Inclusion
 
-* [Delotte's Woman in AI]https://www2.deloitte.com/content/dam/Deloitte/us/Documents/deloitte-analytics/us-consulting-women-in-ai.pdf
+* [Delotte's Woman in AI](https://www2.deloitte.com/content/dam/Deloitte/us/Documents/deloitte-analytics/us-consulting-women-in-ai.pdf)
 * [Account from Dow employees going from R&D to D&I](https://www.nature.com/articles/s41557-021-00677-3)
 * [Diversity in STEM: What it is and Why it Matters](https://blogs.scientificamerican.com/voices/diversity-in-stem-what-it-is-and-why-it-matters/)
 * [How Diversity Makes Us Smarter](https://www.scientificamerican.com/article/how-diversity-makes-us-smarter/)
@@ -278,6 +280,7 @@ List of YouTuber channels that never fail to inspire me
 * [Melthing Asphalt](https://meltingasphalt.com/)
 * [Robert Heaton](https://robertheaton.com/)
 * [Astral Codex Ten](https://astralcodexten.substack.com)
+* [Antonio García Martínez](https://www.thepullrequest.com)
 
 ### Comics 
 

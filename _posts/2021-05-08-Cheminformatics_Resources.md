@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 21st July 2021
+Last update: 3rd August 2021
 
 ## Noteworthy blogs to follow:
 
@@ -102,6 +102,11 @@ New form of storing huge amounts of molecule related data using DNA. Made partia
 
 DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
 
+
+* [Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402](https://arxiv.org/abs/2107.10402)
+
+Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset. 
+
 ### Uncertainty quantification:
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
@@ -139,7 +144,7 @@ Experimental design using Bayesian Optimization.
 
 * [A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.](https://pubs.acs.org/doi/10.1021/acscentsci.1c00546). [Slideshare](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
 
-Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare chemprop and SchNet models on different tasks. 
+Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks. 
 
 ### Transfer Learning  
 
