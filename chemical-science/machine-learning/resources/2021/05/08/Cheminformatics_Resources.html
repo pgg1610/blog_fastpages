@@ -149,7 +149,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#code--packages">Code / Packages:</a></li>
 <li class="toc-entry toc-h2"><a href="#helpful-utilities">Helpful utilities:</a></li>
 <li class="toc-entry toc-h2"><a href="#molecules-datasets">Molecules datasets:</a></li>
-</ul><p>Last update: 21st July 2021</p>
+</ul><p>Last update: 3rd August 2021</p>
 
 <h2 id="noteworthy-blogs-to-follow">
 <a class="anchor" href="#noteworthy-blogs-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Noteworthy blogs to follow:</h2>
@@ -307,6 +307,12 @@ window.onload = wrap_img;
 
 <p>DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates.</p>
 
+<ul>
+  <li><a href="https://arxiv.org/abs/2107.10402">Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402</a></li>
+</ul>
+
+<p>Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.</p>
+
 <h3 id="uncertainty-quantification">
 <a class="anchor" href="#uncertainty-quantification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uncertainty quantification:</h3>
 
@@ -371,7 +377,7 @@ window.onload = wrap_img;
 </li>
 </ul>
 
-<p>Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare chemprop and SchNet models on different tasks.</p>
+<p>Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks.</p>
 
 <h3 id="transfer-learning">
 <a class="anchor" href="#transfer-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transfer Learning</h3>
