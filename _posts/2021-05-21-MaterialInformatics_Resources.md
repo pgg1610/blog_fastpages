@@ -30,7 +30,7 @@ Machine learning in atomic-scale modeling is often used to replace expensive ab 
 Below are few reviews, articles, and resources I've found that document the state-of-the-art for material informatics. It goes without saying that this is a highly biased and a non-exhaustive listing of articles covering only the ones I've read. The idea with this document is to provide a starting point in understanding the general status of the field. 
 
 
-## Special Issues: 
+## Special Issues and Collections: 
 
 * [Nature Materials collection of review articles discussing the role of computation for material design](https://www.nature.com/collections/dhcfgffecf)
 
@@ -80,13 +80,13 @@ Similar to other machine-learning development efforts -- featurization or descri
 
 Predicting properties of crystalline compounds using a representation consisting of attributes derived from the Voronoi tessellation of its structure and composition based features is both twice as accurate as existing methods and can scale to large training set sizes. Also the representations are  insensitive to changes in the volume of a crystal, which makes it possible to predict the properties of the crystal without needing to compute the DFT-relaxed geometry as input. Random forrest algorithm used for the prediction 
 
-* [A. Wang, S. Kauwe, R. Murdock, and T. Sparks, “Compositionally-Restricted Attention-Based Network for Materials Property Prediction.” 20-Feb-2020.](https://chemrxiv.org/articles/preprint/Compositionally-Restricted_Attention-Based_Network_for_Materials_Property_Prediction/11869026/1)
+* [A. Wang, S. Kauwe, R. Murdock, and T. Sparks, “Compositionally-Restricted Attention-Based Network for Materials Property Prediction (CrabNet).” 20-Feb-2020.](https://www.nature.com/articles/s41524-021-00545-1)
 
 Using attention-based graph networks on material composition to predict material properties. 
 
-* [Goodall, R.E.A., Lee, A.A. Predicting materials properties without crystal structure: deep representation learning from stoichiometry. Nat Commun 11, 6280 (2020)](https://www.nature.com/articles/s41467-020-19964-7)
+* [Goodall, R.E.A., Lee, A.A. Predicting materials properties without crystal structure: deep representation learning from stoichiometry (Roost). Nat Commun 11, 6280 (2020)](https://www.nature.com/articles/s41467-020-19964-7)
 
-Similar to the previous article in spirit, here authors use material composition to generate weighted graphs and predict material properties 
+Similar to the previous article in spirit, here authors use material composition to generate weighted graphs and predict material properties. Consider ensemble-based uncertainty estimates.
 
 **2. Structural based:**
 
@@ -98,7 +98,6 @@ Similar to the previous article in spirit, here authors use material composition
 
 Investigate if ML models can distinguish materials wrt thermodynamic stability and not just formation energies. Learning formation energy from composition alone is fine for MAE and RMSE representations. Propose that graph-based methods reduce the MAE by roughly 50% compared with the best performing compositional model. Show that including structural information is advantageous when predicting formation energies.
 
-
 * [A. J. Chowdhury, W. Yang, E. Walker, O. Mamun, A. Heyden, and G. A. Terejanu, “Prediction of Adsorption Energies for Chemical Species on Metal Catalyst Surfaces Using Machine Learning,” J. Phys. Chem. C, vol. 122, no. 49, pp. 28142–28150, 2018](https://pubs.acs.org/doi/10.1021/acs.jpcc.8b09284)
 
 Consider various encoding scheme and machine learning models to predict single adsorbate binding energy for carbon-based adsorabtes on transition metal surfaces. They show linear methods and scaling relationship hold well compared to ML methods. They found that for ML models to succeed, it is not necessary to use advanced (geometric) coordinate-based descriptors; simple descriptors, such as bond count, can provide satisfactory results. As many catalysis and materials science problems require significant time to generate each data point, in many cases the ML models would need to work with a relatively small-sized dataset
@@ -109,7 +108,9 @@ Consider various encoding scheme and machine learning models to predict single a
 
 ## Articles:
 
-There is a rich history of using statistical model and data mining for predicting bulk inorganic crystal properties. The review articles mentioned  in the above section discuss those areas quite nicely. In this section particularly focusses on papers looking at apply informatics to encode surfaces for modeling heterogeneous catalyst surfaces, which is fairly new and very active research direction: 
+There is a rich and long history of using statistical model and data mining for predicting bulk inorganic crystal properties. The review articles mentioned  in the above section discuss those areas quite nicely. 
+
+> This section particularly focusses on works applying informatics to encode surfaces for modeling heterogeneous catalyst surfaces, which is fairly new and very active research direction: 
 
 * Ma, X., Li, Z., Achenie, L.E.K., and Xin, H. (2015). Machine-learning-augmented chemisorption model for CO2 electroreduction catalyst screening. J. Phys. Chem. Lett. 6, 3528–3533.
 
@@ -127,13 +128,13 @@ There is a rich history of using statistical model and data mining for predictin
 
 * Liu, F., Yang, S. & Medford, A. J. Scalable approach to high coverages on oxides via iterative training of a machine-learning algorithm. ChemCatChem 12, 4317–4330 (2020).
 
-Graph-network based approaches for encoding and predicting surface binding energies:
+**Graph-network based approaches for encoding and predicting surface binding energies:**
 
 * Back, S. et al. Convolutional Neural Network of Atomic Surface Structures to Predict Binding Energies for High-Throughput Screening of Catalysts. J. Phys. Chem. Lett. 10, 4401–4408 (2019)
 
 * Lym, J., Gu, G. H., Jung, Y. & Vlachos, D. G. Lattice convolutional neural network modeling of adsorbate coverage effects. J. Phys. Chem. C 123, 18951–18959 (2019).
 
-Adsorbate binding predictions have been recently extended to cover high-entropy alloy surfaces as well: 
+**Adsorbate binding predictions have been recently extended to cover high-entropy alloy surfaces as well:**
 
 * T. A. A. Batchelor et al., “Complex solid solution electrocatalyst discovery by computational prediction and high‐throughput experimentation,” Angew. Chemie Int. Ed., p. anie.202014374, Dec. 2020.
 

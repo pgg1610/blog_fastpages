@@ -24,6 +24,8 @@ Last update: 3rd August 2021
 
 6. [DrugDiscovery.NET - Andreas Bender](http://www.drugdiscovery.net/2019/07/25/new-post1/)
 
+7. [DrugHunter - Dennis Hu](https://drughunter.com)
+
 ## Online resources 
 
 * [Pen's Python cookbook for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
