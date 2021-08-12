@@ -142,6 +142,12 @@ There is a rich and long history of using statistical model and data mining for 
 
 * Z. Lu, Z. W. Chen, and C. V. Singh, “Neural Network-Assisted Development of High-Entropy Alloy Catalysts: Decoupling Ligand and Coordination Effects,” Matter, vol. 3, no. 4, pp. 1318–1333, 2020.
 
+**Miscellaneous** 
+
+* [Jang, Jidon, et al. "Structure-based synthesizability prediction of crystals using partially supervised learning." Journal of the American Chemical Society 142.44 (2020): 18836-18843.](https://pubs.acs.org/doi/10.1021/jacs.0c07384)
+
+CGCNN as a binary classification for synthesizability. The metric is identified only for the positive cases (that is experimental data) and used a proxy to train the model to learn what makes the material positive. 
+
 ## Global optimization methods: 
 
 * M. K. Bisbo and B. Hammer, “Efficient global structure optimization with a machine learned surrogate model,” Phys. Rev. Lett., vol. 124, no. 8, p. 86102, 2019.

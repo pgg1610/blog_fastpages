@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 3rd August 2021
+Last update: 12th August 2021
 
 ## Noteworthy blogs to follow:
 
@@ -246,7 +246,11 @@ Need to generate a comparative metric to benchmark different algorithms.
 
 Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
-Articles: 
+**Articles:**
+
+* [Schwaller, Philippe, et al. "Mapping the space of chemical reactions using attention-based neural networks." Nature Machine Intelligence 3.2 (2021): 144-152.](https://www.nature.com/articles/s42256-020-00284-w). [Github](https://github.com/rxn4chemistry/rxnfp). [Preprint](https://arxiv.org/abs/2012.06051). [News Article](https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&utm_medium=LatestNews&utm_campaign=CENRSS). 
+
+Transformer-based model for reaction classification. Compare it with BERT. Besides this the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.  
 
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
@@ -323,6 +327,10 @@ Tool to generate chemical reaction networks. Includes Arkane, package for calcul
 * [PyePAL](https://pyepal.readthedocs.io/en/latest/?badge=latest)
 
 Active learning approach to efficiently and confidently identify the Pareto front with any regression model that can output a mean and a standard deviation.
+
+* [rxnfp](https://github.com/rxn4chemistry/rxnfp)
+
+Github repository to generate chemical reaction fingerprints from reaction SMILES. 
 
 ## Helpful utilities:
 
