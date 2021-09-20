@@ -120,6 +120,7 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 
 **General tips**
 
+* [How to avoid machine learning pitfalls: a guide for academic researchers](https://arxiv.org/pdf/2108.02497.pdf)
 * [Scikit-learn documentation on common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html)
 * [Machine Learning that Matters](https://arxiv.org/abs/1206.4656)
 * [Three pitfalls to avoid in machine learning](https://www.nature.com/articles/d41586-019-02307-y)

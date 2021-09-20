@@ -218,6 +218,8 @@ Algorithm to predict 3D conforms from molecular graphs.
 
 GraphINVENT uses a tiered deep neural network architecture to probabilistically generate new molecules a single bond at a time 
 
+* [RL-GraphINVENT: Reinforcement learning-based variant of the above code.](https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039)
+
 **GANs**
 
 * [MolGAN: An implicit generative model for small molecular graphs, N. De Cao and T. Kipf, 2018](https://arxiv.org/abs/1805.11973)
@@ -348,6 +350,8 @@ Github repository to generate chemical reaction fingerprints from reaction SMILE
 
 
 ## Molecules datasets:
+
+* [COCONUT - Naturally occuring small molecules produced by living organism with potential application in pharmaceuticals.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9). [Website](https://coconut.naturalproducts.net)
 
 * [GDB Dataset](http://www.gdb.unibe.ch/downloads/)
 
