@@ -28,6 +28,10 @@ Last update: 20th September 2021
 
 ## Online resources 
 
+* [Data Professor's interview with Pat Walters](https://www.youtube.com/watch?v=9zBzLkuFz8k)
+
+* [Pat Walters' RSC CICAG Open Source Tools for Chemistry](https://www.macinchem.org/blog/files/fe66130c1da3375e46d0512e483eb901-2791.php?utm_source=pocket_mylist).[Video](https://www.youtube.com/watch?v=2ZjerAGS_IQ). [Github](https://github.com/PatWalters/chem_tutorial)
+
 * [Pen's Python cookbook for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
 
 * [Patrick Walter's Cheminformatics Hands-on workshop](https://github.com/PatWalters/workshop)
