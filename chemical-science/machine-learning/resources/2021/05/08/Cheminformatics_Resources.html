@@ -143,7 +143,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#active-learning">Active Learning</a></li>
 <li class="toc-entry toc-h3"><a href="#transfer-learning">Transfer Learning</a></li>
 <li class="toc-entry toc-h3"><a href="#generative-models">Generative models:</a></li>
-<li class="toc-entry toc-h3"><a href="#reaction-network-predictions">Reaction Network Predictions:</a></li>
+<li class="toc-entry toc-h3"><a href="#computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#code--packages">Code / Packages:</a></li>
@@ -238,7 +238,12 @@ window.onload = wrap_img;
   <li>
     <p><a href="https://arxiv.org/pdf/2012.05716.pdf">Utilising Graph Machine Learning within Drug Discovery and Development</a></p>
   </li>
+  <li>
+    <p><a href="https://www.sciencedirect.com/science/article/pii/S0169409X21001800?via%3Dihub">Machine learning directed drug formulation development</a></p>
+  </li>
 </ul>
+
+<p>Review from Aspuru-Guzik and Allen’s group discussing how ML can be leveraged for various types of drug formulation tasks.</p>
 
 <h2 id="industry-focused-drug-discovery-reviews">
 <a class="anchor" href="#industry-focused-drug-discovery-reviews" aria-hidden="true"><span class="octicon octicon-link"></span></a>Industry-focused drug discovery reviews</h2>
@@ -524,8 +529,10 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 <p>Molecular generation strategy is described which combines an autoencoder and a GAN. Generator and discriminator network do not use SMILES strings as input, but instead n-dimensional vectors derived from the code-layer of an autoencoder trained as a SMILES heteroencoder that way syntax issues are expected to be addressed.</p>
 
-<h3 id="reaction-network-predictions">
-<a class="anchor" href="#reaction-network-predictions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reaction Network Predictions:</h3>
+<h3 id="computer-aided-synthesis-planning-casp">
+<a class="anchor" href="#computer-aided-synthesis-planning-casp" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computer Aided Synthesis Planning (CASP)</h3>
+
+<p><strong>Reaction Network Predictions:</strong></p>
 
 <p>Recent review on the matter from Reiher group:</p>
 
@@ -550,6 +557,12 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 <p>Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review.</p>
 
 <p><strong>Articles:</strong></p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/10.1021/ci5006614">Schneider, N., et al. (2015). “Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity.” Journal of Chemical Information and Modeling 55(1): 39-53.</a></li>
+</ul>
+
+<p>Using scrapped US Patent data to classify chemical rxns and deploy various fingerprints and ML models for classification.</p>
 
 <ul>
   <li>
