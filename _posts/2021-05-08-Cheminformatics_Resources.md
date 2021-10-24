@@ -63,6 +63,9 @@ Recent review summarising the state of the molecular property prediction and str
 
 * [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
 
+* [Machine learning directed drug formulation development](https://www.sciencedirect.com/science/article/pii/S0169409X21001800?via%3Dihub) 
+
+Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged for various types of drug formulation tasks. 
 
 ## Industry-focused drug discovery reviews 
 
@@ -240,7 +243,10 @@ Generative adversarial network for finding small molecules using graph networks,
 
 Molecular generation strategy is described which combines an autoencoder and a GAN. Generator and discriminator network do not use SMILES strings as input, but instead n-dimensional vectors derived from the code-layer of an autoencoder trained as a SMILES heteroencoder that way syntax issues are expected to be addressed. 
 
-### Reaction Network Predictions: 
+
+### Computer Aided Synthesis Planning (CASP) 
+
+**Reaction Network Predictions:** 
 
 Recent review on the matter from Reiher group: 
 
@@ -259,6 +265,10 @@ Need to generate a comparative metric to benchmark different algorithms.
 Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
 **Articles:**
+
+* [Schneider, N., et al. (2015). "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity." Journal of Chemical Information and Modeling 55(1): 39-53.](https://pubs.acs.org/doi/10.1021/ci5006614)
+
+Using scrapped US Patent data to classify chemical rxns and deploy various fingerprints and ML models for classification. 
 
 * [Schwaller, Philippe, et al. "Mapping the space of chemical reactions using attention-based neural networks." Nature Machine Intelligence 3.2 (2021): 144-152.](https://www.nature.com/articles/s42256-020-00284-w). [Github](https://github.com/rxn4chemistry/rxnfp). [Preprint](https://arxiv.org/abs/2012.06051). [News Article](https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&utm_medium=LatestNews&utm_campaign=CENRSS). 
 
