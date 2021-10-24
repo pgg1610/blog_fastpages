@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 20th September 2021
+Last update: 24th October 2021
 
 ## Noteworthy blogs to follow:
 
@@ -60,7 +60,6 @@ Recent review summarising the state of the molecular property prediction and str
 
 * [Applications of Deep learning in molecular generation and molecular property prediction](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00699)
 
-
 * [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
 
 * [Machine learning directed drug formulation development](https://www.sciencedirect.com/science/article/pii/S0169409X21001800?via%3Dihub) 
@@ -103,18 +102,9 @@ Comparative study of descriptor-based and graph-based models using public data s
 
 Benchmark property prediction models on 19 public and 16 proprietary industrial data sets spanning a wide variety of chemical end points. Introduce a modeling framework (__Chemprop__) that consistently matches or outperforms models using fixed molecular descriptors as well as previous graph neural architectures on both public and proprietary data sets.
 
-* [Matthew Clark, et. al. DNA-encoded small-molecule libraries (DEL)](https://www.nature.com/articles/nchembio.211). [C&EN article on the topic](https://cen.acs.org/articles/95/i25/DNA-encoded-libraries-revolutionizing-drug.html)
-
-New form of storing huge amounts of molecule related data using DNA. Made partially possible by low cost of DNA sequencing. Each molecule in the storage is attached with a DNA strand which encode information about its recipe. 
-
-* Follow up to the work with Machine Learning for hit finding. [(Link)](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
-
-DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
-
-
 * [Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402](https://arxiv.org/abs/2107.10402)
 
-Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset. 
+Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
 ### Uncertainty quantification:
 
@@ -246,9 +236,8 @@ Molecular generation strategy is described which combines an autoencoder and a G
 
 ### Computer Aided Synthesis Planning (CASP) 
 
-**Reaction Network Predictions:** 
-
-Recent review on the matter from Reiher group: 
+**Reviews:** 
+* [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
 
 * [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
 
@@ -264,15 +253,29 @@ Need to generate a comparative metric to benchmark different algorithms.
 
 Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
-**Articles:**
+**Classification of rxn and featurization:**
 
 * [Schneider, N., et al. (2015). "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity." Journal of Chemical Information and Modeling 55(1): 39-53.](https://pubs.acs.org/doi/10.1021/ci5006614)
 
-Using scrapped US Patent data to classify chemical rxns and deploy various fingerprints and ML models for classification. 
+Using scrapped US Patent data to classify chemical reactions and deploy various fingerprints and ML models for classification. 
 
 * [Schwaller, Philippe, et al. "Mapping the space of chemical reactions using attention-based neural networks." Nature Machine Intelligence 3.2 (2021): 144-152.](https://www.nature.com/articles/s42256-020-00284-w). [Github](https://github.com/rxn4chemistry/rxnfp). [Preprint](https://arxiv.org/abs/2012.06051). [News Article](https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&utm_medium=LatestNews&utm_campaign=CENRSS). 
 
 Transformer-based model for reaction classification. Compare it with BERT. Besides this the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.  
+
+* [Delannée, V., Nicklaus, M.C. ReactionCode: format for reaction searching, analysis, classification, transform, and encoding/decoding. J Cheminform 12, 72 (2020)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00476-x)
+
+* [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
+
+**Predicting reaction outcomes:** 
+
+* [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
+
+* [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
+
+* [Guan, Y., et al. (2021). "Regio-selectivity prediction with a machine-learned reaction representation and on-the-fly quantum mechanical descriptors." Chemical Science 12(6): 2198-2208 Accurate and rapid evaluation of whether substrates can undergo the desired the transformation is crucial and challenging for both human knowledge and computer predictions. Despite the potential of machine learning in predicting chemical reactivity such as selectivity, popular feature engineering and learning methods are either time-consuming or data-hungry. We introduce a new method that combines machine-learned reaction representation with selected quantum mechanical descriptors to predict regio-selectivity in general substitution reactions. We construct a reactivity descriptor database based on ab initio calculations of 130k organic molecules, and train a multi-task constrained model to calculate demanded descriptors on-the-fly. The proposed platform enhances the inter/extra-polated performance for regio-selectivity predictions and enables learning from small datasets with just hundreds of examples. Furthermore, the proposed protocol is demonstrated to be generally applicable to a diverse range of chemical spaces. For three general types of substitution reactions (aromatic C–H functionalization, aromatic C–X substitution, and other substitution reactions) curated from a commercial database, the fusion model achieves 89.7%, 96.7%, and 97.2% top-1 accuracy in predicting the major outcome, respectively, each using 5000 training reactions. Using predicted descriptors, the fusion model is end-to-end, and requires approximately only 70 ms per reaction to predict the selectivity from reaction SMILES strings.](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04823b)
+
+**Generation reaction networks:**
 
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
@@ -291,9 +294,17 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 
 Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE. 
 
-* [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
+### DNA-encoded Libraries 
 
-* [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
+* [Matthew Clark, et. al. DNA-encoded small-molecule libraries (DEL)](https://www.nature.com/articles/nchembio.211). [C&EN article on the topic](https://cen.acs.org/articles/95/i25/DNA-encoded-libraries-revolutionizing-drug.html)
+
+New form of storing huge amounts of molecule related data using DNA. Made partially possible by low cost of DNA sequencing. Each molecule in the storage is attached with a DNA strand which encode information about its recipe. 
+
+* Follow up to the work with Machine Learning for hit finding. [(Link)](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
+
+DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
+
+* [Martín, A., et al. (2020). "Navigating the DNA encoded libraries chemical space." Communications Chemistry 3(1).](https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&code=2d1394f8-2e1b-46ef-b926-9441292aea56)
 
 ## Code / Packages:
 
@@ -366,15 +377,4 @@ Github repository to generate chemical reaction fingerprints from reaction SMILE
 * [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
 * [Therapeutics Data Commons](https://tdcommons.ai)
-"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaningful data splits, data processors, and molecule generation oracles. All resources are integrated and accessible via an open Python library."
-
-
-## Molecules datasets:
-
-* [COCONUT - Naturally occuring small molecules produced by living organism with potential application in pharmaceuticals.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9) [Website](https://coconut.naturalproducts.net)
-
-* [GDB Dataset](http://www.gdb.unibe.ch/downloads/)
-
-* [Quantum Machine: Website listing useful datasets including QM9s and MD trajectory](http://quantum-machine.org/datasets/)
-
-* [Github repository listing databases for Drug Discovery](https://github.com/LeeJunHyun/The-Databases-for-Drug-Discovery)
+"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaningf
