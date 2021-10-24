@@ -239,6 +239,8 @@ Molecular generation strategy is described which combines an autoencoder and a G
 **Reviews:** 
 * [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
 
+* Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682.
+
 * [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
 
 Perspective article summarising their position on the current state of research and future considerations on developing better reaction network models. Break down the analysis of reaction networks as into 3 classes (1) Front Open End: exploration of products from reactants (2) Backward Open Start: Know the product and explore potential reactants (3) Start to End: Product and reactant known, explore the likely intermediates. 
@@ -275,6 +277,14 @@ Transformer-based model for reaction classification. Compare it with BERT. Besid
 
 * [Guan, Y., et al. (2021). "Regio-selectivity prediction with a machine-learned reaction representation and on-the-fly quantum mechanical descriptors." Chemical Science 12(6): 2198-2208](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04823b)
 
+**Retrosynthetic routes:** 
+
+* [Computational planning of the synthesis of complex natural products](https://www.nature.com/articles/s41586-020-2855-y)
+
+* [Schwaller, P., et al. (2020). "Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy." Chemical Science 11(12): 3316-3325.](https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h)
+
+* Watson, I. A., et al. (2019). "A retrosynthetic analysis algorithm implementation." J Cheminform 11(1)
+	
 **Generation reaction networks:**
 
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
