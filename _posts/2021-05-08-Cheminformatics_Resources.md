@@ -179,7 +179,6 @@ Interesting analysis from team at AstraZeneca R&D. They look at the chemical spa
 
 This paper looks at different ways of integrating synthesizability criteria into generative models. 
 
-
 **Language models:**
 
 * [R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol. 4, no. 2, pp. 268–276, 2018](https://pubs.acs.org/doi/10.1021/acscentsci.7b00572)
@@ -215,7 +214,6 @@ Introduce a graph generation model by building a Message Passing Neural Network 
 
 Algorithm to predict 3D conforms from molecular graphs.
 
-
 * [GraphINVENT: R. Mercado, T. Rastemo, E. Lindelöf, G. Klambauer and O. Engkvist, “Graph networks for molecular design,” Mach. Learn. Sci. Technol., vol. 2, no. 2, p. 25023, 2021](https://iopscience.iop.org/article/10.1088/2632-2153/abcf91/meta). [Github](https://github.com/MolecularAI/GraphINVENT). [Blogpost](https://www.cheminformania.com/using-graphinvent-to-generate-novel-drd2-actives/)
 
 GraphINVENT uses a tiered deep neural network architecture to probabilistically generate new molecules a single bond at a time. 
@@ -233,6 +231,15 @@ Generative adversarial network for finding small molecules using graph networks,
 
 Molecular generation strategy is described which combines an autoencoder and a GAN. Generator and discriminator network do not use SMILES strings as input, but instead n-dimensional vectors derived from the code-layer of an autoencoder trained as a SMILES heteroencoder that way syntax issues are expected to be addressed. 
 
+**Scoring functions** 
+
+* [Bolcato, Giovanni, and Jonas Boström. "On the Value of Using 3D-shape and Electrostatic Similarities in Deep Generative Methods." ChemRxiv (2021).](https://chemrxiv.org/engage/chemrxiv/article-details/616a9af6a3d2c9789ad8a5e9)
+
+Extension to the fragment-based reinforcement learning methods for generating novel compounds. Comparison of 3D molecular fragments to aid in identifying bioactive conformations. 
+
+* [Iovanac, Nicolae C., Robert MacKnight, and Brett Savoie. "Actively Searching: Inverse Design of Novel Molecules with Simultaneously Optimized Properties." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60c7591a9abda2847ff8ea1f)
+
+Using quantum chemistry attributes calculated on-the-fly as scoring functions for sampling the generative model chemical space. Active learning strategy is deployed to explore the area of space where the properties of the molecules are unknown. 
 
 ### Computer Aided Synthesis Planning (CASP) 
 
