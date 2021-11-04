@@ -252,46 +252,56 @@ Using quantum chemistry attributes calculated on-the-fly as scoring functions fo
 
 Perspective article summarising their position on the current state of research and future considerations on developing better reaction network models. Break down the analysis of reaction networks as into 3 classes (1) Front Open End: exploration of products from reactants (2) Backward Open Start: Know the product and explore potential reactants (3) Start to End: Product and reactant known, explore the likely intermediates. 
 
-Nice summary of potential challenges in the field: 
+Nice summary of potential challenges in the field:
 
-- Validating exploration algorithms on a consistent set of reaction system.
-Need to generate a comparative metric to benchmark different algorithms.  
+- Validating exploration algorithms on a consistent set of reaction system. 
+- Need to generate a comparative metric to benchmark different algorithms.  
 - Considering effect of solvents and/or protein embeddings in the analysis
 
 * Previous review article by same group: [Exploration of Reaction Pathways and Chemical Transformation Networks](https://pubs.acs.org/doi/pdf/10.1021/acs.jpca.8b10007)
 
 Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
-**Classification of rxn and featurization:**
+**Classification of reactions and featurization:**
 
 * [Schneider, N., et al. (2015). "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity." Journal of Chemical Information and Modeling 55(1): 39-53.](https://pubs.acs.org/doi/10.1021/ci5006614)
 
 Using scrapped US Patent data to classify chemical reactions and deploy various fingerprints and ML models for classification. 
 
-* [Schwaller, Philippe, et al. "Mapping the space of chemical reactions using attention-based neural networks." Nature Machine Intelligence 3.2 (2021): 144-152.](https://www.nature.com/articles/s42256-020-00284-w). [Github](https://github.com/rxn4chemistry/rxnfp). [Preprint](https://arxiv.org/abs/2012.06051). [News Article](https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&utm_medium=LatestNews&utm_campaign=CENRSS). 
+* [Schwaller, Philippe, et al. "Mapping the space of chemical reactions using attention-based neural networks." Nature Machine Intelligence 3.2 (2021): 144-152.](https://www.nature.com/articles/s42256-020-00284-w). [rxnfp - Github](https://github.com/rxn4chemistry/rxnfp). [Preprint](https://arxiv.org/abs/2012.06051). [News Article](https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&utm_medium=LatestNews&utm_campaign=CENRSS). 
 
-Transformer-based model for reaction classification. Compare it with BERT. Besides this the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.  
+Transformer-based model for reaction classification. Compared it with BERT. Besides classification, the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.  
 
 * [Delannée, V., Nicklaus, M.C. ReactionCode: format for reaction searching, analysis, classification, transform, and encoding/decoding. J Cheminform 12, 72 (2020)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00476-x)
 
 * [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
 
+**Atom mapping** 
+
+Generate atom mapped rxn SMILES.
+
+* [Extraction of organic chemistry grammar from unsupervised learning of chemical reactions](https://advances.sciencemag.org/content/7/15/eabe4166). [RXMapper]()
+
+* [Automatic mapping of atoms across both simple and complex chemical reactions](https://www.nature.com/articles/s41467-019-09440-2)
+
 **Predicting reaction outcomes:** 
 
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
-* [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](10.1021/acscentsci.7b00064)
+* [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](https://pubs.acs.org/doi/10.1021/acscentsci.7b00064?ref=acsciiVIdeepchemistry)
 
 * [Guan, Y., et al. (2021). "Regio-selectivity prediction with a machine-learned reaction representation and on-the-fly quantum mechanical descriptors." Chemical Science 12(6): 2198-2208](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04823b)
 
-**Retrosynthetic routes:** 
+* [Schwaller, P., et al. (2019). "Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction." ACS Central Science 5(9): 1572-1583.](https://pubs.acs.org/doi/10.1021/acscentsci.9b00576) 
 
-* [Computational planning of the synthesis of complex natural products](https://www.nature.com/articles/s41586-020-2855-y)
+**Retrosynthetic routes:** 
 
 * [Schwaller, P., et al. (2020). "Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy." Chemical Science 11(12): 3316-3325.](https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h)
 
-* Watson, I. A., et al. (2019). "A retrosynthetic analysis algorithm implementation." J Cheminform 11(1)
-	
+* [Computational planning of the synthesis of complex natural products](https://www.nature.com/articles/s41586-020-2855-y)
+
+* [Watson, I. A., et al. (2019). "A retrosynthetic analysis algorithm implementation." J Cheminform 11(1)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0323-6)
+
 **Generation reaction networks:**
 
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
@@ -310,6 +320,10 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 * [Machine learning in chemical reaction space](https://www.nature.com/articles/s41467-020-19267-x)
 
 Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE. 
+
+**Databases**
+
+* [Kearnes, S. M., et al. (2021). "The Open Reaction Database." Journal of the American Chemical Society.](https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist)
 
 ### DNA-encoded Libraries 
 
