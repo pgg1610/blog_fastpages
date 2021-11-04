@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      18 min read
+      19 min read
     
 </span></p>
 
@@ -549,8 +549,8 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 <p>Nice summary of potential challenges in the field:</p>
 
 <ul>
-  <li>Validating exploration algorithms on a consistent set of reaction system.
-Need to generate a comparative metric to benchmark different algorithms.</li>
+  <li>Validating exploration algorithms on a consistent set of reaction system.</li>
+  <li>Need to generate a comparative metric to benchmark different algorithms.</li>
   <li>
     <p>Considering effect of solvents and/or protein embeddings in the analysis</p>
   </li>
@@ -560,7 +560,7 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 
 <p>Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review.</p>
 
-<p><strong>Classification of rxn and featurization:</strong></p>
+<p><strong>Classification of reactions and featurization:</strong></p>
 
 <ul>
   <li><a href="https://pubs.acs.org/doi/10.1021/ci5006614">Schneider, N., et al. (2015). “Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity.” Journal of Chemical Information and Modeling 55(1): 39-53.</a></li>
@@ -570,10 +570,10 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 
 <ul>
   <li>
-<a href="https://www.nature.com/articles/s42256-020-00284-w">Schwaller, Philippe, et al. “Mapping the space of chemical reactions using attention-based neural networks.” Nature Machine Intelligence 3.2 (2021): 144-152.</a>. <a href="https://github.com/rxn4chemistry/rxnfp">Github</a>. <a href="https://arxiv.org/abs/2012.06051">Preprint</a>. <a href="https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&amp;utm_medium=LatestNews&amp;utm_campaign=CENRSS">News Article</a>.</li>
+<a href="https://www.nature.com/articles/s42256-020-00284-w">Schwaller, Philippe, et al. “Mapping the space of chemical reactions using attention-based neural networks.” Nature Machine Intelligence 3.2 (2021): 144-152.</a>. <a href="https://github.com/rxn4chemistry/rxnfp">rxnfp - Github</a>. <a href="https://arxiv.org/abs/2012.06051">Preprint</a>. <a href="https://cen.acs.org/physical-chemistry/computational-chemistry/Mapping-reaction-space-machine-learning/99/i5?utm_source=LatestNews&amp;utm_medium=LatestNews&amp;utm_campaign=CENRSS">News Article</a>.</li>
 </ul>
 
-<p>Transformer-based model for reaction classification. Compare it with BERT. Besides this the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.</p>
+<p>Transformer-based model for reaction classification. Compared it with BERT. Besides classification, the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.</p>
 
 <ul>
   <li>
@@ -584,6 +584,19 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
   </li>
 </ul>
 
+<p><strong>Atom mapping</strong></p>
+
+<p>Generate atom mapped rxn SMILES.</p>
+
+<ul>
+  <li>
+    <p><a href="https://advances.sciencemag.org/content/7/15/eabe4166">Extraction of organic chemistry grammar from unsupervised learning of chemical reactions</a>. <a href="">RXMapper</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.nature.com/articles/s41467-019-09440-2">Automatic mapping of atoms across both simple and complex chemical reactions</a></p>
+  </li>
+</ul>
+
 <p><strong>Predicting reaction outcomes:</strong></p>
 
 <ul>
@@ -591,10 +604,13 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
     <p><a href="https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d">C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.</a></p>
   </li>
   <li>
-    <p><a href="10.1021/acscentsci.7b00064">Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017</a></p>
+    <p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.7b00064?ref=acsciiVIdeepchemistry">Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017</a></p>
   </li>
   <li>
     <p><a href="https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04823b">Guan, Y., et al. (2021). “Regio-selectivity prediction with a machine-learned reaction representation and on-the-fly quantum mechanical descriptors.” Chemical Science 12(6): 2198-2208</a></p>
+  </li>
+  <li>
+    <p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.9b00576">Schwaller, P., et al. (2019). “Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction.” ACS Central Science 5(9): 1572-1583.</a></p>
   </li>
 </ul>
 
@@ -602,13 +618,13 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 
 <ul>
   <li>
-    <p><a href="https://www.nature.com/articles/s41586-020-2855-y">Computational planning of the synthesis of complex natural products</a></p>
-  </li>
-  <li>
     <p><a href="https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h">Schwaller, P., et al. (2020). “Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy.” Chemical Science 11(12): 3316-3325.</a></p>
   </li>
   <li>
-    <p>Watson, I. A., et al. (2019). “A retrosynthetic analysis algorithm implementation.” J Cheminform 11(1)</p>
+    <p><a href="https://www.nature.com/articles/s41586-020-2855-y">Computational planning of the synthesis of complex natural products</a></p>
+  </li>
+  <li>
+    <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0323-6">Watson, I. A., et al. (2019). “A retrosynthetic analysis algorithm implementation.” J Cheminform 11(1)</a></p>
   </li>
 </ul>
 
@@ -641,6 +657,12 @@ Need to generate a comparative metric to benchmark different algorithms.</li>
 </ul>
 
 <p>Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE.</p>
+
+<p><strong>Databases</strong></p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist">Kearnes, S. M., et al. (2021). “The Open Reaction Database.” Journal of the American Chemical Society.</a></li>
+</ul>
 
 <h3 id="dna-encoded-libraries">
 <a class="anchor" href="#dna-encoded-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNA-encoded Libraries</h3>
