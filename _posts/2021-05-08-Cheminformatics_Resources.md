@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 24th October 2021
+Last update: 4th November 2021
 
 ## Noteworthy blogs to follow:
 
@@ -272,6 +272,8 @@ Using scrapped US Patent data to classify chemical reactions and deploy various 
 
 Transformer-based model for reaction classification. Compared it with BERT. Besides classification, the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.  
 
+* [Probst, Daniel, Philippe Schwaller, and Jean-Louis Reymond. "Reaction Classification and Yield Prediction Using the Differential Reaction Fingerprint DRFP." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60e358fb379e8d3ba9f92d15)
+
 * [Delannée, V., Nicklaus, M.C. ReactionCode: format for reaction searching, analysis, classification, transform, and encoding/decoding. J Cheminform 12, 72 (2020)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00476-x)
 
 * [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
@@ -295,6 +297,10 @@ Generate atom mapped rxn SMILES.
 * [Schwaller, P., et al. (2019). "Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction." ACS Central Science 5(9): 1572-1583.](https://pubs.acs.org/doi/10.1021/acscentsci.9b00576) 
 
 **Retrosynthetic routes:** 
+
+* [Zabolotna, Y., et al. (2021). "SynthI: A New Open-Source Tool for Synthon-Based Library Design." Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00754)
+
+Interesting work on de-novo design of molecules wherein, the molecules being created are made up from the fragments that is known to exist and are available to the user. New molecules are generated based on the fragmented (synthons) made available in the dataset. 
 
 * [Schwaller, P., et al. (2020). "Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy." Chemical Science 11(12): 3316-3325.](https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h)
 
