@@ -280,6 +280,10 @@ Transformer-based model for reaction classification. Compared it with BERT. Besi
 
 **Atom mapping** 
 
+* [Lin, A., et al. (2021). "Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies."](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R)
+
+Comparative analysis of different atom-mapping schemes for generating atom-mapped reaction features. 
+
 Generate atom mapped rxn SMILES.
 
 * [Extraction of organic chemistry grammar from unsupervised learning of chemical reactions](https://advances.sciencemag.org/content/7/15/eabe4166). [RXMapper]()
@@ -289,6 +293,8 @@ Generate atom mapped rxn SMILES.
 **Predicting reaction outcomes:** 
 
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
+
+Template-free prediction of organic reaction outcomes using graph convolutional neural networks
 
 * [Prediction of Organic Reaction Outcomes Using Machine Learning, ACS Cent. Sci. 2017](https://pubs.acs.org/doi/10.1021/acscentsci.7b00064?ref=acsciiVIdeepchemistry)
 
@@ -347,8 +353,7 @@ DNA encodings for discovery of novel small-molecule protein inhibitors. Outline 
 
 * [Molecular AI department at AstraZeneca R&D](https://github.com/MolecularAI)
 
-* [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160
-)
+* [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160)
 
 Automates the selection of decision threshold for imbalanced classification task. The assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data. 
 
@@ -402,13 +407,18 @@ Active learning approach to efficiently and confidently identify the Pareto fron
 
 Github repository to generate chemical reaction fingerprints from reaction SMILES. 
 
+## Datasets
+
+* [Papyrus](https://chemrxiv.org/engage/chemrxiv/article-details/617aa2467a002162403d71f0)
+
+* [COCONUT](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9)
+
 ## Helpful utilities:
 
 * [RD-Kit](https://github.com/rdkit/rdkit)
     * [Get Atom Indices in the SMILE:](https://colab.research.google.com/drive/16T6ko0YE5WqIRzL4pwW_nufTDn7F3adw)
     * [Datamol for manipulating RDKit molecules](https://github.com/datamol-org/datamol)
-
-
+    
 * [Papers with code benchmark for QM9 energy predictions](https://paperswithcode.com/sota/formation-energy-on-qm9)
 
 * [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
