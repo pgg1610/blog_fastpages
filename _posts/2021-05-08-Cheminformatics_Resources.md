@@ -2,12 +2,12 @@
 toc: true
 sticky_rank: 3
 layout: post
-description: List of (fairly) recent articles, resources, and blogs that I've found useful to learn about Cheminformatics
+description: List of recent articles, resources, and blogs that I've found useful to learn about Cheminformatics
 categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 4th November 2021
+Last update: 13th November 2021
 
 ## Noteworthy blogs to follow:
 
@@ -27,8 +27,6 @@ Last update: 4th November 2021
 7. [DrugHunter - Dennis Hu](https://drughunter.com)
 
 ## Online resources 
-
-* [Data Professor's interview with Pat Walters](https://www.youtube.com/watch?v=9zBzLkuFz8k)
 
 * [Pat Walters' RSC CICAG Open Source Tools for Chemistry](https://www.macinchem.org/blog/files/fe66130c1da3375e46d0512e483eb901-2791.php?utm_source=pocket_mylist).[Video](https://www.youtube.com/watch?v=2ZjerAGS_IQ). [Github](https://github.com/PatWalters/chem_tutorial)
 
@@ -244,6 +242,7 @@ Using quantum chemistry attributes calculated on-the-fly as scoring functions fo
 ### Computer Aided Synthesis Planning (CASP) 
 
 **Reviews:** 
+
 * [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
 
 * Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682.
@@ -258,11 +257,11 @@ Nice summary of potential challenges in the field:
 - Need to generate a comparative metric to benchmark different algorithms.  
 - Considering effect of solvents and/or protein embeddings in the analysis
 
-* Previous review article by same group: [Exploration of Reaction Pathways and Chemical Transformation Networks](https://pubs.acs.org/doi/pdf/10.1021/acs.jpca.8b10007)
+    * Previous review article by same group: [Exploration of Reaction Pathways and Chemical Transformation Networks](https://pubs.acs.org/doi/pdf/10.1021/acs.jpca.8b10007)
 
 Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
-**Classification of reactions and featurization:**
+**Classifying chemical reactions:**
 
 * [Schneider, N., et al. (2015). "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity." Journal of Chemical Information and Modeling 55(1): 39-53.](https://pubs.acs.org/doi/10.1021/ci5006614)
 
@@ -278,15 +277,15 @@ Transformer-based model for reaction classification. Compared it with BERT. Besi
 
 * [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
 
-**Atom mapping** 
+**Atom mapping:** 
 
 * [Lin, A., et al. (2021). "Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies."](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R)
 
-Comparative analysis of different atom-mapping schemes for generating atom-mapped reaction features. 
+Comparative analysis of different atom-mapping schemes for generating atom-mapped reaction features. Comments on the state of the art methods and their performance on a curated reaction database. 
 
-Generate atom mapped rxn SMILES.
+* [Extraction of organic chemistry grammar from unsupervised learning of chemical reactions](https://advances.sciencemag.org/content/7/15/eabe4166). [RXMapper](https://github.com/rxn4chemistry/rxnmapper)
 
-* [Extraction of organic chemistry grammar from unsupervised learning of chemical reactions](https://advances.sciencemag.org/content/7/15/eabe4166). [RXMapper]()
+Data-driven atom mapping schemes which uses transformers for learning the context of the chemical reaction. Researchers at IBM trained a flavor of language model based on Transformer architecture and used it to find reaction centers and maps atoms. Shown to be robust compared to other SOTA methods. 
 
 * [Automatic mapping of atoms across both simple and complex chemical reactions](https://www.nature.com/articles/s41467-019-09440-2)
 
@@ -343,9 +342,9 @@ Look at exploration of reaction space rather than compound space. SOAP kernel fo
 
 New form of storing huge amounts of molecule related data using DNA. Made partially possible by low cost of DNA sequencing. Each molecule in the storage is attached with a DNA strand which encode information about its recipe. 
 
-* Follow up to the work with Machine Learning for hit finding. [(Link)](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
+    * Follow up to the work with Machine Learning for hit finding. [(Link)](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
 
-DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
+    DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
 
 * [Martín, A., et al. (2020). "Navigating the DNA encoded libraries chemical space." Communications Chemistry 3(1).](https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&code=2d1394f8-2e1b-46ef-b926-9441292aea56)
 
@@ -385,7 +384,7 @@ Github repository for implmenting message passing neural networks for molecular 
 
 * [DimeNet++  - extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
 
-* [BondNet - Graph neural network model for predicting bond dissociation energies, considers both homolytic and heterolytic bond breaking]. [Github](https://github.com/mjwen/bondnet)
+* [BondNet - Graph neural network model for predicting bond dissociation energies, considers both homolytic and heterolytic bond breaking](https://github.com/mjwen/bondnet). [Github](https://github.com/mjwen/bondnet)
 
 * [PhysNet](https://arxiv.org/pdf/1902.08408.pdf)
 
