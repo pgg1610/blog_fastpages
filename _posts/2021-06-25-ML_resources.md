@@ -83,6 +83,7 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [FiveThreeEight](https://github.com/fivethirtyeight/data)
 * [Pudding data](https://github.com/the-pudding/data)
 * [Our world in data](https://github.com/owid/owid-datasets)
+* [US Federal Reserve dataset with visualization](https://fred.stlouisfed.org)
 * [India centric dataset](https://www.gurmanbhatia.com/idea/resources/2021/05/31/dataset-of-datasets-for-indian-journalists.html)
 * [Misc collection](https://github.com/awesomedata/awesome-public-datasets)
 
