@@ -11,6 +11,8 @@ _notebooks/.ipynb_checkpoints
 _notebooks/data/misc
 _notebooks/dask-worker-space
 _notebooks/data/hymenoptera_data
+_notebooks/data/small_molecule_data/
+_notebooks/data/
 
 _posts/misc
 
