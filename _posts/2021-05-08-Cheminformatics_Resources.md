@@ -118,6 +118,7 @@ Train network to output the parameters of an evidential distribution. One forwar
 
 * [Differentiable sampling of molecular geometries with uncertainty-based adversarial attacks](https://arxiv.org/pdf/2101.11588.pdf)
 
+
 * [J. P. Janet, S. Ramesh, C. Duan, H. J. Kulik, ACS Cent. Sci. 2020](https://pubs.acs.org/doi/10.1021/acscentsci.0c00026)
 
 Conduct a global multi-objective optimization with expected improvement criterion. Find transition metal complex redox couples for Redox flow batteries that address stability, solubility, and redox potential metric. Use distance of a point from a training data in latent space as a metric to quantify uncertainty. 
@@ -146,6 +147,7 @@ Train property prediction model to output a distribution statistics in single pa
 ### Transfer Learning  
 
 * [Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning](https://www.nature.com/articles/s41467-019-10827-4)
+
 Transfer learning by training a network to DFT data and then retrain on a dataset of gold standard QM calculations (CCSD(T)/CBS) that optimally spans chemical space. The resulting potential is broadly applicable to materials science, biology, and chemistry, and billions of times faster than CCSD(T)/CBS calculations.
 
 * [Improving the generative performance of chemical autoencoders through transfer learning](https://iopscience.iop.org/article/10.1088/2632-2153/abae75/meta)
@@ -156,6 +158,7 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 **Reviews** 
 
 * [Mouchlis VD, Afantitis A, Serra A, et al. Advances in de Novo Drug Design: From Conventional to Machine Learning Methods. Int J Mol Sci. 2021;22(4):1676. Published 2021 Feb 7. doi:10.3390/ijms22041676](https://pubmed.ncbi.nlm.nih.gov/33562347/)
+
 
 * [B. Sanchez-Lengeling and A. Aspuru-Guzik, “Inverse molecular design using machine learning: Generative models for matter engineering,” Science (80)., vol. 361, no. 6400, pp. 360–365, Jul. 2018](https://science.sciencemag.org/content/361/6400/360)
 
@@ -188,7 +191,8 @@ One of the first implementation of a variation auto-encoder for molecule generat
 * [SELFIES and generative models using STONED](https://chemrxiv.org/articles/preprint/Beyond_Generative_Models_Superfast_Traversal_Optimization_Novelty_Exploration_and_Discovery_STONED_Algorithm_for_Molecules_using_SELFIES/13383266) 
 
 Representation using SELFIES proposed to make it much more powerful
-    * [Reproducibility study of the STONED work from Jablonka et. al.](https://arxiv.org/pdf/2102.00700.pdf)
+
+* [Reproducibility study of the STONED work from Jablonka et. al.](https://arxiv.org/pdf/2102.00700.pdf)
 
 * [LSTM based (RNN) approaches to small molecule generation](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf). [Github](https://github.com/ETHmodlab/BIMODAL)
 
@@ -215,9 +219,10 @@ Algorithm to predict 3D conforms from molecular graphs.
 * [GraphINVENT: R. Mercado, T. Rastemo, E. Lindelöf, G. Klambauer and O. Engkvist, “Graph networks for molecular design,” Mach. Learn. Sci. Technol., vol. 2, no. 2, p. 25023, 2021](https://iopscience.iop.org/article/10.1088/2632-2153/abcf91/meta). [Github](https://github.com/MolecularAI/GraphINVENT). [Blogpost](https://www.cheminformania.com/using-graphinvent-to-generate-novel-drd2-actives/)
 
 GraphINVENT uses a tiered deep neural network architecture to probabilistically generate new molecules a single bond at a time. 
-    * [RL-GraphINVENT: Reinforcement learning-based variant of the above code.](https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039)
 
-    * [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
+* [RL-GraphINVENT: Reinforcement learning-based variant of the above code.](https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039)
+
+* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
 
 **GANs**
 
@@ -344,9 +349,9 @@ Look at exploration of reaction space rather than compound space. SOAP kernel fo
 
 New form of storing huge amounts of molecule related data using DNA. Made partially possible by low cost of DNA sequencing. Each molecule in the storage is attached with a DNA strand which encode information about its recipe. 
 
-    * Follow up to the work with Machine Learning for hit finding. [(Link)](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
-
-    DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
+- [Follow up to the work with Machine Learning for hit finding.](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
+ 
+DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. First work to use GCN for hit searching.
 
 * [Martín, A., et al. (2020). "Navigating the DNA encoded libraries chemical space." Communications Chemistry 3(1).](https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&code=2d1394f8-2e1b-46ef-b926-9441292aea56)
 
