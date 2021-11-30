@@ -380,13 +380,13 @@ window.onload = wrap_img;
 <a class="anchor" href="#transfer-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transfer Learning</h3>
 
 <ul>
-  <li>
-    <p><a href="https://www.nature.com/articles/s41467-019-10827-4">Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning</a>
-Transfer learning by training a network to DFT data and then retrain on a dataset of gold standard QM calculations (CCSD(T)/CBS) that optimally spans chemical space. The resulting potential is broadly applicable to materials science, biology, and chemistry, and billions of times faster than CCSD(T)/CBS calculations.</p>
-  </li>
-  <li>
-    <p><a href="https://iopscience.iop.org/article/10.1088/2632-2153/abae75/meta">Improving the generative performance of chemical autoencoders through transfer learning</a></p>
-  </li>
+  <li><a href="https://www.nature.com/articles/s41467-019-10827-4">Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning</a></li>
+</ul>
+
+<p>Transfer learning by training a network to DFT data and then retrain on a dataset of gold standard QM calculations (CCSD(T)/CBS) that optimally spans chemical space. The resulting potential is broadly applicable to materials science, biology, and chemistry, and billions of times faster than CCSD(T)/CBS calculations.</p>
+
+<ul>
+  <li><a href="https://iopscience.iop.org/article/10.1088/2632-2153/abae75/meta">Improving the generative performance of chemical autoencoders through transfer learning</a></li>
 </ul>
 
 <h3 id="generative-models">
@@ -449,10 +449,12 @@ Transfer learning by training a network to DFT data and then retrain on a datase
   </li>
 </ul>
 
-<p>Representation using SELFIES proposed to make it much more powerful
-    * <a href="https://arxiv.org/pdf/2102.00700.pdf">Reproducibility study of the STONED work from Jablonka et. al.</a></p>
+<p>Representation using SELFIES proposed to make it much more powerful</p>
 
 <ul>
+  <li>
+    <p><a href="https://arxiv.org/pdf/2102.00700.pdf">Reproducibility study of the STONED work from Jablonka et. al.</a></p>
+  </li>
   <li>
     <p><a href="https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf">LSTM based (RNN) approaches to small molecule generation</a>. <a href="https://github.com/ETHmodlab/BIMODAL">Github</a></p>
   </li>
@@ -492,11 +494,16 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 </li>
 </ul>
 
-<p>GraphINVENT uses a tiered deep neural network architecture to probabilistically generate new molecules a single bond at a time. 
-    * <a href="https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039">RL-GraphINVENT: Reinforcement learning-based variant of the above code.</a></p>
+<p>GraphINVENT uses a tiered deep neural network architecture to probabilistically generate new molecules a single bond at a time.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
-</code></pre></div></div>
+<ul>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039">RL-GraphINVENT: Reinforcement learning-based variant of the above code.</a></p>
+  </li>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2">Comparative analysis of graph traversal schemes for GraphINVENT</a></p>
+  </li>
+</ul>
 
 <p><strong>GANs</strong></p>
 
@@ -699,10 +706,11 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 <p>New form of storing huge amounts of molecule related data using DNA. Made partially possible by low cost of DNA sequencing. Each molecule in the storage is attached with a DNA strand which encode information about its recipe.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Follow up to the work with Machine Learning for hit finding. [(Link)](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452)
+<ul>
+  <li><a href="https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.0c00452">Follow up to the work with Machine Learning for hit finding.</a></li>
+</ul>
 
-DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. 
-</code></pre></div></div>
+<p>DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. First work to use GCN for hit searching.</p>
 
 <ul>
   <li><a href="https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&amp;code=2d1394f8-2e1b-46ef-b926-9441292aea56">Martín, A., et al. (2020). “Navigating the DNA encoded libraries chemical space.” Communications Chemistry 3(1).</a></li>
