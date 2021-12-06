@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      20 min read
+      21 min read
     
 </span></p>
 
@@ -135,14 +135,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#online-resources">Online resources</a></li>
 <li class="toc-entry toc-h2"><a href="#reviews">Reviews:</a></li>
 <li class="toc-entry toc-h2"><a href="#industry-focused-drug-discovery-reviews">Industry-focused drug discovery reviews</a></li>
-<li class="toc-entry toc-h2"><a href="#special-journal-issues">Special Journal Issues:</a></li>
+<li class="toc-entry toc-h2"><a href="#special-journal-issues">Special Journal Issues</a></li>
+<li class="toc-entry toc-h2"><a href="#meeting-notes">Meeting notes</a></li>
 <li class="toc-entry toc-h2"><a href="#specific-articles">Specific Articles</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#representation">Representation:</a></li>
-<li class="toc-entry toc-h3"><a href="#uncertainty-quantification">Uncertainty quantification:</a></li>
+<li class="toc-entry toc-h3"><a href="#representation">Representation</a></li>
+<li class="toc-entry toc-h3"><a href="#qsar-benchmarks">QSAR benchmarks</a></li>
+<li class="toc-entry toc-h3"><a href="#uncertainty-quantification">Uncertainty quantification</a></li>
 <li class="toc-entry toc-h3"><a href="#active-learning">Active Learning</a></li>
 <li class="toc-entry toc-h3"><a href="#transfer-learning">Transfer Learning</a></li>
-<li class="toc-entry toc-h3"><a href="#generative-models">Generative models:</a></li>
+<li class="toc-entry toc-h3"><a href="#generative-models">Generative models</a></li>
 <li class="toc-entry toc-h3"><a href="#computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</a></li>
 <li class="toc-entry toc-h3"><a href="#dna-encoded-libraries">DNA-encoded Libraries</a></li>
 </ul>
@@ -256,10 +258,13 @@ window.onload = wrap_img;
   <li>
     <p><a href="https://www.sciencedirect.com/science/article/abs/pii/S1740674920300032">J. Shen and C. A. Nicolaou, “Molecular property prediction: recent trends in the era of artificial intelligence,” Drug Discov. Today Technol., vol. 32–33, no. xx, pp. 29–36, 2019.</a></p>
   </li>
+  <li>
+    <p><a href="https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub">Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., &amp; Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.</a></p>
+  </li>
 </ul>
 
 <h2 id="special-journal-issues">
-<a class="anchor" href="#special-journal-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Special Journal Issues:</h2>
+<a class="anchor" href="#special-journal-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Special Journal Issues</h2>
 
 <ol>
   <li>
@@ -273,13 +278,25 @@ window.onload = wrap_img;
   </li>
 </ol>
 
+<h2 id="meeting-notes">
+<a class="anchor" href="#meeting-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Meeting notes</h2>
+
+<ul>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/611cf1a6ac8b499b36458d19">Warr, W. (2021). National Institutes of Health (NIH) Workshop on Reaction Informatics</a></p>
+  </li>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5">Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.</a></p>
+  </li>
+</ul>
+
 <h2 id="specific-articles">
 <a class="anchor" href="#specific-articles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specific Articles</h2>
 
 <p>Few key papers which I have found useful when learning more about the state-of-the-art in Cheminformatics. I’ve tried to categorize them roughly based on their area of application:</p>
 
 <h3 id="representation">
-<a class="anchor" href="#representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Representation:</h3>
+<a class="anchor" href="#representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Representation</h3>
 
 <ul>
   <li>
@@ -310,8 +327,30 @@ window.onload = wrap_img;
 
 <p>Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.</p>
 
+<h3 id="qsar-benchmarks">
+<a class="anchor" href="#qsar-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>QSAR benchmarks</h3>
+
+<ul>
+  <li>
+    <p><a href="https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a">MoleculeNet: a benchmark for molecular machine learning (rsc.org)</a></p>
+  </li>
+  <li>
+    <p><a href="https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k">Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)</a></p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set</td>
+          <td>Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 <h3 id="uncertainty-quantification">
-<a class="anchor" href="#uncertainty-quantification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uncertainty quantification:</h3>
+<a class="anchor" href="#uncertainty-quantification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uncertainty quantification</h3>
 
 <ul>
   <li>
@@ -390,7 +429,7 @@ window.onload = wrap_img;
 </ul>
 
 <h3 id="generative-models">
-<a class="anchor" href="#generative-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generative models:</h3>
+<a class="anchor" href="#generative-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generative models</h3>
 
 <p><strong>Reviews</strong></p>
 
@@ -569,6 +608,14 @@ window.onload = wrap_img;
 
 <p>Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review.</p>
 
+<p><strong>Best practices</strong></p>
+
+<ul>
+  <li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/minf.202100119?casa_token=SczoexCIDDUAAAAA:3M-uhrRFMaNRnydOQb-NBhJ1VvocjwZ1_ll--OGP1QwJ-X5Amwt24M586NXxbbgazYn0t-NBAmxS1oFk">Gimadiev, T. R., Lin, A., Afonina, V. A., Batyrshin, D., Nugmanov, R. I., Akhmetshin, T., … &amp; Varnek, A. (2021). Reaction Data Curation I: Chemical Structures and Transformations Standardization. Molecular Informatics, 2100119.</a></li>
+</ul>
+
+<p>Article from Varnek group on best practices on processing data for reaction informatics.</p>
+
 <p><strong>Classifying chemical reactions:</strong></p>
 
 <ul>
@@ -713,7 +760,12 @@ window.onload = wrap_img;
 <p>DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. First work to use GCN for hit searching.</p>
 
 <ul>
-  <li><a href="https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&amp;code=2d1394f8-2e1b-46ef-b926-9441292aea56">Martín, A., et al. (2020). “Navigating the DNA encoded libraries chemical space.” Communications Chemistry 3(1).</a></li>
+  <li>
+    <p><a href="https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&amp;code=2d1394f8-2e1b-46ef-b926-9441292aea56">Martín, A., et al. (2020). “Navigating the DNA encoded libraries chemical space.” Communications Chemistry 3(1).</a></p>
+  </li>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/60fac8718804431689e3155b">Zabolotna, Y., Pikalyova, R., Volochnyuk, D., Horvath, D., Marcou, G., &amp; Varnek, A. (2021). Exploration of the chemical space of DNA-encoded libraries.</a></p>
+  </li>
 </ul>
 
 <h2 id="code--packages">
