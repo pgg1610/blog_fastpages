@@ -93,11 +93,14 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 **Statstics & Exploratory Analysis**
 
 * [Think Stats by Allen Downley]([https://greenteapress.com/thinkstats2/thinkstats2.pdf](https://greenteapress.com/thinkstats2/thinkstats2.pdf))
+
 * [Telling stories with data](https://www.tellingstorieswithdata.com/)
 
 **Data Science**
 
 * [Jakevdp Python Datascience Notebook](https://github.com/jakevdp/PythonDataScienceHandbook)
+* [Introduction to Cultural Analytics & Python](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html)
+Nice collection of tips for web scraping, network analysis, geotagging, language processing using python. 
 
 **Data Visualization** 
 

@@ -72,7 +72,9 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 * [J. Shen and C. A. Nicolaou, “Molecular property prediction: recent trends in the era of artificial intelligence,” Drug Discov. Today Technol., vol. 32–33, no. xx, pp. 29–36, 2019.](https://www.sciencedirect.com/science/article/abs/pii/S1740674920300032)
 
-## Special Journal Issues: 
+* [Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., & Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub)
+
+## Special Journal Issues
 
 1. [Nice collection of recent papers in Nature Communications on ML application and modeling](https://www.nature.com/collections/gcijejjahe)
 
@@ -80,11 +82,18 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 3. [Account of Chemical Research Special Issue on advances in data-driven chemistry research](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
 
+
+## Meeting notes 
+
+* [Warr, W. (2021). National Institutes of Health (NIH) Workshop on Reaction Informatics](https://chemrxiv.org/engage/chemrxiv/article-details/611cf1a6ac8b499b36458d19)
+
+* [Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.](https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5)
+
 ## Specific Articles 
 
 Few key papers which I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
 
-### Representation:
+### Representation
 
 * [Representation of Molecules in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
 
@@ -104,7 +113,16 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
-### Uncertainty quantification:
+### QSAR benchmarks 
+
+* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
+
+* [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
+
+* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set | Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
+
+
+### Uncertainty quantification
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
 
@@ -153,7 +171,7 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 * [Improving the generative performance of chemical autoencoders through transfer learning](https://iopscience.iop.org/article/10.1088/2632-2153/abae75/meta)
 
 
-### Generative models:
+### Generative models
 
 **Reviews** 
 
@@ -266,6 +284,13 @@ Nice summary of potential challenges in the field:
 
 Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
 
+
+**Best practices** 
+
+* [Gimadiev, T. R., Lin, A., Afonina, V. A., Batyrshin, D., Nugmanov, R. I., Akhmetshin, T., ... & Varnek, A. (2021). Reaction Data Curation I: Chemical Structures and Transformations Standardization. Molecular Informatics, 2100119.](https://onlinelibrary.wiley.com/doi/abs/10.1002/minf.202100119?casa_token=SczoexCIDDUAAAAA:3M-uhrRFMaNRnydOQb-NBhJ1VvocjwZ1_ll--OGP1QwJ-X5Amwt24M586NXxbbgazYn0t-NBAmxS1oFk)
+
+Article from Varnek group on best practices on processing data for reaction informatics. 
+
 **Classifying chemical reactions:**
 
 * [Schneider, N., et al. (2015). "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity." Journal of Chemical Information and Modeling 55(1): 39-53.](https://pubs.acs.org/doi/10.1021/ci5006614)
@@ -354,6 +379,8 @@ New form of storing huge amounts of molecule related data using DNA. Made partia
 DNA encodings for discovery of novel small-molecule protein inhibitors. Outline a process for building a ML model using DEL. Compare graph convolutions to random forest for classification tasks with application to protein target binding. Graph models seemed to achieve high hit rate comapred to random forest. Apply diversity, logistical, structural filtering to search for novel candidates. First work to use GCN for hit searching.
 
 * [Martín, A., et al. (2020). "Navigating the DNA encoded libraries chemical space." Communications Chemistry 3(1).](https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&code=2d1394f8-2e1b-46ef-b926-9441292aea56)
+
+* [Zabolotna, Y., Pikalyova, R., Volochnyuk, D., Horvath, D., Marcou, G., & Varnek, A. (2021). Exploration of the chemical space of DNA-encoded libraries.](https://chemrxiv.org/engage/chemrxiv/article-details/60fac8718804431689e3155b)
 
 ## Code / Packages:
 
