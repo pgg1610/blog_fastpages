@@ -268,7 +268,7 @@ Using quantum chemistry attributes calculated on-the-fly as scoring functions fo
 
 * [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
 
-* Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682.
+* [Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02120)
 
 * [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
 
