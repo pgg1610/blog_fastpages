@@ -1,13 +1,13 @@
 ---
 toc: true
-sticky_rank: 3
+sticky_rank: 2
 layout: post
-description: List of recent articles, resources, and blogs that I've found useful to learn about Cheminformatics
+description: Compendium of recent articles, resources, and blogs in the area of Cheminformatics
 categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 13th November 2021
+Last update: 12th December 2021
 
 ## Noteworthy blogs to follow:
 
@@ -38,7 +38,15 @@ Last update: 13th November 2021
 
 * [Chem LibreText collection from ACS Division of Chemical Education](https://bit.ly/2SxItoc)
 
-## Reviews:
+
+## Books
+
+* [Bajorath, J. (Ed.). (2011). Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology. doi:10.1007/978-1-60761-839-3](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
+
+* [Heifetz, Alexander. (Ed.) (2022). "Artificial Intelligence in Drug Design."](https://link.springer.com/book/10.1007/978-1-0716-1787-8)
+
+
+## Reviews
 
 * [F. Strieth-Kalthoff, F. Sandfort, M. H. S. Segler, and F. Glorius, Machine learning the ropes: principles, applications and directions in synthetic chemistry, Chem. Soc. Rev](https://pubs.rsc.org/en/content/articlelanding/2020/CS/C9CS00786E#fn1)
 
@@ -62,7 +70,7 @@ Recent review summarising the state of the molecular property prediction and str
 
 * [Machine learning directed drug formulation development](https://www.sciencedirect.com/science/article/pii/S0169409X21001800?via%3Dihub) 
 
-Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged for various types of drug formulation tasks. 
+Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged for various tasks in drug formulation tasks. 
 
 ## Industry-focused drug discovery reviews 
 
@@ -95,6 +103,7 @@ Few key papers which I have found useful when learning more about the state-of-t
 
 ### Representation
 
+
 * [Representation of Molecules in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
 
 * [Screening of energetic molecules -- comparing different representations](https://www.nature.com/articles/s41598-018-27344-x)
@@ -119,10 +128,12 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 
 * [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
 
-* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set | Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
+* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
 
 
 ### Uncertainty quantification
+
+* [Mervin, Lewis H., et al. "Uncertainty quantification in drug design." Drug discovery today 26.2 (2021): 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110)
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
 
@@ -170,6 +181,20 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 * [Improving the generative performance of chemical autoencoders through transfer learning](https://iopscience.iop.org/article/10.1088/2632-2153/abae75/meta)
 
+### Meta Learning 
+
+* [Altae-Tran, H., Ramsundar, B., Pappu, A. S., & Pande, V. (2017). Low data drug discovery with one-shot learning. ACS central science, 3(4), 283-293.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)
+
+
+
+* [Nguyen, C. Q., Kreatsoulas, C., & Branson, K. M. (2020). Meta-learning GNN initializations for low-resource molecular property prediction. arXiv preprint arXiv:2003.05996.](https://arxiv.org/pdf/2003.05996.pdf)
+
+Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just ~256 datapoints. 
+
+
+### Federated Learning 
+
+* [Simm, Jaak, et al. "Splitting chemical structure data sets for federated privacy-preserving machine learning." Journal of Cheminformatics 13.1 (2021): 1-14.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00576-2)
 
 ### Generative models
 
@@ -181,6 +206,10 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 * [B. Sanchez-Lengeling and A. Aspuru-Guzik, “Inverse molecular design using machine learning: Generative models for matter engineering,” Science (80)., vol. 361, no. 6400, pp. 360–365, Jul. 2018](https://science.sciencemag.org/content/361/6400/360)
 
 **Benchmarks**
+
+* [Flam-Shepherd, Daniel, Kevin Zhu, and Alán Aspuru-Guzik. "Keeping it Simple: Language Models can learn Complex Molecular Distributions." arXiv preprint arXiv:2112.03041 (2021).](https://arxiv.org/abs/2112.03041)
+
+Test SOTA language models and representation performance against graph-based methods (CGVAE, JTVAE) for 'challenging' generative modeling tasks - generate a molecule - property distribution as a function of synthetic feasiblity. Graph models faced chanllenge in generating large molcules (> 100 HAs). Selfies provided advantage here. All of the models seem to generate novel molecules - how practical each of these novel molecules are is yet an open question. 
 
 * [MOSES - Benchmarking platform for generative models](https://arxiv.org/abs/1811.12823).
 
@@ -266,6 +295,8 @@ Using quantum chemistry attributes calculated on-the-fly as scoring functions fo
 
 **Reviews:** 
 
+* [Madzhidov, T. I., et al. (2021). "Machine learning modelling of chemical reaction characteristics: yesterday, today, tomorrow." Mendeleev Communications 31(6): 769-780.](https://www.sciencedirect.com/science/article/abs/pii/S0959943621002959?dgcid=author)
+
 * [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
 
 * [Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02120)
@@ -306,6 +337,8 @@ Transformer-based model for reaction classification. Compared it with BERT. Besi
 * [Delannée, V., Nicklaus, M.C. ReactionCode: format for reaction searching, analysis, classification, transform, and encoding/decoding. J Cheminform 12, 72 (2020)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00476-x)
 
 * [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
+
+Reaction classifiction prediction using atom-mapped reaction that are used to generate condensed reaction graphs and passed through a GCN-variant as implemented in chemprop. 
 
 **Atom mapping:** 
 
