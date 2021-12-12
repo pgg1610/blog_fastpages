@@ -186,6 +186,8 @@ I've compiled some nice cheat-sheets discussing basics of ML, Data Science, Stat
 * [Nate Silver's 538](https://fivethirtyeight.com/)
 * [Jim Vallandingham](https://vallandingham.me/vis/)
 * [Pudding's data viz](https://pudding.cool/)
+* [Flowing Data](https://flowingdata.com)
+* [Mike Bostock](https://observablehq.com/@mbostock)
 * [Spurious Correlations](https://www.tylervigen.com/spurious-correlations)
 * [Understanding uncertainty](https://understandinguncertainty.org/blog)
 * [Math3ma Blog](https://www.math3ma.com/blog/)
