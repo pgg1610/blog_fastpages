@@ -13,6 +13,7 @@ _notebooks/dask-worker-space
 _notebooks/data/hymenoptera_data
 _notebooks/data/small_molecule_data/
 _notebooks/data/
+_notebooks/temp/
 
 _posts/misc
 
