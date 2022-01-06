@@ -122,6 +122,19 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
+### Explainable/Interpretable Machine Learning 
+
+**Reviews/Perspectives**
+
+* [Rodríguez-Pérez, Raquel, and Jürgen Bajorath. "Explainable Machine Learning for Property Predictions in Compound Optimization." Journal of medicinal chemistry 64.24 (2021): 17744-17752](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01789)
+
+**Articles**
+
+* [Wellawatte, Geemi P., Aditi Seshadri, and Andrew D. White. "Model agnostic generation of counterfactual explanations for molecules." (2021).](https://chemrxiv.org/engage/chemrxiv/article-details/613268f0d5f0803706ba0c79)
+
+* [Matveieva, Mariia, and Pavel Polishchuk. "Benchmarks for interpretation of QSAR models." Journal of cheminformatics 13.1 (2021): 1-20](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Patrick Walter's blog](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html)
+
+
 ### QSAR benchmarks 
 
 * [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
