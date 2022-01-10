@@ -192,22 +192,22 @@ window.onload = wrap_img;
 <h4 id="How?">
 <a class="anchor" href="#How?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How?<a class="anchor-link" href="#How?"> </a>
 </h4>
-<p>To describe a reaction, a three-level reaction ontology classification is based upon the hierarchy proposed by Carey, Laffan, Thomson and Williams 2006, and used again by Roughley and Jordan 2011.</p>
-<p>Each reaction is categorized in 3 layers: superclass &gt;&gt; class &gt;&gt; type</p>
-<p>Example: Suzuki reaction is as follows:</p>
+<p>A chemical reaction is descirbed using a three-level reaction ontology based on the hierarchy proposed by Carey, Laffan, Thomson and Williams in 2006.</p>
+<p>In this scheme, every reaction is grouped using 3 layers of information: superclass &gt;&gt; class &gt;&gt; type</p>
+<p>Fo example: Suzuki reaction is as follows:</p>
 
 <pre><code>"3 Carbon-Carbon bond formation" (Superclass)
     |- "3.1. Suzuki coupling" (Class)
         |- 3.1.1 Bromo OR 3.1.2 Chloro OR 3.1.3 Iodo Suzuki Coupling (Type)
     |- "3.5 Palladium-catalyzed C-C bond formation" (Class) 
         |- 3.5.3 Negishi coupling (Type)</code></pre>
-<p>Researchers at <a href="https://www.nextmovesoftware.com/namerxn.html">NextMove software</a> were one of the first groups to scrap US Patent literature for chemical reactions - use the categories defined above and then systematically classify the reactions in it as per these categories.</p>
-<p>Another important step in this process is the atom-atom mapping of the chemical reactions. While not the crucial steps (as newer algorithms can perform this task without explicit atom-mapping) it is an important pre-processing standardization operation.</p>
+<p>Researchers at <a href="https://www.nextmovesoftware.com/namerxn.html">NextMove software</a> were among the first groups to scrap US Patent literature for chemical reactions and use the categories defined above to systematically classify the reactions.</p>
+<p>Another important step in this process is the atom-atom mapping of the chemical reactions. While not a crucial step (as newer algorithms can perform this task without explicit atom-mapping) it is an important pre-processing standardization operation.</p>
 <p>Atom-atom mapping helps to understand which reactant atom becomes which product atom during the reaction. From this information it is possible to identify reaction centers and sets of bonds made and broken during the reaction.</p>
 <p>This is also useful in distinguishing reactants and products.</p>
-<p><strong>By convention:</strong>
-Reactant: Contribute one more more atoms to the product 
-Reagents (solvent, catalyst): Do not contribute any atom to the product(s)</p>
+<p><strong>By convention:</strong></p>
+<p>Reactant: Contribute one more more atoms to the product</p>
+<p>Reagents (solvent, catalyst): Do not contribute any atom to the product(s)</p>
 <p>Relevant papers in this field can be found <a href="https://pgg1610.github.io/blog_fastpages/chemical-science/machine-learning/resources/2021/05/08/Cheminformatics_Resources.html#computer-aided-synthesis-planning-casp">here</a></p>
 <p>Using the Schneider et. al. paper for reference - 
 <a href="https://pubs.acs.org/doi/10.1021/ci5006614">https://pubs.acs.org/doi/10.1021/ci5006614</a></p>
@@ -350,7 +350,7 @@ Reagents (solvent, catalyst): Do not contribute any atom to the product(s)</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">'/lrlhps/users/l017301/SHARE/DATA/Schneider_etal_ChemReactionClassification/data'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">'DATA/Schneider_etal_ChemReactionClassification/data'</span>
 </pre></div>
 
     </div>
@@ -369,7 +369,8 @@ Reagents (solvent, catalyst): Do not contribute any atom to the product(s)</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">'reactionTypes_training_test_set_patent_data.pkl'</span><span class="p">),</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
     <span class="n">reaction_types</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    
+
+<span class="c1"># reaction classification data</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">'names_rTypes_classes_superclasses_training_test_set_patent_data.pkl'</span><span class="p">),</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
     <span class="n">names_rTypes</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
