@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -227,6 +227,43 @@ window.onload = wrap_img;
 <span class="o">&gt;&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s">'Mol Image'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s">'SMILES'</span><span class="p">]]</span>
 <span class="o">&gt;&gt;</span> <span class="n">PandasTools</span><span class="p">.</span><span class="n">SaveXlsxFromFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">'test.xlsx'</span><span class="p">,</span> <span class="n">molCol</span><span class="o">=</span><span class="s">'Mol Image'</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p><strong>Viewing substructures</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">viz_substruct</span><span class="p">(</span><span class="n">main_smile</span><span class="p">,</span> <span class="n">substructure_smarts</span><span class="p">):</span>
+    
+    <span class="n">mol_file</span> <span class="o">=</span> <span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">main_smile</span><span class="p">)</span>
+    <span class="n">sub_pattern</span> <span class="o">=</span> <span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">substructure_smarts</span><span class="p">)</span>
+    
+    <span class="n">hit_ats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mol_file</span><span class="p">.</span><span class="n">GetSubstructMatch</span><span class="p">(</span><span class="n">sub_pattern</span><span class="p">))</span> <span class="c1"># Returns the indices of the molecule’s atoms that match a substructure query
+</span>    <span class="n">hit_bonds</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">sub_pattern</span><span class="p">.</span><span class="n">GetBonds</span><span class="p">():</span>
+        <span class="n">aid1</span> <span class="o">=</span> <span class="n">hit_ats</span><span class="p">[</span><span class="n">bond</span><span class="p">.</span><span class="n">GetBeginAtomIdx</span><span class="p">()]</span>
+        <span class="n">aid2</span> <span class="o">=</span> <span class="n">hit_ats</span><span class="p">[</span><span class="n">bond</span><span class="p">.</span><span class="n">GetEndAtomIdx</span><span class="p">()]</span>
+
+        <span class="n">hit_bonds</span><span class="p">.</span><span class="n">append</span><span class="p">(</span> <span class="n">mol_file</span><span class="p">.</span><span class="n">GetBondBetweenAtoms</span><span class="p">(</span><span class="n">aid1</span><span class="p">,</span> <span class="n">aid2</span><span class="p">).</span><span class="n">GetIdx</span><span class="p">()</span> <span class="p">)</span>
+
+    <span class="n">d2d</span> <span class="o">=</span> <span class="n">rdMolDraw2D</span><span class="p">.</span><span class="n">MolDraw2DSVG</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span> <span class="c1"># or MolDraw2DCairo to get PNGs
+</span>    <span class="n">rdMolDraw2D</span><span class="p">.</span><span class="n">PrepareAndDrawMolecule</span><span class="p">(</span><span class="n">d2d</span><span class="p">,</span> <span class="n">mol_file</span><span class="p">,</span> <span class="n">highlightAtoms</span><span class="o">=</span><span class="n">hit_ats</span><span class="p">,</span>  <span class="n">highlightBonds</span><span class="o">=</span><span class="n">hit_bonds</span><span class="p">)</span>
+    <span class="n">d2d</span><span class="p">.</span><span class="n">FinishDrawing</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">SVG</span><span class="p">(</span><span class="n">d2d</span><span class="p">.</span><span class="n">GetDrawingText</span><span class="p">())</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">diclofenac</span> <span class="o">=</span> <span class="s">'O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl'</span>
+<span class="o">&gt;&gt;</span> <span class="n">substruct_smarts</span> <span class="o">=</span> <span class="s">'O=CCccN'</span>
+<span class="o">&gt;&gt;</span> <span class="n">viz_substruct</span><span class="p">(</span><span class="n">diclofenac</span><span class="p">,</span> <span class="n">substruct_smarts</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>View a reaction</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rxn</span> <span class="o">=</span> <span class="n">AllChem</span><span class="p">.</span><span class="n">ReactionFromSmarts</span><span class="p">(</span><span class="s">'[C:1]=[C:2].[C:3]=[*:4][*:5]=[C:6]&gt;&gt;[C:1]1[C:2][C:3][*:4]=[*:5][C:6]1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Get changed atoms in a reaction: https://greglandrum.github.io/rdkit-blog/tutorial/reactions/2021/11/26/highlighting-changed-bonds-in-reactions.html</p>
+
+<p><strong>Edit, merge, react molecules</strong></p>
+
+<p>Molecule tinkering using Rdkit: http://asteeves.github.io/blog/2015/01/14/editing-in-rdkit/</p>
 
 <p><strong>Using mol2grid</strong></p>
 
