@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 12th December 2021
+Last update: 22nd January 2022
 
 ## Noteworthy blogs to follow:
 
@@ -41,7 +41,7 @@ Last update: 12th December 2021
 
 ## Books
 
-* [Bajorath, J. (Ed.). (2011). Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology. doi:10.1007/978-1-60761-839-3](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
+* [Bajorath, 2011. Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology.](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
 
 * [Heifetz, Alexander. (Ed.) (2022). "Artificial Intelligence in Drug Design."](https://link.springer.com/book/10.1007/978-1-0716-1787-8)
 
@@ -150,7 +150,7 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
 
-* [Uncertainty Quantification Using Neural Networks for Molecular Property Prediction. J. Chem. Inf. Model. (2020) Hirschfeld, L., Swanson, K., Yang, K., Barzilay, R. & Coley, C. W.](10.1021/acs.jcim.0c00502)
+* [Uncertainty Quantification Using Neural Networks for Molecular Property Prediction. J. Chem. Inf. Model. (2020) Hirschfeld, L., Swanson, K., Yang, K., Barzilay, R. & Coley, C. W.](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.0c00502)
 
 Benchmark different models and uncertainty metrics for molecular property prediction. 
 
@@ -432,7 +432,7 @@ DNA encodings for discovery of novel small-molecule protein inhibitors. Outline 
 
 * [Molecular AI department at AstraZeneca R&D](https://github.com/MolecularAI)
 
-* [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160)
+* [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160). [Blogpost](https://greglandrum.github.io/rdkit-blog/exploratory/machinelearning/2021/12/23/ternary-ghost.html#Synthetic-datasets)
 
 Automates the selection of decision threshold for imbalanced classification task. The assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data. 
 
