@@ -88,7 +88,7 @@ Approachable compendium of key ML concepts boiled down to key insights, offers a
 * [Misc collection](https://github.com/awesomedata/awesome-public-datasets)
 
 
-### Books
+### Books and websites
 
 **Statstics & Exploratory Analysis**
 
@@ -105,6 +105,7 @@ Nice collection of tips for web scraping, network analysis, geotagging, language
 **Data Visualization** 
 
 * [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+* [Compendium of different charting types and python code](https://www.python-graph-gallery.com)
 
 **Machine-Learning**
 

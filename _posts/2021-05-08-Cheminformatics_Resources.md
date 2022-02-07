@@ -120,7 +120,7 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 
 * [Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402](https://arxiv.org/abs/2107.10402)
 
-Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
+Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
 ### Explainable/Interpretable Machine Learning 
 
@@ -240,6 +240,11 @@ Interesting analysis from team at AstraZeneca R&D. They look at the chemical spa
 
 This paper looks at different ways of integrating synthesizability criteria into generative models. 
 
+* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
+
+Bechmark work from AstraZeneca/MIT AI team to document different graph architecture schemes and algorithms for generative models. 
+
+
 **Language models:**
 
 * [R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol. 4, no. 2, pp. 268–276, 2018](https://pubs.acs.org/doi/10.1021/acscentsci.7b00572)
@@ -264,6 +269,11 @@ SMILES-based language model that generates molecules from scaffolds and can be t
 
 **Graph-based**
 
+* [Flam-Shepherd, Daniel, Alexander Zhigalin, and Alán Aspuru-Guzik. "Scalable Fragment-Based 3D Molecular Design with Reinforcement Learning." arXiv preprint arXiv:2202.00658 (2022)](https://arxiv.org/abs/2202.00658?)
+
+Reinforcement learning-based generative model whici is an update on point cloud approach by the same group to now incorporate 'grammar' for building molecules in form of functional groups in 3D space. 
+
+
 * [W. Jin, R. Barzilay, and T. Jaakkola, “Junction tree variational autoencoder for molecular graph generation,” 35th Int. Conf. Mach. Learn. ICML 2018, vol. 5, pp. 3632–3648, 2018](https://arxiv.org/abs/1802.04364)
 
 Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule. The molecule is generated in two-steps: first being generating the scaffold or backbone of the molelcule, then the nodes  are added with molecular substructure as identified from the 'molecular grammar'. 
@@ -282,7 +292,6 @@ GraphINVENT uses a tiered deep neural network architecture to probabilistically 
 
 * [RL-GraphINVENT: Reinforcement learning-based variant of the above code.](https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039)
 
-* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
 
 **GANs**
 
