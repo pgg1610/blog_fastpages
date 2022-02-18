@@ -237,7 +237,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install pandas rdkit-pypi mols2grid matplotlib scikit-learn
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_output</span>
+<span class="o">!</span>pip install pandas rdkit-pypi mols2grid matplotlib scikit-learn
 </pre></div>
 
     </div>
@@ -256,19 +257,19 @@ Requirement already satisfied: rdkit-pypi in /Users/pghaneka/miniconda3/envs/sma
 Requirement already satisfied: mols2grid in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (0.1.0)
 Requirement already satisfied: matplotlib in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (3.5.1)
 Requirement already satisfied: scikit-learn in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (1.0.2)
-Requirement already satisfied: numpy&gt;=1.21.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from pandas) (1.21.4)
-Requirement already satisfied: pytz&gt;=2017.3 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from pandas) (2021.3)
 Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2017.3 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from pandas) (2021.3)
+Requirement already satisfied: numpy&gt;=1.21.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from pandas) (1.21.4)
 Requirement already satisfied: jinja2 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from mols2grid) (3.0.3)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (4.28.3)
 Requirement already satisfied: pillow&gt;=6.2.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (8.4.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (3.0.6)
-Requirement already satisfied: packaging&gt;=20.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (21.3)
 Requirement already satisfied: cycler&gt;=0.10 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: packaging&gt;=20.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (21.3)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (3.0.6)
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from matplotlib) (1.3.2)
 Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from scikit-learn) (3.1.0)
-Requirement already satisfied: scipy&gt;=1.1.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from scikit-learn) (1.7.3)
 Requirement already satisfied: joblib&gt;=0.11 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from scikit-learn) (1.1.0)
+Requirement already satisfied: scipy&gt;=1.1.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from scikit-learn) (1.7.3)
 Requirement already satisfied: six&gt;=1.5 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.16.0)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/pghaneka/miniconda3/envs/small_mols/lib/python3.10/site-packages (from jinja2-&gt;mols2grid) (2.0.1)
 </pre>
@@ -4588,7 +4589,8 @@ Q 285.8 5.5, 286.7 5.5
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mols2grid</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">logP_df_smol</span><span class="p">[</span><span class="s1">'ROMol'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_output</span>
+<span class="n">mols2grid</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">logP_df_smol</span><span class="p">[</span><span class="s1">'ROMol'</span><span class="p">])</span>
 </pre></div>
 
     </div>
