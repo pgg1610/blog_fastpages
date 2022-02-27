@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Cheminformatics basics - A SMARTS way to filter molecules | Pushkar G. Ghanekar</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Cheminformatics basics - A SMARTS way to filter molecules" />
+<meta name="author" content="Pushkar G. Ghanekar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Walkthrough about what are SMARTS and SMIRKS, and how they can be used for substructure filtering" />
+<meta property="og:description" content="Walkthrough about what are SMARTS and SMIRKS, and how they can be used for substructure filtering" />
+<link rel="canonical" href="http://pgg1610.github.io/blog_fastpages/chemical-science/python/data-analysis/2022/01/10/cheminfo_basics_smarts.html" />
+<meta property="og:url" content="http://pgg1610.github.io/blog_fastpages/chemical-science/python/data-analysis/2022/01/10/cheminfo_basics_smarts.html" />
+<meta property="og:site_name" content="Pushkar G. Ghanekar" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-10T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"http://pgg1610.github.io/blog_fastpages/chemical-science/python/data-analysis/2022/01/10/cheminfo_basics_smarts.html","@type":"BlogPosting","headline":"Cheminformatics basics - A SMARTS way to filter molecules","dateModified":"2022-01-10T00:00:00-06:00","datePublished":"2022-01-10T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pgg1610.github.io/blog_fastpages/chemical-science/python/data-analysis/2022/01/10/cheminfo_basics_smarts.html"},"author":{"@type":"Person","name":"Pushkar G. Ghanekar"},"description":"Walkthrough about what are SMARTS and SMIRKS, and how they can be used for substructure filtering","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://pgg1610.github.io/blog_fastpages/feed.xml" title="Pushkar G. Ghanekar" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167983168-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167983168-2');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog_fastpages/images/favicon_glass.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog_fastpages/">Pushkar G. Ghanekar</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog_fastpages/about/">About Me</a><a class="page-link" href="/blog_fastpages/search/">Search</a><a class="page-link" href="/blog_fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Cheminformatics basics - A SMARTS way to filter molecules</h1><p class="page-description">Walkthrough about what are SMARTS and SMIRKS, and how they can be used for substructure filtering</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-10T00:00:00-06:00" itemprop="datePublished">
+        Jan 10, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Pushkar G. Ghanekar</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#chemical-science">chemical-science</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog_fastpages/categories/#data-analysis">data-analysis</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/pgg1610/blog_fastpages/tree/master/_notebooks/2022-01-10-cheminfo_basics_smarts.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog_fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/pgg1610/blog_fastpages/blob/master/_notebooks/2022-01-10-cheminfo_basics_smarts.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog_fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Pattern-matching">Pattern matching </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#In-molecules">In molecules </a></li>
+<li class="toc-entry toc-h3"><a href="#In-chemical-reactions">In chemical reactions </a></li>
+<li class="toc-entry toc-h3"><a href="#Other-resources:">Other resources: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Install-necessary-modules">Install necessary modules </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-01-10-cheminfo_basics_smarts.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://www.rdkit.org/"><img src="https://img.shields.io/static/v1?label=Powered%20by&amp;message=RDKit&amp;color=3838ff&amp;style=flat&amp;logo=data:image/x-icon;base64,AAABAAEAEBAQAAAAAABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAABILAAASCwAAAAAAAAAAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/FBT/FBT/FBT/FBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/PBT/PBT/PBT/PBT/PBT/PBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/PBT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/PBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/PBT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/PBT/FBTc3Nzc3Nzc3Nz/FBT/PBT/ZGT/ZGT/ZGT/jIz/jIz/jIz/jIz/ZGT/ZGT/ZGT/PBT/FBTc3Nzc3Nz/FBT/PBT/ZGT/ZGT/jIz/jIz/jIz/jIz/jIz/jIz/ZGT/ZGT/PBT/FBTc3Nzc3Nz/FBT/PBT/ZGT/ZGT/jIz/jIz/tLT/tLT/jIz/jIz/ZGT/ZGT/PBT/FBTc3Nzc3Nz/FBT/PBT/ZGT/ZGT/jIz/jIz/tLT/tLT/jIz/jIz/ZGT/ZGT/PBT/FBTc3Nzc3Nz/FBT/PBT/ZGT/ZGT/jIz/jIz/jIz/jIz/jIz/jIz/ZGT/ZGT/PBT/FBTc3Nzc3Nz/FBT/PBT/ZGT/ZGT/ZGT/jIz/jIz/jIz/jIz/ZGT/ZGT/ZGT/PBT/FBTc3Nzc3Nzc3Nz/FBT/PBT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/PBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/PBT/ZGT/ZGT/ZGT/ZGT/ZGT/ZGT/PBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/PBT/PBT/PBT/PBT/PBT/PBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz/FBT/FBT/FBT/FBT/FBT/FBTc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz/////+B////AP///gB///wAP//4AB//+AAf//gAH//4AB//+AAf//gAH//8AD///gB///8A////gf////////" align="left"></a><br></p>
+<p>The code in this notebook is inspired from:</p>
+<ul>
+<li><a href="https://iwatobipen.github.io/is_life_worth_living-/jupyter/2021/11/19/NIBR_SF.html">iwatobipen</a></li>
+<li><a href="http://practicalcheminformatics.blogspot.com/2018/08/filtering-chemical-libraries.html?utm_source=pocket_mylist">PatWalters</a></li>
+</ul>
+<h2 id="Pattern-matching">
+<a class="anchor" href="#Pattern-matching" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pattern matching<a class="anchor-link" href="#Pattern-matching"> </a>
+</h2>
+<h3 id="In-molecules">
+<a class="anchor" href="#In-molecules" aria-hidden="true"><span class="octicon octicon-link"></span></a>In molecules<a class="anchor-link" href="#In-molecules"> </a>
+</h3>
+<p><strong>The SMART way</strong></p>
+<p>SMARTS (SMiles ARbitrary Target Specification) is a lanuguage used to search, select, and match a substructure pattern in a molecule SMILE. The idea of SMARTS is reminiscent of regular expressions (regex) for texts. Following some pre-defined rules for searching, SMARTS offer a powerful way to systematically search though a large corpus of molecules for a particular chemical phenotype.</p>
+<p>More details on the SMARTS and its 'grammar' can be found on the Daylight's <a href="http://www.daylight.com/dayhtml/doc/theory/theory.smarts.html">official page</a></p>
+<p>Few words of caution:</p>
+<ul>
+<li>SMILES represent <em>whole</em> molecule (graph), SMARTS identify a substructure (subgraph). </li>
+<li>All SMILES are valid SMARTS </li>
+<li>It is better to be precise with your query than be general (you dont know what it might hit if not meticulous)<blockquote>
+<p>For instance, the SMILES O means an aliphatic oxygen with zero charge and two hydrogens, i.e. water. In SMARTS, the same expression means any aliphatic oxygen regardless of charge, hydrogen count, etc, e.g. it will match the oxygen in water, but also those in ethanol, acetone, molecular oxygen, hydroxy and hydronium ions, etc. Specifying [OH2] limits the pattern to match only water (this is also the fully specified SMILES for water).</p>
+</blockquote>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table border="">
+<caption><b>SMARTS Atomic Primitives</b></caption>
+
+<tbody>
+<tr>
+  <th>Symbol</th>
+  <th>Symbol name</th>
+  <th>Atomic property requirements</th>
+  <th>Default</th>
+</tr>
+
+<tr>
+  <td>* </td>
+  <td>wildcard</td>
+  <td>any atom</td>
+  <td>(no default)</td>
+</tr>
+
+<tr>
+  <td>a</td>
+  <td>aromatic</td>
+  <td>aromatic</td>
+  <td>(no default)</td>
+</tr>
+
+<tr>
+  <td>A</td>
+  <td>aliphatic</td>
+  <td>aliphatic </td>
+  <td>(no default)</td>
+</tr>
+
+<tr>
+  <td>D&lt;n&gt;</td>
+  <td>degree</td>
+  <td>&lt;n&gt; explicit connections</td>
+  <td>exactly one</td>
+</tr>
+
+<tr>
+  <td>H&lt;n&gt;</td>
+  <td>total-H-count</td>
+  <td>&lt;n&gt; attached hydrogens</td>
+  <td>exactly one<sup><small>1</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>h&lt;n&gt;</td>
+  <td>implicit-H-count</td>
+  <td>&lt;n&gt; implicit hydrogens</td>
+  <td>at least one</td>
+</tr>
+
+<tr>
+  <td>R&lt;n&gt;</td>
+  <td>ring membership</td>
+  <td>in &lt;n&gt; SSSR rings</td>
+  <td>any ring atom</td>
+</tr>
+
+<tr>
+  <td>r&lt;n&gt; </td>
+  <td>ring size</td>
+  <td>in smallest SSSR ring of size &lt;n&gt;</td>
+  <td>any ring atom<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>v&lt;n&gt;</td>
+  <td>valence</td>
+  <td>total bond order &lt;n&gt; </td>
+  <td>exactly one<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>X&lt;n&gt;</td>
+  <td>connectivity</td>
+  <td>&lt;n&gt; total connections</td>
+  <td>exactly one<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>x&lt;n&gt;</td>
+  <td>ring connectivity</td>
+  <td>&lt;n&gt; total ring connections</td>
+  <td>at least one<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>- &lt;n&gt;</td>
+  <td>negative charge</td>
+  <td>-&lt;n&gt; charge</td>
+  <td>-1 charge (-- is -2, etc)</td>
+</tr>
+
+<tr>
+  <td>+&lt;n&gt;</td>
+  <td>positive charge</td>
+  <td>+&lt;n&gt; formal charge</td>
+  <td>+1 charge (++ is +2, etc)</td>
+</tr>
+
+<tr>
+  <td>#n</td>
+  <td>atomic number</td>
+  <td>atomic number &lt;n&gt;</td>
+  <td>(no default)<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>@</td>
+  <td>chirality</td>
+  <td>anticlockwise</td>
+  <td>anticlockwise, default class<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>@@</td>
+  <td>chirality</td>
+  <td>clockwise</td>
+  <td>clockwise, default class<sup><small>2</small></sup>
+</td>
+</tr>
+
+<tr>
+  <td>@&lt;c&gt;&lt;n&gt;</td>
+  <td>chirality</td>
+  <td>chiral class &lt;c&gt; chirality &lt;n&gt;</td>
+  <td>(nodefault)</td>
+</tr>
+
+<tr>
+  <td>@&lt;c&gt;&lt;n&gt;?</td>
+  <td>chiral or unspec</td>
+  <td>chirality &lt;c&gt;&lt;n&gt; or unspecified</td>
+  <td>(no default)</td>
+
+</tr>
+<tr>
+  <td>&lt;n&gt;</td>
+  <td>atomic mass</td>
+  <td>explicit atomic mass</td>
+  <td>unspecified mass</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center>
+    <b>Examples<sup><small>1</small></sup>:</b>
+<table border="">
+<tbody>
+<tr>
+  <td>C</td>
+  <td>aliphatic carbon atom</td>
+</tr>
+
+<tr>
+  <td>c</td>
+  <td>aromatic carbon atom</td>
+</tr>
+
+<tr>
+  <td>a</td>
+  <td>aromatic atom</td>
+</tr>
+
+<tr>
+  <td>[#6]</td>
+  <td>carbon atom</td>
+</tr>
+
+<tr>
+  <td>[Ca]</td>
+  <td>calcium atom</td>
+</tr>
+
+<tr>
+  <td>[++]</td>
+  <td>atom with a +2 charge</td>
+  <td>
+</td>
+</tr>
+
+<tr>
+  <td>[R]</td>
+  <td>atom in any ring</td>
+</tr>
+
+<tr>
+  <td>[D3]</td>
+  <td>atom with 3 explicit bonds (implicit H's don't count)</td>
+</tr>
+
+<tr>
+  <td>[X3]</td>
+  <td>atom with 3 total bonds (includes implicit H's)</td>
+</tr>
+
+<tr>
+  <td>[v3]</td>
+  <td>atom with bond orders totaling 3 (includes implicit H's)</td>
+</tr>
+
+<tr>
+  <td>C[C@H](F)O</td>
+  <td>match chirality (H-F-O anticlockwise viewed from C)</td>
+</tr>
+
+<tr>
+  <td>C[C@?H](F)O</td>
+  <td>matches if chirality is as specified or is not specified</td>
+</tr>
+</tbody>
+</table>
+    </center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center>
+<table border="">
+<tbody>
+<tr>
+  <td>cc</td>
+  <td>any pair of attached aromatic carbons</td>
+</tr>
+
+<tr>
+  <td>c:c</td>
+  <td>aromatic carbons joined by an aromatic bond</td>
+</tr>
+
+<tr>
+  <td>c-c</td>
+  <td>aromatic carbons joined by a single bond (e.g. biphenyl).</td>
+</tr>
+
+<tr>
+  <td>O</td>
+  <td>any aliphatic oxygen</td>
+</tr>
+
+<tr>
+  <td>[O;H1]</td>
+  <td>simple hydroxy oxygen</td>
+</tr>
+
+<tr>
+  <td>[O;D1]</td>
+  <td>1-connected (hydroxy or hydroxide) oxygen</td>
+</tr>
+
+<tr>
+  <td>[O;D2]</td>
+  <td>2-connected (etheric) oxygen</td>
+</tr>
+
+<tr>
+  <td>[C,c]</td>
+  <td>any carbon</td>
+</tr>
+
+<tr>
+  <td>F,Cl,Br,I]</td>
+  <td>the 1st four halogens.</td>
+</tr>
+
+<tr>
+  <td>[N;R]</td>
+  <td>must be aliphatic nitrogen AND in a ring</td>
+</tr>
+
+<tr>
+  <td>[!C;R]</td>
+  <td>( NOTaliphatic carbon ) AND in a ring</td>
+</tr>
+
+<tr>
+  <td>[n;H1]</td>
+  <td>H-pyrrole nitrogen</td>
+</tr>
+
+<tr>
+  <td>[n&amp;H1]</td>
+  <td>same as above</td>
+</tr>
+
+<tr>
+  <td>[c,n&amp;H1]</td>
+  <td>any arom carbon OR H-pyrrole nitrogen</td>
+</tr>
+
+<tr>
+  <td>[c,n;H1]</td>
+  <td>(arom carbon OR arom nitrogen) and exactly one H</td>
+</tr>
+
+<tr>
+  <td>*!@*</td>
+  <td>two atoms connected by a non-ringbond</td>
+</tr>
+
+<tr>
+  <td>*@;!:*</td>
+  <td>two atoms connected by a non-aromatic ringbond</td>
+</tr>
+
+<tr>
+  <td>[C,c]=,#[C,c]</td>
+  <td>two carbons connected by a double or triple bond</td>
+</tr>
+
+</tbody>
+</table>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Query files</strong></p>
+<p><a href="https://greglandrum.github.io/rdkit-blog/tutorial/substructure/2021/08/03/generalized-substructure-search.html">Greg Landrum of Rdkit on query files</a></p>
+<p><strong>Pre-defined filters</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-chemical-reactions">
+<a class="anchor" href="#In-chemical-reactions" aria-hidden="true"><span class="octicon octicon-link"></span></a>In chemical reactions<a class="anchor-link" href="#In-chemical-reactions"> </a>
+</h3>
+<p><strong>The Reaction SMARTS way</strong></p>
+<p><strong>SMIRKS</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center>
+<table border="1">
+  <tbody>
+<tr>
+    <td colspan="4" align="center">
+    <b>Example Reaction SMARTS:</b>
+    </td>
+</tr>
+<tr>
+      <td align="center">Query:</td>
+      <td align="center">Target:</td>
+      <td align="center">Matches:</td>
+      <td align="center">Comment:</td>
+    </tr>
+    <tr>
+      <td align="center">C&gt;&gt;C</td>
+      <td align="center">CC&gt;&gt;CC</td>
+      <td align="center">4</td>
+      <td>No maps, normal match.</td>
+    </tr>     
+    <tr>
+      <td align="center">C&gt;&gt;C</td>
+      <td align="center">[CH3:7][CH3:8]&gt;&gt; [CH3:7][CH3:8]</td>
+      <td align="center">4</td>
+      <td>No maps in query, maps in target are ignored.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:1]&gt;&gt;C</td>
+      <td align="center">[CH3:7][CH3:8]&gt;&gt; [CH3:7][CH3:8]</td>
+      <td align="center">4</td>
+      <td>Unpaired map in query ignored.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:1]&gt;&gt;[C:1]</td>
+      <td align="center">CC&gt;&gt;CC</td>
+      <td align="center">0</td>
+      <td>No maps in target, hence no matches.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:?1]&gt;&gt;[C:?1]</td>
+      <td align="center">CC&gt;&gt;CC</td>
+      <td align="center">4</td>
+      <td>Query says mapped as shown or not present.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:1]&gt;&gt;[C:1]</td>
+      <td align="center">[CH3:7][CH3:8]&gt;&gt;[CH3:7][CH3:8]</td>
+      <td align="center">2</td>
+      <td>Matches for target 7,7 and 8,8 atom pairs.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:1]&gt;&gt;[C:2]</td>
+      <td align="center">[CH3:7][CH3:8]&gt;&gt; [CH3:7][CH3:8]</td>
+      <td align="center">4</td>
+      <td>When a query class is not found on both<br>sides of the query, it is
+      ignored;<br>this query does NOT say that the atoms<br>are in different
+      classes. </td>
+    </tr>
+    <tr>
+      <td align="center">[C:1][C:1]&gt;&gt;[C:1]</td>
+      <td align="center">[CH3:7][CH3:7]&gt;&gt; [CH3:7][CH3:7]</td>
+      <td align="center">4</td>
+      <td>Atom maps match with "or" logic.  All atoms<br>get bound to
+      class 7.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:1][C:1]&gt;&gt;[C:1]</td>
+      <td align="center">[CH3:7][CH3:8]&gt;&gt; [CH3:7][CH3:8]</td>
+      <td align="center">4</td>
+      <td>The reactant atoms are bound to classes 7<br>and 8. Note that having
+      the first query atom<br>bound to class 7 does not preclude<br>binding the
+      second atom. Next, the product<br>atom can bind to classes 7 or 8.</td>
+    </tr>
+    <tr>
+      <td align="center">[C:1][C:1]&gt;&gt;[C:1]</td>
+      <td align="center">[CH3:7][CH3:7]&gt;&gt; [CH3:7][CH3:8]</td>
+      <td align="center">2</td>
+      <td>The reactants are bound to class 7.  The<br>product atom can bind to
+      class 7 only.</td>
+    </tr>
+
+
+</tbody>
+</table>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Other-resources:">
+<a class="anchor" href="#Other-resources:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other resources:<a class="anchor-link" href="#Other-resources:"> </a>
+</h3>
+<ul>
+<li><a href="https://daylight.com/dayhtml_tutorials/languages/smarts/smarts_examples.html#ES_AM">Daylight SMART Examples</a></li>
+<li>
+<a href="https://smarts.plus/">SMARTS.plus - to visualize the smart strings</a> </li>
+</ul>
+<p><strong>Relevant literature</strong></p>
+<ol>
+<li>
+<p><a href="https://pubs.acs.org/doi/abs/10.1021/jm301008n">Rules for Identifying Potentially Reactive or Promiscuous Compounds | Journal of Medicinal Chemistry (acs.org)</a></p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1021/jm901137j">Baell, J. B.; Holloway, G. A. New Substructure Filters for Removal of Pan Assay Interference Compounds (PAINS) from Screening Libraries and for Their Exclusion in Bioassays. J. Med. Chem. 2010.</a></p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1021/acsmedchemlett.8b00097.">Vidler, L. R.; Watson, I. A.; Margolis, B. J.; Cummins, D. J.; Brunavs, M. Investigating the Behavior of Published PAINS Alerts Using a Pharmaceutical Company Dataset. ACS Med. Chem. Lett. 2018.</a></p>
+</li>
+<li>
+<p><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.0c01332">Schuffenhauer, A. et al. Evolution of Novartis' small molecule screening deck design, J. Med. Chem. (2020)</a></p>
+</li>
+<li>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/34142592/">Gomez-Sanchez, Ruben et al. “Maintaining a High-Quality Screening Collection: The GSK Experience.” SLAS discovery : advancing life sciences R &amp; D vol. 26,8 (2021): 1065-1070. doi:10.1177/24725552211017526</a></p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-necessary-modules">
+<a class="anchor" href="#Install-necessary-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install necessary modules<a class="anchor-link" href="#Install-necessary-modules"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Install requirements for the tutorial</span>
+<span class="o">!</span>pip install pandas rdkit-pypi mols2grid matplotlib scikit-learn ipywidgets
+</pre></div>
+
+    </div>
+</div>
+</div>
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
+        <p>
+</p>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pandas in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (1.1.5)
+Collecting rdkit-pypi
+  Using cached rdkit_pypi-2021.9.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20.8 MB)
+Collecting mols2grid
+  Downloading mols2grid-0.2.1-py3-none-any.whl (37 kB)
+Requirement already satisfied: matplotlib in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (3.3.0)
+Requirement already satisfied: scikit-learn in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (0.23.2)
+Requirement already satisfied: ipywidgets in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (7.5.1)
+Requirement already satisfied: pytz&gt;=2017.2 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from pandas) (2020.1)
+Requirement already satisfied: numpy&gt;=1.15.4 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from pandas) (1.18.5)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from pandas) (2.8.1)
+Requirement already satisfied: Pillow in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from rdkit-pypi) (7.2.0)
+Requirement already satisfied: jinja2&gt;=2.11.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from mols2grid) (2.11.2)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: cycler&gt;=0.10 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from matplotlib) (1.2.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from scikit-learn) (2.1.0)
+Requirement already satisfied: scipy&gt;=0.19.1 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from scikit-learn) (1.4.1)
+Requirement already satisfied: joblib&gt;=0.11 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from scikit-learn) (0.16.0)
+Requirement already satisfied: widgetsnbextension~=3.5.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipywidgets) (3.5.1)
+Requirement already satisfied: nbformat&gt;=4.2.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipywidgets) (5.0.7)
+Requirement already satisfied: ipython&gt;=4.0.0; python_version &gt;= "3.3" in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipywidgets) (7.17.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /home/l017301/.local/lib/python3.8/site-packages (from ipywidgets) (5.1.1)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipywidgets) (5.3.4)
+Requirement already satisfied: six&gt;=1.5 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.15.0)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from jinja2&gt;=2.11.0-&gt;mols2grid) (1.1.1)
+Requirement already satisfied: notebook&gt;=4.4.1 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from widgetsnbextension~=3.5.0-&gt;ipywidgets) (6.1.1)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets) (3.2.0)
+Requirement already satisfied: ipython-genutils in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets) (0.2.0)
+Requirement already satisfied: jupyter-core in /home/l017301/.local/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets) (4.9.1)
+Requirement already satisfied: pygments in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (2.6.1)
+Requirement already satisfied: pexpect; sys_platform != "win32" in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (4.8.0)
+Requirement already satisfied: backcall in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (0.2.0)
+Requirement already satisfied: setuptools&gt;=18.5 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (47.1.0)
+Requirement already satisfied: pickleshare in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /home/l017301/.local/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (3.0.24)
+Requirement already satisfied: decorator in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (4.4.2)
+Requirement already satisfied: jedi&gt;=0.10 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (0.17.1)
+Requirement already satisfied: jupyter-client in /home/l017301/.local/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets) (7.1.2)
+Requirement already satisfied: tornado&gt;=4.2 in /home/l017301/.local/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets) (6.1)
+Requirement already satisfied: argon2-cffi in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (20.1.0)
+Requirement already satisfied: pyzmq&gt;=17 in /home/l017301/.local/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (22.3.0)
+Requirement already satisfied: terminado&gt;=0.8.3 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.8.3)
+Requirement already satisfied: Send2Trash in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.5.0)
+Requirement already satisfied: prometheus-client in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.8.0)
+Requirement already satisfied: nbconvert in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (5.6.1)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets) (0.16.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets) (19.3.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from pexpect; sys_platform != "win32"-&gt;ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (0.6.0)
+Requirement already satisfied: wcwidth in /home/l017301/.local/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (0.2.5)
+Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from jedi&gt;=0.10-&gt;ipython&gt;=4.0.0; python_version &gt;= "3.3"-&gt;ipywidgets) (0.7.0)
+Requirement already satisfied: entrypoints in /home/l017301/.local/lib/python3.8/site-packages (from jupyter-client-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets) (0.3)
+Requirement already satisfied: nest-asyncio&gt;=1.5 in /home/l017301/.local/lib/python3.8/site-packages (from jupyter-client-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets) (1.5.4)
+Requirement already satisfied: cffi&gt;=1.0.0 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.14.1)
+Requirement already satisfied: testpath in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.4.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.4.2)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.8.4)
+Requirement already satisfied: bleach in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (3.1.5)
+Requirement already satisfied: defusedxml in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.6.0)
+Requirement already satisfied: pycparser in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from cffi&gt;=1.0.0-&gt;argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (2.20)
+Requirement already satisfied: webencodings in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.5.1)
+Requirement already satisfied: packaging in /lrlhps/apps/python/python-3.8.5/lib/python3.8/site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (20.4)
+Installing collected packages: rdkit-pypi, mols2grid
+<span class="ansi-red-fg">ERROR: After October 2020 you may experience errors when installing or updating packages. This is because pip will change the way that it resolves dependency conflicts.
+
+We recommend you use --use-feature=2020-resolver to test your packages with the new resolver before it becomes the default.
+
+rdkit-pypi 2021.9.4 requires numpy&gt;=1.19, but you'll have numpy 1.18.5 which is incompatible.</span>
+Successfully installed mols2grid-0.2.1 rdkit-pypi-2021.9.4
+<span class="ansi-yellow-fg">WARNING: You are using pip version 20.2.2; however, version 22.0.3 is available.
+You should consider upgrading via the '/lrlhps/apps/python/python-3.8.5/bin/python -m pip install --upgrade pip' command.</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+    </details>
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The majority of the basic molecular functionality is found in module <code>rdkit.Chem</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">rdkit</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span> <span class="c1">#This gives us most of RDkits's functionality</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">IPythonConsole</span> <span class="c1">#Needed to show molecules</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">ipython_useSVG</span><span class="o">=</span><span class="kc">True</span>  <span class="c1">#SVG's tend to look nicer than the png counterparts</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rdkit</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="c1"># Mute all errors except critical</span>
+<span class="n">Chem</span><span class="o">.</span><span class="n">WrapLogs</span><span class="p">()</span>
+<span class="n">lg</span> <span class="o">=</span> <span class="n">rdkit</span><span class="o">.</span><span class="n">RDLogger</span><span class="o">.</span><span class="n">logger</span><span class="p">()</span> 
+<span class="n">lg</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">rdkit</span><span class="o">.</span><span class="n">RDLogger</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2021.09.4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span>
+
+<span class="c1"># High DPI rendering for mac</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+
+<span class="c1"># Plot matplotlib plots with white background: </span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.print_figure_kwargs={'facecolor' : "w"}
+
+<span class="n">plot_params</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">'font.size'</span> <span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+<span class="s1">'axes.titlesize'</span> <span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+<span class="s1">'axes.labelsize'</span> <span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+<span class="s1">'axes.labelweight'</span> <span class="p">:</span> <span class="s1">'bold'</span><span class="p">,</span>
+<span class="s1">'xtick.labelsize'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+<span class="s1">'ytick.labelsize'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+<span class="p">}</span>
+ 
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot_params</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="pgg1610/blog_fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog_fastpages/chemical-science/python/data-analysis/2022/01/10/cheminfo_basics_smarts.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog_fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog_fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Blog on data &amp; science</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/pgg1610" target="_blank" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/pgg1610" target="_blank" title="pgg1610"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/pushkarghanekar" target="_blank" title="pushkarghanekar"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/mepgg" target="_blank" title="mepgg"><svg class="svg-icon grey"><use xlink:href="/blog_fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
