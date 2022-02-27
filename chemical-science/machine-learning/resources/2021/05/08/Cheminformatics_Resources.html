@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      23 min read
+      24 min read
     
 </span></p>
 
@@ -138,11 +138,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#industry-focused-drug-discovery-reviews">Industry-focused drug discovery reviews</a></li>
 <li class="toc-entry toc-h2"><a href="#special-journal-issues">Special Journal Issues</a></li>
 <li class="toc-entry toc-h2"><a href="#meeting-notes">Meeting notes</a></li>
-<li class="toc-entry toc-h2"><a href="#specific-articles">Specific Articles</a>
+<li class="toc-entry toc-h2"><a href="#specific-areas-of-interest">Specific areas of interest</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#representation">Representation</a></li>
-<li class="toc-entry toc-h3"><a href="#explainableinterpretable-machine-learning">Explainable/Interpretable Machine Learning</a></li>
+<li class="toc-entry toc-h3"><a href="#predictive-modeling">Predictive modeling</a></li>
 <li class="toc-entry toc-h3"><a href="#qsar-benchmarks">QSAR benchmarks</a></li>
+<li class="toc-entry toc-h3"><a href="#enumeration-of-chemical-space">Enumeration of chemical space</a></li>
+<li class="toc-entry toc-h3"><a href="#explainableinterpretable-machine-learning">Explainable/Interpretable Machine Learning</a></li>
 <li class="toc-entry toc-h3"><a href="#uncertainty-quantification">Uncertainty quantification</a></li>
 <li class="toc-entry toc-h3"><a href="#active-learning">Active Learning</a></li>
 <li class="toc-entry toc-h3"><a href="#transfer-learning">Transfer Learning</a></li>
@@ -154,9 +156,9 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#code--packages">Code / Packages:</a></li>
-<li class="toc-entry toc-h2"><a href="#datasets">Datasets</a></li>
+<li class="toc-entry toc-h2"><a href="#datasets--chemical-libraries">Datasets &amp; Chemical libraries</a></li>
 <li class="toc-entry toc-h2"><a href="#helpful-utilities">Helpful utilities:</a></li>
-</ul><p>Last update: 22nd January 2022</p>
+</ul><p>Last update: 27th February 2022</p>
 
 <h2 id="noteworthy-blogs-to-follow">
 <a class="anchor" href="#noteworthy-blogs-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Noteworthy blogs to follow:</h2>
@@ -306,13 +308,15 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h2 id="specific-articles">
-<a class="anchor" href="#specific-articles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specific Articles</h2>
+<h2 id="specific-areas-of-interest">
+<a class="anchor" href="#specific-areas-of-interest" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specific areas of interest</h2>
 
-<p>Few key papers which I have found useful when learning more about the state-of-the-art in Cheminformatics. I’ve tried to categorize them roughly based on their area of application:</p>
+<p>Catalog of recent reviews and manuscripts I have found useful when learning more about the state-of-the-art in Cheminformatics. I’ve tried to categorize them roughly based on their area of application:</p>
 
 <h3 id="representation">
 <a class="anchor" href="#representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Representation</h3>
+
+<p><strong>Reviews</strong></p>
 
 <ul>
   <li>
@@ -321,6 +325,11 @@ window.onload = wrap_img;
   <li>
     <p><a href="https://www.nature.com/articles/s41598-018-27344-x">Screening of energetic molecules – comparing different representations</a></p>
   </li>
+</ul>
+
+<p><strong>Articles</strong></p>
+
+<ul>
   <li>
     <p><a href="https://arxiv.org/abs/1905.13741">M. Krenn, F. Hase, A. Nigam, P. Friederich, and A. Aspuru-Guzik, “Self-Referencing Embedded Strings (SELFIES): A 100% robust molecular string representation,” Mach. Learn. Sci. Technol., pp. 1–9, 2020</a></p>
   </li>
@@ -330,6 +339,9 @@ window.onload = wrap_img;
 </ul>
 
 <p>Comparative study of descriptor-based and graph-based models using public data set. Used descriptor-based models (XGBoost, RF, SVM, using ECFP) and compared them to graph-based models (GCN, GAT, AttentiveFP, MPNN). They show descriptor-based models outperform the graph-based models in terms of prediction accuracy and computational efficiency with SVM having best predictions. Graph-based methods are good for multi-task learning.</p>
+
+<h3 id="predictive-modeling">
+<a class="anchor" href="#predictive-modeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictive modeling</h3>
 
 <ul>
   <li><a href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237">Yang, K., Swanson, K., Jin, W., Coley, C., Eiden, P., Gao, H., Guzman-Perez, A., Hopper, T., Kelley, B., Mathea, M. and Palmer, A., 2019. Analyzing learned molecular representations for property prediction. Journal of chemical information and modeling, 59(8), pp.3370-3388</a></li>
@@ -342,6 +354,34 @@ window.onload = wrap_img;
 </ul>
 
 <p>Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.</p>
+
+<h3 id="qsar-benchmarks">
+<a class="anchor" href="#qsar-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>QSAR benchmarks</h3>
+
+<ul>
+  <li>
+    <p><a href="https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a">MoleculeNet: a benchmark for molecular machine learning (rsc.org)</a></p>
+  </li>
+  <li>
+    <p><a href="https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k">Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)</a></p>
+  </li>
+  <li>
+    <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0">Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics</a></p>
+  </li>
+</ul>
+
+<h3 id="enumeration-of-chemical-space">
+<a class="anchor" href="#enumeration-of-chemical-space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enumeration of chemical space</h3>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c01378">Bellmann, Louis, et al. “Comparison of Combinatorial Fragment Spaces and Its Application to Ultralarge Make-on-Demand Compound Catalogs.” Journal of Chemical Information and Modeling (2022).</a></li>
+</ul>
+
+<p>Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.</p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173">Nicolaou, Christos A., et al. “The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space.” Journal of chemical information and modeling 56.7 (2016): 1253-1266.</a></li>
+</ul>
 
 <h3 id="explainableinterpretable-machine-learning">
 <a class="anchor" href="#explainableinterpretable-machine-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Explainable/Interpretable Machine Learning</h3>
@@ -360,21 +400,6 @@ window.onload = wrap_img;
   </li>
   <li>
     <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x">Matveieva, Mariia, and Pavel Polishchuk. “Benchmarks for interpretation of QSAR models.” Journal of cheminformatics 13.1 (2021): 1-20</a>. <a href="https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html">Patrick Walter’s blog</a></p>
-  </li>
-</ul>
-
-<h3 id="qsar-benchmarks">
-<a class="anchor" href="#qsar-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>QSAR benchmarks</h3>
-
-<ul>
-  <li>
-    <p><a href="https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a">MoleculeNet: a benchmark for molecular machine learning (rsc.org)</a></p>
-  </li>
-  <li>
-    <p><a href="https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k">Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)</a></p>
-  </li>
-  <li>
-    <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0">Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics</a></p>
   </li>
 </ul>
 
@@ -472,14 +497,21 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<p>Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just ~256 datapoints.</p>
+<p>Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just approx. 256 datapoints.</p>
 
 <h3 id="federated-learning">
 <a class="anchor" href="#federated-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Federated Learning</h3>
 
 <ul>
-  <li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00576-2">Simm, Jaak, et al. “Splitting chemical structure data sets for federated privacy-preserving machine learning.” Journal of Cheminformatics 13.1 (2021): 1-14.</a></li>
+  <li>
+    <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00576-2">Simm, Jaak, et al. “Splitting chemical structure data sets for federated privacy-preserving machine learning.” Journal of Cheminformatics 13.1 (2021): 1-14.</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.melloddy.eu/objectives">Melloddy consortium</a></p>
+  </li>
 </ul>
+
+<p>Consortia comprising of leading resarch labs and companies working on decentralized datasets and predictive modeling of biochemical and cellular activity.</p>
 
 <h3 id="generative-models">
 <a class="anchor" href="#generative-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generative models</h3>
@@ -936,15 +968,64 @@ window.onload = wrap_img;
 
 <p>Github repository to generate chemical reaction fingerprints from reaction SMILES.</p>
 
-<h2 id="datasets">
-<a class="anchor" href="#datasets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Datasets</h2>
+<ul>
+  <li><a href="https://github.com/cbouy/mols2grid">mols2grid</a></li>
+</ul>
+
+<p>Interactive chemical viewer for small molecules (RDKit wrapper)</p>
 
 <ul>
+  <li><a href="https://github.com/wjm41/molplotly">molplotly</a></li>
+</ul>
+
+<p>Spotfire like capabilities to jupyter notebook.</p>
+
+<h2 id="datasets--chemical-libraries">
+<a class="anchor" href="#datasets--chemical-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Datasets &amp; Chemical libraries</h2>
+
+<p><strong>Molecule datasets</strong></p>
+
+<ul>
+  <li>
+    <p>PubChem: public sourced molecules</p>
+  </li>
+  <li>
+    <p>ChEMBL: bioactive molecules (most synthetic)</p>
+  </li>
+  <li>
+    <p>ZINC: collection of synthetic molecules (not all are bioactive)</p>
+  </li>
+  <li>
+    <p>QM 7/8/9: small molecules having not more than 7/8/9 heavy atoms</p>
+  </li>
   <li>
     <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/617aa2467a002162403d71f0">Papyrus</a></p>
   </li>
   <li>
-    <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9">COCONUT</a></p>
+    <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9">COCONUT</a>: NP 400k there are some which are not NP</p>
+  </li>
+  <li>
+    <p><a href="https://mcule.com/database/">Mcule</a>: Used in DEL enumerations</p>
+  </li>
+  <li>
+    <p><a href="https://go.drugbank.com/">DrugBank</a></p>
+  </li>
+</ul>
+
+<p><strong>Commericial (building block) vendors</strong></p>
+
+<ul>
+  <li>
+    <p>eMolecules building blocks</p>
+  </li>
+  <li>
+    <p>Enamine REAL Space</p>
+  </li>
+  <li>
+    <p>WuXi GalaXi space</p>
+  </li>
+  <li>
+    <p>Otava’s CHEMriya</p>
   </li>
 </ul>
 
@@ -967,7 +1048,7 @@ window.onload = wrap_img;
   </li>
   <li>
 <a href="https://tdcommons.ai">Therapeutics Data Commons</a>
-“Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaningf</li>
+“Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaning”</li>
 </ul>
 
   </div><a class="u-url" href="/blog_fastpages/chemical-science/machine-learning/resources/2021/05/08/Cheminformatics_Resources.html" hidden></a>
