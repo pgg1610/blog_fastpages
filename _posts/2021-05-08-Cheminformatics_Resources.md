@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 22nd January 2022
+Last update: 27th February 2022
 
 ## Noteworthy blogs to follow:
 
@@ -97,22 +97,27 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 * [Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.](https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5)
 
-## Specific Articles 
+## Specific areas of interest 
 
-Few key papers which I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
+Catalog of recent reviews and manuscripts I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
 
 ### Representation
 
+**Reviews**
 
 * [Representation of Molecules in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
 
 * [Screening of energetic molecules -- comparing different representations](https://www.nature.com/articles/s41598-018-27344-x)
+
+**Articles** 
 
 * [M. Krenn, F. Hase, A. Nigam, P. Friederich, and A. Aspuru-Guzik, “Self-Referencing Embedded Strings (SELFIES): A 100% robust molecular string representation,” Mach. Learn. Sci. Technol., pp. 1–9, 2020](https://arxiv.org/abs/1905.13741)
 
 * [Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00479-8)
 
 Comparative study of descriptor-based and graph-based models using public data set. Used descriptor-based models (XGBoost, RF, SVM, using ECFP) and compared them to graph-based models (GCN, GAT, AttentiveFP, MPNN). They show descriptor-based models outperform the graph-based models in terms of prediction accuracy and computational efficiency with SVM having best predictions. Graph-based methods are good for multi-task learning. 
+
+### Predictive modeling 
 
 * [Yang, K., Swanson, K., Jin, W., Coley, C., Eiden, P., Gao, H., Guzman-Perez, A., Hopper, T., Kelley, B., Mathea, M. and Palmer, A., 2019. Analyzing learned molecular representations for property prediction. Journal of chemical information and modeling, 59(8), pp.3370-3388](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237)
 
@@ -121,6 +126,23 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 * [Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402](https://arxiv.org/abs/2107.10402)
 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
+
+
+### QSAR benchmarks 
+
+* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
+
+* [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
+
+* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
+
+### Enumeration of chemical space
+
+* [Bellmann, Louis, et al. "Comparison of Combinatorial Fragment Spaces and Its Application to Ultralarge Make-on-Demand Compound Catalogs." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01378)
+
+Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.
+
+* [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
 
 ### Explainable/Interpretable Machine Learning 
 
@@ -133,15 +155,6 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 * [Wellawatte, Geemi P., Aditi Seshadri, and Andrew D. White. "Model agnostic generation of counterfactual explanations for molecules." (2021).](https://chemrxiv.org/engage/chemrxiv/article-details/613268f0d5f0803706ba0c79)
 
 * [Matveieva, Mariia, and Pavel Polishchuk. "Benchmarks for interpretation of QSAR models." Journal of cheminformatics 13.1 (2021): 1-20](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Patrick Walter's blog](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html)
-
-
-### QSAR benchmarks 
-
-* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
-
-* [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
-
-* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
 
 
 ### Uncertainty quantification
@@ -198,16 +211,18 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 * [Altae-Tran, H., Ramsundar, B., Pappu, A. S., & Pande, V. (2017). Low data drug discovery with one-shot learning. ACS central science, 3(4), 283-293.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)
 
-
-
 * [Nguyen, C. Q., Kreatsoulas, C., & Branson, K. M. (2020). Meta-learning GNN initializations for low-resource molecular property prediction. arXiv preprint arXiv:2003.05996.](https://arxiv.org/pdf/2003.05996.pdf)
 
-Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just ~256 datapoints. 
+Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just approx. 256 datapoints.
 
 
 ### Federated Learning 
 
 * [Simm, Jaak, et al. "Splitting chemical structure data sets for federated privacy-preserving machine learning." Journal of Cheminformatics 13.1 (2021): 1-14.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00576-2)
+
+* [Melloddy consortium](https://www.melloddy.eu/objectives)
+
+Consortia comprising of leading resarch labs and companies working on decentralized datasets and predictive modeling of biochemical and cellular activity. 
 
 ### Generative models
 
@@ -495,11 +510,45 @@ Active learning approach to efficiently and confidently identify the Pareto fron
 
 Github repository to generate chemical reaction fingerprints from reaction SMILES. 
 
-## Datasets
+* [mols2grid](https://github.com/cbouy/mols2grid)
+
+Interactive chemical viewer for small molecules (RDKit wrapper)
+
+* [molplotly](https://github.com/wjm41/molplotly)
+
+Spotfire like capabilities to jupyter notebook. 
+
+
+## Datasets & Chemical libraries 
+
+
+**Molecule datasets**
+
+* PubChem: public sourced molecules 
+
+* ChEMBL: bioactive molecules (most synthetic)
+
+* ZINC: collection of synthetic molecules (not all are bioactive) 
+
+* QM 7/8/9: small molecules having not more than 7/8/9 heavy atoms 
 
 * [Papyrus](https://chemrxiv.org/engage/chemrxiv/article-details/617aa2467a002162403d71f0)
 
-* [COCONUT](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9)
+* [COCONUT](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9): NP 400k there are some which are not NP 
+
+* [Mcule](https://mcule.com/database/): Used in DEL enumerations 
+
+* [DrugBank](https://go.drugbank.com/)
+
+**Commericial (building block) vendors**
+
+* eMolecules building blocks 
+
+* Enamine REAL Space 
+
+* WuXi GalaXi space 
+
+* Otava's CHEMriya 
 
 ## Helpful utilities:
 
@@ -512,4 +561,4 @@ Github repository to generate chemical reaction fingerprints from reaction SMILE
 * [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
 * [Therapeutics Data Commons](https://tdcommons.ai)
-"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaningf
+"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaning"
