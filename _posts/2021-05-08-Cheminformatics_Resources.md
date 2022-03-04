@@ -74,6 +74,10 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 ## Industry-focused drug discovery reviews 
 
+* [Abramov, Yuriy A., Guangxu Sun, and Qun Zeng. "Emerging Landscape of Computational Modeling in Pharmaceutical Development." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01580)
+
+Overview of methods and scope of computational methods used in the drug development process. 
+
 * [Dragovich, Peter S., et al. "Small-Molecule Lead-Finding Trends across the Roche and Genentech Research Organizations." Journal of Medicinal Chemistry (2022).](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c02106)
 
 * [A. Bender and I. Cortés-Ciriano, “Artificial intelligence in drug discovery: what is realistic, what are illusions? Part 1: Ways to make an impact, and why we are not there yet,” Drug Discov. Today, vol. 26, no. 2, pp. 511–524, 2021](https://www.sciencedirect.com/science/article/pii/S1359644620305274)
@@ -148,6 +152,10 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 
 Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.
 
+* [Zabolotna, Yuliana, et al. "NP navigator: a new look at the natural product chemical space." Molecular informatics 40.9 (2021): 2100068.](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100068).
+
+Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found [here](https://www.sciencedirect.com/science/article/pii/S1740674920300044)
+
 * [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
 
 ### Explainable/Interpretable Machine Learning 
@@ -206,6 +214,12 @@ Experimental design using Bayesian Optimization.
 Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks. 
 
 ### Transfer Learning  
+
+**Reviews** 
+
+* [Cai, Chenjing, et al. "Transfer learning for drug discovery." Journal of Medicinal Chemistry 63.16 (2020): 8683-8694.](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02147)
+
+** Articles** 
 
 * [Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning](https://www.nature.com/articles/s41467-019-10827-4)
 
@@ -323,6 +337,15 @@ Generative adversarial network for finding small molecules using graph networks,
 * [LatentGAN: A de novo molecular generation method using latent vector based generative adversarial network](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-019-0397-9)
 
 Molecular generation strategy is described which combines an autoencoder and a GAN. Generator and discriminator network do not use SMILES strings as input, but instead n-dimensional vectors derived from the code-layer of an autoencoder trained as a SMILES heteroencoder that way syntax issues are expected to be addressed. 
+
+**Scaffold-retained** 
+
+* [Kaitoh, Kazuma, and Yoshihiro Yamanishi. "Scaffold-Retained Structure Generator to Exhaustively Create Molecules in an Arbitrary Chemical Space." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01130)
+
+* [Maziarz, Krzysztof, et al. "Learning to extend molecular scaffolds with structural motifs." arXiv preprint arXiv:2103.03864 (2021).](https://arxiv.org/pdf/2103.03864.pdf)
+
+Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown. 
+
 
 **Scoring functions** 
 
