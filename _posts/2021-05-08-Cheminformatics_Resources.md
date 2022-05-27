@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 11th May 2022
+Last update: 27th May 2022
 
 ## Noteworthy blogs to follow:
 
@@ -44,6 +44,16 @@ Last update: 11th May 2022
 * [Bajorath, 2011. Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology.](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
 
 * [Heifetz, Alexander. (Ed.) (2022). "Artificial Intelligence in Drug Design."](https://link.springer.com/book/10.1007/978-1-0716-1787-8)
+
+## Best practices 
+
+* [Bender, Andreas, et al. "Evaluation guidelines for machine learning tools in the chemical sciences." Nature Reviews Chemistry (2022): 1-15.](https://www.nature.com/articles/s41570-022-00391-9). [Temporary SharedIt Link](https://www.nature.com/articles/s41570-022-00391-9.epdf?sharing_token=c7ajAY6RtejsBwo7JKb_EdRgN0jAjWel9jnR3ZoTv0PlqwefS9tuSzOUSTdLlQspcQfdrrg6BP1js7fwhK8sXckoDuc05MIHU8Tf2mCEeVGilKBg5tdIz-htajojgKeP-9SZLLqCDAphBNd8VUtODVWYw0CXTg8CY1uUfyiB8zk%3D)
+
+Nice account outlining guidelines for evaluating different AI/ML methodologies in molecular science. They propose a checklist of tests and best practices to assess the practicality and importance of different methodologies thereby providing a framework on how to evaluate plethora of ML workflows being proposed in different areas of chemical science. The basis for not overlooking the older non-ML method when evaluating the 'new' learning-based method, emphasis on model interpretation to translate the corrleation to chemical causality and finally 
+
+* [Artrith, Nongnuch, et al. "Best practices in machine learning for chemistry." Nature chemistry 13.6 (2021): 505-508.](https://www.nature.com/articles/s41557-021-00716-z)
+
+Set of rules, considerations, and caveats to keep in mind when designing ML model for chemical science. The authors propose a checklist when evaluating ML models, while intuitive at first, when lot of the new ML papers are scanned through that lens, you can identify the shortcommings of the proposed model. This checklist is especially helpful for those entering just entering the field. 
 
 
 ## Reviews
