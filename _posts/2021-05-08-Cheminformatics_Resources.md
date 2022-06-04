@@ -238,7 +238,7 @@ Train property prediction model to output a distribution statistics in single pa
 
 * [Cai, Chenjing, et al. "Transfer learning for drug discovery." Journal of Medicinal Chemistry 63.16 (2020): 8683-8694.](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02147)
 
-** Articles** 
+**Articles** 
 
 * [Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning](https://www.nature.com/articles/s41467-019-10827-4)
 
@@ -447,6 +447,8 @@ Data-driven atom mapping schemes which uses transformers for learning the contex
 
 **Predicting reaction outcomes:** 
 
+* [Jin, Wengong, et al. "Predicting organic reaction outcomes with weisfeiler-lehman network." Advances in neural information processing systems 30 (2017).](https://arxiv.org/abs/1709.04555)
+
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
 Template-free prediction of organic reaction outcomes using graph convolutional neural networks
@@ -471,7 +473,7 @@ Interesting work on de-novo design of molecules wherein, the molecules being cre
 
 * [Watson, I. A., et al. (2019). "A retrosynthetic analysis algorithm implementation." J Cheminform 11(1)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0323-6)
 
-**Generation reaction networks:**
+**Generate reaction networks:**
 
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
