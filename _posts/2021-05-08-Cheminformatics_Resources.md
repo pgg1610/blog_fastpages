@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 27th May 2022
+Last update: 14th June 2022
 
 ## Noteworthy blogs to follow:
 
@@ -83,6 +83,8 @@ Recent review summarising the state of the molecular property prediction and str
 Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged for various tasks in drug formulation tasks. 
 
 ## Industry-focused drug discovery reviews 
+
+* [Jayatunga, Madura KP, et al. "AI in small-molecule drug discovery: A coming wave." Nat. Rev. Drug Discov 21 (2022): 175-176.](https://www.nature.com/articles/d41573-022-00025-1)
 
 * [Abramov, Yuriy A., Guangxu Sun, and Qun Zeng. "Emerging Landscape of Computational Modeling in Pharmaceutical Development." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01580)
 
