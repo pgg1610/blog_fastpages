@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 14th June 2022
+Last update: 25th July 2022
 
 ## Noteworthy blogs to follow:
 
@@ -25,6 +25,8 @@ Last update: 14th June 2022
 6. [DrugDiscovery.NET - Andreas Bender](http://www.drugdiscovery.net/2019/07/25/new-post1/)
 
 7. [DrugHunter - Dennis Hu](https://drughunter.com)
+
+8. [Practical Fragments](http://practicalfragments.blogspot.com/) 
 
 ## Online resources 
 
