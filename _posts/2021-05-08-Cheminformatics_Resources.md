@@ -30,13 +30,13 @@ Last update: 25th July 2022
 
 ## Online resources 
 
+* [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD) - Highly recommended. 
+
+* [Patrick Walter's Cheminformatics Tutorials](https://github.com/PatWalters/practical_cheminformatics_tutorials)
+
 * [Pat Walters' RSC CICAG Open Source Tools for Chemistry](https://www.macinchem.org/blog/files/fe66130c1da3375e46d0512e483eb901-2791.php?utm_source=pocket_mylist).[Video](https://www.youtube.com/watch?v=2ZjerAGS_IQ). [Github](https://github.com/PatWalters/chem_tutorial)
 
 * [Pen's Python cookbook for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
-
-* [Patrick Walter's Cheminformatics Hands-on workshop](https://github.com/PatWalters/workshop)
-
-* [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD)
 
 * [Chem LibreText collection from ACS Division of Chemical Education](https://bit.ly/2SxItoc)
 
@@ -180,6 +180,10 @@ Authors propose an algorithmic approach called as SpaceCompare to calculate over
 Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found [here](https://www.sciencedirect.com/science/article/pii/S1740674920300044)
 
 * [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
+
+* [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
+
+* [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
 
 ### Explainable/Interpretable Machine Learning 
 
