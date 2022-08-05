@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      28 min read
+      33 min read
     
 </span></p>
 
@@ -153,13 +153,14 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#federated-learning">Federated Learning</a></li>
 <li class="toc-entry toc-h3"><a href="#generative-models">Generative models</a></li>
 <li class="toc-entry toc-h3"><a href="#computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</a></li>
+<li class="toc-entry toc-h3"><a href="#data-driven-chemistry-modeling-and-reaction-optimization">Data-driven chemistry modeling and reaction optimization</a></li>
 <li class="toc-entry toc-h3"><a href="#dna-encoded-libraries">DNA-encoded Libraries</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#code--packages">Code / Packages:</a></li>
 <li class="toc-entry toc-h2"><a href="#datasets--chemical-libraries">Datasets &amp; Chemical libraries</a></li>
 <li class="toc-entry toc-h2"><a href="#helpful-utilities">Helpful utilities:</a></li>
-</ul><p>Last update: 25th July 2022</p>
+</ul><p>Last update: 5th August 2022</p>
 
 <h2 id="noteworthy-blogs-to-follow">
 <a class="anchor" href="#noteworthy-blogs-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Noteworthy blogs to follow:</h2>
@@ -323,6 +324,14 @@ window.onload = wrap_img;
   <li>
     <p><a href="https://www.nature.com/collections/gcijejjahe">Nice collection of recent papers in Nature Communications on ML application and modeling</a></p>
   </li>
+  <li>
+    <p><a href="https://pubs.acs.org/page/achre4/data-science-meets-chemistry">Data Science Meets Chemistry</a></p>
+  </li>
+</ol>
+
+<p>This issue includes contributions that demonstrate the profound impact data science techniques have had in chemistry including chemical and materials synthesis, catalyst and materials design, and overhauling the models used in traditional theoretical or computational chemistry.</p>
+
+<ol>
   <li>
     <p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077">Journal of Medicinal Chemistry compendium of AI in Drug discovery issue</a></p>
   </li>
@@ -529,16 +538,8 @@ window.onload = wrap_img;
     <p><a href="https://pubs.acs.org/doi/abs/10.1021/acscentsci.0c00026">Janet, J. P., Ramesh, S., Duan, C., &amp; Kulik, H. J. (2020). Accurate multiobjective design in a space of millions of transition metal complexes with neural-network-driven efficient global optimization. ACS central science, 6(4), 513-524.</a></p>
   </li>
   <li>
-    <p><a href="https://www.nature.com/articles/s41586-021-03213-y">B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021</a>. <a href="https://github.com/b-shields/edbo">Github</a></p>
+    <p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.1c00546">A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.</a>. <a href="https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery">Slideshare</a></p>
   </li>
-</ul>
-
-<p>Experimental design using Bayesian Optimization.</p>
-
-<ul>
-  <li>
-<a href="https://pubs.acs.org/doi/10.1021/acscentsci.1c00546">A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.</a>. <a href="https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery">Slideshare</a>
-</li>
 </ul>
 
 <p>Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks.</p>
@@ -568,12 +569,13 @@ window.onload = wrap_img;
 <a class="anchor" href="#meta-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Meta Learning</h3>
 
 <ul>
-  <li>
-    <p><a href="https://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367">Altae-Tran, H., Ramsundar, B., Pappu, A. S., &amp; Pande, V. (2017). Low data drug discovery with one-shot learning. ACS central science, 3(4), 283-293.</a></p>
-  </li>
-  <li>
-    <p><a href="https://arxiv.org/pdf/2003.05996.pdf">Nguyen, C. Q., Kreatsoulas, C., &amp; Branson, K. M. (2020). Meta-learning GNN initializations for low-resource molecular property prediction. arXiv preprint arXiv:2003.05996.</a></p>
-  </li>
+  <li><a href="https://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367">Altae-Tran, H., Ramsundar, B., Pappu, A. S., &amp; Pande, V. (2017). Low data drug discovery with one-shot learning. ACS central science, 3(4), 283-293.</a></li>
+</ul>
+
+<p>Authors demonstrate how one-shot learning can be used to signifinicantly lower the amount of data required to make predictions in drug discovery tasks. LSTM combined with GCNNs is shown to improve learning capabilities of the model. In the simplest one-shot learning formalism these continuous vectors are then fed into a simple nearest-neighbor classifier that labels new examples by distance-weighted combination of support set labels</p>
+
+<ul>
+  <li><a href="https://arxiv.org/pdf/2003.05996.pdf">Nguyen, C. Q., Kreatsoulas, C., &amp; Branson, K. M. (2020). Meta-learning GNN initializations for low-resource molecular property prediction. arXiv preprint arXiv:2003.05996.</a></li>
 </ul>
 
 <p>Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just approx. 256 datapoints.</p>
@@ -778,8 +780,14 @@ window.onload = wrap_img;
     <p><a href="https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02120">Struble, T. J., et al. (2020). “Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis.” J Med Chem 63(16): 8667-8682</a></p>
   </li>
   <li>
-    <p><a href="https://arxiv.org/pdf/1906.10223.pdf">The Exploration of Chemical Reaction Networks</a></p>
+    <p><a href="https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00770">Zuranski, Andrzej M., et al. “Predicting reaction yields via supervised learning.” Accounts of chemical research 54.8 (2021): 1856-1865.</a></p>
   </li>
+</ul>
+
+<p>Perspective on ML for organic chemistry reactivity prediction. Group uses DFT-derived physical features of the reaction molecules and conditions for representation. Small data set plus HTE experimentation dataset for yield estimation.</p>
+
+<ul>
+  <li><a href="https://arxiv.org/pdf/1906.10223.pdf">The Exploration of Chemical Reaction Networks</a></li>
 </ul>
 
 <p>Perspective article summarising their position on the current state of research and future considerations on developing better reaction network models. Break down the analysis of reaction networks as into 3 classes (1) Front Open End: exploration of products from reactants (2) Backward Open Start: Know the product and explore potential reactants (3) Start to End: Product and reactant known, explore the likely intermediates.</p>
@@ -914,7 +922,32 @@ window.onload = wrap_img;
   <li>
     <p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0323-6">Watson, I. A., et al. (2019). “A retrosynthetic analysis algorithm implementation.” J Cheminform 11(1)</a></p>
   </li>
+  <li>
+    <p><a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201605499">Segler, Marwin HS, and Mark P. Waller. “Neural‐symbolic machine learning for retrosynthesis and reaction prediction.” Chemistry–A European Journal 23.25 (2017): 5966-5971.</a></p>
+  </li>
 </ul>
+
+<p>Hybrid neural-symbolic approach for both retrosynthesis and reaction prediction that can be trained with large reaction sets from databases. Template extraction from known reaction datasets to classify new reaction to known reaction classes.</p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.0c00403">Fortunato, Michael E., et al. “Data augmentation and pretraining for template-based retrosynthetic prediction in computer-aided synthesis planning.” Journal of chemical information and modeling 60.7 (2020): 3398-3407.</a></li>
+</ul>
+
+<p>In template-based retrosynthesis predictions, templates with few examples are excluded from training. This works talks on methods to augment the current set of data to account for the cases where examples for training are few.</p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c01065">Seidl, Philipp, et al. “Improving Few-and Zero-Shot Reaction Template Prediction Using Modern Hopfield Networks.” Journal of chemical information and modeling 62.9 (2022): 2111-2120.</a></li>
+</ul>
+
+<p>Introduce a template-based single-step retrosynthesis model based on Modern Hopfield
+Networks, which learn an encoding of both molecules and reaction templates in order to
+predict the relevance of templates for a given molecule. The model does not consider templates as distinct categories, but can leverage structural information about the template. The retrieval approach enables generalization across templates, which makes zero-shot learning possible and improves few-shot learning. On the single-step retrosynthesis benchmark USPTO-50k, the MHN model reaction reaches the state-of-the-art at top-k accuracy for k ≥ 3.</p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.2c00321">Tu, Zhengkai, and Connor W. Coley. “Permutation invariant graph-to-sequence model for template-free retrosynthesis and reaction prediction.” Journal of Chemical Information and Modeling (2021).</a></li>
+</ul>
+
+<p>Graph2SMILES, a template-free retrosynthesis model to predict reaction outcomes and retrosynthesis routes. This model eliminates the need for any input-side SMILES augmentation, while achieving noticeable improvements over Transformer baselines (especially for top-1 accuracy).</p>
 
 <p><strong>Generate reaction networks:</strong></p>
 
@@ -945,6 +978,61 @@ window.onload = wrap_img;
 </ul>
 
 <p>Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE.</p>
+
+<p><strong>Estimate molecular synthesizability</strong></p>
+
+<p>The idea of estimating whether a molecule is ‘synthesizable’ can be thought of from two areas:</p>
+<ol>
+  <li>Complexity based - compare the fragments in the molecule to the known fragments in the chemical space</li>
+  <li>Full retrosynthesis based - entire route is considered for molecule generation. Reactant complexity drives route complexity.</li>
+</ol>
+
+<ul>
+  <li>
+<a href="https://jcheminf.biomedcentral.com/articles/10.1186/1758-2946-1-8">Ertl, Peter, and Ansgar Schuffenhauer. “Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions.” Journal of cheminformatics 1.1 (2009): 1-11.</a>. <a href="https://github.com/rdkit/rdkit/tree/master/Contrib/SA_Score">RDkit implementation</a>
+</li>
+</ul>
+
+<p>Synthetic Accessbility  score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability.</p>
+
+<ul>
+  <li>
+<a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.7b00622">Coley, Connor W., et al. “SCScore: synthetic complexity learned from a reaction corpus.” Journal of chemical information and modeling 58.2 (2018): 252-261.</a>. <a href="https://github.com/deepchem/deepchem/blob/master/examples/tutorials/Synthetic_Feasibility_Scoring.ipynb">DeepChem implementation</a>
+</li>
+</ul>
+
+<p>SCScore is a learned synthetic complexity score computed as a neural network model trained on reaction data from the Reaxys database. It was designed with synthesis planning in mind to operate on molecules resembling not just drug-like products but intermediates and simpler building blocks as well.</p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c01476">Liu, Cheng-Hao, et al. “RetroGNN: Fast Estimation of Synthesizability for Virtual Screening and De Novo Design by Learning from Slow Retrosynthesis Software.” Journal of Chemical Information and Modeling 62.10 (2022): 2293-2300.</a></li>
+</ul>
+
+<p>RetroGNN is a graph neural network based model to predict outcome of a synthesis planner given the target molecule. Shown to better perform than SAScore. Code is yet to be released.</p>
+
+<h3 id="data-driven-chemistry-modeling-and-reaction-optimization">
+<a class="anchor" href="#data-driven-chemistry-modeling-and-reaction-optimization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data-driven chemistry modeling and reaction optimization</h3>
+
+<p><strong>Review</strong></p>
+
+<ul>
+  <li><a href="https://pubs.acs.org/doi/full/10.1021/acscentsci.1c00535">Williams, Wendy L., et al. “The evolution of data-driven modeling in organic chemistry.” ACS central science 7.10 (2021): 1622-1637.</a></li>
+</ul>
+
+<p><strong>Articles</strong></p>
+
+<ul>
+  <li>
+<a href="https://www.nature.com/articles/s41586-021-03213-y">B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021</a>. <a href="https://github.com/b-shields/edbo">Github</a>
+</li>
+</ul>
+
+<p>Experimental design using Bayesian Optimization. Look at 3 rxn class with multiple reaction parameters - temp solvent ligand. Algorithm identifies the optimal conditions. Variables looked into: ligands, bases, solvents, temperatures, concentrations. Algorithm arrived at 99% yields consistently - which was possible by using unusual ligand not known to work well (cognitive bias).</p>
+
+<ul>
+  <li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/62b2dc4b7da6ce2ddb1b3264">Dotson, Jordan, et al. “Data-driven multi-objective optimization tactics for catalytic asymmetric reactions.” (2022).</a></li>
+</ul>
+
+<p>Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts – 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of &gt;550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space.</p>
 
 <p><strong>Databases</strong></p>
 
