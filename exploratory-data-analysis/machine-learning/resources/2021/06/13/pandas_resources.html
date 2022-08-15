@@ -301,6 +301,18 @@ window.onload = wrap_img;
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_raw_data</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="n">df_raw_data</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'STRING_SUBSET'</span><span class="p">)]</span>
 </code></pre></div></div>
 
+<p><strong>Find rows in column <code class="language-plaintext highlighter-rouge">Model</code> based on a string</strong></p>
+
+<p>Select all row entries that start with Mac</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'model'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="s">'Mac'</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p>Select all row entries that contain <code class="language-plaintext highlighter-rouge">ac</code> in it</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'model'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'ac'</span><span class="p">)]</span>
+</code></pre></div></div>
+
 <p><strong>Filter entries in the column based on the threshold</strong></p>
 <ul>
   <li>Data has indian-inspired international cuisines which are not what we are interested in
