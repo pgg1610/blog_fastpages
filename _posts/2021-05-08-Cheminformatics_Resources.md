@@ -379,6 +379,11 @@ Team at Novartis and Microsoft propose MoLeR, graph based model to generate mole
 
 **Scoring functions** 
 
+* [Imrie, Fergus, et al. "Deep generative design with 3D pharmacophoric constraints." Chemical science 12.43 (2021): 14577-14589.](https://pubs.rsc.org/en/content/articlelanding/2021/sc/d1sc02436a#!)
+
+Method that combines GNNs with CNNs to incorporate 3D pharmacophoric constraints into molecular generation. 
+
+
 * [Bolcato, Giovanni, and Jonas Boström. "On the Value of Using 3D-shape and Electrostatic Similarities in Deep Generative Methods." ChemRxiv (2021).](https://chemrxiv.org/engage/chemrxiv/article-details/616a9af6a3d2c9789ad8a5e9)
 
 Extension to the fragment-based reinforcement learning methods for generating novel compounds. Comparison of 3D molecular fragments to aid in identifying bioactive conformations. 

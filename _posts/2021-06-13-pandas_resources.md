@@ -187,6 +187,20 @@ df1.merge( df2, on = ['col_A', 'col_B'])
 df_raw_data.columns[df_raw_data.columns.str.contains('STRING_SUBSET')]
 ```
 
+**Find rows in column `Model` based on a string**
+
+Select all row entries that start with Mac
+
+```python
+df[df['model'].str.match('Mac')]
+```
+
+Select all row entries that contain `ac` in it
+
+```python
+df[df['model'].str.contains('ac')]
+```
+
 **Filter entries in the column based on the threshold** 
 * Data has indian-inspired international cuisines which are not what we are interested in
 ```python
