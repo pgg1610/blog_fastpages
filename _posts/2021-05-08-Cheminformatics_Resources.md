@@ -72,6 +72,10 @@ Paper outlining good practices for interpretating QSAR (Quantative Structure-Pro
 
 Recent review summarising the state of the molecular property prediction and structure generation research. In spite of exciting recent advances in the modeling efforts,  there is a need to generate better (realistic)  training data, assess model prediction confidence, and metrics to quantify molecular generation performance. 
 
+* [Keith, John A., et al. "Combining machine learning and computational chemistry for predictive insights into chemical systems." Chemical reviews 121.16 (2021): 9816-9872.](https://pubs.acs.org/doi/full/10.1021/acs.chemrev.1c00107?utm_source=pcm&utm_medium=twitter&utm_campaign=PUBS_0522_EJK_CR_chreay_CR_Most_Read&src=PUBS_0522_EJK_CR_chreay_CR_Most_Read)
+
+In-depth account of the machine learning and computational methods used in material science and small molecules. Nice introduction to the mathematics and theory behind first-principles based methods. 
+
 * [Navigating through the Maze of Homogeneous Catalyst Design with Machine Learning](https://chemrxiv.org/articles/preprint/Navigating_through_the_Maze_of_Homogeneous_Catalyst_Design_with_Machine_Learning/12786722/1)
 
 * [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004)
@@ -101,6 +105,8 @@ Overview of methods and scope of computational methods used in the drug developm
 * [J. Shen and C. A. Nicolaou, “Molecular property prediction: recent trends in the era of artificial intelligence,” Drug Discov. Today Technol., vol. 32–33, no. xx, pp. 29–36, 2019.](https://www.sciencedirect.com/science/article/abs/pii/S1740674920300032)
 
 * [Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., & Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub)
+
+* [Congreve, Miles, et al. "Recent developments in fragment-based drug discovery." Journal of medicinal chemistry 51.13 (2008): 3661-3680.](https://pubs.acs.org/doi/10.1021/jm8000373)
 
 ## Special Journal Issues
 
@@ -285,7 +291,7 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 
 **Benchmarks**
 
-* [Flam-Shepherd, Daniel, Kevin Zhu, and Alán Aspuru-Guzik. "Keeping it Simple: Language Models can learn Complex Molecular Distributions." arXiv preprint arXiv:2112.03041 (2021).](https://arxiv.org/abs/2112.03041)
+* [Flam-Shepherd, Daniel, Kevin Zhu, and Alán Aspuru-Guzik. "Keeping it Simple: Language Models can learn Complex Molecular Distributions." arXiv preprint arXiv:2112.03041 (2021).](https://arxiv.org/abs/2112.03041). [Nature Comms Link](https://www.nature.com/articles/s41467-022-30839-x)
 
 Test SOTA language models and representation performance against graph-based methods (CGVAE, JTVAE) for 'challenging' generative modeling tasks - generate a molecule - property distribution as a function of synthetic feasiblity. Graph models faced chanllenge in generating large molcules (> 100 HAs). Selfies provided advantage here. All of the models seem to generate novel molecules - how practical each of these novel molecules are is yet an open question. 
 
@@ -673,6 +679,17 @@ Spotfire like capabilities to jupyter notebook.
 * [Mcule](https://mcule.com/database/): Used in DEL enumerations 
 
 * [DrugBank](https://go.drugbank.com/)
+
+* [QMugs](https://www.nature.com/articles/s41597-022-01390-7)
+
+QMugs (Quantum mechanical properties of drug-like molecules) collection comprises quantum mechanical properties of more than 665 k biologically and pharmacologically relevant molecules extracted from the ChEMBL database, totaling 2M conformers.
+
+**Reaction Datasets**
+
+* USPTO 
+* Pistachio
+* Reaxys
+* Open Reaction Database 
 
 **Commericial (building block) vendors**
 
