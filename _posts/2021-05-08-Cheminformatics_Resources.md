@@ -402,6 +402,10 @@ Using quantum chemistry attributes calculated on-the-fly as scoring functions fo
 
 **Reviews:** 
 
+* [Thakkar, Amol, et al. "Artificial intelligence and automation in computer aided synthesis planning." Reaction chemistry & engineering 6.1 (2021): 27-51.](https://pubs.rsc.org/en/content/articlehtml/2021/xx/d0re00340a?casa_token=XlT3Q35wF_QAAAAA:Rcge3W9WUQher8k9zVMPBUQJsCeOskpUZOvQShiCcVZw127BHRFMRrZL0X6Upa9eHD-KMYPBNTaPww)
+
+Perspective on the current SOTA of synthesis planning, automation, and reaction optimization in drug discovery and development phases using AI and ML. 
+
 * [Madzhidov, T. I., et al. (2021). "Machine learning modelling of chemical reaction characteristics: yesterday, today, tomorrow." Mendeleev Communications 31(6): 769-780.](https://www.sciencedirect.com/science/article/abs/pii/S0959943621002959?dgcid=author)
 
 * [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
