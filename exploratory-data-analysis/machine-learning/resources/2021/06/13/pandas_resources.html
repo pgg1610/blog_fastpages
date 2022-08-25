@@ -132,6 +132,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#reading-and-writing">Reading and Writing</a></li>
+<li class="toc-entry toc-h2"><a href="#post-process">Post process</a></li>
 <li class="toc-entry toc-h2"><a href="#quick-plotting">Quick plotting</a></li>
 <li class="toc-entry toc-h2"><a href="#handling-missing-values">Handling missing values</a></li>
 <li class="toc-entry toc-h2"><a href="#join-two-datasets">Join two datasets</a></li>
@@ -212,6 +213,27 @@ window.onload = wrap_img;
 <p><strong>Dropping miscellaneous columns and NaN entries</strong></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">columns_to_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s">'CookTimeInMins'</span><span class="p">,</span> <span class="s">'Servings'</span><span class="p">,</span> <span class="s">'Course'</span><span class="p">,</span> <span class="s">'Diet'</span><span class="p">,</span> <span class="s">'Instructions'</span><span class="p">,</span> <span class="s">'TranslatedInstructions'</span><span class="p">,</span> <span class="s">'URL'</span><span class="p">]</span>
 <span class="n">food_df</span> <span class="o">=</span> <span class="n">food_df</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns_to_drop</span><span class="p">).</span><span class="n">dropna</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="post-process">
+<a class="anchor" href="#post-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Post process</h2>
+
+<p><strong>Highlight cells based on a condition</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">"col1"</span><span class="p">:[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+    <span class="s">"col2"</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="k">def</span> <span class="nf">highlight_number</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">[</span>
+    <span class="s">"background-color: red; color:white"</span>
+    <span class="k">if</span> <span class="n">cell</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+    <span class="k">else</span> <span class="s">"background-color: green; color:white"</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span>
+    <span class="p">]</span>
+
+<span class="n">df</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">highlight_number</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="quick-plotting">

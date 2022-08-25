@@ -108,7 +108,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      34 min read
+      35 min read
     
 </span></p>
 
@@ -154,6 +154,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#generative-models">Generative models</a></li>
 <li class="toc-entry toc-h3"><a href="#computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</a></li>
 <li class="toc-entry toc-h3"><a href="#data-driven-chemistry-modeling-and-reaction-optimization">Data-driven chemistry modeling and reaction optimization</a></li>
+<li class="toc-entry toc-h3"><a href="#automated-chemistry-workflows">Automated chemistry workflows</a></li>
 <li class="toc-entry toc-h3"><a href="#dna-encoded-libraries">DNA-encoded Libraries</a></li>
 </ul>
 </li>
@@ -1052,16 +1053,58 @@ predict the relevance of templates for a given molecule. The model does not cons
 <p>Experimental design using Bayesian Optimization. Look at 3 rxn class with multiple reaction parameters - temp solvent ligand. Algorithm identifies the optimal conditions. Variables looked into: ligands, bases, solvents, temperatures, concentrations. Algorithm arrived at 99% yields consistently - which was possible by using unusual ligand not known to work well (cognitive bias).</p>
 
 <ul>
-  <li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/62b2dc4b7da6ce2ddb1b3264">Dotson, Jordan, et al. “Data-driven multi-objective optimization tactics for catalytic asymmetric reactions.” (2022).</a></li>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/62f6966269f3a5df46b5584b">Torres, Jose Garrido, et al. “A Multi-Objective Active Learning Platform and Web App for Reaction Optimization.” (2022).</a></p>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/abs/2203.17241">Hickman, Riley J., et al. “Bayesian optimization with known experimental and design constraints for chemistry applications.” arXiv preprint arXiv:2203.17241 (2022).</a></p>
+  </li>
+  <li>
+    <p><a href="https://aip.scitation.org/doi/abs/10.1063/5.0048164">Häse, Florian, et al. “Gryffin: An algorithm for Bayesian optimization of categorical variables informed by expert knowledge.” Applied Physics Reviews 8.3 (2021): 031406.</a></p>
+  </li>
+  <li>
+    <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/62b2dc4b7da6ce2ddb1b3264">Dotson, Jordan, et al. “Data-driven multi-objective optimization tactics for catalytic asymmetric reactions.” (2022).</a></p>
+  </li>
 </ul>
 
 <p>Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts – 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of &gt;550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space.</p>
 
+<ul>
+  <li><a href="https://pubs.acs.org/doi/10.1021/acscatal.2c02807#.YvpbIMo0Ovw.linkedin">Zhang, Ying, et al. “Descriptor-Free Design of Multicomponent Catalysts.” ACS Catalysis 12 (2022): 10562-10571.</a></li>
+</ul>
+
+<p>Bayesian optimization (BO) to improve the experimental measured activity as a direct function of compositional variables without educating physical knowledge to the machine. We applied BO in screening spinel Cr<sub>a</sub>Mn<sub>b</sub>Fe<sub>c</sub>Co<sub>d</sub>Ni<sub>e</sub>Cu<sub>f</sub>Zn<sub>3–a–b–c–d–e–f</sub>O<sub>4</sub> for the decomposition of nitric oxide into environmentally friendly nitrogen.</p>
+
 <p><strong>Databases</strong></p>
 
 <ul>
-  <li><a href="https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist">Kearnes, S. M., et al. (2021). “The Open Reaction Database.” Journal of the American Chemical Society.</a></li>
+  <li>
+    <p><a href="https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist">Kearnes, S. M., et al. (2021). “The Open Reaction Database.” Journal of the American Chemical Society.</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.science.org/doi/10.1126/science.abo0058">Rohrbach, Simon, et al. “Digitization and validation of a chemical synthesis literature database in the ChemPU.” Science 377.6602 (2022): 172-180.</a></p>
+  </li>
 </ul>
+
+<h3 id="automated-chemistry-workflows">
+<a class="anchor" href="#automated-chemistry-workflows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automated chemistry workflows</h3>
+
+<ul>
+  <li>
+    <p><a href="https://pubs.acs.org/doi/abs/10.1021/acs.accounts.2c00220">Seifrid, Martin, et al. “Autonomous Chemical Experiments: Challenges and Perspectives on Establishing a Self-Driving Lab.” Accounts of Chemical Research (2022): e0229862-131.</a></p>
+  </li>
+  <li>
+    <p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.2c00207">Nambiar, Anirudh MK, et al. “Bayesian Optimization of Computer-Proposed Multistep Synthetic Routes on an Automated Robotic Flow Platform.” ACS Central Science (2022).</a></p>
+  </li>
+  <li>
+    <p><a href="https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00674">Wilbraham, Liam, S. Hessam M. Mehr, and Leroy Cronin. “Digitizing chemistry using the chemical processing unit: from synthesis to discovery.” Accounts of Chemical Research 54.2 (2020): 253-262.</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.sciencedirect.com/science/article/pii/S135964461300069X">Godfrey, Alexander G., Thierry Masquelin, and Horst Hemmerle. “A remote-controlled adaptive medchem lab: an innovative approach to enable drug discovery in the 21st Century.” Drug Discovery Today 18.17-18 (2013): 795-802.</a></p>
+  </li>
+</ul>
+
+<p>Account of Eli Lilly and Company’s ASL (Automated Synthesis Lab)</p>
 
 <h3 id="dna-encoded-libraries">
 <a class="anchor" href="#dna-encoded-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNA-encoded Libraries</h3>
