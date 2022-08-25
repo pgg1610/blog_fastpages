@@ -89,6 +89,27 @@ columns_to_drop = ['CookTimeInMins', 'Servings', 'Course', 'Diet', 'Instructions
 food_df = food_df.drop(columns = columns_to_drop).dropna()
 ```
 
+## Post process 
+
+**Highlight cells based on a condition**
+
+```python
+df = pd.DataFrame({
+    "col1":[-5,-2,1,4],
+    "col2":[2,3,-1,4]
+})
+
+def highlight_number(row):
+    return[
+    "background-color: red; color:white"
+    if cell <= 0
+    else "background-color: green; color:white"
+    for cell in row
+    ]
+
+df.style.apply(highlight_number)
+```
+
 ## Quick plotting 
 
 **Simple pearson correlation plot**

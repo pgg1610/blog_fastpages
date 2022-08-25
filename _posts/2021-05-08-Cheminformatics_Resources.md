@@ -573,14 +573,38 @@ RetroGNN is a graph neural network based model to predict outcome of a synthesis
 
 Experimental design using Bayesian Optimization. Look at 3 rxn class with multiple reaction parameters - temp solvent ligand. Algorithm identifies the optimal conditions. Variables looked into: ligands, bases, solvents, temperatures, concentrations. Algorithm arrived at 99% yields consistently - which was possible by using unusual ligand not known to work well (cognitive bias).
 
+* [Torres, Jose Garrido, et al. "A Multi-Objective Active Learning Platform and Web App for Reaction Optimization." (2022).](https://chemrxiv.org/engage/chemrxiv/article-details/62f6966269f3a5df46b5584b)
+
+* [Hickman, Riley J., et al. "Bayesian optimization with known experimental and design constraints for chemistry applications." arXiv preprint arXiv:2203.17241 (2022).](https://arxiv.org/abs/2203.17241)
+
+* [Häse, Florian, et al. "Gryffin: An algorithm for Bayesian optimization of categorical variables informed by expert knowledge." Applied Physics Reviews 8.3 (2021): 031406.](https://aip.scitation.org/doi/abs/10.1063/5.0048164)
+
 * [Dotson, Jordan, et al. "Data-driven multi-objective optimization tactics for catalytic asymmetric reactions." (2022).](https://chemrxiv.org/engage/chemrxiv/article-details/62b2dc4b7da6ce2ddb1b3264)
 
 Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts -- 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of >550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space. 
 
+* [Zhang, Ying, et al. "Descriptor-Free Design of Multicomponent Catalysts." ACS Catalysis 12 (2022): 10562-10571.](https://pubs.acs.org/doi/10.1021/acscatal.2c02807#.YvpbIMo0Ovw.linkedin)
+
+Bayesian optimization (BO) to improve the experimental measured activity as a direct function of compositional variables without educating physical knowledge to the machine. We applied BO in screening spinel Cr<sub>a</sub>Mn<sub>b</sub>Fe<sub>c</sub>Co<sub>d</sub>Ni<sub>e</sub>Cu<sub>f</sub>Zn<sub>3–a–b–c–d–e–f</sub>O<sub>4</sub> for the decomposition of nitric oxide into environmentally friendly nitrogen.
 
 **Databases**
 
 * [Kearnes, S. M., et al. (2021). "The Open Reaction Database." Journal of the American Chemical Society.](https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist)
+
+* [Rohrbach, Simon, et al. "Digitization and validation of a chemical synthesis literature database in the ChemPU." Science 377.6602 (2022): 172-180.](https://www.science.org/doi/10.1126/science.abo0058)
+
+### Automated chemistry workflows 
+
+* [Seifrid, Martin, et al. "Autonomous Chemical Experiments: Challenges and Perspectives on Establishing a Self-Driving Lab." Accounts of Chemical Research (2022): e0229862-131.](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.2c00220)
+
+* [Nambiar, Anirudh MK, et al. "Bayesian Optimization of Computer-Proposed Multistep Synthetic Routes on an Automated Robotic Flow Platform." ACS Central Science (2022).](https://pubs.acs.org/doi/10.1021/acscentsci.2c00207)
+
+* [Wilbraham, Liam, S. Hessam M. Mehr, and Leroy Cronin. "Digitizing chemistry using the chemical processing unit: from synthesis to discovery." Accounts of Chemical Research 54.2 (2020): 253-262.](https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00674)
+
+
+* [Godfrey, Alexander G., Thierry Masquelin, and Horst Hemmerle. "A remote-controlled adaptive medchem lab: an innovative approach to enable drug discovery in the 21st Century." Drug Discovery Today 18.17-18 (2013): 795-802.](https://www.sciencedirect.com/science/article/pii/S135964461300069X)
+
+Account of Eli Lilly and Company's ASL (Automated Synthesis Lab)
 
 ### DNA-encoded Libraries 
 
