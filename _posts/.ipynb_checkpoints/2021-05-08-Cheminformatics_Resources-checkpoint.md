@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Cheminformatics Literature and Resources
 ---
 
-Last update: 22nd January 2022
+Last update: 5th August 2022
 
 ## Noteworthy blogs to follow:
 
@@ -26,15 +26,17 @@ Last update: 22nd January 2022
 
 7. [DrugHunter - Dennis Hu](https://drughunter.com)
 
+8. [Practical Fragments](http://practicalfragments.blogspot.com/) 
+
 ## Online resources 
+
+* [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD) - Highly recommended. 
+
+* [Patrick Walter's Cheminformatics Tutorials](https://github.com/PatWalters/practical_cheminformatics_tutorials)
 
 * [Pat Walters' RSC CICAG Open Source Tools for Chemistry](https://www.macinchem.org/blog/files/fe66130c1da3375e46d0512e483eb901-2791.php?utm_source=pocket_mylist).[Video](https://www.youtube.com/watch?v=2ZjerAGS_IQ). [Github](https://github.com/PatWalters/chem_tutorial)
 
 * [Pen's Python cookbook for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
-
-* [Patrick Walter's Cheminformatics Hands-on workshop](https://github.com/PatWalters/workshop)
-
-* [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD)
 
 * [Chem LibreText collection from ACS Division of Chemical Education](https://bit.ly/2SxItoc)
 
@@ -44,6 +46,16 @@ Last update: 22nd January 2022
 * [Bajorath, 2011. Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology.](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
 
 * [Heifetz, Alexander. (Ed.) (2022). "Artificial Intelligence in Drug Design."](https://link.springer.com/book/10.1007/978-1-0716-1787-8)
+
+## Best practices 
+
+* [Bender, Andreas, et al. "Evaluation guidelines for machine learning tools in the chemical sciences." Nature Reviews Chemistry (2022): 1-15.](https://www.nature.com/articles/s41570-022-00391-9). [Temporary SharedIt Link](https://www.nature.com/articles/s41570-022-00391-9.epdf?sharing_token=c7ajAY6RtejsBwo7JKb_EdRgN0jAjWel9jnR3ZoTv0PlqwefS9tuSzOUSTdLlQspcQfdrrg6BP1js7fwhK8sXckoDuc05MIHU8Tf2mCEeVGilKBg5tdIz-htajojgKeP-9SZLLqCDAphBNd8VUtODVWYw0CXTg8CY1uUfyiB8zk%3D)
+
+Nice account outlining guidelines for evaluating different AI/ML methodologies in molecular science. They propose a checklist of tests and best practices to assess the practicality and importance of different methodologies thereby providing a framework on how to evaluate plethora of ML workflows being proposed in different areas of chemical science. The basis for not overlooking the older non-ML method when evaluating the 'new' learning-based method, emphasis on model interpretation to translate the corrleation to chemical causality and finally 
+
+* [Artrith, Nongnuch, et al. "Best practices in machine learning for chemistry." Nature chemistry 13.6 (2021): 505-508.](https://www.nature.com/articles/s41557-021-00716-z)
+
+Set of rules, considerations, and caveats to keep in mind when designing ML model for chemical science. The authors propose a checklist when evaluating ML models, while intuitive at first, when lot of the new ML papers are scanned through that lens, you can identify the shortcommings of the proposed model. This checklist is especially helpful for those entering just entering the field. 
 
 
 ## Reviews
@@ -74,6 +86,14 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 ## Industry-focused drug discovery reviews 
 
+* [Jayatunga, Madura KP, et al. "AI in small-molecule drug discovery: A coming wave." Nat. Rev. Drug Discov 21 (2022): 175-176.](https://www.nature.com/articles/d41573-022-00025-1)
+
+* [Abramov, Yuriy A., Guangxu Sun, and Qun Zeng. "Emerging Landscape of Computational Modeling in Pharmaceutical Development." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01580)
+
+Overview of methods and scope of computational methods used in the drug development process. 
+
+* [Dragovich, Peter S., et al. "Small-Molecule Lead-Finding Trends across the Roche and Genentech Research Organizations." Journal of Medicinal Chemistry (2022).](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c02106)
+
 * [A. Bender and I. Cortés-Ciriano, “Artificial intelligence in drug discovery: what is realistic, what are illusions? Part 1: Ways to make an impact, and why we are not there yet,” Drug Discov. Today, vol. 26, no. 2, pp. 511–524, 2021](https://www.sciencedirect.com/science/article/pii/S1359644620305274)
 
 * [A. H. Göller et al., “Bayer’s in silico ADMET platform: a journey of machine learning over the past two decades,” Drug Discov. Today, vol. 25, no. 9, pp. 1702–1709, 2020.](https://www.sciencedirect.com/science/article/pii/S1359644620302609)
@@ -86,10 +106,15 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 1. [Nice collection of recent papers in Nature Communications on ML application and modeling](https://www.nature.com/collections/gcijejjahe)
 
-2. [Journal of Medicinal Chemistry compendium of AI in Drug discovery issue](https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077)
+2. [Data Science Meets Chemistry](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
 
-3. [Account of Chemical Research Special Issue on advances in data-driven chemistry research](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
+This issue includes contributions that demonstrate the profound impact data science techniques have had in chemistry including chemical and materials synthesis, catalyst and materials design, and overhauling the models used in traditional theoretical or computational chemistry. 
 
+3. [Journal of Medicinal Chemistry compendium of AI in Drug discovery issue](https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077)
+
+4. [Account of Chemical Research Special Issue on advances in data-driven chemistry research](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
+
+5. [Special Issue on Reaction Informatics and Chemical Space, Journal of Chemical Information and Modeling (2022)](https://pubs.acs.org/toc/jcisd8/62/9)
 
 ## Meeting notes 
 
@@ -97,16 +122,19 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 * [Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.](https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5)
 
-## Specific Articles 
+## Specific areas of interest 
 
-Few key papers which I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
+Catalog of recent reviews and manuscripts I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
 
 ### Representation
 
+**Reviews**
 
 * [Representation of Molecules in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
 
 * [Screening of energetic molecules -- comparing different representations](https://www.nature.com/articles/s41598-018-27344-x)
+
+**Articles** 
 
 * [M. Krenn, F. Hase, A. Nigam, P. Friederich, and A. Aspuru-Guzik, “Self-Referencing Embedded Strings (SELFIES): A 100% robust molecular string representation,” Mach. Learn. Sci. Technol., pp. 1–9, 2020](https://arxiv.org/abs/1905.13741)
 
@@ -114,13 +142,53 @@ Few key papers which I have found useful when learning more about the state-of-t
 
 Comparative study of descriptor-based and graph-based models using public data set. Used descriptor-based models (XGBoost, RF, SVM, using ECFP) and compared them to graph-based models (GCN, GAT, AttentiveFP, MPNN). They show descriptor-based models outperform the graph-based models in terms of prediction accuracy and computational efficiency with SVM having best predictions. Graph-based methods are good for multi-task learning. 
 
+### Predictive modeling 
+
+* [Fang, Xiaomin, et al. "Geometry-enhanced molecular representation learning for property prediction." Nature Machine Intelligence (2022): 1-8.](https://www.nature.com/articles/s42256-021-00438-4)
+
+Self-supervised learning using special type of GNN architecture (GeoGNN) that includes molecule geometric / spatial information. Geometry-enhanced molecular representation learning method (GEM). The model achieves SOTA performance on 14 of 15 public classification and regression datasets.  
+
 * [Yang, K., Swanson, K., Jin, W., Coley, C., Eiden, P., Gao, H., Guzman-Perez, A., Hopper, T., Kelley, B., Mathea, M. and Palmer, A., 2019. Analyzing learned molecular representations for property prediction. Journal of chemical information and modeling, 59(8), pp.3370-3388](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237)
 
 Benchmark property prediction models on 19 public and 16 proprietary industrial data sets spanning a wide variety of chemical end points. Introduce a modeling framework (__Chemprop__) that consistently matches or outperforms models using fixed molecular descriptors as well as previous graph neural architectures on both public and proprietary data sets.
 
 * [Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402](https://arxiv.org/abs/2107.10402)
 
-Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E2/SN2 barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
+Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
+
+
+
+### QSAR benchmarks 
+
+* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
+
+* [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
+
+* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
+
+### Enumeration of chemical space
+
+* [Subbaiah, Murugaiah AM, and Nicholas A. Meanwell. "Bioisosteres of the phenyl ring: Recent strategic applications in lead optimization and drug design." Journal of Medicinal Chemistry 64.19 (2021): 14046-14128.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01215)
+
+Looks at biosteric replacements for the phenyl rings in the lead optimization phase. Phenyl rings results in improve potency but have poor solubility and lipophilicitty. Find biosteres can be used to improve them.
+
+* [Ertl, Peter. "Magic Rings: Navigation in the Ring Chemical Space Guided by the Bioactive Rings." Journal of Chemical Information and Modeling (2021).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00761)
+
+Analyze the nature of rings which appear in bioactive compounds. Ring systems are systematically extracted from one billion molecules and are analyzed to discover a structure or correlation in the bioactivity and type of rings.  No simple set of structural descriptors separating active and inactive rings could be identified, the separation is best described by a neural network model taking into account a complex combination of many substructure features.
+
+* [Bellmann, Louis, et al. "Comparison of Combinatorial Fragment Spaces and Its Application to Ultralarge Make-on-Demand Compound Catalogs." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01378)
+
+Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.
+
+* [Zabolotna, Yuliana, et al. "NP navigator: a new look at the natural product chemical space." Molecular informatics 40.9 (2021): 2100068.](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100068).
+
+Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found [here](https://www.sciencedirect.com/science/article/pii/S1740674920300044)
+
+* [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
+
+* [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
+
+* [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
 
 ### Explainable/Interpretable Machine Learning 
 
@@ -133,15 +201,6 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 * [Wellawatte, Geemi P., Aditi Seshadri, and Andrew D. White. "Model agnostic generation of counterfactual explanations for molecules." (2021).](https://chemrxiv.org/engage/chemrxiv/article-details/613268f0d5f0803706ba0c79)
 
 * [Matveieva, Mariia, and Pavel Polishchuk. "Benchmarks for interpretation of QSAR models." Journal of cheminformatics 13.1 (2021): 1-20](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Patrick Walter's blog](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html)
-
-
-### QSAR benchmarks 
-
-* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
-
-* [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
-
-* [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
 
 
 ### Uncertainty quantification
@@ -178,15 +237,17 @@ Active learning provides strategies for efficient screening of subsets of the li
 
 * [Janet, J. P., Ramesh, S., Duan, C., & Kulik, H. J. (2020). Accurate multiobjective design in a space of millions of transition metal complexes with neural-network-driven efficient global optimization. ACS central science, 6(4), 513-524.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.0c00026)
 
-* [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
-
-Experimental design using Bayesian Optimization. 
-
 * [A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.](https://pubs.acs.org/doi/10.1021/acscentsci.1c00546). [Slideshare](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
 
 Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks. 
 
 ### Transfer Learning  
+
+**Reviews** 
+
+* [Cai, Chenjing, et al. "Transfer learning for drug discovery." Journal of Medicinal Chemistry 63.16 (2020): 8683-8694.](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02147)
+
+**Articles** 
 
 * [Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning](https://www.nature.com/articles/s41467-019-10827-4)
 
@@ -198,16 +259,20 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 * [Altae-Tran, H., Ramsundar, B., Pappu, A. S., & Pande, V. (2017). Low data drug discovery with one-shot learning. ACS central science, 3(4), 283-293.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)
 
-
+Authors demonstrate how one-shot learning can be used to signifinicantly lower the amount of data required to make predictions in drug discovery tasks. LSTM combined with GCNNs is shown to improve learning capabilities of the model. In the simplest one-shot learning formalism these continuous vectors are then fed into a simple nearest-neighbor classifier that labels new examples by distance-weighted combination of support set labels
 
 * [Nguyen, C. Q., Kreatsoulas, C., & Branson, K. M. (2020). Meta-learning GNN initializations for low-resource molecular property prediction. arXiv preprint arXiv:2003.05996.](https://arxiv.org/pdf/2003.05996.pdf)
 
-Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just ~256 datapoints. 
+Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just approx. 256 datapoints.
 
 
 ### Federated Learning 
 
 * [Simm, Jaak, et al. "Splitting chemical structure data sets for federated privacy-preserving machine learning." Journal of Cheminformatics 13.1 (2021): 1-14.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00576-2)
+
+* [Melloddy consortium](https://www.melloddy.eu/objectives)
+
+Consortia comprising of leading resarch labs and companies working on decentralized datasets and predictive modeling of biochemical and cellular activity. 
 
 ### Generative models
 
@@ -240,6 +305,11 @@ Interesting analysis from team at AstraZeneca R&D. They look at the chemical spa
 
 This paper looks at different ways of integrating synthesizability criteria into generative models. 
 
+* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
+
+Bechmark work from AstraZeneca/MIT AI team to document different graph architecture schemes and algorithms for generative models. 
+
+
 **Language models:**
 
 * [R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol. 4, no. 2, pp. 268–276, 2018](https://pubs.acs.org/doi/10.1021/acscentsci.7b00572)
@@ -264,6 +334,11 @@ SMILES-based language model that generates molecules from scaffolds and can be t
 
 **Graph-based**
 
+* [Flam-Shepherd, Daniel, Alexander Zhigalin, and Alán Aspuru-Guzik. "Scalable Fragment-Based 3D Molecular Design with Reinforcement Learning." arXiv preprint arXiv:2202.00658 (2022)](https://arxiv.org/abs/2202.00658?)
+
+Reinforcement learning-based generative model whici is an update on point cloud approach by the same group to now incorporate 'grammar' for building molecules in form of functional groups in 3D space. 
+
+
 * [W. Jin, R. Barzilay, and T. Jaakkola, “Junction tree variational autoencoder for molecular graph generation,” 35th Int. Conf. Mach. Learn. ICML 2018, vol. 5, pp. 3632–3648, 2018](https://arxiv.org/abs/1802.04364)
 
 Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule. The molecule is generated in two-steps: first being generating the scaffold or backbone of the molelcule, then the nodes  are added with molecular substructure as identified from the 'molecular grammar'. 
@@ -282,7 +357,6 @@ GraphINVENT uses a tiered deep neural network architecture to probabilistically 
 
 * [RL-GraphINVENT: Reinforcement learning-based variant of the above code.](https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039)
 
-* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
 
 **GANs**
 
@@ -294,7 +368,21 @@ Generative adversarial network for finding small molecules using graph networks,
 
 Molecular generation strategy is described which combines an autoencoder and a GAN. Generator and discriminator network do not use SMILES strings as input, but instead n-dimensional vectors derived from the code-layer of an autoencoder trained as a SMILES heteroencoder that way syntax issues are expected to be addressed. 
 
+**Scaffold-retained** 
+
+* [Kaitoh, Kazuma, and Yoshihiro Yamanishi. "Scaffold-Retained Structure Generator to Exhaustively Create Molecules in an Arbitrary Chemical Space." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01130)
+
+* [Maziarz, Krzysztof, et al. "Learning to extend molecular scaffolds with structural motifs." arXiv preprint arXiv:2103.03864 (2021).](https://arxiv.org/pdf/2103.03864.pdf)
+
+Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown. 
+
+
 **Scoring functions** 
+
+* [Imrie, Fergus, et al. "Deep generative design with 3D pharmacophoric constraints." Chemical science 12.43 (2021): 14577-14589.](https://pubs.rsc.org/en/content/articlelanding/2021/sc/d1sc02436a#!)
+
+Method that combines GNNs with CNNs to incorporate 3D pharmacophoric constraints into molecular generation. 
+
 
 * [Bolcato, Giovanni, and Jonas Boström. "On the Value of Using 3D-shape and Electrostatic Similarities in Deep Generative Methods." ChemRxiv (2021).](https://chemrxiv.org/engage/chemrxiv/article-details/616a9af6a3d2c9789ad8a5e9)
 
@@ -313,6 +401,10 @@ Using quantum chemistry attributes calculated on-the-fly as scoring functions fo
 * [Jorner, K., et al. (2021). "Organic reactivity from mechanism to machine learning." Nature Reviews Chemistry 5(4): 240-255.](https://www.nature.com/articles/s41570-021-00260-x)
 
 * [Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02120)
+
+* [Zuranski, Andrzej M., et al. "Predicting reaction yields via supervised learning." Accounts of chemical research 54.8 (2021): 1856-1865.](https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00770)
+
+Perspective on ML for organic chemistry reactivity prediction. Group uses DFT-derived physical features of the reaction molecules and conditions for representation. Small data set plus HTE experimentation dataset for yield estimation. 
 
 * [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
 
@@ -334,6 +426,14 @@ Technical details of various algorithms being implemented for reaction mechanism
 * [Gimadiev, T. R., Lin, A., Afonina, V. A., Batyrshin, D., Nugmanov, R. I., Akhmetshin, T., ... & Varnek, A. (2021). Reaction Data Curation I: Chemical Structures and Transformations Standardization. Molecular Informatics, 2100119.](https://onlinelibrary.wiley.com/doi/abs/10.1002/minf.202100119?casa_token=SczoexCIDDUAAAAA:3M-uhrRFMaNRnydOQb-NBhJ1VvocjwZ1_ll--OGP1QwJ-X5Amwt24M586NXxbbgazYn0t-NBAmxS1oFk)
 
 Article from Varnek group on best practices on processing data for reaction informatics. 
+
+
+**Benchmarking**
+
+* [Genheden S, Bjerrum E. PaRoutes: a framework for benchmarking retrosynthesis route predictions. ChemRxiv. Cambridge: Cambridge Open Engage; 2022](https://chemrxiv.org/engage/chemrxiv/article-details/621c86f3c3e9da4f737b0047). [Github](https://github.com/MolecularAI/PaRoutes)
+
+Benchmarking framework for comparing different multi-step retrosynthesis methods from researchers at AstraZeneca R&D. Provides 10k synthetic routes which can be used as a validation set for different methodologies, providing a platform for systematic comparison of different methods being proposed in the community. 
+
 
 **Classifying chemical reactions:**
 
@@ -367,6 +467,8 @@ Data-driven atom mapping schemes which uses transformers for learning the contex
 
 **Predicting reaction outcomes:** 
 
+* [Jin, Wengong, et al. "Predicting organic reaction outcomes with weisfeiler-lehman network." Advances in neural information processing systems 30 (2017).](https://arxiv.org/abs/1709.04555)
+
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
 Template-free prediction of organic reaction outcomes using graph convolutional neural networks
@@ -391,7 +493,25 @@ Interesting work on de-novo design of molecules wherein, the molecules being cre
 
 * [Watson, I. A., et al. (2019). "A retrosynthetic analysis algorithm implementation." J Cheminform 11(1)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0323-6)
 
-**Generation reaction networks:**
+* [Segler, Marwin HS, and Mark P. Waller. "Neural‐symbolic machine learning for retrosynthesis and reaction prediction." Chemistry–A European Journal 23.25 (2017): 5966-5971.](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201605499)
+
+Hybrid neural-symbolic approach for both retrosynthesis and reaction prediction that can be trained with large reaction sets from databases. Template extraction from known reaction datasets to classify new reaction to known reaction classes. 
+
+* [Fortunato, Michael E., et al. "Data augmentation and pretraining for template-based retrosynthetic prediction in computer-aided synthesis planning." Journal of chemical information and modeling 60.7 (2020): 3398-3407.](https://pubs.acs.org/doi/10.1021/acs.jcim.0c00403)
+
+In template-based retrosynthesis predictions, templates with few examples are excluded from training. This works talks on methods to augment the current set of data to account for the cases where examples for training are few. 
+
+* [Seidl, Philipp, et al. "Improving Few-and Zero-Shot Reaction Template Prediction Using Modern Hopfield Networks." Journal of chemical information and modeling 62.9 (2022): 2111-2120.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01065)
+
+Introduce a template-based single-step retrosynthesis model based on Modern Hopfield
+Networks, which learn an encoding of both molecules and reaction templates in order to
+predict the relevance of templates for a given molecule. The model does not consider templates as distinct categories, but can leverage structural information about the template. The retrieval approach enables generalization across templates, which makes zero-shot learning possible and improves few-shot learning. On the single-step retrosynthesis benchmark USPTO-50k, the MHN model reaction reaches the state-of-the-art at top-k accuracy for k ≥ 3. 
+
+* [Tu, Zhengkai, and Connor W. Coley. "Permutation invariant graph-to-sequence model for template-free retrosynthesis and reaction prediction." Journal of Chemical Information and Modeling (2021).](https://pubs.acs.org/doi/full/10.1021/acs.jcim.2c00321)
+
+Graph2SMILES, a template-free retrosynthesis model to predict reaction outcomes and retrosynthesis routes. This model eliminates the need for any input-side SMILES augmentation, while achieving noticeable improvements over Transformer baselines (especially for top-1 accuracy). 
+
+**Generate reaction networks:**
 
 * [M. Liu et al., “Reaction Mechanism Generator v3.0: Advances in Automatic Mechanism Generation,” J. Chem. Inf. Model., May 2021](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01480)
 
@@ -409,6 +529,44 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 * [Machine learning in chemical reaction space](https://www.nature.com/articles/s41467-020-19267-x)
 
 Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE. 
+
+
+**Estimate molecular synthesizability**
+
+The idea of estimating whether a molecule is 'synthesizable' can be thought of from two areas:
+1. Complexity based - compare the fragments in the molecule to the known fragments in the chemical space  
+2. Full retrosynthesis based - entire route is considered for molecule generation. Reactant complexity drives route complexity. 
+
+* [Ertl, Peter, and Ansgar Schuffenhauer. "Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions." Journal of cheminformatics 1.1 (2009): 1-11.](https://jcheminf.biomedcentral.com/articles/10.1186/1758-2946-1-8). [RDkit implementation](https://github.com/rdkit/rdkit/tree/master/Contrib/SA_Score)
+
+Synthetic Accessbility  score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability. 
+
+
+* [Coley, Connor W., et al. "SCScore: synthetic complexity learned from a reaction corpus." Journal of chemical information and modeling 58.2 (2018): 252-261.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.7b00622). [DeepChem implementation](https://github.com/deepchem/deepchem/blob/master/examples/tutorials/Synthetic_Feasibility_Scoring.ipynb)
+
+SCScore is a learned synthetic complexity score computed as a neural network model trained on reaction data from the Reaxys database. It was designed with synthesis planning in mind to operate on molecules resembling not just drug-like products but intermediates and simpler building blocks as well.
+
+* [Liu, Cheng-Hao, et al. "RetroGNN: Fast Estimation of Synthesizability for Virtual Screening and De Novo Design by Learning from Slow Retrosynthesis Software." Journal of Chemical Information and Modeling 62.10 (2022): 2293-2300.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01476)
+
+RetroGNN is a graph neural network based model to predict outcome of a synthesis planner given the target molecule. Shown to better perform than SAScore. Code is yet to be released. 
+
+### Data-driven chemistry modeling and reaction optimization
+
+**Review**
+
+* [Williams, Wendy L., et al. "The evolution of data-driven modeling in organic chemistry." ACS central science 7.10 (2021): 1622-1637.](https://pubs.acs.org/doi/full/10.1021/acscentsci.1c00535)
+
+
+**Articles**
+
+* [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
+
+Experimental design using Bayesian Optimization. Look at 3 rxn class with multiple reaction parameters - temp solvent ligand. Algorithm identifies the optimal conditions. Variables looked into: ligands, bases, solvents, temperatures, concentrations. Algorithm arrived at 99% yields consistently - which was possible by using unusual ligand not known to work well (cognitive bias).
+
+* [Dotson, Jordan, et al. "Data-driven multi-objective optimization tactics for catalytic asymmetric reactions." (2022).](https://chemrxiv.org/engage/chemrxiv/article-details/62b2dc4b7da6ce2ddb1b3264)
+
+Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts -- 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of >550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space. 
+
 
 **Databases**
 
@@ -486,11 +644,45 @@ Active learning approach to efficiently and confidently identify the Pareto fron
 
 Github repository to generate chemical reaction fingerprints from reaction SMILES. 
 
-## Datasets
+* [mols2grid](https://github.com/cbouy/mols2grid)
+
+Interactive chemical viewer for small molecules (RDKit wrapper)
+
+* [molplotly](https://github.com/wjm41/molplotly)
+
+Spotfire like capabilities to jupyter notebook. 
+
+
+## Datasets & Chemical libraries 
+
+
+**Molecule datasets**
+
+* PubChem: public sourced molecules 
+
+* ChEMBL: bioactive molecules (most synthetic)
+
+* ZINC: collection of synthetic molecules (not all are bioactive) 
+
+* QM 7/8/9: small molecules having not more than 7/8/9 heavy atoms 
 
 * [Papyrus](https://chemrxiv.org/engage/chemrxiv/article-details/617aa2467a002162403d71f0)
 
-* [COCONUT](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9)
+* [COCONUT](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9): NP 400k there are some which are not NP 
+
+* [Mcule](https://mcule.com/database/): Used in DEL enumerations 
+
+* [DrugBank](https://go.drugbank.com/)
+
+**Commericial (building block) vendors**
+
+* eMolecules building blocks 
+
+* Enamine REAL Space 
+
+* WuXi GalaXi space 
+
+* Otava's CHEMriya 
 
 ## Helpful utilities:
 
@@ -503,4 +695,4 @@ Github repository to generate chemical reaction fingerprints from reaction SMILE
 * [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
 * [Therapeutics Data Commons](https://tdcommons.ai)
-"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaningf
+"Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaning"
