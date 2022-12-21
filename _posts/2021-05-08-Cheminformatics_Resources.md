@@ -162,9 +162,12 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
-
-
 ### QSAR benchmarks 
+
+* [Exposing the Limitations of Molecular Machine Learning with Activity Cliffs](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01073)
+
+Account on how to treat and analyze activity cliffs in context of developing a predictive model. The authors outline best practices to probe activity cliffs. They show, using 24 DL and ML models and 30 targets, ML approaches based on molecular descriptors outperformed more complex deep learning methods. Activity cliff pairs were defined on similarity of the molecule SMILES and the bioactivity difference.  Compared to most traditional machine learning approaches, deep neural networks seem to fall short at picking up subtle structural differences (and the corresponding property change) that give rise to activity cliffs.
+
 
 * [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
 
@@ -284,6 +287,10 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 
 **Reviews** 
 
+* [Walters, W. Patrick, and Mark Murcko. "Assessing the impact of generative AI on medicinal chemistry." Nature biotechnology 38.2 (2020): 143-145.](https://www.nature.com/articles/s41587-020-0418-2)
+
+Correspondence on assessing the impact of AI on medicinal chemistry. It is a well written account on practical implication of generative design on pharmaceutical research.They outline two recent cases of 'success' of AI generative design in drug discovery and give more context and propose best practices for furthering the development of algorithms and drug discovery pipelines. 
+
 * [Mouchlis VD, Afantitis A, Serra A, et al. Advances in de Novo Drug Design: From Conventional to Machine Learning Methods. Int J Mol Sci. 2021;22(4):1676. Published 2021 Feb 7. doi:10.3390/ijms22041676](https://pubmed.ncbi.nlm.nih.gov/33562347/)
 
 
@@ -384,6 +391,10 @@ Team at Novartis and Microsoft propose MoLeR, graph based model to generate mole
 
 
 **Scoring functions** 
+
+* [Bolcato, Giovanni, Esther Heid, and Jonas Boström. "On the Value of Using 3D Shape and Electrostatic Similarities in Deep Generative Methods." Journal of chemical information and modeling 62.6 (2022): 1388-1398.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01535)
+
+Extension to the fragment-based generative design model (DeepFMPO) using reinforcement learning now incorporating 3D electrostatic similarity in the analysis. Ability to replace fragment with similar 3D shape and electrostatics. ESP_sim for comparison of electrostatic potential and molecule shape is used for this purpose. The authors find scaffold-hopping bioisoteres for CDK2. 
 
 * [Imrie, Fergus, et al. "Deep generative design with 3D pharmacophoric constraints." Chemical science 12.43 (2021): 14577-14589.](https://pubs.rsc.org/en/content/articlelanding/2021/sc/d1sc02436a#!)
 
