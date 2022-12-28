@@ -2,12 +2,12 @@
 toc: true
 sticky_rank: 2
 layout: post
-description: Compendium of recent articles, resources, and blogs in the area of Cheminformatics
+description: Compendium of recent articles, resources, and blogs in the area of chemical science and drug discovery
 categories: [chemical-science, machine-learning, resources]
-title: Cheminformatics Literature and Resources
+title: Small Molecules Resources
 ---
 
-Last update: 20th December 2022
+Last update: 28th December 2022
 
 ## Noteworthy blogs to follow:
 
@@ -28,6 +28,8 @@ Last update: 20th December 2022
 
 8. [Practical Fragments](http://practicalfragments.blogspot.com/) 
 
+9. [Derek Lowe's In the Pipeline](https://www.science.org/blogs/pipeline)
+
 ## Online resources 
 
 * [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD) - Highly recommended. 
@@ -39,7 +41,6 @@ Last update: 20th December 2022
 * [Pen's Python cookbook for Cheminformatics](https://github.com/iwatobipen/py4chemoinformatics)
 
 * [Chem LibreText collection from ACS Division of Chemical Education](https://bit.ly/2SxItoc)
-
 
 ## Books
 
@@ -63,6 +64,8 @@ Set of rules, considerations, and caveats to keep in mind when designing ML mode
 * [F. Strieth-Kalthoff, F. Sandfort, M. H. S. Segler, and F. Glorius, Machine learning the ropes: principles, applications and directions in synthetic chemistry, Chem. Soc. Rev](https://pubs.rsc.org/en/content/articlelanding/2020/CS/C9CS00786E#fn1)
 
 Pedagogical account of various machine learning techniques, models, representation schemes from perspective of synthetic chemistry. Covers different applications of machine learning in synthesis planning, property prediction, molecular design, and reactivity prediction
+
+* [Rodríguez-Pérez, Raquel, Filip Miljković, and Jürgen Bajorath. "Machine Learning in Chemoinformatics and Medicinal Chemistry." Annual review of biomedical data science 5 (2022)](https://www.annualreviews.org/doi/abs/10.1146/annurev-biodatasci-122120-124216)
 
 * [Mariia Matveieva & Pavel Polishchuk. Benchmarks for interpretation of QSAR models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Github](https://github.com/ci-lab-cz/ibenchmark). [Patrick Walter's blog on the paper](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html).
 
@@ -128,7 +131,32 @@ This issue includes contributions that demonstrate the profound impact data scie
 
 * [Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.](https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5)
 
-## Specific areas of interest 
+## Chemical modalities 
+
+* [Blanco, Maria-Jesus, and Kevin M. Gardinier. "New chemical modalities and strategic thinking in early drug discovery." ACS medicinal chemistry letters 11.3 (2020): 228-231.](https://pubs.acs.org/doi/pdf/10.1021/acsmedchemlett.9b00582)
+
+Overview of different chemical modalities currently at work to address different disease targets. The article addresses the small molecule medicinal chemists and how they can expand their outlook of small molecules to include other molecular entities when considering the angle of attack for different target engagement strategies. The authors offer a nice set of tools and thought process when selecting possible drug modalities for different target classes and what questions should be asked when zeroing in a possible mode of action. 
+
+## Meta themes on optimizing small molecules 
+
+* [Walters, W. Patrick, and Mark A. Murcko. "Prediction of ‘drug-likeness’." Advanced drug delivery reviews 54.3 (2002): 255-271.](https://www.sciencedirect.com/science/article/abs/pii/S0169409X02000030?via%3Dihub) 
+
+
+
+## Synthesis Chemistry 
+
+Catalog of recent research articles that look at synthesis chemistry from a point of view of computational workflows, how traditional synthetic chemistry methods can be combined with informatics to augment drug discovery and synthesis processes. 
+
+* [Ruck, Rebecca T., Neil A. Strotman, and Shane W. Krska. "The Catalysis Laboratory at Merck: 20 Years of Catalyzing Innovation." ACS Catalysis 13 (2022): 475-503.](https://pubs.acs.org/doi/10.1021/acscatal.2c05159#.Y6oIfVMoYEs)
+
+* [Campos, Kevin R., et al. "The importance of synthetic chemistry in the pharmaceutical industry." Science 363.6424 (2019): eaat0805.](https://www.science.org/doi/pdf/10.1126/science.aat0805)
+
+* [Late-stage diversification of indole skeletons through nitrogen atom insertion](https://www.science.org/doi/10.1126/science.add1383)
+
+* [Lenci, Elena, and Andrea Trabocchi. "Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics." ChemBioChem 20.9 (2019): 1115-1123.](https://doi.org/10.1002/cbic.201800751)
+
+
+## Cheminformatics-focus
 
 Catalog of recent reviews and manuscripts I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
 
