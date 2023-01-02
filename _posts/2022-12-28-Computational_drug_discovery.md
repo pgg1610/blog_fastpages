@@ -141,7 +141,16 @@ Overview of different chemical modalities currently at work to address different
 
 * [Walters, W. Patrick, and Mark A. Murcko. "Prediction of ‘drug-likeness’." Advanced drug delivery reviews 54.3 (2002): 255-271.](https://www.sciencedirect.com/science/article/abs/pii/S0169409X02000030?via%3Dihub) 
 
+* [Veber, Daniel F., et al. "Molecular properties that influence the oral bioavailability of drug candidates." Journal of medicinal chemistry 45.12 (2002): 2615-2623.](https://pubs.acs.org/doi/10.1021/jm020017n)
 
+Retrospective analysis on factors influencing the bioavailability of drug candidates. Authors find rotatable bonds and polar surface area or hydrogen bond count (sum of donor and accpetors) found to be important predictors of good oral bioavailability. Compounds having <10 rotatable bonds and <140 A (or < 12 hydrogen bonds) have good chances of being orally bioavailable. 
+
+* [DeGoey, David A., et al. "Beyond the rule of 5: lessons learned from AbbVie’s drugs and compound collection: miniperspective." Journal of Medicinal Chemistry 61.7 (2017): 2636-2651.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.7b00717)
+
+ AB-MPS metric calculated using cLogD, the number of aromatic rings (nAr), and the number of rotatable bonds (nRotB) according to the formula AB-MPS = Abs(cLogD −3) + nAr + nRotB. The lower the AB-MPS score, the more likely the compound is to be absorbed, and a value of ≤14 is reported to predict a higher probability of oral absorption.
+
+* [Poongavanam, Vasanthanathan, Bradley C. Doak, and Jan Kihlberg. "Opportunities and guidelines for discovery of orally absorbed drugs in beyond rule of 5 space." Current Opinion in Chemical Biology 44 (2018): 23-29.](https://www.sciencedirect.com/science/article/pii/S1367593118300176#bib0030)
+Hueristics for oral bioavailability of molecules that are violating the rule of 5. MW may reach up to approximately 1000 Da provided that TPSA increases proportionally up to 250 Å2. In contrast, cLogP and HBDs must be carefully controlled at high MW. Our lack of ability to predict compound conformations and flexibility is currently a hurdle that is critical to overcome to enable further prospective design in oral bRo5 space.
 
 ## Synthesis Chemistry 
 
@@ -149,12 +158,15 @@ Catalog of recent research articles that look at synthesis chemistry from a poin
 
 * [Ruck, Rebecca T., Neil A. Strotman, and Shane W. Krska. "The Catalysis Laboratory at Merck: 20 Years of Catalyzing Innovation." ACS Catalysis 13 (2022): 475-503.](https://pubs.acs.org/doi/10.1021/acscatal.2c05159#.Y6oIfVMoYEs)
 
+* [Dreher, Spencer D., and Shane W. Krska. "Chemistry informer libraries: Conception, early experience, and role in the future of cheminformatics." Accounts of Chemical Research 54.7 (2021): 1586-1596.](https://pubs.acs.org/doi/10.1021/acs.accounts.0c00760)
+
+Curated set of substrates to quickly assess the practicality of synthetic methods with the complete capture of success and failure, that can optimize reaction conditions with a broader scope with respect to relevant applications.
+
 * [Campos, Kevin R., et al. "The importance of synthetic chemistry in the pharmaceutical industry." Science 363.6424 (2019): eaat0805.](https://www.science.org/doi/pdf/10.1126/science.aat0805)
 
 * [Late-stage diversification of indole skeletons through nitrogen atom insertion](https://www.science.org/doi/10.1126/science.add1383)
 
 * [Lenci, Elena, and Andrea Trabocchi. "Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics." ChemBioChem 20.9 (2019): 1115-1123.](https://doi.org/10.1002/cbic.201800751)
-
 
 ## Cheminformatics-focus
 
