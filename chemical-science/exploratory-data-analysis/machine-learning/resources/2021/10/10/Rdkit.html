@@ -137,6 +137,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#fingerprints">Fingerprints</a></li>
 <li class="toc-entry toc-h3"><a href="#loading-data">Loading data</a></li>
 <li class="toc-entry toc-h3"><a href="#viewing-molecules">Viewing molecules</a></li>
+<li class="toc-entry toc-h3"><a href="#reactions">Reactions</a></li>
 </ul><p>Rdkit code snippets and recipes that I revisit now and again. The snippets are adopted from different python scripts written over time, ignore the variable names.</p>
 
 <h3 id="fingerprints">
@@ -199,6 +200,43 @@ window.onload = wrap_img;
 <h3 id="viewing-molecules">
 <a class="anchor" href="#viewing-molecules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing molecules</h3>
 
+<p><strong>SDF</strong></p>
+
+<ul>
+  <li><a href="https://greglandrum.github.io/rdkit-blog/posts/2022-10-28-dealing-with-multiconformer-sd-files.html">RDKit blog</a></li>
+</ul>
+
+<p>Simple implementation</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./example.sdf'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">)</span>
+<span class="c1">#import gzip 
+#inf = gzip.open('gzip_file')
+</span><span class="n">fsuppl</span> <span class="o">=</span> <span class="n">Chem</span><span class="p">.</span><span class="n">ForwardSDMolSupplier</span><span class="p">(</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">mol_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">fsuppl</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">mol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">continue</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">mol</span><span class="p">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
+  <span class="n">mol_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>As a Pandas DataFrame</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sdf_df</span> <span class="o">=</span> <span class="n">PandasTools</span><span class="p">.</span><span class="n">LoadSDF</span><span class="p">(</span><span class="s">'./example.sdf'</span><span class="p">)</span>
+<span class="n">sdf_df</span><span class="p">[</span><span class="s">'NumHeavyAtoms'</span><span class="p">]</span><span class="o">=</span> <span class="n">sdf_df</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'ROMol'</span><span class="p">].</span><span class="n">GetNumHeavyAtoms</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">PandasTools</span><span class="p">.</span><span class="n">WriteSDF</span><span class="p">(</span><span class="n">sdf_df</span><span class="p">,</span> <span class="s">'out.sdf'</span><span class="p">,</span> <span class="n">molColName</span><span class="o">=</span><span class="s">'ROMol'</span><span class="p">,</span> <span class="n">idName</span><span class="o">=</span><span class="s">'ID'</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">sdf_df</span><span class="p">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">allNumeric</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Viewing molecules inline</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">IPythonConsole</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">MolsToGridImage</span> 
+<span class="n">IPythonConsole</span><span class="p">.</span><span class="n">ipython_useSVG</span><span class="o">=</span><span class="bp">True</span>  <span class="c1">#SVG's tend to look nicer than the png counterparts
+</span>
+<span class="n">sample_mol_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span>  <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">]</span>
+<span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">sample_mol_list</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
 <p><strong>Viewing molecules in a grid</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -254,12 +292,39 @@ window.onload = wrap_img;
 <span class="o">&gt;&gt;</span> <span class="n">viz_substruct</span><span class="p">(</span><span class="n">diclofenac</span><span class="p">,</span> <span class="n">substruct_smarts</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="reactions">
+<a class="anchor" href="#reactions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reactions</h3>
+
 <p><strong>View a reaction</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rxn</span> <span class="o">=</span> <span class="n">AllChem</span><span class="p">.</span><span class="n">ReactionFromSmarts</span><span class="p">(</span><span class="s">'[C:1]=[C:2].[C:3]=[*:4][*:5]=[C:6]&gt;&gt;[C:1]1[C:2][C:3][*:4]=[*:5][C:6]1'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Get changed atoms in a reaction: https://greglandrum.github.io/rdkit-blog/tutorial/reactions/2021/11/26/highlighting-changed-bonds-in-reactions.html</p>
+
+<p><strong>Run enumerations</strong></p>
+
+<p>Borrowed and inspired from Pat Walters <a href="https://gist.github.com/PatWalters/7439099598b4f08a331a81b209f88baa#file-reaction_example-ipynb">gist</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rxn</span> <span class="o">=</span> <span class="n">AllChem</span><span class="p">.</span><span class="n">ReactionFromSmarts</span><span class="p">(</span><span class="s">"[#6:10]-[#7H2:9].[#7]-[c:4]1[c:5][c:6][c:7][c:8][c:3]1-[#6](-[OH])=O.[#6H:1](-[#6:2])=O&gt;&gt;[#6:10]-[#7:9]-c1n[c:1](-[#6:2])n[c:4]2[c:5][c:6][c:7][c:8][c:3]12"</span><span class="p">)</span>
+
+<span class="n">react_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">'R1'</span><span class="p">:[],</span><span class="s">'R2'</span><span class="p">:[],</span><span class="s">'R3'</span><span class="p">:[],</span> <span class="s">'product'</span><span class="p">:[]}</span>
+<span class="k">for</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span> <span class="o">*</span><span class="p">[</span><span class="n">primary_amines_list</span><span class="p">,</span> <span class="n">amino_benzoic_list</span><span class="p">,</span> <span class="n">aldehyde_list</span><span class="p">]):</span>
+  <span class="n">react_dict</span><span class="p">[</span><span class="s">'R1'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+  <span class="n">react_dict</span><span class="p">[</span><span class="s">'R2'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+  <span class="n">react_dict</span><span class="p">[</span><span class="s">'R3'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">r3</span><span class="p">)</span>
+  <span class="n">r1_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+  <span class="n">r2_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+  <span class="n">r3_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="p">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">r3</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">prod</span> <span class="ow">in</span> <span class="n">rxn</span><span class="p">.</span><span class="n">RunReactants</span><span class="p">([</span><span class="n">r1_mol</span><span class="p">,</span><span class="n">r2_mol</span><span class="p">,</span><span class="n">r3_mol</span><span class="p">]):</span>
+    <span class="n">prod_mol</span> <span class="o">=</span> <span class="n">prod</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Chem</span><span class="p">.</span><span class="n">SanitizeMol</span><span class="p">(</span><span class="n">prod_mol</span><span class="p">)</span>
+    <span class="n">react_dict</span><span class="p">[</span><span class="s">'product'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">Chem</span><span class="p">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">prod_mol</span><span class="p">))</span>
+
+<span class="n">react_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">react_dict</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>More examples <a href="https://pgg1610.github.io/blog_fastpages/chemical-science/python/data-analysis/2022/08/31/cheminfo_smirks.html">here</a></p>
 
 <p><strong>Edit, merge, react molecules</strong></p>
 
