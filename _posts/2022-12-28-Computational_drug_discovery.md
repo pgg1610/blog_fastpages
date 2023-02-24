@@ -7,7 +7,7 @@ categories: [chemical-science, machine-learning, resources]
 title: Small Molecules Resources
 ---
 
-Last update: 28th December 2022
+Last update: 8th February 2023
 
 ## Noteworthy blogs to follow:
 
@@ -147,9 +147,10 @@ Retrospective analysis on factors influencing the bioavailability of drug candid
 
 * [DeGoey, David A., et al. "Beyond the rule of 5: lessons learned from AbbVie’s drugs and compound collection: miniperspective." Journal of Medicinal Chemistry 61.7 (2017): 2636-2651.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.7b00717)
 
- AB-MPS metric calculated using cLogD, the number of aromatic rings (nAr), and the number of rotatable bonds (nRotB) according to the formula AB-MPS = Abs(cLogD −3) + nAr + nRotB. The lower the AB-MPS score, the more likely the compound is to be absorbed, and a value of ≤14 is reported to predict a higher probability of oral absorption.
+AB-MPS calculated using cLogD, the number of aromatic rings (nAr), and the number of rotatable bonds (nRotB) according to the formula AB-MPS = Abs(cLogD −3) + nAr + nRotB. The lower the AB-MPS score, the more likely the compound is to be absorbed, and a value of ≤14 is reported to predict a higher probability of oral absorption.
 
 * [Poongavanam, Vasanthanathan, Bradley C. Doak, and Jan Kihlberg. "Opportunities and guidelines for discovery of orally absorbed drugs in beyond rule of 5 space." Current Opinion in Chemical Biology 44 (2018): 23-29.](https://www.sciencedirect.com/science/article/pii/S1367593118300176#bib0030)
+
 Hueristics for oral bioavailability of molecules that are violating the rule of 5. MW may reach up to approximately 1000 Da provided that TPSA increases proportionally up to 250 Å2. In contrast, cLogP and HBDs must be carefully controlled at high MW. Our lack of ability to predict compound conformations and flexibility is currently a hurdle that is critical to overcome to enable further prospective design in oral bRo5 space.
 
 ## Synthesis Chemistry 
@@ -168,6 +169,18 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 * [Lenci, Elena, and Andrea Trabocchi. "Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics." ChemBioChem 20.9 (2019): 1115-1123.](https://doi.org/10.1002/cbic.201800751)
 
+## Large chemical libraries 
+
+Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field. 
+
+* [Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.](https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5)
+
+* [Warr, Wendy A., et al. "Exploration of ultralarge compound collections for drug discovery." Journal of Chemical Information and Modeling 62.9 (2022): 2021-2034.](https://pubs.acs.org/doi/10.1021/acs.jcim.2c00224)
+
+* SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial fragment spaces, utilizes topological fingerprints and the combinatorial character of these chemical spaces. Enamine’s REAL Space, WuXi’s GalaXi Space, and Otava’s CHEMriya. The overlap of the commercial make-on-demand catalogs is only in the low single-digit percent range, despite their large overall size.
+
+* PathFinder uses retrosynthetic analysis followed by combinatorial synthesis to generate novel compounds in synthetically accessible chemical space.
+https://pubs.acs.org/doi/10.1021/acs.jcim.9b00367
 
 ## Binding free energetic calculations 
 
@@ -218,7 +231,6 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 * [Exposing the Limitations of Molecular Machine Learning with Activity Cliffs](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01073)
 
 Account on how to treat and analyze activity cliffs in context of developing a predictive model. The authors outline best practices to probe activity cliffs. They show, using 24 DL and ML models and 30 targets, ML approaches based on molecular descriptors outperformed more complex deep learning methods. Activity cliff pairs were defined on similarity of the molecule SMILES and the bioactivity difference.  Compared to most traditional machine learning approaches, deep neural networks seem to fall short at picking up subtle structural differences (and the corresponding property change) that give rise to activity cliffs.
-
 
 * [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
 
@@ -338,15 +350,15 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 
 **Reviews** 
 
+* [Comment about generative design from Patrick Walters](https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html)
+
 * [Walters, W. Patrick, and Mark Murcko. "Assessing the impact of generative AI on medicinal chemistry." Nature biotechnology 38.2 (2020): 143-145.](https://www.nature.com/articles/s41587-020-0418-2)
 
 Correspondence on assessing the impact of AI on medicinal chemistry. It is a well written account on practical implication of generative design on pharmaceutical research.They outline two recent cases of 'success' of AI generative design in drug discovery and give more context and propose best practices for furthering the development of algorithms and drug discovery pipelines. 
 
 * [Mouchlis VD, Afantitis A, Serra A, et al. Advances in de Novo Drug Design: From Conventional to Machine Learning Methods. Int J Mol Sci. 2021;22(4):1676. Published 2021 Feb 7. doi:10.3390/ijms22041676](https://pubmed.ncbi.nlm.nih.gov/33562347/)
 
-
 * [B. Sanchez-Lengeling and A. Aspuru-Guzik, “Inverse molecular design using machine learning: Generative models for matter engineering,” Science (80)., vol. 361, no. 6400, pp. 360–365, Jul. 2018](https://science.sciencemag.org/content/361/6400/360)
-
 
 * [Meyers, Joshua, Benedek Fabian, and Nathan Brown. "De novo molecular design and generative models." Drug Discovery Today 26.11 (2021): 2707-2715.](https://www.sciencedirect.com/science/article/pii/S1359644621002531#f0010)
 
